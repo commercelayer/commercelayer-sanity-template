@@ -1,0 +1,43 @@
+{
+    "version": 1.00,
+    "title": "Sanity Commerce Layer Starter",
+    "description": "Sanity Ecommerce starter built with Next.js, Commerce Layer, and deployed to Netlify.",
+    "previewMedia": {
+      "type": "image",
+      "src": ".sanity-template/screenshot.png",
+      "alt": "Homepage UI"
+    },
+    "technologies": [
+      {
+        "id": "nextjs",
+        "name": "Next.js",
+        "url": "https://nextjs.org"
+      },
+      {
+        "id": "commercelayer",
+        "name": "Commerce Layer",
+        "url": "https://commercelayer.io"  
+      },
+      {
+        "id": "netlify",
+        "name": "Netlify",
+        "url": "https://netlify.com"
+      }
+    ],
+    "deployment": {
+      "provider": "netlify",
+      "studio": {
+        "basePath": "/studio"
+      },
+      "envVars": {
+        "projectId": ["NEXT_PUBLIC_SANITY_PROJECT_ID"],
+        "dataset": ["NEXT_PUBLIC_SANITY_DATASET"]
+      },
+      "corsOrigins": [
+        {
+          "origin": "http://localhost:3000",
+          "allowCredentials": true
+        }
+      ]
+    }
+  }
