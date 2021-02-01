@@ -24,7 +24,6 @@ export default {
       type: "text",
       localized: true,
       required: false,
-      validations: [],
       disabled: false,
       omitted: false,
     },
@@ -83,7 +82,6 @@ export default {
       ],
       localized: false,
       required: false,
-      validations: [],
       disabled: false,
       omitted: false,
     },
@@ -104,7 +102,6 @@ export default {
       ],
       localized: false,
       required: false,
-      validations: [],
       disabled: false,
       omitted: false,
     },
@@ -116,5 +113,12 @@ export default {
       subtitle: "Slug.current",
       media: "Images[0]",
     },
+    prepare({title, subtitle, media}) {
+      return {
+        title: title,
+        subtitle: `/${subtitle}`,
+        media: media
+      }
+    }
   }
 };

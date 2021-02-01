@@ -110,6 +110,13 @@ export default {
     select: {
       title: "Name",
       media: "Image",
+      countryCode: "Code"
     },
+    prepare({title, media, countryCode}) {
+      return {
+        title: `(${countryCode}) ${title}`,
+        media: media
+      }
+    }
   }
 };
