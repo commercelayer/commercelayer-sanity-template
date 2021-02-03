@@ -2,42 +2,32 @@ export default {
   name: "catalog",
   title: "Catalog",
   description: "",
-  type: "object",
+  type: "document",
   fields: [
     {
       id: "name",
       name: "Name",
       type: "string",
-      localized: true,
       required: true,
       validations: [
         {
           unique: true,
         },
       ],
-      disabled: false,
-      omitted: false,
     },
     {
       id: "taxonomies",
       name: "Taxonomies",
       type: "array",
+      required: true,
       of: [
         {
-          type: "url",
-          validations: [
-            {
-              urlContentType: ["taxonomy"],
-            },
-          ],
-          urlType: "Entry",
+          type: "reference",
+          to: {
+            type: "taxonomy",
+          },
         },
       ],
-      localized: false,
-      required: true,
-      validations: [],
-      disabled: false,
-      omitted: false,
     },
   ],
 };

@@ -1,42 +1,42 @@
 export default {
-  name: "variant",
-  title: "Product variant",
+  name: "taxon",
+  title: "Taxon",
   description: "",
-  type: "object",
+  type: "document",
   fields: [
     {
       id: "name",
       name: "Name",
       type: "string",
-      localized: true,
-      required: true,
-      validations: [],
-      disabled: false,
-      omitted: false,
-    },
-    {
-      id: "code",
-      name: "Code",
-      type: "string",
-      localized: false,
       required: true,
       validations: [
         {
           unique: true,
         },
       ],
-      disabled: false,
-      omitted: false,
+    },
+    {
+      id: "label",
+      name: "Label",
+      type: "string",
+    },
+    {
+      id: "slug",
+      name: "Slug",
+      type: "slug",
+      options: {
+        source: "Name",
+      },
+      validations: [
+        {
+          unique: true,
+        },
+      ],
     },
     {
       id: "description",
       name: "Description",
       type: "text",
-      localized: true,
-      required: false,
-      validations: [],
-      disabled: false,
-      omitted: false,
     },
     {
       id: "images",
@@ -56,29 +56,34 @@ export default {
               },
             },
           ],
-          urlType: "Asset",
         },
       ],
-      localized: false,
-      required: false,
-      validations: [],
-      disabled: false,
-      omitted: false,
     },
     {
-      id: "size",
-      name: "Size",
-      type: "url",
-      localized: false,
-      required: true,
-      validations: [
+      id: "products",
+      name: "Products",
+      type: "array",
+      of: [
         {
-          urlContentType: ["size"],
+          type: "reference",
+          to: {
+            type: "product",
+          },
         },
       ],
-      disabled: false,
-      omitted: false,
-      urlType: "Entry",
+    },
+    {
+      id: "taxons",
+      name: "Taxons",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: {
+            type: "taxon",
+          },
+        },
+      ],
     },
   ],
 };

@@ -8,15 +8,12 @@ export default {
       id: "name",
       name: "Name",
       type: "string",
-      localized: true,
       required: true,
       validations: [
         {
           unique: true,
         },
       ],
-      disabled: false,
-      omitted: false,
     },
     {
       id: "code",
@@ -31,37 +28,29 @@ export default {
         {
           size: {
             min: 2,
-            max: 2,
+            max: 4,
           },
         },
       ],
-      disabled: false,
-      omitted: false,
     },
     {
       id: "catalog",
       name: "Catalog",
-      type: "url",
-      localized: false,
+      type: "array",
       required: true,
-      validations: [
+      of: [
         {
-          urlContentType: ["catalog"],
+          type: "reference",
+          to: {
+            type: "catalog",
+          },
         },
       ],
-      disabled: false,
-      omitted: false,
-      urlType: "Entry",
     },
     {
       id: "marketId",
       name: "MarketId",
       type: "string",
-      localized: false,
-      required: false,
-      validations: [],
-      disabled: false,
-      omitted: false,
     },
     {
       id: "image",
@@ -80,29 +69,16 @@ export default {
           },
         },
       ],
-      disabled: false,
-      omitted: false,
-      urlType: "Asset",
     },
     {
       id: "defaultLocale",
       name: "DefaultLocale",
       type: "string",
-      localized: false,
-      required: false,
-      validations: [],
-      disabled: false,
-      omitted: false,
     },
     {
       id: "domain",
       name: "Domain",
-      type: "url",
-      localized: false,
-      required: false,
-      validations: [],
-      disabled: false,
-      omitted: false,
+      type: "string",
     },
   ],
 
@@ -110,13 +86,13 @@ export default {
     select: {
       title: "Name",
       media: "Image",
-      countryCode: "Code"
+      countryCode: "Code",
     },
-    prepare({title, media, countryCode}) {
+    prepare({ title, media, countryCode }) {
       return {
         title: `(${countryCode}) ${title}`,
-        media: media
-      }
-    }
-  }
+        media: media,
+      };
+    },
+  },
 };

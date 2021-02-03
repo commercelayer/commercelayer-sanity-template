@@ -1,22 +1,19 @@
 export default {
   name: "size",
-  title: "Weight in grams",
-  description: "",
-  type: "object",
+  title: "Size",
+  description: "Weight in grams",
+  type: "document",
   fields: [
     {
       id: "name",
       name: "Name",
       type: "string",
-      localized: true,
       required: true,
       validations: [
         {
           unique: true,
         },
       ],
-      disabled: false,
-      omitted: false,
     },
   ],
 };

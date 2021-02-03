@@ -15,27 +15,20 @@ export default {
           unique: true,
         },
       ],
-      disabled: false,
-      omitted: false,
     },
     {
       id: "description",
       name: "Description",
       type: "text",
-      localized: true,
-      required: false,
-      disabled: false,
-      omitted: false,
     },
     {
       id: "slug",
       name: "Slug",
       type: "slug",
       options: {
-        source: 'Name',
-        maxLength: 200
+        source: "Name",
+        maxLength: 200,
       },
-      localized: true,
       required: true,
       validations: [
         {
@@ -49,15 +42,12 @@ export default {
       id: "reference",
       name: "Reference",
       type: "string",
-      localized: false,
       required: false,
       validations: [
         {
           unique: true,
         },
       ],
-      disabled: false,
-      omitted: false,
     },
     {
       id: "images",
@@ -77,13 +67,8 @@ export default {
               },
             },
           ],
-          urlType: "Asset",
         },
       ],
-      localized: false,
-      required: false,
-      disabled: false,
-      omitted: false,
     },
     {
       id: "variants",
@@ -91,19 +76,12 @@ export default {
       type: "array",
       of: [
         {
-          type: "url",
-          validations: [
-            {
-              urlContentType: ["variant"],
-            },
-          ],
-          urlType: "Entry",
+          type: "reference",
+          to: {
+            type: "variant",
+          },
         },
       ],
-      localized: false,
-      required: false,
-      disabled: false,
-      omitted: false,
     },
   ],
 
@@ -113,12 +91,12 @@ export default {
       subtitle: "Slug.current",
       media: "Images[0]",
     },
-    prepare({title, subtitle, media}) {
+    prepare({ title, subtitle, media }) {
       return {
         title: title,
         subtitle: `/${subtitle}`,
-        media: media
-      }
-    }
-  }
+        media: media,
+      };
+    },
+  },
 };
