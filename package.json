@@ -15,7 +15,7 @@
     "url": "git+https://github.com/BolajiAyodeji/sanity-commercelayer-starter"
   },
   "dependencies": {
-    "@sanity/client": "^2.0.1",
+    "@sanity/client": "^2.2.6",
     "@sanity/image-url": "^0.140.19",
     "next": "^10.0.1",
     "next-sanity": "^0.1.8",
@@ -23,7 +23,7 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@sanity/cli": "^2.0.9",
+    "@sanity/cli": "^2.2.6",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
     "concurrently": "^5.3.0",
