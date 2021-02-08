@@ -1,6 +1,6 @@
 export default {
-  name: "catalog",
-  title: "Catalog",
+  name: "productImage",
+  title: "Product Image",
   description: "",
   type: "document",
   fields: [
@@ -11,18 +11,15 @@ export default {
       validation: (rule) => rule.required(),
     },
     {
-      id: "taxonomies",
-      name: "Taxonomies",
-      type: "array",
+      id: "description",
+      name: "Description",
+      type: "string",
+    },
+    {
+      id: "images",
+      name: "Images",
+      type: "image",
       validation: (rule) => rule.required(),
-      of: [
-        {
-          type: "reference",
-          to: {
-            type: "taxonomy",
-          },
-        },
-      ],
     },
   ],
 };

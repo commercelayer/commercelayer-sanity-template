@@ -8,12 +8,7 @@ export default {
       id: "name",
       name: "Name",
       type: "string",
-      required: true,
-      validations: [
-        {
-          unique: true,
-        },
-      ],
+      validation: (rule) => rule.required(),
     },
     {
       id: "label",
@@ -27,11 +22,7 @@ export default {
       options: {
         source: "Name",
       },
-      validations: [
-        {
-          unique: true,
-        },
-      ],
+      validation: (rule) => rule.required(),
     },
     {
       id: "description",
@@ -44,20 +35,13 @@ export default {
       type: "array",
       of: [
         {
-          type: "url",
-          validations: [
-            {
-              urlMimetypeGroup: ["image"],
-            },
-            {
-              assetFileSize: {
-                min: null,
-                max: 5242880,
-              },
-            },
-          ],
+          type: "reference",
+          to: {
+            type: "productImage",
+          },
         },
       ],
+      validation: (rule) => rule.required(),
     },
     {
       id: "products",

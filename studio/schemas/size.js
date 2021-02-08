@@ -8,12 +8,7 @@ export default {
       id: "name",
       name: "Name",
       type: "string",
-      required: true,
-      validations: [
-        {
-          unique: true,
-        },
-      ],
+      validation: (rule) => rule.required(),
     },
   ],
 };

@@ -8,13 +8,7 @@ export default {
       id: "name",
       name: "Name",
       type: "string",
-      localized: true,
-      required: true,
-      validations: [
-        {
-          unique: true,
-        },
-      ],
+      validation: (rule) => rule.required(),
     },
     {
       id: "description",
@@ -29,25 +23,13 @@ export default {
         source: "Name",
         maxLength: 200,
       },
-      required: true,
-      validations: [
-        {
-          unique: true,
-        },
-      ],
-      disabled: false,
-      omitted: false,
+      validation: (rule) => rule.required(),
     },
     {
       id: "reference",
       name: "Reference",
       type: "string",
-      required: false,
-      validations: [
-        {
-          unique: true,
-        },
-      ],
+      validation: (rule) => rule.required(),
     },
     {
       id: "images",
@@ -55,20 +37,13 @@ export default {
       type: "array",
       of: [
         {
-          type: "url",
-          validations: [
-            {
-              urlMimetypeGroup: ["image"],
-            },
-            {
-              assetFileSize: {
-                min: null,
-                max: 5242880,
-              },
-            },
-          ],
+          type: "reference",
+          to: {
+            type: "productImage",
+          },
         },
       ],
+      validation: (rule) => rule.required(),
     },
     {
       id: "variants",
@@ -82,6 +57,7 @@ export default {
           },
         },
       ],
+      validation: (rule) => rule.required(),
     },
   ],
 

@@ -8,12 +8,7 @@ export default {
       id: "name",
       name: "Name",
       type: "string",
-      required: true,
-      validations: [
-        {
-          unique: true,
-        },
-      ],
+      validation: (rule) => rule.required(),
     },
     {
       id: "label",
@@ -24,7 +19,7 @@ export default {
       id: "taxons",
       name: "Taxons",
       type: "array",
-      required: true,
+      validation: (rule) => rule.required(),
       of: [
         {
           type: "reference",

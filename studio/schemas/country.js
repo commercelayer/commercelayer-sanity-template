@@ -8,12 +8,7 @@ export default {
       id: "name",
       name: "Name",
       type: "string",
-      required: true,
-      validations: [
-        {
-          unique: true,
-        },
-      ],
+      validation: (rule) => rule.required(),
     },
     {
       id: "code",
@@ -21,23 +16,12 @@ export default {
       type: "string",
       localized: false,
       required: true,
-      validations: [
-        {
-          unique: true,
-        },
-        {
-          size: {
-            min: 2,
-            max: 4,
-          },
-        },
-      ],
+      validation: (rule) => rule.required().min(2).max(4),
     },
     {
       id: "catalog",
       name: "Catalog",
       type: "array",
-      required: true,
       of: [
         {
           type: "reference",
@@ -46,6 +30,7 @@ export default {
           },
         },
       ],
+      validation: (rule) => rule.required(),
     },
     {
       id: "marketId",
@@ -55,20 +40,8 @@ export default {
     {
       id: "image",
       name: "Image",
-      type: "url",
-      localized: false,
-      required: false,
-      validations: [
-        {
-          urlMimetypeGroup: ["image"],
-        },
-        {
-          assetFileSize: {
-            min: null,
-            max: 5242880,
-          },
-        },
-      ],
+      type: "image",
+      validation: (rule) => rule.required(),
     },
     {
       id: "defaultLocale",
