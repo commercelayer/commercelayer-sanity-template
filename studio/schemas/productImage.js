@@ -1,8 +1,11 @@
+import { BsFillImageFill } from "react-icons/bs";
+
 export default {
   name: "productImage",
   title: "Product Image",
   description: "",
   type: "document",
+  icon: BsFillImageFill,
   fields: [
     {
       id: "name",

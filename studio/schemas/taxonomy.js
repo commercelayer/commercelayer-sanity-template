@@ -1,8 +1,11 @@
+import { SiElasticstack } from "react-icons/si";
+
 export default {
   name: "taxonomy",
   title: "Taxonomy",
   description: "",
   type: "document",
+  icon: SiElasticstack,
   fields: [
     {
       id: "name",

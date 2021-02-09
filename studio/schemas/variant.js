@@ -1,8 +1,11 @@
+import { GrMultiple } from "react-icons/gr";
+
 export default {
   name: "variant",
   title: "Variant",
   description: "",
   type: "document",
+  icon: GrMultiple,
   fields: [
     {
       id: "name",

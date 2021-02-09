@@ -1,8 +1,11 @@
+import { BsSquareHalf } from "react-icons/bs";
+
 export default {
   name: "taxon",
   title: "Taxon",
   description: "",
   type: "document",
+  icon: BsSquareHalf,
   fields: [
     {
       id: "name",

@@ -1,8 +1,11 @@
+import { MdShoppingCart } from "react-icons/md";
+
 export default {
   name: "product",
   title: "Product",
   description: "",
   type: "document",
+  icon: MdShoppingCart,
   fields: [
     {
       id: "name",

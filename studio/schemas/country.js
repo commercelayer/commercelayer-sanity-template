@@ -1,8 +1,11 @@
+import { MdFlag } from "react-icons/md";
+
 export default {
   name: "country",
   title: "Country",
   description: "",
   type: "document",
+  icon: MdFlag,
   fields: [
     {
       id: "name",

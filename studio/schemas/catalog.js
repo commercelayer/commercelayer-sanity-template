@@ -1,8 +1,11 @@
+import { GoFileSubmodule } from "react-icons/go";
+
 export default {
   name: "catalog",
   title: "Catalog",
   description: "",
   type: "document",
+  icon: GoFileSubmodule,
   fields: [
     {
       id: "name",
