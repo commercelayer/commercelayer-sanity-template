@@ -65,7 +65,7 @@ export default {
     select: {
       title: "Name",
       subtitle: "Slug.current",
-      media: "Images[0]",
+      media: "Images.0.Images",
     },
     prepare({ title, subtitle, media }) {
       return {

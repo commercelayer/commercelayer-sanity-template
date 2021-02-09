@@ -54,7 +54,7 @@ export default {
   preview: {
     select: {
       title: "Name",
-      media: "Images[0]",
+      media: "Images.0.Images",
     },
   },
 };
