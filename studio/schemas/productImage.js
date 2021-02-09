@@ -13,7 +13,7 @@ export default {
     {
       id: "description",
       name: "Description",
-      type: "string",
+      type: "text",
     },
     {
       id: "images",

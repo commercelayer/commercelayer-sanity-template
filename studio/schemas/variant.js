@@ -50,4 +50,11 @@ export default {
       validation: (rule) => rule.required(),
     },
   ],
+
+  preview: {
+    select: {
+      title: "Name",
+      media: "Images[0]",
+    },
+  },
 };

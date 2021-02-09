@@ -14,8 +14,6 @@ export default {
       id: "code",
       name: "Code",
       type: "string",
-      localized: false,
-      required: true,
       validation: (rule) => rule.required().min(2).max(4),
     },
     {
@@ -59,13 +57,6 @@ export default {
     select: {
       title: "Name",
       media: "Image",
-      countryCode: "Code",
-    },
-    prepare({ title, media, countryCode }) {
-      return {
-        title: `(${countryCode}) ${title}`,
-        media: media,
-      };
     },
   },
 };

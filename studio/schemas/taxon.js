@@ -41,7 +41,6 @@ export default {
           },
         },
       ],
-      validation: (rule) => rule.required(),
     },
     {
       id: "products",
