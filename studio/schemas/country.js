@@ -22,13 +22,10 @@ export default {
     {
       name: 'catalog',
       title: 'Catalog',
-      type: 'array',
-      of: [
+      type: 'reference',
+      to: [
         {
-          type: 'reference',
-          to: {
-            type: 'catalog',
-          },
+          type: 'catalog',
         },
       ],
       validation: (rule) => rule.required(),
