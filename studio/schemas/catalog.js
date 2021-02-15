@@ -8,14 +8,12 @@ export default {
   icon: GoFileSubmodule,
   fields: [
     {
-      id: 'name',
       name: 'name',
       title: 'Name',
       type: 'string',
       validation: (rule) => rule.required(),
     },
     {
-      id: 'taxonomies',
       name: 'taxonomies',
       title: 'Taxonomies',
       type: 'array',

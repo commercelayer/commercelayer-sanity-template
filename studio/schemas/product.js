@@ -72,9 +72,9 @@ export default {
 
   preview: {
     select: {
-      title: 'Name',
-      subtitle: 'Slug.current',
-      media: 'Images.0.Images',
+      title: 'name',
+      subtitle: 'slug.current',
+      media: 'images.0.images',
     },
     prepare({ title, subtitle, media }) {
       return {

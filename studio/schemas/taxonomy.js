@@ -8,20 +8,17 @@ export default {
   icon: SiElasticstack,
   fields: [
     {
-      id: 'name',
       name: 'name',
       title: 'Name',
       type: 'string',
       validation: (rule) => rule.required(),
     },
     {
-      id: 'label',
       name: 'label',
       title: 'Label',
       type: 'string',
     },
     {
-      id: 'taxons',
       name: 'taxons',
       title: 'Taxons',
       type: 'array',

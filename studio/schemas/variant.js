@@ -1,52 +1,52 @@
-import { GrMultiple } from "react-icons/gr";
+import { GrMultiple } from 'react-icons/gr'
 
 export default {
-  name: "variant",
-  title: "Variant",
-  description: "",
-  type: "document",
+  name: 'variant',
+  title: 'Variant',
+  description: '',
+  type: 'document',
   icon: GrMultiple,
   fields: [
     {
-      id: "name",
-      name: "Name",
-      type: "string",
+      name: 'name',
+      title: 'Name',
+      type: 'string',
       validation: (rule) => rule.required(),
     },
     {
-      id: "code",
-      name: "Code",
-      type: "string",
+      name: 'code',
+      title: 'Code',
+      type: 'string',
       validation: (rule) => rule.required(),
     },
     {
-      id: "description",
-      name: "Description",
-      type: "text",
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     },
     {
-      id: "images",
-      name: "Images",
-      type: "array",
+      name: 'images',
+      title: 'Images',
+      type: 'array',
       of: [
         {
-          type: "reference",
+          type: 'reference',
           to: {
-            type: "productImage",
+            type: 'productImage',
           },
         },
       ],
       validation: (rule) => rule.required(),
     },
     {
-      id: "size",
-      name: "Size",
-      type: "array",
+      name: 'size',
+      title: 'Size',
+      type: 'array',
       of: [
         {
-          type: "reference",
+          type: 'reference',
           to: {
-            type: "size",
+            type: 'size',
           },
         },
       ],
@@ -56,8 +56,8 @@ export default {
 
   preview: {
     select: {
-      title: "Name",
-      media: "Images.0.Images",
+      title: 'name',
+      media: 'images.0.images',
     },
   },
-};
+}

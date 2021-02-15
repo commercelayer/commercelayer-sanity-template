@@ -8,20 +8,17 @@ export default {
   icon: BsSquareHalf,
   fields: [
     {
-      id: 'name',
       name: 'name',
       title: 'Name',
       type: 'string',
       validation: (rule) => rule.required(),
     },
     {
-      id: 'label',
       name: 'label',
       title: 'Label',
       type: 'string',
     },
     {
-      id: 'slug',
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -31,13 +28,11 @@ export default {
       validation: (rule) => rule.required(),
     },
     {
-      id: 'description',
       name: 'description',
       title: 'Description',
       type: 'text',
     },
     {
-      id: 'images',
       name: 'images',
       title: 'Images',
       type: 'array',
@@ -51,7 +46,6 @@ export default {
       ],
     },
     {
-      id: 'products',
       name: 'products',
       title: 'Products',
       type: 'array',
@@ -65,7 +59,6 @@ export default {
       ],
     },
     {
-      id: 'taxons',
       name: 'taxons',
       title: 'Taxons',
       type: 'array',
