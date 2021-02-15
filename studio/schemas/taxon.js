@@ -1,75 +1,82 @@
-import { BsSquareHalf } from "react-icons/bs";
+import { BsSquareHalf } from 'react-icons/bs'
 
 export default {
-  name: "taxon",
-  title: "Taxon",
-  description: "",
-  type: "document",
+  name: 'taxon',
+  title: 'Taxon',
+  description: '',
+  type: 'document',
   icon: BsSquareHalf,
   fields: [
     {
-      id: "name",
-      name: "Name",
-      type: "string",
+      id: 'name',
+      name: 'name',
+      title: 'Name',
+      type: 'string',
       validation: (rule) => rule.required(),
     },
     {
-      id: "label",
-      name: "Label",
-      type: "string",
+      id: 'label',
+      name: 'label',
+      title: 'Label',
+      type: 'string',
     },
     {
-      id: "slug",
-      name: "Slug",
-      type: "slug",
+      id: 'slug',
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
       options: {
-        source: "Name",
+        source: 'Name',
       },
       validation: (rule) => rule.required(),
     },
     {
-      id: "description",
-      name: "Description",
-      type: "text",
+      id: 'description',
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     },
     {
-      id: "images",
-      name: "Images",
-      type: "array",
+      id: 'images',
+      name: 'images',
+      title: 'Images',
+      type: 'array',
       of: [
         {
-          type: "reference",
+          type: 'reference',
           to: {
-            type: "productImage",
+            type: 'productImage',
           },
         },
       ],
     },
     {
-      id: "products",
-      name: "Products",
-      type: "array",
+      id: 'products',
+      name: 'products',
+      title: 'Products',
+      type: 'array',
       of: [
         {
-          type: "reference",
+          type: 'reference',
           to: {
-            type: "product",
+            type: 'product',
           },
         },
       ],
     },
     {
-      id: "taxons",
-      name: "Taxons",
-      type: "array",
+      id: 'taxons',
+      name: 'taxons',
+      title: 'Taxons',
+      type: 'array',
       of: [
         {
-          type: "reference",
+          type: 'reference',
           to: {
-            type: "taxon",
+            type: 'taxon',
           },
         },
       ],
     },
   ],
-};
+}

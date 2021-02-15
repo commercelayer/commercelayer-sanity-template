@@ -1,36 +1,39 @@
-import { SiElasticstack } from "react-icons/si";
+import { SiElasticstack } from 'react-icons/si'
 
 export default {
-  name: "taxonomy",
-  title: "Taxonomy",
-  description: "",
-  type: "document",
+  name: 'taxonomy',
+  title: 'Taxonomy',
+  description: '',
+  type: 'document',
   icon: SiElasticstack,
   fields: [
     {
-      id: "name",
-      name: "Name",
-      type: "string",
+      id: 'name',
+      name: 'name',
+      title: 'Name',
+      type: 'string',
       validation: (rule) => rule.required(),
     },
     {
-      id: "label",
-      name: "Label",
-      type: "string",
+      id: 'label',
+      name: 'label',
+      title: 'Label',
+      type: 'string',
     },
     {
-      id: "taxons",
-      name: "Taxons",
-      type: "array",
+      id: 'taxons',
+      name: 'taxons',
+      title: 'Taxons',
+      type: 'array',
       validation: (rule) => rule.required(),
       of: [
         {
-          type: "reference",
+          type: 'reference',
           to: {
-            type: "taxon",
+            type: 'taxon',
           },
         },
       ],
     },
   ],
-};
+}

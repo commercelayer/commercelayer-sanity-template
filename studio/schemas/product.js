@@ -1,62 +1,68 @@
-import { MdShoppingCart } from "react-icons/md";
+import { MdShoppingCart } from 'react-icons/md'
 
 export default {
-  name: "product",
-  title: "Product",
-  description: "",
-  type: "document",
+  name: 'product',
+  title: 'Product',
+  description: '',
+  type: 'document',
   icon: MdShoppingCart,
   fields: [
     {
-      id: "name",
-      name: "Name",
-      type: "string",
+      id: 'name',
+      name: 'name',
+      title: 'Name',
+      type: 'string',
       validation: (rule) => rule.required(),
     },
     {
-      id: "description",
-      name: "Description",
-      type: "text",
+      id: 'description',
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     },
     {
-      id: "slug",
-      name: "Slug",
-      type: "slug",
+      id: 'slug',
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
       options: {
-        source: "Name",
+        source: 'Name',
         maxLength: 200,
       },
       validation: (rule) => rule.required(),
     },
     {
-      id: "reference",
-      name: "Reference",
-      type: "string",
+      id: 'reference',
+      name: 'reference',
+      title: 'Reference',
+      type: 'string',
       validation: (rule) => rule.required(),
     },
     {
-      id: "images",
-      name: "Images",
-      type: "array",
+      id: 'images',
+      name: 'images',
+      title: 'Images',
+      type: 'array',
       of: [
         {
-          type: "reference",
+          type: 'reference',
           to: {
-            type: "productImage",
+            type: 'productImage',
           },
         },
       ],
       validation: (rule) => rule.required(),
     },
     {
-      id: "variants",
-      name: "Variants",
-      type: "array",
+      id: 'variants',
+      name: 'variants',
+      title: 'Variants',
+      type: 'array',
       of: [
         {
-          type: "reference",
+          type: 'reference',
           to: {
-            type: "variant",
+            type: 'variant',
           },
         },
       ],
@@ -66,16 +72,16 @@ export default {
 
   preview: {
     select: {
-      title: "Name",
-      subtitle: "Slug.current",
-      media: "Images.0.Images",
+      title: 'Name',
+      subtitle: 'Slug.current',
+      media: 'Images.0.Images',
     },
     prepare({ title, subtitle, media }) {
       return {
         title: title,
         subtitle: `/${subtitle}`,
         media: media,
-      };
+      }
     },
   },
-};
+}
