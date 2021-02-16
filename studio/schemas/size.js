@@ -11,7 +11,7 @@ export default {
       id: 'name',
       name: 'name',
       title: 'Name',
-      type: 'string',
+      type: 'localeString',
       validation: (rule) => rule.required(),
     },
   ],

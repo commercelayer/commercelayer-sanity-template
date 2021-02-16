@@ -10,18 +10,18 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'string',
+      type: 'localeString',
       validation: (rule) => rule.required(),
     },
     {
       name: 'label',
       title: 'Label',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'slug',
       title: 'Slug',
-      type: 'slug',
+      type: 'localeSlug',
       options: {
         source: 'Name',
       },
@@ -30,7 +30,7 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'localeText',
     },
     {
       name: 'images',

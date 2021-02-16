@@ -11,20 +11,20 @@ export default {
       id: 'name',
       name: 'name',
       title: 'Name',
-      type: 'string',
+      type: 'localeString',
       validation: (rule) => rule.required(),
     },
     {
       id: 'description',
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'localeText',
     },
     {
       id: 'slug',
       name: 'slug',
       title: 'Slug',
-      type: 'slug',
+      type: 'localeSlug',
       options: {
         source: 'Name',
         maxLength: 200,

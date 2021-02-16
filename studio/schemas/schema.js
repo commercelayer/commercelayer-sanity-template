@@ -14,6 +14,7 @@ import blockContent from './blockContent'
 import productImage from './productImage'
 import localeString from './locale/String'
 import localeText from './locale/Text'
+import localeSlug from './locale/Slug'
 import localeBlockContent from './locale/BlockContent'
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -36,8 +37,9 @@ export default createSchema({
     // { type: "typename" } in other document schemas
     productImage,
     blockContent,
-    localeText,
-    localeBlockContent,
     localeString,
+    localeText,
+    localeSlug,
+    localeBlockContent,
   ]),
 })
