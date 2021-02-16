@@ -1,4 +1,7 @@
 import { MdFlag } from 'react-icons/md'
+import supportedLanguages from './locale/supportedLanguages'
+
+const baseLanguage = supportedLanguages.find((l) => l.isDefault)
 
 export default {
   name: 'country',
@@ -55,7 +58,7 @@ export default {
 
   preview: {
     select: {
-      title: 'name',
+      title: `name.${baseLanguage.id}`,
       media: 'image',
     },
   },

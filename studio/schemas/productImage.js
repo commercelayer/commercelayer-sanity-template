@@ -31,6 +31,7 @@ export default {
   preview: {
     select: {
       title: `name.${baseLanguage.id}`,
+      media: 'images'
     },
   },
 }
