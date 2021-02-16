@@ -1,4 +1,7 @@
 import { BsSquareHalf } from 'react-icons/bs'
+import supportedLanguages from './locale/supportedLanguages'
+
+const baseLanguage = supportedLanguages.find((l) => l.isDefault)
 
 export default {
   name: 'taxon',
@@ -72,4 +75,9 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: `name.${baseLanguage.id}`,
+    },
+  },
 }

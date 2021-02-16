@@ -1,4 +1,7 @@
 import { GoFileSubmodule } from 'react-icons/go'
+import supportedLanguages from './locale/supportedLanguages'
+
+const baseLanguage = supportedLanguages.find((l) => l.isDefault)
 
 export default {
   name: 'catalog',
@@ -28,4 +31,9 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: `name.${baseLanguage.id}`,
+    },
+  },
 }

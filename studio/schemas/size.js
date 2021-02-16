@@ -1,4 +1,7 @@
 import { GiResize } from 'react-icons/gi'
+import supportedLanguages from './locale/supportedLanguages'
+
+const baseLanguage = supportedLanguages.find((l) => l.isDefault)
 
 export default {
   name: 'size',
@@ -15,4 +18,9 @@ export default {
       validation: (rule) => rule.required(),
     },
   ],
+  preview: {
+    select: {
+      title: `name.${baseLanguage.id}`,
+    },
+  },
 }

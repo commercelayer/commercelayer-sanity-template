@@ -1,4 +1,7 @@
 import { MdShoppingCart } from 'react-icons/md'
+import supportedLanguages from './locale/supportedLanguages'
+
+const baseLanguage = supportedLanguages.find((l) => l.isDefault)
 
 export default {
   name: 'product',
@@ -8,38 +11,29 @@ export default {
   icon: MdShoppingCart,
   fields: [
     {
-      id: 'name',
       name: 'name',
       title: 'Name',
       type: 'localeString',
       validation: (rule) => rule.required(),
     },
     {
-      id: 'description',
       name: 'description',
       title: 'Description',
       type: 'localeText',
     },
     {
-      id: 'slug',
       name: 'slug',
       title: 'Slug',
       type: 'localeSlug',
-      options: {
-        source: 'Name',
-        maxLength: 200,
-      },
       validation: (rule) => rule.required(),
     },
     {
-      id: 'reference',
       name: 'reference',
       title: 'Reference',
       type: 'string',
       validation: (rule) => rule.required(),
     },
     {
-      id: 'images',
       name: 'images',
       title: 'Images',
       type: 'array',
@@ -54,7 +48,6 @@ export default {
       validation: (rule) => rule.required(),
     },
     {
-      id: 'variants',
       name: 'variants',
       title: 'Variants',
       type: 'array',
@@ -72,8 +65,8 @@ export default {
 
   preview: {
     select: {
-      title: 'name',
-      subtitle: 'slug.current',
+      title: `name.${baseLanguage.id}`,
+      subtitle: `slug.${baseLanguage.id}.current`,
       media: 'images.0.images',
     },
     prepare({ title, subtitle, media }) {

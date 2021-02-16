@@ -1,4 +1,7 @@
 import { SiElasticstack } from 'react-icons/si'
+import supportedLanguages from './locale/supportedLanguages'
+
+const baseLanguage = supportedLanguages.find((l) => l.isDefault)
 
 export default {
   name: 'taxonomy',
@@ -33,4 +36,9 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: `name.${baseLanguage.id}`,
+    },
+  },
 }

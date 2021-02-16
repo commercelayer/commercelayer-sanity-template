@@ -1,4 +1,7 @@
 import { GrMultiple } from 'react-icons/gr'
+import supportedLanguages from './locale/supportedLanguages'
+
+const baseLanguage = supportedLanguages.find((l) => l.isDefault)
 
 export default {
   name: 'variant',
@@ -53,10 +56,9 @@ export default {
       validation: (rule) => rule.required(),
     },
   ],
-
   preview: {
     select: {
-      title: 'name',
+      title: `name.${baseLanguage.id}`,
       media: 'images.0.images',
     },
   },
