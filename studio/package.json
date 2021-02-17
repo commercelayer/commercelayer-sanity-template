@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Bolaji Ayodeji <sirbeejay1@gmail.com>",
-  "license": "UNLICENSED",
+  "author": "Commerce Layer <commercelayer.io>",
+  "license": "MIT",
   "scripts": {
     "start": "sanity start",
     "build": "sanity build"
