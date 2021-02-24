@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Eina01', 'sans-serif';
+  height: 100vh;
+  @apply bg-gray-50;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+#__next {
+  height: 100%;
+}
+
+section.content {
+  min-height: calc(100vh - 20vh);
+}

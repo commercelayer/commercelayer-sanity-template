@@ -44,15 +44,10 @@ export default {
     {
       name: 'size',
       title: 'Size',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: {
-            type: 'size',
-          },
-        },
-      ],
+      type: 'reference',
+      to: {
+        type: 'size',
+      },
       validation: (rule) => rule.required(),
     },
   ],
