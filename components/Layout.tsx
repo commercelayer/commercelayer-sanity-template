@@ -68,6 +68,7 @@ const Layout: React.FunctionComponent<Props> = ({
           href="//data.commercelayer.app/assets/fonts/fontawesome.min.css"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" type="image/x-icon" href="https://data.commercelayer.app/assets/images/favicons/favicon.ico"/>
         {/* <link
           href="//data.commercelayer.app/assets/css/commercelayer.min.css"
           rel="stylesheet"
