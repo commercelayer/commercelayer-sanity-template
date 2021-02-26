@@ -1,0 +1,1 @@
+{"version":3,"file":"test-import-spread.js","sourceRoot":"","sources":["../../src/__fixtures__/test-import-spread.ts"],"names":[],"mappings":";;AAAA,yCAA+C;AAE/C,sBAAU,CAAyB,IAAI,CAAC,CAAC","sourcesContent":["import { expectType, TypeOf } from \"ts-expect\";\n\nexpectType<TypeOf<string, string>>(true);\n"]}

@@ -1,0 +1,44 @@
+{
+  "name": "hyperscript",
+  "version": "2.0.2",
+  "homepage": "https://github.com/dominictarr/hyperscript",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/hyperscript.git"
+  },
+  "author": "'Dominic Tarr' <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "~2.13.3",
+    "observable": "~2.1.2",
+    "ispy": "~0.1.2",
+    "simulate": "0.0.3"
+  },
+  "dependencies": {
+    "browser-split": "0.0.0",
+    "class-list": "~0.1.0",
+    "html-element": "^2.0.0"
+  },
+  "browser": {
+    "html-element": false
+  },
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/8..latest",
+      "firefox/17..latest",
+      "firefox/nightly",
+      "chrome/22..latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  }
+}

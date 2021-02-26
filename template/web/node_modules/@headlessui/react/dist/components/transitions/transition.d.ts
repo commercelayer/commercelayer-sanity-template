@@ -1,0 +1,32 @@
+import { ElementType, MutableRefObject } from 'react';
+import { Props } from '../../types';
+import { Features, PropsForFeatures } from '../../utils/render';
+export interface TransitionClasses {
+    enter?: string;
+    enterFrom?: string;
+    enterTo?: string;
+    leave?: string;
+    leaveFrom?: string;
+    leaveTo?: string;
+}
+export interface TransitionEvents {
+    beforeEnter?: () => void;
+    afterEnter?: () => void;
+    beforeLeave?: () => void;
+    afterLeave?: () => void;
+}
+declare type TransitionChildProps<TTag> = Props<TTag, TransitionChildRenderPropArg> & PropsForFeatures<typeof TransitionChildRenderFeatures> & TransitionClasses & TransitionEvents & {
+    appear?: boolean;
+};
+declare let DEFAULT_TRANSITION_CHILD_TAG: "div";
+declare type TransitionChildRenderPropArg = MutableRefObject<HTMLDivElement>;
+declare let TransitionChildRenderFeatures: Features;
+declare function TransitionChild<TTag extends ElementType = typeof DEFAULT_TRANSITION_CHILD_TAG>(props: TransitionChildProps<TTag>): JSX.Element;
+export declare function Transition<TTag extends ElementType = typeof DEFAULT_TRANSITION_CHILD_TAG>(props: TransitionChildProps<TTag> & {
+    show: boolean;
+    appear?: boolean;
+}): JSX.Element;
+export declare namespace Transition {
+    var Child: typeof TransitionChild;
+}
+export {};

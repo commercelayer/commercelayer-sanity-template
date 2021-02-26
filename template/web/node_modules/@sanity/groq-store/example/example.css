@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+#root {
+  display: flex;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+}
+
+.actions button {
+  flex: 1;
+  margin-top: 10px;
+}
+
+.actions button:not(:last-child) {
+  margin-right: 10px;
+}
+
+textarea {
+  font-family: monospace;
+  font-size: 1.2em;
+}
+
+section {
+  padding: 10px;
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+}
+
+section > * {
+  width: 100%;
+}
+
+section textarea {
+  min-height: 300px;
+  flex: 1;
+}
+
+textarea:disabled,
+textarea:read-only {
+  background: #ddd;
+  border: 1px solid #eee;
+}
+
+button {
+  padding: 10px;
+  font-size: 1.5em;
+}

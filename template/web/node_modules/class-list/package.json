@@ -1,0 +1,32 @@
+{
+  "name": "class-list",
+  "version": "0.1.1",
+  "description": "A cross browser class list",
+  "keywords": [],
+  "author": "Raynos <raynos2@gmail.com>",
+  "repository": "git://github.com/Raynos/class-list.git",
+  "main": "index",
+  "homepage": "https://github.com/Raynos/class-list",
+  "contributors": [
+    {
+      "name": "Jake Verbaten"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Raynos/class-list/issues",
+    "email": "raynos2@gmail.com"
+  },
+  "dependencies": {
+    "indexof": "0.0.1"
+  },
+  "devDependencies": {
+    "browserify-server": "~1.2.2"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/Raynos/class-list/raw/master/LICENSE"
+    }
+  ],
+  "scripts": {}
+}

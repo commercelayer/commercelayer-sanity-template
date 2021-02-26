@@ -1,0 +1,96 @@
+{
+  "name": "popsicle-transport-xhr",
+  "version": "2.0.0",
+  "description": "Popsicle transport for sending requests over `XMLHttpRequest`",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "prettier": "prettier --write",
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
+    "format": "npm run prettier -- \"*.{md,yml,yaml}\" \"src/**/*.{js,jsx,ts,tsx}\"",
+    "build": "rimraf dist && tsc",
+    "specs": "jest --coverage",
+    "test": "npm run -s lint && npm run -s build && npm run -s specs && npm run -s size",
+    "prepare": "npm run build",
+    "size": "size-limit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/serviejs/popsicle-transport-xhr.git"
+  },
+  "keywords": [
+    "popsicle",
+    "transport",
+    "xhr",
+    "browser",
+    "xmlhttprequest"
+  ],
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/serviejs/popsicle-transport-xhr/issues"
+  },
+  "homepage": "https://github.com/serviejs/popsicle-transport-xhr",
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "1 kB"
+    }
+  ],
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "transform": {
+      "\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,md,yml,yaml}": [
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "servie": "^4.2.0"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^2.1.6",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.7",
+    "husky": "^3.0.9",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "servie": "^4.2.1",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.5.1"
+  }
+}

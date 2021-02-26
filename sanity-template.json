@@ -1,0 +1,68 @@
+{
+  "version": 2.0,
+  "title": "Sanity Commerce Layer Starter",
+  "description": "Sanity Ecommerce starter built with Next.js, Commerce Layer, and deployed to Netlify.",
+  "previewMedia": {
+    "type": "image",
+    "src": "assets/preview.png",
+    "alt": "Preview image with Nextjs, Commerce Layer, and Netlify's logo"
+  },
+  "technologies": [
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "url": "https://nextjs.org"
+    },
+    {
+      "id": "commercelayer",
+      "name": "Commerce Layer",
+      "url": "https://commercelayer.io"
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "url": "https://netlify.com"
+    }
+  ],
+  "deployment": {
+    "provider": "netlify",
+    "sites": [
+      {
+        "id": "studio",
+        "type": "studio",
+        "title": "Commerce Layer Sanity Studio",
+        "description": "The Sanity Studio is where you edit and structure your content.",
+        "dir": "./studio",
+        "previewMedia": {
+          "type": "image",
+          "src": "assets/studio.png",
+          "alt": "A preview image of the Sanity Studio."
+        },
+        "buildSettings": {
+          "base": "studio",
+          "dir": "dist",
+          "cmd": "npm run build"
+        },
+        "requirements": ["build-hook"]
+      },
+      {
+        "id": "web",
+        "type": "web",
+        "title": "Nextjs Demo by Commerce Layer",
+        "description": "Sanity Ecommerce starter built with Next.js, Commerce Layer, and deployed to Netlify.",
+        "dir": "./web",
+        "previewMedia": {
+          "type": "image",
+          "src": "assets/frontend.png",
+          "alt": "A preview image of the Nextjs demo."
+        },
+        "buildSettings": {
+          "base": "web",
+          "dir": "build",
+          "cmd": "npm run build"
+        },
+        "requirements": ["build-hook"]
+      }
+    ]
+  }
+}

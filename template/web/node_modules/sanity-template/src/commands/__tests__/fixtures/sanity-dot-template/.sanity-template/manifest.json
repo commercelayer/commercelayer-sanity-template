@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "title": "Next.js E-commerce",
+  "description": "Sanity E-commerce example with Next.js frontend, deployed to Vercel.",
+  "previewMedia": {
+    "type": "image",
+    "src": ".sanity-template/screenshot.png",
+    "alt": "Frontend"
+  },
+  "technologies": [
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "url": "https://nextjs.org/"
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "url": "https://vercel.com/"
+    }
+  ],
+  "deployment": {
+    "provider": "vercel"
+  }
+}

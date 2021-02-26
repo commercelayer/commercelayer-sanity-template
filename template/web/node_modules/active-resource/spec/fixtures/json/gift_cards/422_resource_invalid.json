@@ -1,0 +1,9 @@
+{
+  "errors": [
+    {
+      "source": { "pointer": "/data/attributes/initial_value" },
+      "code": "blank",
+      "detail": "Initial value code cannot be blank."
+    }
+  ]
+}

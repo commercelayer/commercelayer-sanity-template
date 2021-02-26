@@ -1,0 +1,12 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react"],
+  "extends": ["sanity", "prettier", "sanity/typescript"],
+  "env": {"browser": true, "node": true},
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "no-undef": "off"
+  }
+}

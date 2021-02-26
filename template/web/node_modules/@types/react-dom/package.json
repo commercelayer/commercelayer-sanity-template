@@ -1,0 +1,48 @@
+{
+    "name": "@types/react-dom",
+    "version": "17.0.1",
+    "description": "TypeScript definitions for React (react-dom)",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Asana",
+            "url": "https://asana.com"
+        },
+        {
+            "name": "AssureSign",
+            "url": "http://www.assuresign.com"
+        },
+        {
+            "name": "Microsoft",
+            "url": "https://microsoft.com"
+        },
+        {
+            "name": "MartynasZilinskas",
+            "url": "https://github.com/MartynasZilinskas",
+            "githubUsername": "MartynasZilinskas"
+        },
+        {
+            "name": "Josh Rutherford",
+            "url": "https://github.com/theruther4d",
+            "githubUsername": "theruther4d"
+        },
+        {
+            "name": "Jessica Franco",
+            "url": "https://github.com/Jessidhia",
+            "githubUsername": "Jessidhia"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-dom"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/react": "*"
+    },
+    "typesPublisherContentHash": "c302f0be7fb06c7551457af27468748a0ef2c37e88fe6c2f9f2fcb8cdc52740e",
+    "typeScriptVersion": "3.4"
+}

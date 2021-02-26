@@ -1,0 +1,17 @@
+excludeInFolderSearch = "{$excludeInFolderSearch,node_modules}"
+
+excludeInFileChooser = "{$excludeInFileChooser,node_modules}"
+
+# Settings
+softWrap = false
+softTabs = true
+tabSize  = 2
+include  = "{$include,.jscsrc,.gitignore,.travis.yml}"
+
+[ text.html.markdown ]
+softWrap = true
+softTabs = false
+tabSize  = 2
+
+[ .jscsrc ]
+fileType = "source.json"

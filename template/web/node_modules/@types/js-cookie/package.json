@@ -1,0 +1,44 @@
+{
+    "name": "@types/js-cookie",
+    "version": "2.2.6",
+    "description": "TypeScript definitions for js-cookie",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Theodore Brown",
+            "url": "https://github.com/theodorejb",
+            "githubUsername": "theodorejb"
+        },
+        {
+            "name": "BendingBender",
+            "url": "https://github.com/BendingBender",
+            "githubUsername": "BendingBender"
+        },
+        {
+            "name": "Antoine Lépée",
+            "url": "https://github.com/alepee",
+            "githubUsername": "alepee"
+        },
+        {
+            "name": "Yuto Doi",
+            "url": "https://github.com/yutod",
+            "githubUsername": "yutod"
+        },
+        {
+            "name": "Nicolas Reynis",
+            "url": "https://github.com/nreynis",
+            "githubUsername": "nreynis"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/js-cookie"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "968ab7dc2c45bd219bb1e9b9bd237290e61180bbc5e0fe3e02b515bff16f3840",
+    "typeScriptVersion": "2.8"
+}

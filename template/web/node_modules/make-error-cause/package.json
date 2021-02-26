@@ -1,0 +1,80 @@
+{
+  "name": "make-error-cause",
+  "version": "2.3.0",
+  "description": "Make your own nested error types!",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "prettier": "prettier --write",
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
+    "format": "npm run prettier -- README.md .travis.yml \"src/**/*.{jsx?,tsx?}\"",
+    "clean": "rimraf dist .nyc_output mochawesome-report coverage",
+    "build": "npm run clean && tsc",
+    "specs": "nyc mocha",
+    "test": "npm run -s lint && npm run -s build && npm run -s specs",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakeembrey/make-error-cause.git"
+  },
+  "keywords": [
+    "nested",
+    "error",
+    "cause",
+    "extend",
+    "inherit",
+    "custom"
+  ],
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/blakeembrey/make-error-cause/issues"
+  },
+  "homepage": "https://github.com/blakeembrey/make-error-cause",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/jest": "^24.0.17",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.2",
+    "chai": "^4.2.0",
+    "husky": "^3.0.3",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.1",
+    "mocha": "^6.2.0",
+    "mochawesome": "^4.1.0",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "make-error": "^1.3.5"
+  }
+}

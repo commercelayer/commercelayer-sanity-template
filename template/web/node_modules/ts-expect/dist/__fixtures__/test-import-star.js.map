@@ -1,0 +1,1 @@
+{"version":3,"file":"test-import-star.js","sourceRoot":"","sources":["../../src/__fixtures__/test-import-star.ts"],"names":[],"mappings":";;AAAA,oCAAoC;AAEpC,MAAM,CAAC,UAAU,CAAS,GAAG,CAAC,CAAC","sourcesContent":["import * as expect from \"ts-expect\";\n\nexpect.expectType<number>(123);\n"]}

@@ -1,0 +1,11 @@
+{
+  "version": 0,
+  "title": "minimal",
+  "description": "minimal",
+  "deployments": [],
+  "previewMedia": {
+    "type": "image",
+    "src": "assets/preview.jpg",
+    "alt": "preview"
+  }
+}

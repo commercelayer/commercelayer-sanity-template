@@ -1,0 +1,107 @@
+{
+  "name": "servie",
+  "version": "4.3.3",
+  "description": "Standard HTTP interfaces for HTTP clients and servers in node.js and browsers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "LICENSE",
+    "logo.svg"
+  ],
+  "browser": {
+    "./dist/node.js": "./dist/browser.js"
+  },
+  "scripts": {
+    "prettier": "prettier --write",
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
+    "format": "npm run prettier -- \"*.{md,yml,yaml}\" \"src/**/*.{js,jsx,ts,tsx}\"",
+    "build": "rimraf dist && tsc",
+    "specs": "jest --coverage",
+    "test": "npm run -s lint && npm run -s build && npm run -s specs && npm run -s size",
+    "prepare": "npm run build",
+    "size": "size-limit"
+  },
+  "size-limit": [
+    {
+      "path": "./dist/index.js",
+      "limit": "2 kB"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/serviejs/servie.git"
+  },
+  "keywords": [
+    "request",
+    "response",
+    "http",
+    "interface",
+    "server",
+    "browser",
+    "req",
+    "res"
+  ],
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/serviejs/servie/issues"
+  },
+  "homepage": "https://github.com/serviejs/servie",
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "transform": {
+      "\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,md,yml,yaml}": [
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^2.1.6",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^12.0.0",
+    "browserify": "^16.2.3",
+    "husky": "^3.0.2",
+    "jest": "^24.6.0",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.17.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.0.1",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.4.1"
+  },
+  "dependencies": {
+    "@servie/events": "^1.0.0",
+    "byte-length": "^1.0.2",
+    "ts-expect": "^1.1.0"
+  }
+}

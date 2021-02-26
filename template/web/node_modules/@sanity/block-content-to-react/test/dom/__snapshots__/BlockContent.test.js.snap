@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can reuse default serializers 1`] = `"<div><p><em>Plain text.</em></p><blockquote class=\\"my-quote\\">Some quote</blockquote></div>"`;
+
+exports[`renders empty block with react proptype error 1`] = `""`;
+
+exports[`renders uses empty array instead of undefined/null blocks prop 1`] = `""`;
+
+exports[`renders uses empty array instead of undefined/null blocks prop 2`] = `""`;

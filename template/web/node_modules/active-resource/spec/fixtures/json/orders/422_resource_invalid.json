@@ -1,0 +1,9 @@
+{
+  "errors": [
+    {
+      "source": { "pointer": "/data/attributes/verification_code" },
+      "code": "blank",
+      "detail": "Verification code cannot be blank."
+    }
+  ]
+}
