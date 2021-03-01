@@ -4,7 +4,7 @@
   "description": "Sanity Ecommerce starter built with Next.js, Commerce Layer, and deployed to Netlify.",
   "previewMedia": {
     "type": "image",
-    "src": "assets/preview.png",
+    "src": "assets/preview.gif",
     "alt": "Preview image with Nextjs, Commerce Layer, and Netlify's logo"
   },
   "technologies": [
