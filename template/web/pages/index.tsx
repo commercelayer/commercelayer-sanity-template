@@ -16,7 +16,7 @@ type Props = {
 const IndexPage = (props: Props) => {
   const { cms, searchEngine, countries } = props
   return (
-    <Layout title="NextJS Demo by Commerce Layer" showMenu={false} cms={cms}>
+    <Layout title="Commerce Layer Starter" showMenu={false} cms={cms}>
       <div className="pb-10 px-5 md:px-0 max-w-screen-lg mx-auto container">
         <Countries items={countries} cms={cms} searchBy={searchEngine} />
       </div>

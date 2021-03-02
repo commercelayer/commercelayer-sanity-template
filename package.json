@@ -1,13 +1,13 @@
 {
-    "name": "sanity-template-commercelayer",
-    "private": false,
-    "scripts": {
-      "build": "sanity-template build --template-values template-values-dev.json",
-      "export": "cd template/studio && sanity dataset export production ../../data/production.tar.gz",
-      "lint-build": "npm run build && (cd build && npm install && npm run lint)",
-      "test": "npm run build && cd build && npm install && npm run build"
-    },
-    "devDependencies": {
-      "sanity-template": "^1.0.3"
-    }
+  "name": "sanity-template-commercelayer",
+  "private": false,
+  "scripts": {
+    "build": "sanity-template build --template-values template-values-dev.json",
+    "export": "cd template/studio && sanity dataset export production ../../data/production.tar.gz",
+    "lint-build": "npm run build && (cd build && npm install && npm run lint)",
+    "test": "npm run build && cd build && npm install && npm run build"
+  },
+  "devDependencies": {
+    "sanity-template": "^1.0.3"
   }
+}
