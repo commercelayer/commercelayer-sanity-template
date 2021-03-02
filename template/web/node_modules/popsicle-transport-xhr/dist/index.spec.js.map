@@ -1,1 +1,0 @@
-{"version":3,"file":"index.spec.js","sourceRoot":"","sources":["../src/index.spec.ts"],"names":[],"mappings":";AAAA,QAAQ,CAAC,wBAAwB,EAAE,GAAG,EAAE;IACtC,EAAE,CAAC,aAAa,EAAE,GAAG,EAAE,CAAC,SAAS,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC","sourcesContent":["describe(\"popsicle transport xhr\", () => {\n  it(\"should noop\", () => undefined);\n});\n"]}

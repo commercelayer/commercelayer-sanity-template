@@ -9,7 +9,7 @@ import { GetStaticProps } from 'next'
 type Props = {
   [key: string]: any
   countries: any[]
-  cms: 'contentful' | 'dato' | 'sanity'
+  cms: 'sanity'
   searchEngine?: 'algolia'
 }
 

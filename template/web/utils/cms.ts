@@ -1,6 +1,4 @@
 import { EnvObject } from '../typings/env'
-import contentfulApi from './contentful/api'
-import datoApi from './dato/api'
 import sanityApi from './sanity/api'
 
 export const cmsList = () => {
@@ -9,7 +7,5 @@ export const cmsList = () => {
 }
 
 export const cmsFunctions: Record<string, any> = {
-  ...contentfulApi,
-  ...datoApi,
-  ...sanityApi,
+  ...sanityApi
 }
