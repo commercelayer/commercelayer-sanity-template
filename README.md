@@ -83,7 +83,13 @@ This will run the studio at `localhost:3333`
 
 ### ⬇️ Import test studio content
 
-1. Extract the `production.tar.gz` file in `./data`. The extracted folder name should look like `production-export-2021-02-26t14-15-56-557z`.
+1. Extract the `production.tar.gz` file in `./data` directory using the command below.
+
+```bash
+tar -xf production.tar.gz
+```
+
+The extracted folder name should look like `production-export-2021-02-26t14-15-56-557z`.
 
 2. Run the command below in the extracted folder to import a `data.ndjson` file.
 
@@ -91,7 +97,7 @@ This will run the studio at `localhost:3333`
 sanity dataset import data.ndjson production
 ```
 
-NB: If your dataset is not named `production`, kindly update this to the right value.
+NB: If your dataset is not named `production`, kindly update the dataset name to the right value.
 
 3. Check the frontend and studio now for some imported data.
 
