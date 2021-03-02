@@ -1,25 +1,34 @@
-# Sanity Commerce Layer Starter
+# Commerce Layer Starter
 
-An ecommerce starter that features the sanity studio built with Next.js, Commerce Layer, and deployed to Netlify.
+A multi-country ecommerce starter that features the sanity studio built with Commerce Layer, Next.js, and deployed to Netlify.
 
-![](./assets/frontend.png)
-![](./assets/studio.png)
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/frontend.png)
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/studio.png)
 
 ## What is Commerce Layer?
 
 [Commerce Layer](https://commercelayer.io) is a headless commerce platform and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, or IoT device, with ease. Perfect fit for the best-of-breed CMSs, static site generators, and any other tools you already master and love, our blazing-fast and secure API will help you make your content shoppable on a global scale.
 
+## Starter features
+
+- An ecommerce storefront built with Nextjs and [Commerce Layer react components library](https://github.com/commercelayer/commercelayer-react-components).
+- International shopping capabilities powered by Commerce Layer APIs.
+- Micro CLI seeder to import Commerce Layer data.
+- Structured content on Sanity CMS.
+- Localization support.
+- Deploy settings to Netlify.
+
 ## Getting started
 
 The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer and create a new project by following the instructions on Sanity.
 
-![](./assets/sanity.png)
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/sanity.png)
 
 ### Installation guide
 
 1. Clone this repository ([learn how to do it](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)).
 
-2. Rename `.env.example` to `.env` and add the following:
+2. Rename `./template/web/.env.example` to `.env` and add the following:
 
 - Your project ID and token from [manage.sanity.io](https://manage.sanity.io).
 - Your client ID and client endpoint from [Commerce Layer](https://core.commercelayer.io/users/sign_up).
@@ -30,23 +39,25 @@ The quickest way to get up and running is to go to https://www.sanity.io/create?
 npm install
 ```
 
-### Run frontend locally
+4. Add your project `name`, `projectId,` and `dataset` in `./template-values-dev.json`.
 
-1. Build template files to the `./build` directory.
+5. Build template files into the `./build` directory.
 
 ```bash
-npm run dev
+npm run build
 ```
 
 This will build both `web` and `studio` files.
 
-2. Install the necessary dependencies for Nextjs.
+### Run frontend locally
+
+1. Install the necessary dependencies for Nextjs.
 
 ```bash
 cd build/web && npm install
 ```
 
-3. Start the development server in `./build/web`.
+2. Start the development server in `./build/web`.
 
 ```bash
 npm run dev
@@ -62,15 +73,31 @@ This will run the frontend at `localhost:3000`
 cd build/studio && sanity install
 ```
 
-2. Add your project `name`, `projectId,` and `dataset` in `./template-values-dev.json`.
-
-3. Start the development server `./build/web`.
+2. Start the development server in `./build/studio`.
 
 ```bash
 npm run dev
 ```
 
 This will run the studio at `localhost:3333`
+
+### Import test content
+
+1. Extract the `production.tar.gz` file in `./data`. The extracted folder name should look like `production-export-2021-02-26t14-15-56-557z`.
+
+2. Run the command below in the extracted folder to import a `data.ndjson` file.
+
+```bash
+sanity dataset import data.ndjson production
+```
+
+NB: If your dataset is not named `production`, kindly update this to the right value.
+
+3. Check the frontend and studio now for some imported data.
+
+### Seed Commerce Layer data
+
+*Coming soon.*
 
 ## Contributors guide
 
@@ -83,6 +110,8 @@ git clone https://github.com/<your username>/sanity-template-commercelayer.git &
 ```
 
 3. Make your changes and create a pull request ([learn how to do it](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
+
+4. Someone will attend to your pull request and provide some feedback.
 
 ## Need help?
 
