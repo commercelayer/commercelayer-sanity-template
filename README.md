@@ -2,7 +2,8 @@
 
 A multi-country ecommerce starter that features the sanity studio built with Commerce Layer, Next.js, and deployed to Netlify.
 
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/frontend.png)
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/preview.gif)
+
 ![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/studio.png)
 
 ## What is Commerce Layer?
