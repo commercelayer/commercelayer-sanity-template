@@ -1,4 +1,4 @@
-import { Compiler } from 'webpack';
+import { webpack } from 'next/dist/compiled/webpack/webpack';
 export default class NextJsSsrImportPlugin {
-    apply(compiler: Compiler): void;
+    apply(compiler: webpack.Compiler): void;
 }

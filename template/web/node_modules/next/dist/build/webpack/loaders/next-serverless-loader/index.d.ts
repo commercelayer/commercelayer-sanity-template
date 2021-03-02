@@ -1,4 +1,4 @@
-import { loader } from 'webpack';
+import { webpack } from 'next/dist/compiled/webpack/webpack';
 export declare type ServerlessLoaderQuery = {
     page: string;
     distDir: string;
@@ -18,5 +18,5 @@ export declare type ServerlessLoaderQuery = {
     loadedEnvFiles: string;
     i18n: string;
 };
-declare const nextServerlessLoader: loader.Loader;
+declare const nextServerlessLoader: webpack.loader.Loader;
 export default nextServerlessLoader;

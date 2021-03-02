@@ -1,7 +1,6 @@
-import { loader } from 'webpack';
 export declare type ClientPagesLoaderOptions = {
     absolutePagePath: string;
     page: string;
 };
-declare const nextClientPagesLoader: loader.Loader;
+declare function nextClientPagesLoader(this: any): string;
 export default nextClientPagesLoader;

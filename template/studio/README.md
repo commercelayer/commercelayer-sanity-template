@@ -4,5 +4,5 @@ Congratulations, you have now installed the Sanity Content Studio, an open sourc
 
 Now you can do the following things:
 
-- [Read “getting started” guide in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Read the blog post about this starter](#)
+- [Read the Sanity "getting started"](https://www.sanity.io/docs/introduction/getting-started).
+- [Read the tutorial article about this starter](#).

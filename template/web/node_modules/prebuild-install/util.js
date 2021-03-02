@@ -23,7 +23,7 @@ function getDownloadUrl (opts) {
     libc: opts.libc || process.env.LIBC || '',
     configuration: (opts.debug ? 'Debug' : 'Release'),
     module_name: opts.pkg.binary && opts.pkg.binary.module_name,
-    tag_prefix: opts['tag-prefix'] || 'v'
+    tag_prefix: opts['tag-prefix']
   })
 }
 

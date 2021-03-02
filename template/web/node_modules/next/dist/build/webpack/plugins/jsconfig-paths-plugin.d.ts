@@ -1,4 +1,4 @@
-import { ResolvePlugin } from 'webpack';
+import { webpack } from 'next/dist/compiled/webpack/webpack';
 export interface Pattern {
     prefix: string;
     suffix: string;
@@ -35,7 +35,7 @@ declare type Paths = {
  * Largely based on how the TypeScript compiler handles it:
  * https://github.com/microsoft/TypeScript/blob/1a9c8197fffe3dace5f8dca6633d450a88cba66d/src/compiler/moduleNameResolver.ts#L1362
  */
-export declare class JsConfigPathsPlugin implements ResolvePlugin {
+export declare class JsConfigPathsPlugin implements webpack.ResolvePlugin {
     paths: Paths;
     resolvedBaseUrl: string;
     constructor(paths: Paths, resolvedBaseUrl: string);

@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.0.1] - 2021-02-14
+
+### Fixed
+
+- Fixes empty `--tag-prefix` ([#143](https://github.com/prebuild/prebuild-install/issues/143)) ([**@mathiask88**](https://github.com/mathiask88))
+
 ## [6.0.0] - 2020-10-23
 
 ### Changed
@@ -23,5 +29,7 @@
 ### Changed
 
 - Replace `mkdirp` dependency with `mkdirp-classic` ([**@ralphtheninja**](https://github.com/ralphtheninja))
+
+[6.0.1]: https://github.com/prebuild/prebuild-install/compare/v6.0.0...v6.0.1
 
 [6.0.0]: https://github.com/prebuild/prebuild-install/compare/v5.3.6...v6.0.0

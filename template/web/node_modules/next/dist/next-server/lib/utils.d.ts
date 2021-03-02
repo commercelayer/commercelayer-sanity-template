@@ -152,6 +152,7 @@ export declare type DocumentProps = DocumentInitialProps & {
     canonicalBase: string;
     headTags: any[];
     unstable_runtimeJS?: false;
+    unstable_JsPreload?: false;
     devOnlyCacheBusterQueryString: string;
     scriptLoader: {
         defer?: string[];

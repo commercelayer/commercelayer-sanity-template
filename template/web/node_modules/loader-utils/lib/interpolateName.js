@@ -38,14 +38,8 @@ function encodeStringToEmoji(content, length) {
 function interpolateName(loaderContext, name, options) {
   let filename;
 
-  const hasQuery =
-    loaderContext.resourceQuery && loaderContext.resourceQuery.length > 1;
-
   if (typeof name === 'function') {
-    filename = name(
-      loaderContext.resourcePath,
-      hasQuery ? loaderContext.resourceQuery : undefined
-    );
+    filename = name(loaderContext.resourcePath);
   } else {
     filename = name || '[hash].[ext]';
   }
@@ -58,7 +52,6 @@ function interpolateName(loaderContext, name, options) {
   let basename = 'file';
   let directory = '';
   let folder = '';
-  let query = '';
 
   if (loaderContext.resourcePath) {
     const parsed = path.parse(loaderContext.resourcePath);
@@ -90,16 +83,6 @@ function interpolateName(loaderContext, name, options) {
     }
   }
 
-  if (loaderContext.resourceQuery && loaderContext.resourceQuery.length > 1) {
-    query = loaderContext.resourceQuery;
-
-    const hashIdx = query.indexOf('#');
-
-    if (hashIdx >= 0) {
-      query = query.substr(0, hashIdx);
-    }
-  }
-
   let url = filename;
 
   if (content) {
@@ -121,8 +104,7 @@ function interpolateName(loaderContext, name, options) {
     .replace(/\[ext\]/gi, () => ext)
     .replace(/\[name\]/gi, () => basename)
     .replace(/\[path\]/gi, () => directory)
-    .replace(/\[folder\]/gi, () => folder)
-    .replace(/\[query\]/gi, () => query);
+    .replace(/\[folder\]/gi, () => folder);
 
   if (regExp && loaderContext.resourcePath) {
     const match = loaderContext.resourcePath.match(new RegExp(regExp));

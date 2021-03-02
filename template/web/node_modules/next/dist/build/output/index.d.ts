@@ -1,4 +1,4 @@
-export declare function startedDevelopmentServer(appUrl: string): void;
+export declare function startedDevelopmentServer(appUrl: string, bindAddr: string): void;
 declare type AmpStatus = {
     message: string;
     line: number;

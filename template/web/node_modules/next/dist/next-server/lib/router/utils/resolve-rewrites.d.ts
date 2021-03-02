@@ -1,4 +1,10 @@
 /// <reference types="node" />
 import { ParsedUrlQuery } from 'querystring';
 import { Rewrite } from '../../../../lib/load-custom-routes';
-export default function resolveRewrites(asPath: string, pages: string[], rewrites: Rewrite[], query: ParsedUrlQuery, resolveHref: (path: string) => string, locales?: string[]): string;
+import { parseRelativeUrl } from './parse-relative-url';
+export default function resolveRewrites(asPath: string, pages: string[], rewrites: Rewrite[], query: ParsedUrlQuery, resolveHref: (path: string) => string, locales?: string[]): {
+    matchedPage: boolean;
+    parsedAs: ReturnType<typeof parseRelativeUrl>;
+    asPath: string;
+    resolvedHref?: string;
+};

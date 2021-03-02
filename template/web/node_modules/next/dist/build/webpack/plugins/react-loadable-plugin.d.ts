@@ -18,12 +18,12 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWAR
 */
-import { Compiler } from 'webpack';
+import { webpack } from 'next/dist/compiled/webpack/webpack';
 export declare class ReactLoadablePlugin {
     private filename;
     constructor(opts: {
         filename: string;
     });
     createAssets(compiler: any, compilation: any, assets: any): any;
-    apply(compiler: Compiler): void;
+    apply(compiler: webpack.Compiler): void;
 }

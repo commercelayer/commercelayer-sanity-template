@@ -12,7 +12,7 @@ export declare type DynamicSsgRoute = {
     dataRouteRegex: string;
 };
 export declare type PrerenderManifest = {
-    version: 2;
+    version: 3;
     routes: {
         [route: string]: SsgRoute;
     };

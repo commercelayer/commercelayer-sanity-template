@@ -1,4 +1,4 @@
-"use strict";exports.__esModule=true;exports.getClientStyleLoader=getClientStyleLoader;var _miniCssExtractPlugin=_interopRequireDefault(require("../../../../plugins/mini-css-extract-plugin"));function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function getClientStyleLoader({isDevelopment,assetPrefix}){return isDevelopment?{loader:require.resolve('style-loader'),options:{// By default, style-loader injects CSS into the bottom
+"use strict";exports.__esModule=true;exports.getClientStyleLoader=getClientStyleLoader;var _miniCssExtractPlugin=_interopRequireDefault(require("../../../../plugins/mini-css-extract-plugin"));function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function getClientStyleLoader({isDevelopment,assetPrefix}){return isDevelopment?{loader:'next-style-loader',options:{// By default, style-loader injects CSS into the bottom
 // of <head>. This causes ordering problems between dev
 // and prod. To fix this, we render a <noscript> tag as
 // an anchor for the styles to be placed before. These

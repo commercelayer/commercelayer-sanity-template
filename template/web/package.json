@@ -1,11 +1,14 @@
 {
   "name": "sanity-template-commercelayer",
+  "private": false,
   "version": "1.0.0",
   "description": "Sanity Ecommerce starter built with Next.js, Commerce Layer, and deployed to Netlify.",
+  "author": "Commerce Layer <commercelayer.io>",
+  "license": "MIT",
   "scripts": {
-    "dev": "concurrently \"next\" \"cd ../studio && sanity start\"",
+    "dev": "next",
     "build": "next build",
-    "start": "npm run dev",
+    "start": "next start",
     "postinstall": "lerna bootstrap",
     "check-template": "sanity-template check"
   },
@@ -53,9 +56,10 @@
     "tailwindcss": "^2.0.3",
     "typescript": "4.2.2"
   },
-  "keywords": [],
-  "author": "Commerce Layer <commercelayer.io>",
-  "license": "MIT",
+  "keywords": [
+    "Commerce Layer",
+    "Nextjs Demo"
+  ],
   "bugs": {
     "url": "https://github.com/commercelayer/sanity-template-commercelayer/issues"
   },

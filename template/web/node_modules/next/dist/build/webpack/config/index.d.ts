@@ -1,5 +1,6 @@
-import webpack from 'webpack';
-export declare function build(config: webpack.Configuration, { rootDirectory, customAppFile, isDevelopment, isServer, assetPrefix, sassOptions, productionBrowserSourceMaps, }: {
+import { webpack } from 'next/dist/compiled/webpack/webpack';
+import { NextConfig } from '../../../next-server/server/config';
+export declare function build(config: webpack.Configuration, { rootDirectory, customAppFile, isDevelopment, isServer, assetPrefix, sassOptions, productionBrowserSourceMaps, future, }: {
     rootDirectory: string;
     customAppFile: string | null;
     isDevelopment: boolean;
@@ -7,4 +8,5 @@ export declare function build(config: webpack.Configuration, { rootDirectory, cu
     assetPrefix: string;
     sassOptions: any;
     productionBrowserSourceMaps: boolean;
+    future: NextConfig['future'];
 }): Promise<webpack.Configuration>;

@@ -1,4 +1,4 @@
-import { Compiler } from 'webpack';
+import { webpack } from 'next/dist/compiled/webpack/webpack';
 import { IWebpackConformanceTest } from './TestInterface';
 export { DuplicatePolyfillsConformanceCheck } from './checks/duplicate-polyfills-conformance-check';
 export { GranularChunksConformanceCheck } from './checks/granular-chunks-conformance';
@@ -17,5 +17,5 @@ export default class WebpackConformancePlugin {
     private buildStartedHandler;
     private buildCompletedHandler;
     private parserHandler;
-    apply(compiler: Compiler): void;
+    apply(compiler: webpack.Compiler): void;
 }

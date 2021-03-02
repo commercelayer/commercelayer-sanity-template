@@ -7,8 +7,9 @@
   "author": "Commerce Layer <commercelayer.io>",
   "license": "MIT",
   "scripts": {
-    "start": "sanity start",
-    "build": "sanity build"
+    "dev": "sanity start",
+    "build": "sanity build",
+    "test": "sanity check"
   },
   "keywords": [
     "sanity"

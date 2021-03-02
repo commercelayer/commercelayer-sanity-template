@@ -1,5 +1,5 @@
 /// <reference types="lodash" />
-import { Configuration, Plugin, RuleSetRule } from 'webpack';
-export declare const loader: import("lodash").CurriedFunction2<RuleSetRule, Configuration, Configuration>;
-export declare const unshiftLoader: import("lodash").CurriedFunction2<RuleSetRule, Configuration, Configuration>;
-export declare const plugin: import("lodash").CurriedFunction2<Plugin, Configuration, Configuration>;
+import { webpack } from 'next/dist/compiled/webpack/webpack';
+export declare const loader: import("lodash").CurriedFunction2<webpack.RuleSetRule, webpack.Configuration, webpack.Configuration>;
+export declare const unshiftLoader: import("lodash").CurriedFunction2<webpack.RuleSetRule, webpack.Configuration, webpack.Configuration>;
+export declare const plugin: import("lodash").CurriedFunction2<webpack.Plugin, webpack.Configuration, webpack.Configuration>;

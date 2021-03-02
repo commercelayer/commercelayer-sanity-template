@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import webpack from 'webpack';
+import { webpack } from 'next/dist/compiled/webpack/webpack';
 import http from 'http';
 export declare class WebpackHotMiddleware {
     eventStream: EventStream;

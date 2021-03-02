@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { IncomingMessage, ServerResponse } from 'http';
-import webpack from 'webpack';
+import { webpack } from 'next/dist/compiled/webpack/webpack';
 export declare const ADDED: unique symbol;
 export declare const BUILDING: unique symbol;
 export declare const BUILT: unique symbol;
