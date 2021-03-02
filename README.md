@@ -24,7 +24,7 @@ The quickest way to get up and running is to go to https://www.sanity.io/create?
 
 ![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/sanity.png)
 
-### Installation guide
+### ⚙️ Installation guide
 
 1. Clone this repository ([learn how to do it](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)).
 
@@ -49,7 +49,7 @@ npm run build
 
 This will build both `web` and `studio` files.
 
-### Run frontend locally
+### ✨ Run frontend locally
 
 1. Install the necessary dependencies for Nextjs.
 
@@ -65,7 +65,7 @@ npm run dev
 
 This will run the frontend at `localhost:3000`
 
-### Run studio locally
+### 🗂 Run studio locally
 
 1. Install the necessary dependencies for Sanity Studio.
 
@@ -81,7 +81,7 @@ npm run dev
 
 This will run the studio at `localhost:3333`
 
-### Import test content
+### ⬇️ Import test studio content
 
 1. Extract the `production.tar.gz` file in `./data`. The extracted folder name should look like `production-export-2021-02-26t14-15-56-557z`.
 
@@ -95,7 +95,7 @@ NB: If your dataset is not named `production`, kindly update this to the right v
 
 3. Check the frontend and studio now for some imported data.
 
-### Seed Commerce Layer data
+### ⬇️ Seed Commerce Layer data
 
 *Coming soon.*
 
