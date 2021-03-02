@@ -28,7 +28,7 @@ The quickest way to get up and running is to go to https://www.sanity.io/create?
 
 1. Clone this repository ([learn how to do it](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)).
 
-2. Rename `./template/web/.env.example` to `.env` and add the following:
+2. Rename the `./template/web/.env.example` file to `.env` and add the following:
 
 - Your project ID and token from [manage.sanity.io](https://manage.sanity.io).
 - Your client ID and client endpoint from [Commerce Layer](https://core.commercelayer.io/users/sign_up).
@@ -91,10 +91,10 @@ tar -xf production.tar.gz
 
 The extracted folder name should look like `production-export-2021-02-26t14-15-56-557z`.
 
-2. Run the command below in the extracted folder to import a `data.ndjson` file.
+2. Run the command below in `./build/studio` to import the `data.ndjson` file in the extracted folder.
 
 ```bash
-sanity dataset import data.ndjson production
+sanity dataset import ../../data/<name of extracted folder>/data.ndjson production
 ```
 
 NB: If your dataset is not named `production`, kindly update the dataset name to the right value.
