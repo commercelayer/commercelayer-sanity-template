@@ -128,6 +128,10 @@ git clone https://github.com/<your username>/sanity-template-commercelayer.git &
 
 3. Ping us [on Twitter](https://twitter.com/commercelayer).
 
+## License
+
+This repository is published under the [MIT](LICENSE) license.
+
 ---
 
 Want to learn more about how we built this starter and how you can build yours? Sign up for our [newsletter](https://commercelayer.io) to get notified once we publish the article.
