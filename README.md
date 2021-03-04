@@ -2,9 +2,9 @@
 
 A multi-country ecommerce starter that features the sanity studio built with Commerce Layer, Next.js, and deployed to Netlify.
 
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/preview.gif 'A preview GIF showing the frontend demo and some logos')
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/preview.gif 'A preview GIF showing the frontend demo with some products.')
 
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/studio.png 'Screenshot of Commerce Layer Sanity Studio')
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/studio.png 'A screenshot of Commerce Layer Sanity studio')
 
 ## What is Commerce Layer?
 
@@ -34,9 +34,11 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 ## Getting started
 
-The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer and create a new project by following the instructions on Sanity. You can also clone this repository, configure the starter, import some test content into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
+The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer and create a new project by following the instructions on Sanity.
 
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/sanity.png 'Screenshot of Commerce Layer Starter in sanity.io')
+You can also clone this repository, configure the starter, import some test content into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
+
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/sanity.png 'A screenshot of Commerce Layer Starter in sanity.io')
 
 ### ⚙️ Installation guide
 
