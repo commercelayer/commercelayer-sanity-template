@@ -14,7 +14,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 - [Starter features](#starter-features)
 - [Getting started](#getting-started)
-  - [⚙️ Installation guide](#⚙%EF%B8%8F-installation-guide)
+  - [⚙️ Installation guide](#%EF%B8%8F-installation-guide)
   - [✨ Run frontend locally](#-run-frontend-locally)
   - [🗂 Run studio locally](#-run-studio-locally)
   - [⬇️ Import test studio content](#%EF%B8%8F-import-test-studio-content)
