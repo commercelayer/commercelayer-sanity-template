@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react'
-import { Country } from '../utils/contentful/api'
 import Link from 'next/link'
 import _ from 'lodash'
 
