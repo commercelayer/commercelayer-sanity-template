@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import Link from 'next/link'
 import _ from 'lodash'
+import { Country } from '@typings/models'
 
-type Item = Omit<Country['fields'], 'image'> & {
+type Item = Omit<Country, 'image'> & {
   image: { title: string; url: string }
 }
 
