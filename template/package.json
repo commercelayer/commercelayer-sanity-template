@@ -1,0 +1,16 @@
+{
+  "name": "sanity-template-commercelayer",
+  "private": false,
+  "scripts": {
+    "build": "lerna run build --parallel",
+    "build-web": "lerna bootstrap && (cd web && npm run build)",
+    "build-studio": "lerna bootstrap && (cd studio && npm run build)",
+    "dev": "lerna run dev --parallel",
+    "postinstall": "lerna bootstrap",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@sanity/cli": "^2.6.0",
+    "lerna": "^4.0.0"
+  }
+}
