@@ -1,20 +1,18 @@
 {
-  "name": "sanity-template-commercelayer",
+  "name": "sanity-template-commercelayer-web",
   "private": false,
   "version": "1.0.0",
   "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
   "author": "Commerce Layer <commercelayer.io>",
   "license": "MIT",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "postinstall": "lerna bootstrap",
-    "check-template": "sanity-template check"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/commercelayer/sanity-template-commercelayer"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@commercelayer/js-auth": "^2.0.4",
