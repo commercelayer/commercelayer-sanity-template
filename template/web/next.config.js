@@ -7,5 +7,9 @@ const STUDIO_REWRITE = {
 }
 
 module.exports = {
+  target: 'serverless',
+  env: {
+    JSCOV: 0,
+  },
   rewrites: () => [STUDIO_REWRITE],
 }
