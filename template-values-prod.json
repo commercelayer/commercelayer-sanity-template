@@ -1,0 +1,26 @@
+{
+    "sanity": {
+      "projectTitle": "Commerce Layer Starter",
+      "projectId": "wvv7gbzb",
+      "dataset": "production"
+    },
+    "deployments": {
+      "studio": {
+        "url": "https://sanity-commercelayer-studio-9430d6.netlify.app/",
+        "providerName": "netlify",
+        "providerInfo": {
+          "buildHookId": "604f919ec8d2e22158398443",
+          "siteId": "f6e28fa0-d320-416d-8d35-a65f1ce458bf"
+        }
+      },
+      "web": {
+        "url": "https://sanity-commercelayer-web-4fb273.netlify.app/",
+        "providerName": "netlify",
+        "providerInfo": {
+          "buildHookId": "604f8fc90af7fa2627563f75",
+          "siteId": "efd2763d-d7a6-4c20-8543-14847a2bc023"
+        }
+      }
+    }
+  }
+  
