@@ -4,8 +4,3 @@
 
 [context.production.environment]
   NODE_ENV = "production"
-
-[[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
