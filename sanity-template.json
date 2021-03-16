@@ -41,7 +41,7 @@
         "buildSettings": {
           "base": "/",
           "dir": "/studio/dist",
-          "cmd": "npm run build-studio && cp studio/netlify.toml studio/dist"
+          "cmd": "cd studio && cp -rf netlify.toml ../ && cd ../ && npm run build-studio"
         },
         "requirements": ["build-hook"]
       },
@@ -59,7 +59,7 @@
         "buildSettings": {
           "base": "/",
           "dir": "/web/out",
-          "cmd": "npm run build-web && cp web/netlify.toml web/out"
+          "cmd": "cd web && cp -rf netlify.toml ../ && cd ../ && npm run build-web"
         },
         "requiredCorsOrigins": [
           {
