@@ -165,7 +165,7 @@ git clone https://github.com/<your username>/sanity-template-commercelayer.git &
 
 ## Need help?
 
-1. Request an invite to join [Commerce Layer's Slack community](https://slack.sanity.io).
+1. Request an invite to join [Commerce Layer's Slack community](https://commercelayer.io/developers) (kindly scroll down to the bottom of the page).
 
 2. Create an [issue](https://github.com/commercelayer/sanity-template-commercelayer/issues) in this repository.
 
