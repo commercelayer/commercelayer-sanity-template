@@ -8,8 +8,8 @@
 [context.production.environment]
   NEXT_SERVERLESS = "true"
   NODE_ENV = "production"
-  SANITY_TOKEN=""
-  BUILD_LANGUAGES="en-US,it-IT"
-  BUILD_CMS="sanity"
-  CL_CLIENT_ID="ETpqt0R5oIDG8BgttE4idgGMkR6PeOkBCNnRhp-nvGk"
-  CL_ENDPOINT="https://demo.commercelayer.io"
+  SANITY_TOKEN = ""
+  BUILD_LANGUAGES = "en-US,it-IT"
+  BUILD_CMS = "sanity"
+  CL_CLIENT_ID = "ETpqt0R5oIDG8BgttE4idgGMkR6PeOkBCNnRhp-nvGk"
+  CL_ENDPOINT = "https://demo.commercelayer.io"
