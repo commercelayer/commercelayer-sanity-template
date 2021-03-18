@@ -11,8 +11,8 @@ import {
 } from './typings'
 
 const client = sanityClient({
-  projectId: '<#< sanity.projectId >#>' as string,
-  dataset: '<#< sanity.dataset >#>' as string,
+  projectId: process.env.projectId as string,
+  dataset: process.env.dataset as string,
   token: process.env.SANITY_TOKEN as string, // or leave blank to be anonymous user
   useCdn: process.env.NODE_ENV === 'production', // `false` if you want to ensure fresh data
 })
