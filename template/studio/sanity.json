@@ -5,7 +5,7 @@
     "basePath": "/studio"
   },
   "api": {
-    "projectId": "<#< sanity.projectId >#>",
+    "projectId": "wvv7gbzb",
     "dataset": "<#< sanity.dataset >#>"
   },
   "plugins": [
