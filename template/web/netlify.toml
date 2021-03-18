@@ -1,6 +1,6 @@
 [build]
   base = "web"
-  publish = "web/out"
+  publish = "/out"
   command = "npm run build"
   
 [[plugins]]

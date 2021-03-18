@@ -39,9 +39,9 @@
           "alt": "A preview image of the Sanity studio."
         },
         "buildSettings": {
-          "base": "/",
-          "dir": "/studio/dist",
-          "cmd": "npm run build-studio"
+          "base": "studio",
+          "dir": "studio/dist",
+          "cmd": "npm run build"
         },
         "requirements": ["build-hook"]
       },
@@ -57,9 +57,9 @@
           "alt": "A preview image of the web demo."
         },
         "buildSettings": {
-          "base": "/",
-          "dir": "/web/out",
-          "cmd": "npm run build-web"
+          "base": "web",
+          "dir": "web/out",
+          "cmd": "npm run build"
         },
         "requiredCorsOrigins": [
           {

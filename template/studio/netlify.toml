@@ -1,12 +1,9 @@
 [build]
   base = "studio"
-  publish = "studio/dist"
+  publish = "/dist"
   command = "npm run build"
-
-[context.production.environment]
-  NODE_ENV = "production"
   
 [[redirects]]
-  from = "/*"
-  to = "/"
+  from = "/studio/*"
+  to = "/studio/"
   status = 200
