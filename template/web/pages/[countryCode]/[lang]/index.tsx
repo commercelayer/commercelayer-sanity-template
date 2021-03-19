@@ -185,23 +185,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const {
-    BUILD_COUNTRY,
-    CL_CLIENT_ID,
-    CL_ENDPOINT,
-    BUILD_LANGUAGES,
-    BUILD_CMS,
-    BUILD_SEARCH_ENGINE,
-  } = process.env
   try {
     const lang = params?.lang as string
-    const cms = BUILD_CMS
-    const countryCode = params?.countryCode || BUILD_COUNTRY?.toLowerCase()
+    const cms = process.env.BUILD_CMS
+    const countryCode =
+      params?.countryCode || process.env.BUILD_COUNTRY?.toLowerCase()
     const countries = _.has(cmsFunctions, `${cms}AllCountries`)
       ? await cmsFunctions[`${cms}AllCountries`](lang)
       : {}
     const buildLanguages = _.compact(
-      BUILD_LANGUAGES?.split(',').map((l) => {
+      process.env.BUILD_LANGUAGES?.split(',').map((l) => {
         const country = countries.find(
           (country: Country) => country.code === parseLanguageCode(l)
         )
@@ -219,10 +212,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         country,
         countries,
         taxonomies,
-        clientId: CL_CLIENT_ID,
-        endpoint: CL_ENDPOINT,
+        clientId: process.env.CL_CLIENT_ID,
+        endpoint: process.env.CL_ENDPOINT,
         buildLanguages,
-        searchEngine: BUILD_SEARCH_ENGINE || '',
+        searchEngine: process.env.BUILD_SEARCH_ENGINE || '',
         lang,
         cms,
       },
@@ -232,8 +225,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     console.error(err)
     return {
       props: {
-        clientId: CL_CLIENT_ID,
-        endpoint: CL_ENDPOINT,
+        clientId: process.env.CL_CLIENT_ID,
+        endpoint: process.env.CL_ENDPOINT,
         errors: err.message,
       },
       revalidate: 60,

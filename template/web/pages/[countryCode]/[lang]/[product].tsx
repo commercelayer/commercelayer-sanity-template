@@ -185,22 +185,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const {
-    CL_CLIENT_ID,
-    CL_ENDPOINT,
-    BUILD_COUNTRY,
-    BUILD_LANGUAGES,
-    BUILD_CMS,
-  } = process.env
   const lang = params?.lang as string
-  const cms = BUILD_CMS
-  const countryCode = params?.countryCode || BUILD_COUNTRY?.toLowerCase()
+  const cms = process.env.BUILD_CMS
+  const countryCode =
+    params?.countryCode || process.env.BUILD_COUNTRY?.toLowerCase()
   const slug = params?.product
   const countries = _.has(cmsFunctions, `${cms}AllCountries`)
     ? await cmsFunctions[`${cms}AllCountries`](lang)
     : {}
   const buildLanguages = _.compact(
-    BUILD_LANGUAGES?.split(',').map((l) => {
+    process.env.BUILD_LANGUAGES?.split(',').map((l) => {
       const country = countries.find(
         (country: Country) => country.code === parseLanguageCode(l)
       )
@@ -216,13 +210,13 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   return {
     props: {
       product,
-      clientId: CL_CLIENT_ID,
-      endpoint: CL_ENDPOINT,
+      clientId: process.env.CL_CLIENT_ID,
+      endpoint: process.env.CL_ENDPOINT,
       lang,
       countryCode,
       marketId: `market:${country?.marketId}`,
       buildLanguages,
-      cms: BUILD_CMS,
+      cms: process.env.BUILD_CMS,
       countries,
     },
     revalidate: 60,
