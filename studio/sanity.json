@@ -5,8 +5,8 @@
     "basePath": "/"
   },
   "api": {
-    "projectId": "projectId",
-    "dataset": "dataset"
+    "projectId": "<#< sanity.projectId >#>",
+    "dataset": "<#< sanity.dataset >#>"
   },
   "plugins": [
     "@sanity/base",

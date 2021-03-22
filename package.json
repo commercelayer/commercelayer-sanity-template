@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "concurrently \"next\" \"cd studio && sanity start\"",
-    "build": "cd studio && sanity build && cd ../ && next build",
+    "build": "next build",
     "start": "npm run build",
     "postinstall": "lerna bootstrap",
     "check-template": "sanity-template check",
