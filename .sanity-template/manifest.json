@@ -40,10 +40,9 @@
         },
         "buildSettings": {
           "base": "studio",
-          "dir": "studio/dist",
+          "dir": "/dist",
           "cmd": "npm run build"
-        },
-        "requirements": ["build-hook"]
+        }
       },
       {
         "id": "web",
@@ -57,17 +56,10 @@
           "alt": "A preview image of the web demo."
         },
         "buildSettings": {
-          "base": "web",
-          "dir": "web/out",
+          "base": "/",
+          "dir": "/out",
           "cmd": "npm run build"
-        },
-        "requiredCorsOrigins": [
-          {
-            "origin": "http://localhost:3000",
-            "allowCredentials": false
-          }
-        ],
-        "requirements": ["build-hook"]
+        }
       }
     ]
   }

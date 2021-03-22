@@ -1,12 +1,12 @@
 {
   "root": true,
   "project": {
-    "name": "<#< sanity.projectTitle >#>",
+    "name": "Commerce Layer Starter",
     "basePath": "/"
   },
   "api": {
-    "projectId": "<#< sanity.projectId >#>",
-    "dataset": "<#< sanity.dataset >#>"
+    "projectId": "projectId",
+    "dataset": "dataset"
   },
   "plugins": [
     "@sanity/base",
