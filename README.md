@@ -25,31 +25,31 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 ## Starter features
 
-- An ecommerce storefront built with Nextjs and [Commerce Layer react components library](https://github.com/commercelayer/commercelayer-react-components).
-- International shopping capabilities powered by Commerce Layer APIs.
-- Micro CLI seeder to import Commerce Layer data.
+- An ecommerce storefront built with Nextjs, [Commerce Layer react components library](https://github.com/commercelayer/commercelayer-react-components), and Tailwind CSS.
+- International shopping capabilities powered by [Commerce Layer](https://commercelayer.io) APIs.
+- [Micro CLI seeder](https://github.com/commercelayer/commercelayer-seeder-cli) to import Commerce Layer data.
 - Structured content on Sanity CMS.
 - Localization support.
-- Deploy settings to Netlify.
+- Deployment configuration to Netlify.
 
 ## Getting started
 
 The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer and create a new project by following the instructions on Sanity.
 
-You can also clone this repository, configure the starter, import some test content into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
+Alternatively, you can clone this repository, configure the starter, import the dataset into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
 
 ![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/sanity.png 'A screenshot of Commerce Layer Starter in sanity.io')
 
 ### ⚙️ Installation guide
 
-1. Clone this repository ([learn how to do it](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)).
+1. Clone this repository ([learn how to do this](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)).
 
 2. Rename the `./template/web/.env.example` file to `.env` and add the following:
 
-- Your project ID and token from [manage.sanity.io](https://manage.sanity.io).
+- Your project ID, dataset, and token from [manage.sanity.io](https://manage.sanity.io).
 - Your client ID and client endpoint from [Commerce Layer](https://core.commercelayer.io/users/sign_up).
 
-3. Install the necessary dependencies:
+3. Run the command below to install the necessary dependencies:
 
 ```bash
 npm install
@@ -63,43 +63,43 @@ npm install
 npm run build
 ```
 
-This will build both `web` and `studio` files.
+This will build both `web` (the Nextjs frontend) and `studio` (the Sanity CMS) files using the secrets provided in `./template-values-dev.json`.
 
 ### ✨ Run frontend locally
 
-1. Install the necessary dependencies for Nextjs.
+1. Install the necessary dependencies for the frontend codebase using the command below:
 
 ```bash
 cd build/web && npm install
 ```
 
-2. Start the development server in `./build/web`.
+2. Start the development server in `./build/web` using the command below:
 
 ```bash
 npm run dev
 ```
 
-This will run the frontend at `localhost:3000`
+This will run the frontend at `localhost:3000`.
 
 ### 🗂 Run studio locally
 
-1. Install the necessary dependencies for Sanity Studio.
+1. Install the necessary dependencies for Sanity using the command below:
 
 ```bash
 cd build/studio && sanity install
 ```
 
-2. Start the development server in `./build/studio`.
+2. Start the development server in `./build/studio` using the command below:
 
 ```bash
 npm run dev
 ```
 
-This will run the studio at `localhost:3333`
+This will run the studio at `localhost:3333`.
 
 ### ⬇️ Import test studio content
 
-1. Extract the `production.tar.gz` file in `./data` directory using the command below.
+1. Extract the `production.tar.gz` file in `./data` directory using the command below:
 
 ```bash
 tar -xf production.tar.gz
@@ -110,12 +110,10 @@ The extracted folder name should look like `production-export-2021-02-26t14-15-5
 2. Run the command below in `./build/studio` to import the `data.ndjson` file in the extracted folder.
 
 ```bash
-sanity dataset import ../../data/<name of extracted folder>/data.ndjson production
+sanity dataset import ../../data/<name of extracted folder>/data.ndjson <your_dataset>
 ```
 
-NB: If your dataset is not named `production`, kindly update the dataset name to the right value.
-
-3. Check the frontend and studio now for some imported data.
+3. Check the frontend and studio now to preview the imported content.
 
 ### ⬇️ Seed Commerce Layer data
 
@@ -151,7 +149,7 @@ commercelayer-seeder --help
 
 ## Contributors guide
 
-1. Fork this repository ([learn how to do it](https://help.github.com/articles/fork-a-repo)).
+1. Fork this repository ([learn how to do this](https://help.github.com/articles/fork-a-repo)).
 
 2. Clone the forked repository like so:
 
@@ -159,7 +157,7 @@ commercelayer-seeder --help
 git clone https://github.com/<your username>/sanity-template-commercelayer.git && cd sanity-template-commercelayer
 ```
 
-3. Make your changes and create a pull request ([learn how to do it](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
+3. Make your changes and create a pull request ([learn how to do this](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
 
 4. Someone will attend to your pull request and provide some feedback.
 
