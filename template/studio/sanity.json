@@ -2,10 +2,10 @@
   "root": true,
   "project": {
     "name": "<#< sanity.projectTitle >#>",
-    "basePath": "/studio"
+    "basePath": "/"
   },
   "api": {
-    "projectId": "wvv7gbzb",
+    "projectId": "<#< sanity.projectId >#>",
     "dataset": "<#< sanity.dataset >#>"
   },
   "plugins": [

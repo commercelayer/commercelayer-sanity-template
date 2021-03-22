@@ -4,6 +4,6 @@
   command = "npm run build"
   
 [[redirects]]
-  from = "/studio/*"
-  to = "/studio/"
+  from = "/*"
+  to = "/"
   status = 200
