@@ -2,9 +2,9 @@
 
 A multi-country ecommerce starter that features the sanity studio built with Commerce Layer, Next.js, and deployed to Netlify.
 
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/preview.gif 'A preview GIF showing the frontend demo with some products.')
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/preview.gif 'A preview GIF showing the frontend demo with some products.')
 
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/studio.png 'A screenshot of Commerce Layer Sanity studio')
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/studio.png 'A screenshot of Commerce Layer Sanity studio')
 
 ## What is Commerce Layer?
 
@@ -36,7 +36,7 @@ The quickest way to get up and running is to go to https://www.sanity.io/create?
 
 Alternatively, you can clone this repository, configure the starter, import the dataset into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
 
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/assets/sanity.png 'A screenshot of Commerce Layer Starter in sanity.io')
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/sanity.png 'A screenshot of Commerce Layer Starter in sanity.io')
 
 ### ⚙️ Installation guide
 
