@@ -1,5 +1,5 @@
 [build]
-  base = "web"
+  base = "/"
   publish = "/out"
   command = "npm run build"
   functions = "/netlify"

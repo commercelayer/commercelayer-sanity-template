@@ -4,7 +4,7 @@
   "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
   "previewMedia": {
     "type": "image",
-    "src": "assets/preview.gif",
+    "src": ".sanity-template/assets/preview.gif",
     "alt": "Preview image with Commerce Layer, Nextjs, and Netlify's logo"
   },
   "technologies": [
@@ -35,15 +35,14 @@
         "dir": "./studio",
         "previewMedia": {
           "type": "image",
-          "src": "assets/studio.png",
+          "src": ".sanity-template/assets/studio.png",
           "alt": "A preview image of the Sanity studio."
         },
         "buildSettings": {
           "base": "studio",
-          "dir": "studio/dist",
+          "dir": "/dist",
           "cmd": "npm run build"
-        },
-        "requirements": ["build-hook"]
+        }
       },
       {
         "id": "web",
@@ -53,21 +52,14 @@
         "dir": "./web",
         "previewMedia": {
           "type": "image",
-          "src": "assets/frontend.png",
+          "src": ".sanity-template/assets/frontend.png",
           "alt": "A preview image of the web demo."
         },
         "buildSettings": {
-          "base": "web",
-          "dir": "web/out",
+          "base": "/",
+          "dir": "/out",
           "cmd": "npm run build"
-        },
-        "requiredCorsOrigins": [
-          {
-            "origin": "http://localhost:3000",
-            "allowCredentials": false
-          }
-        ],
-        "requirements": ["build-hook"]
+        }
       }
     ]
   }

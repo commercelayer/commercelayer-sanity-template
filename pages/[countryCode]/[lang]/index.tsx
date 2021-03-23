@@ -80,7 +80,7 @@ const FilterPage: NextPage<Props> = ({
       <OrderStorage persistKey={`order-${code}`}>
         <OrderContainer attributes={{ languageCode }}>
           <Layout
-            title="Contentful NextJS Demo by Commerce Layer"
+            title="Commerce Layer Starter"
             buildLanguages={buildLanguages}
             countries={countries}
             lang={lang}
