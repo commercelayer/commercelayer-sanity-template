@@ -15,8 +15,6 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 - [Starter features](#starter-features)
 - [Getting started](#getting-started)
   - [⚙️ Installation guide](#%EF%B8%8F-installation-guide)
-  - [✨ Run frontend locally](#-run-frontend-locally)
-  - [🗂 Run studio locally](#-run-studio-locally)
   - [⬇️ Import test studio content](#%EF%B8%8F-import-test-studio-content)
   - [⬇️ Seed Commerce Layer data](#%EF%B8%8F-seed-commerce-layer-data)
 - [Contributors guide](#contributors-guide)
@@ -44,62 +42,32 @@ Alternatively, you can clone this repository, configure the starter, import the 
 
 1. Clone this repository ([learn how to do this](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)).
 
-2. Rename the `./template/web/.env.example` file to `.env` and add the following:
+2. Rename the `/env.example` file to `.env` and add the following:
 
 - Your project ID, dataset, and token from [manage.sanity.io](https://manage.sanity.io).
 - Your client ID and client endpoint from [Commerce Layer](https://core.commercelayer.io/users/sign_up).
 
-3. Run the command below to install the necessary dependencies:
+3. Run the command below to install the necessary dependencies of your project:
 
 ```bash
-npm install
+npm install && cd /studio && sanity install
 ```
 
-4. Add your project `name`, `projectId,` and `dataset` in `./template-values-dev.json`.
+4. Add your `projectTitle`, `projectId,` and `dataset` in `/studio/sanity.json`.
 
-5. Build template files into the `./build` directory.
-
-```bash
-npm run build
-```
-
-This will build both `web` (the Nextjs frontend) and `studio` (the Sanity CMS) files using the secrets provided in `./template-values-dev.json`.
-
-### ✨ Run frontend locally
-
-1. Install the necessary dependencies for the frontend codebase using the command below:
-
-```bash
-cd build/web && npm install
-```
-
-2. Start the development server in `./build/web` using the command below:
+5. Run the command below to start the development server:
 
 ```bash
 npm run dev
 ```
 
-This will run the frontend at `localhost:3000`.
-
-### 🗂 Run studio locally
-
-1. Install the necessary dependencies for Sanity using the command below:
-
-```bash
-cd build/studio && sanity install
-```
-
-2. Start the development server in `./build/studio` using the command below:
-
-```bash
-npm run dev
-```
-
-This will run the studio at `localhost:3333`.
+This will run the frontend at `localhost:3000` and studio at `localhost:3333`.
 
 ### ⬇️ Import test studio content
 
-1. Extract the `production.tar.gz` file in `./data` directory using the command below:
+> If you set up your project from the starters page on Sanity, you should skip this step as Sanity will automatically add the dataset's content.
+
+1. Extract the `production.tar.gz` file in `/.sanity-template/data` directory using the command below:
 
 ```bash
 tar -xf production.tar.gz
@@ -107,10 +75,10 @@ tar -xf production.tar.gz
 
 The extracted folder name should look like `production-export-2021-02-26t14-15-56-557z`.
 
-2. Run the command below in `./build/studio` to import the `data.ndjson` file in the extracted folder.
+2. Run the command below in `/studio` to import the `data.ndjson` file in the extracted folder.
 
 ```bash
-sanity dataset import ../../data/<name of extracted folder>/data.ndjson <your_dataset>
+sanity dataset import ../.sanity-template/data/<name of extracted folder>/data.ndjson <your_dataset>
 ```
 
 3. Check the frontend and studio now to preview the imported content.
