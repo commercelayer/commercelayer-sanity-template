@@ -249,10 +249,10 @@ const Layout: React.FunctionComponent<Props> = ({
             on{' '}
             <a
               className="underline hover:text-blue-500"
-              href="//vercel.com"
+              href="//netlify.com"
               target="_blank"
             >
-              Vercel.
+              Netlify.
             </a>
           </p>
         </footer>

@@ -2,7 +2,7 @@
 
 A multi-country ecommerce starter that features the sanity studio built with Commerce Layer, Next.js, and deployed to Netlify.
 
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/preview.gif 'A preview GIF showing the frontend demo with some products.')
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/preview.jpg 'A preview image showing the frontend demo with some products.')
 
 ![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/studio.png 'A screenshot of Commerce Layer Sanity studio')
 
@@ -117,7 +117,7 @@ commercelayer-seeder --help
 
 ## Contributors guide
 
-1. Fork this repository ([learn how to do this](https://help.github.com/articles/fork-a-repo)).
+1. Fork [this repository](https://github.com/commercelayer/sanity-template-commercelayer) (learn how to do this [here](https://help.github.com/articles/fork-a-repo)).
 
 2. Clone the forked repository like so:
 
