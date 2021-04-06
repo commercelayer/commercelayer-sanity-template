@@ -30,7 +30,7 @@
       {
         "id": "studio",
         "type": "studio",
-        "title": "Commerce Layer Stater Studio",
+        "title": "Commerce Layer Starter Studio",
         "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
         "dir": "./studio",
         "previewMedia": {
