@@ -52,7 +52,7 @@
         "dir": "./web",
         "previewMedia": {
           "type": "image",
-          "src": ".sanity-template/assets/frontend.png",
+          "src": ".sanity-template/assets/preview.jpg",
           "alt": "A preview image of the web demo."
         },
         "buildSettings": {
