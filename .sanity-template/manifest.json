@@ -4,7 +4,7 @@
   "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
   "previewMedia": {
     "type": "image",
-    "src": ".sanity-template/assets/preview.gif",
+    "src": ".sanity-template/assets/preview.jpg",
     "alt": "Preview image with Commerce Layer, Nextjs, and Netlify's logo"
   },
   "technologies": [
