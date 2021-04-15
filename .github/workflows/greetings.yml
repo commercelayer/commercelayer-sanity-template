@@ -1,6 +1,6 @@
 name: Greetings
 
-on: [pull_request, issues]
+on: [issues]
 
 jobs:
   greeting:
@@ -10,4 +10,3 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: 'Hey, there! :wave: <br /><br /> We welcome all kinds of contributions, please feel free to contribute and/or ask questions. <br /> Someone will attend to your issue soon :relaxed:'
-        pr-message: 'Hey, there! :wave: <br /><br /> We welcome all kinds of contributions, please feel free to contribute and/or ask questions. <br /> Someone will attend to your PR soon :relaxed:'
