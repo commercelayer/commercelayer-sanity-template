@@ -89,9 +89,9 @@ sanity dataset import ../.sanity-template/data/<name of extracted folder>/data.n
 
 2. Create a new organization.
 
-3. Create a new application in **Settings > Applications** with **Kind** set to `sanity`.
+3. Create a new application in **Settings > Applications** with **Kind** set to `integration`, and **Role** set to `admin`.
 
-4. In your newly created application, copy your Client ID.
+4. In your newly created application, copy your Client ID and Client Secret.
 
 5. Install the Commerce Layer Seeder which is available as an [npm package](https://www.npmjs.com/package/@commercelayer/commercelayer-seeder-cli):
 
@@ -106,7 +106,7 @@ yarn global add @commercelayer/commercelayer-seeder-cli
 6. Run the command below to import a [set of products](https://data.commercelayer.app/seed/skus.json), related [prices](https://data.commercelayer.app/seed/prices.json), and [inventory](https://data.commercelayer.app/seed/stock_items.json) into your organization.
 
 ```bash
-commercelayer-seeder -i your-client-id -e https://<yourdomain>.commercelayer.io
+commercelayer-seeder -i <your-client-id> -s <your-client-secret> -e https://<yourdomain>.commercelayer.io
 ```
 
 7. To see the commands for other seeder options, type the command below:
