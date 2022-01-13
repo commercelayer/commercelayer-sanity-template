@@ -8,4 +8,4 @@ You can do the following things:
 - [Read the tutorial article about this starter](#).
 - [Check out other projects and resources like this starter](https://commercelayer.io/developers).
 - [Read our comprehensive Headless Commerce guide](https://commercelayer.io/guides/headless-commerce).
-- Request an invite to join [Commerce Layer's Slack community](https://commercelayer.io/developers) (kindly scroll down to the bottom of the page).
+- Join [Commerce Layer's Slack community](https://slack.commercelayer.app).
