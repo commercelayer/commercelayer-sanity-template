@@ -85,34 +85,46 @@ sanity dataset import ../.sanity-template/data/<name of extracted folder>/data.n
 
 ### ⬇️ Seed Commerce Layer data
 
-1. Create a [Commerce Layer account](https://core.commercelayer.io/users/sign_up).
+1. Create a free [Commerce Layer account](https://dashboard.commercelayer.io/sign_up).
 
-2. Create a new organization.
+2. Create a new [organization](https://commercelayer.io/docs/data-model/users-and-organizations).
 
-3. Create a new application in **Settings > Applications** with **Kind** set to `integration`, and **Role** set to `admin`.
+3. Create a new application in the **Integrations** tab with **Name** set to `<Project Name>`, and **Role** set to `admin`.
 
-4. In your newly created application, copy your Client ID and Client Secret.
+4. In your newly created application, copy your `Client ID`, `Client Secret`, and organization slug.
 
-5. Install the Commerce Layer Seeder which is available as an [npm package](https://www.npmjs.com/package/@commercelayer/commercelayer-seeder-cli):
+5. Install the [Commerce Layer CLI](https://github.com/commercelayer/commercelayer-cli) which is available as an [npm package](https://www.npmjs.com/package/@commercelayer/commercelayer-cli) using the command below:
 
 ```
 // npm
-npm install -g @commercelayer/commercelayer-seeder-cli
+npm install -g @commercelayer/cli
 
-// yarn
-yarn global add @commercelayer/commercelayer-seeder-cli
+//yarn
+yarn global add @commercelayer/cli
 ```
 
-6. Run the command below to import a [set of products](https://data.commercelayer.app/seed/skus.json), related [prices](https://data.commercelayer.app/seed/prices.json), and [inventory](https://data.commercelayer.app/seed/stock_items.json) into your organization.
+6. Log into your application via the CLI using the previously created CLI credentials like so:
 
-```bash
-commercelayer-seeder -i <your-client-id> -s <your-client-secret> -e https://<yourdomain>.commercelayer.io
+```
+commercelayer applications:login -o <organizationSlug> -i <clientId> -s <clientSecret> -a <applicationAlias>
 ```
 
-7. To see the commands for other seeder options, type the command below:
+7. Install the seeder plugin using the command below:
+
+```
+commercelayer plugins:install seeder
+```
+
+8. Run the command below to import a [set of products](https://data.commercelayer.app/seed/skus.json), related [prices](https://data.commercelayer.app/seed/prices.json), and [inventory](https://data.commercelayer.app/seed/stock_items.json) into your organization.
 
 ```bash
-commercelayer-seeder --help
+commercelayer seed
+```
+
+9. To see the commands for other seeder options, type the command below:
+
+```bash
+commercelayer --help
 ```
 
 ## Contributors guide
@@ -131,7 +143,7 @@ git clone https://github.com/<your username>/sanity-template-commercelayer.git &
 
 ## Need help?
 
-1. Request an invite to join [Commerce Layer's Slack community](https://commercelayer.io/developers) (kindly scroll down to the bottom of the page).
+1. Join [Commerce Layer's Slack community](https://slack.commercelayer.app).
 
 2. Create an [issue](https://github.com/commercelayer/sanity-template-commercelayer/issues) in this repository.
 
@@ -143,4 +155,4 @@ This repository is published under the [MIT](LICENSE) license.
 
 ---
 
-Want to learn more about how we built this starter and how you can build yours? Sign up for our [newsletter](https://commercelayer.io) to get notified once we publish the article.
+Want to learn more about how we built this starter and how you can build yours? Sign up for our [newsletter](https://commercelayer.io/blog) to get notified once we publish the article.
