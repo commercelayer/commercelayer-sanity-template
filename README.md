@@ -45,7 +45,7 @@ Alternatively, you can clone this repository, configure the starter, import the 
 2. Rename the `/env.example` file to `.env` and add the following:
 
 - Your project ID, dataset, and token from [manage.sanity.io](https://manage.sanity.io).
-- Your client ID and client endpoint from [Commerce Layer](https://core.commercelayer.io/users/sign_up).
+- Your client ID and client endpoint from [Commerce Layer](https://dashboard.commercelayer.io/sign_up).
 
 3. Run the command below to install the necessary dependencies of your project:
 
