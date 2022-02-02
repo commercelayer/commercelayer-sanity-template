@@ -1,6 +1,7 @@
 import sanityClient from '@sanity/client'
 import { Product, Taxon, Taxonomy, Variant } from '@typings/models'
 import { parseLocale } from '@utils/parser'
+import { request } from '../../utils/datocmsClient'
 import _ from 'lodash'
 import {
   SanityCountry,
@@ -161,18 +162,48 @@ const datoCMSAllTaxonomies = async (catalogId: string, locale = 'en-US') => {
 //   return parsingProduct(_.first(item), lang)
 // }
 
+const token = "10954c93458841cc0c2dbabfac5728"
 const datoCMSGetProduct = async (slug: string, locale = 'en-US') => {
 
  console.log('using datoCMS datoProduct' );
+ console.log(slug , locale , 'slug and local');
  
   const lang = parseLocale(locale, '_', '-', 'lowercase')
-  const query = `product(filter:{slug: {eq: ${slug}}}) {
+  const query = `{product(filter:{slug: {eq: "${slug}"}}) {
     name
     id
     description
-  }`
-  const item: any[] = await client.fetch(query)
-  return parsingProduct(_.first(item), lang)
+  }}`
+  // const query = `{product(filter:{slug: {eq:"black-baby-long-sleeve-bodysuit-with-white-logo"}}) {
+  //   name
+  //   id
+  //   description
+  // }}`
+
+return fetch(
+    'https://graphql.datocms.com/',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        query
+      }),
+    }
+  )
+    .then(res => res.json())
+    .then((res) => {
+       console.log( res, " resssssssssssssss)");
+       return  res.data.product || []
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+
 }
 export default {
   datoCMSAllCountries,

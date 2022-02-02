@@ -16,12 +16,12 @@ type Props = {
   searchEngine: boolean
   lang?: string
 }
-const token = '10954c93458841cc0c2dbabfac5728';
 
 interface ProductType {
   allProducts: Product[]
 }
 
+const token = "10954c93458841cc0c2dbabfac5728"
 const Taxonomies = ({
   taxonomies,
   activeAlgolia,
@@ -32,7 +32,7 @@ const Taxonomies = ({
   const [currentProducts, setCurrentProducts] = useState<ProductType>({
     allProducts: [
       {
-        name: '',
+        name: 'Good',
         slug: '',
         variants: [
           {
@@ -73,7 +73,8 @@ const Taxonomies = ({
   //   }
   // }, [on, taxonomies])
 
-  useEffect(() => {
+
+  useEffect(() =>{
     fetch(
       'https://graphql.datocms.com/',
       {
@@ -119,13 +120,29 @@ const Taxonomies = ({
         console.log(error);
       });
 
+  
   }, [])
-  console.log(taxonomies, 'taxonomies')
-  console.log(currentProducts, 'currentProducts')
+
+  
+// export async function getStaticProps() {
+//   const data = await request({
+//     query: HOMEPAGE_QUERY,
+//     variables: { limit: 10 }
+//   });
+//   return {
+//     props: { data }
+//   };
+// }
+// export default function Home({ data }) {
+//   return <div>{JSON.stringify(data, null, 2)}</div>;
+// }
+
+console.log(currentProducts  , 'current')
+
   const taxonomy = taxonomies?.map((t, k) => {
-    console.log(taxonomies, 'taxonomies')
+    // console.log(taxonomies, 'taxonomies')
     const taxonCard = t.taxons.map((taxon, i) => {
-      console.log(taxon , 'taxon')
+      // console.log(taxon , 'taxon')
       const { name, products, label } = taxon
       const pQuantity = products?.length || 0
       const initialName = label || name

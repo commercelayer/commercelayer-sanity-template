@@ -12,7 +12,7 @@
   resolved "https://registry.yarnpkg.com/@ac-dev/states-service/-/states-service-1.0.2.tgz#16dd308fee1c88168781c3199d9122a86f6fc07e"
   integrity sha512-9EdAyKfcBEAtu/MlzRVIbYcWzd/0ZtXFJf+ifvA6qD5bS6qBjXskaVRIF4hmhZ7E1AA74CEAPO4f0um2CDCBtw==
 
-"@adyen/adyen-web@^5.6.2":
+"@adyen/adyen-web@^5.3.1":
   version "5.6.2"
   resolved "https://registry.yarnpkg.com/@adyen/adyen-web/-/adyen-web-5.6.2.tgz#b6d07414aecac01c5a9a69f5dd76e52ac7142e1c"
   integrity sha512-5H2rQCpCvNvXFZQW8a9j4crGxDdcl3h4Dc9SCqnxclFNBfZx0Dd9+L9+uDVaiisyYbnZ8gcClPGJjQdWGQYyZw==
@@ -379,7 +379,7 @@
   resolved "https://registry.yarnpkg.com/@braintree/wrap-promise/-/wrap-promise-2.1.0.tgz#7e27ffc5dacd2d71533b0c42506eea8e7c2e50fa"
   integrity sha512-UIrJB+AfKU0CCfbMoWrsGpd2D/hBpY/SGgFI6WRHPOwhaZ3g9rz1weiJ6eb6L9KgVyunT7s2tckcPkbHw+NzeA==
 
-"@commercelayer/js-auth@^2.0.4", "@commercelayer/js-auth@^2.2.9":
+"@commercelayer/js-auth@^2.0.4", "@commercelayer/js-auth@^2.2.6":
   version "2.2.9"
   resolved "https://registry.yarnpkg.com/@commercelayer/js-auth/-/js-auth-2.2.9.tgz#c6610b723d6e7e4628c8ca07c40cf91db80f0192"
   integrity sha512-G75o9fzZPzrU9evQ1RuBch3qg3uMgjLu28jkOth4RJd3Uc5NvbeuvEyGax4v0z56/zm0m9TQqkNzvPzXW4rwAA==
@@ -387,29 +387,29 @@
     client-oauth2 "^4.3.3"
     tslib "^2.3.1"
 
-"@commercelayer/react-components@^3.2.2":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@commercelayer/react-components/-/react-components-3.2.2.tgz#2575318c2ac9997cd390158d47777703c6b5f85c"
-  integrity sha512-0oJOIJBueRify9wdKQI8umA49ZUM5mr89wpC6HLunJL7pOXO6zHT+nlvKOjLLN7WVXhpIfO+FgXtKowoj73xsw==
+"@commercelayer/react-components@^2.8.0":
+  version "2.53.3"
+  resolved "https://registry.yarnpkg.com/@commercelayer/react-components/-/react-components-2.53.3.tgz#9c22f08e58b7765babd02a1b8bd156fa5603c91e"
+  integrity sha512-HmvckOyZoow7OCTSxweeguo2uQ6k4QrbkCxVyR9f38z8rb8DZgvnzf1vD19G30yoe6S3/2LoLyaqeiBiBIQDag==
   dependencies:
     "@ac-dev/countries-service" "^1.1.3"
     "@ac-dev/states-service" "^1.0.2"
-    "@adyen/adyen-web" "^5.6.2"
-    "@commercelayer/js-auth" "^2.2.9"
-    "@commercelayer/sdk" "^3.5.0"
-    "@stripe/react-stripe-js" "^1.7.0"
-    "@stripe/stripe-js" "^1.22.0"
-    axios "^0.25.0"
-    braintree-web "^3.85.2"
+    "@adyen/adyen-web" "^5.3.1"
+    "@commercelayer/js-auth" "^2.2.6"
+    "@commercelayer/sdk" "^2.3.11"
+    "@stripe/react-stripe-js" "^1.6.0"
+    "@stripe/stripe-js" "^1.21.2"
+    axios "^0.24.0"
+    braintree-web "^3.84.0"
     jwt-decode "^3.1.2"
     lodash "^4.17.21"
     lodash-es "^4.17.21"
     rapid-form "^1.6.0"
 
-"@commercelayer/sdk@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@commercelayer/sdk/-/sdk-3.5.0.tgz#11264fc29b92263453623dda535c1ad23ca270d2"
-  integrity sha512-1GBlsZ4rV12YyEzohCYNo0tobREIUethWgTD28ApmKEQhzsoNUtvNTc2bOQKFAI/AEQhoa83cgEgXKtySq9j0Q==
+"@commercelayer/sdk@^2.3.11":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@commercelayer/sdk/-/sdk-2.5.0.tgz#f1f486d832640d601516f43875ad9686ee92e566"
+  integrity sha512-ah1nxIxQvfKdZrSYspErUYQCq1t6KiXMaQ4sFPp8Aw4msdXYrCK+fM7CO0UJsfV/zbolFVJ6jfulKGPLXqbGzA==
   dependencies:
     axios "^0.24.0"
 
@@ -1524,14 +1524,14 @@
   resolved "https://registry.yarnpkg.com/@servie/events/-/events-1.0.0.tgz#8258684b52d418ab7b86533e861186638ecc5dc1"
   integrity sha512-sBSO19KzdrJCM3gdx6eIxV8M9Gxfgg6iDQmH5TIAGaUu+X9VDdsINXJOnoiZ1Kx3TrHdH4bt5UVglkjsEGBcvw==
 
-"@stripe/react-stripe-js@^1.7.0":
+"@stripe/react-stripe-js@^1.6.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-1.7.0.tgz#83c993a09a903703205d556617f9729784a896c3"
   integrity sha512-L20v8Jq0TDZFL2+y+uXD751t6q9SalSFkSYZpmZ2VWrGZGK7HAGfRQ804dzYSSr5fGenW6iz6y7U0YKfC/TK3g==
   dependencies:
     prop-types "^15.7.2"
 
-"@stripe/stripe-js@^1.22.0":
+"@stripe/stripe-js@^1.21.2":
   version "1.22.0"
   resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.22.0.tgz#9d3d2f0a1ce81f185ec477fd7cc67544b2b2a00c"
   integrity sha512-fm8TR8r4LwbXgBIYdPmeMjJJkxxFC66tvoliNnmXOpUgZSgQKoNPW3ON0ZphZIiif1oqWNhAaSrr7tOvGu+AFg==
@@ -2018,13 +2018,6 @@ axios@^0.24.0:
   dependencies:
     follow-redirects "^1.14.4"
 
-axios@^0.25.0:
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.25.0.tgz#349cfbb31331a9b4453190791760a8d35b093e0a"
-  integrity sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==
-  dependencies:
-    follow-redirects "^1.14.7"
-
 babel-plugin-transform-inline-environment-variables@^0.4.3:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-inline-environment-variables/-/babel-plugin-transform-inline-environment-variables-0.4.3.tgz#a3b09883353be8b5e2336e3ff1ef8a5d93f9c489"
@@ -2157,7 +2150,7 @@ braces@^3.0.1, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-braintree-web@^3.85.2:
+braintree-web@^3.84.0:
   version "3.85.2"
   resolved "https://registry.yarnpkg.com/braintree-web/-/braintree-web-3.85.2.tgz#27d8bc43cdc7c0523f29798ea78d2fe1a6b41d45"
   integrity sha512-misbiuiouCopHHzwNdY2ai2aPq7NsfyTRAQq7lhdgiqEMS8fFpFk78uNW3VTzusviRC/xIbXugIgfFdtDZGs4w==
@@ -2636,7 +2629,7 @@ columnify@^1.5.4, columnify@~1.5.4:
     strip-ansi "^3.0.0"
     wcwidth "^1.0.0"
 
-combined-stream@^1.0.6, combined-stream@~1.0.6:
+combined-stream@^1.0.6, combined-stream@^1.0.8, combined-stream@~1.0.6:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
   integrity sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
@@ -2902,6 +2895,13 @@ credit-card-type@9.1.0, credit-card-type@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/credit-card-type/-/credit-card-type-9.1.0.tgz#54dd96c93b6579623e9c8656e6798fc2b93f5f05"
   integrity sha512-CpNFuLxiPFxuZqhSKml3M+t0K/484pMAnfYWH14JoD7OZMnmC0Lmo+P7JX9SobqFpRoo7ifA18kOHdxJywYPEA==
+
+cross-fetch@^3.0.6:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.5.tgz#e1389f44d9e7ba767907f7af8454787952ab534f"
+  integrity sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==
+  dependencies:
+    node-fetch "2.6.7"
 
 cross-spawn@^5.0.1:
   version "5.1.0"
@@ -3517,6 +3517,11 @@ extglob@^2.0.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+extract-files@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/extract-files/-/extract-files-9.0.0.tgz#8a7744f2437f81f5ed3250ed9f1550de902fe54a"
+  integrity sha512-CvdFfHkC95B4bBBk36hcEmvdR2awOdhhVUYH6S/zrVj3477zven/fJMYg7121h4T1xHZC+tetUpubpAhxwI7hQ==
+
 extsprintf@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.3.0.tgz#96918440e3041a7a414f8c52e3c574eb3c3e1e05"
@@ -3678,7 +3683,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.14.0, follow-redirects@^1.14.4, follow-redirects@^1.14.7, follow-redirects@^1.2.4:
+follow-redirects@^1.14.0, follow-redirects@^1.14.4, follow-redirects@^1.2.4:
   version "1.14.7"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.7.tgz#2004c02eb9436eee9a21446a6477debf17e81685"
   integrity sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==
@@ -3692,6 +3697,15 @@ forever-agent@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
   integrity sha1-+8cfDEGt6zf5bFd60e1C2P2sypE=
+
+form-data@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-3.0.1.tgz#ebd53791b78356a99af9a300d4282c4d5eb9755f"
+  integrity sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
 
 form-data@~2.3.2:
   version "2.3.3"
@@ -4101,6 +4115,20 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   version "4.2.9"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.9.tgz#041b05df45755e587a24942279b9d113146e1c96"
   integrity sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==
+
+graphql-request@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-4.0.0.tgz#5e4361d33df1a95ccd7ad23a8ebb6bbca9d5622f"
+  integrity sha512-cdqQLCXlBGkaLdkLYRl4LtkwaZU6TfpE7/tnUQFl3wXfUPWN74Ov+Q61VuIh+AltS789YfGB6whghmCmeXLvTw==
+  dependencies:
+    cross-fetch "^3.0.6"
+    extract-files "^9.0.0"
+    form-data "^3.0.0"
+
+graphql@^16.3.0:
+  version "16.3.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.3.0.tgz#a91e24d10babf9e60c706919bb182b53ccdffc05"
+  integrity sha512-xm+ANmA16BzCT5pLjuXySbQVFwH3oJctUVdy81w1sV0vBU0KgDdBGtxQOUd5zqOBk/JayAFeG8Dlmeq74rjm/A==
 
 groq-js@^0.2.0:
   version "0.2.0"
@@ -6025,7 +6053,7 @@ node-fetch-npm@^2.0.2:
     json-parse-better-errors "^1.0.0"
     safe-buffer "^5.1.1"
 
-node-fetch@^2.6.0, node-fetch@^2.6.1, node-fetch@^2.6.7:
+node-fetch@2.6.7, node-fetch@^2.6.0, node-fetch@^2.6.1, node-fetch@^2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
   integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==

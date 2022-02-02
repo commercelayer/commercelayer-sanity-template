@@ -70,7 +70,7 @@ const ProductPage: FunctionComponent<Props> = ({
     countryCode: router.query?.countryCode as string,
   })
 
-  console.log('productPage');
+  console.log('productPage , ', product, product?.product?.name);
   
   const imgUrl = parseImg(_.first(product?.images)?.url as string, cms)
   const firstVariantCode = _.first(product?.variants)?.code
@@ -189,11 +189,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   console.log(params , 'params');
-  console.log(params?.product , 'product');
-  
   
   const lang = params?.lang as string
-  const cms = process.env.BUILD_CMS
+  // const cms = process.env.BUILD_CMS
+   const cms = 'datoCMS'
   const countryCode =
     params?.countryCode || process.env.BUILD_COUNTRY?.toLowerCase()
   const slug = params?.product
@@ -216,6 +215,8 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const product = _.has(cmsFunctions, `${cms}GetProduct`)
     ? await cmsFunctions[`${cms}GetProduct`](slug, lang)
     : {}
+    console.log(product , 'product_static_query');
+    
   return {
     props: {
       product,
