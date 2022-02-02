@@ -16,8 +16,8 @@ const client = sanityClient({
   useCdn: process.env.NODE_ENV === 'production', // `false` if you want to ensure fresh data
 })
 
-const sanityAllCountries = async (locale = 'en-US') => {
-  console.log('using sanity sanityAllCountries ');
+const datoCMSAllCountries = async (locale = 'en-US') => {
+  console.log('using datoCMS datoCountry');
   const lang = parseLocale(locale, '_', '-', 'lowercase')
   const query = `*[_type == "country"]{
     name,
@@ -106,9 +106,9 @@ const parsingTaxonomies = (
   })
   return items
 }
-const sanityAllTaxonomies = async (catalogId: string, locale = 'en-US') => {
+const datoCMSAllTaxonomies = async (catalogId: string, locale = 'en-US') => {
+  console.log('using datoCMS datoALlTaxmi' );
   // const newLocale = getLocale(locale)
-  console.log('using sanity sanityAllTaxonomies');
   const query = `*[_type == "catalog" && _id == '${catalogId}']{
     'taxonomies': taxonomies[]->{
       label,
@@ -137,35 +137,46 @@ const sanityAllTaxonomies = async (catalogId: string, locale = 'en-US') => {
   return parsingTaxonomies(_.first(items)?.taxonomies, locale)
 }
 
-const sanityGetProduct = async (slug: string, locale = 'en-US') => {
+// const datoCMSGetProduct = async (slug: string, locale = 'en-US') => {
+//   const lang = parseLocale(locale, '_', '-', 'lowercase')
+//   const query = `*[_type == "product" && slug["${lang}"].current == "${slug}"]{
+//     name,
+//     description,
+//     reference,
+//     slug,
+//     'images': images[]->{
+//       'url': images.asset->url
+//     },
+//     'variants': variants[]->{
+//       label,
+//       code,
+//       name,
+//       size->,
+//       'images': images[]->{
+//         'url': images.asset->url
+//       }
+//     }    
+//   }`
+//   const item: any[] = await client.fetch(query)
+//   return parsingProduct(_.first(item), lang)
+// }
 
-  console.log('using sanity sanityGetProduct');
-  
+const datoCMSGetProduct = async (slug: string, locale = 'en-US') => {
+
+ console.log('using datoCMS datoProduct' );
+ 
   const lang = parseLocale(locale, '_', '-', 'lowercase')
-  const query = `*[_type == "product" && slug["${lang}"].current == "${slug}"]{
-    name,
-    description,
-    reference,
-    slug,
-    'images': images[]->{
-      'url': images.asset->url
-    },
-    'variants': variants[]->{
-      label,
-      code,
-      name,
-      size->,
-      'images': images[]->{
-        'url': images.asset->url
-      }
-    }    
+  const query = `product(filter:{slug: {eq: ${slug}}}) {
+    name
+    id
+    description
   }`
   const item: any[] = await client.fetch(query)
   return parsingProduct(_.first(item), lang)
 }
-
 export default {
-  sanityAllCountries,
-  sanityAllTaxonomies,
-  sanityGetProduct
+  datoCMSAllCountries,
+  datoCMSAllTaxonomies,
+  datoCMSGetProduct,
 }
+

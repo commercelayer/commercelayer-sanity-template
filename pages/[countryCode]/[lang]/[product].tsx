@@ -69,6 +69,9 @@ const ProductPage: FunctionComponent<Props> = ({
     scope: marketId,
     countryCode: router.query?.countryCode as string,
   })
+
+  console.log('productPage');
+  
   const imgUrl = parseImg(_.first(product?.images)?.url as string, cms)
   const firstVariantCode = _.first(product?.variants)?.code
   const variantOptions = product?.variants?.map((variant) => {
@@ -185,6 +188,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+  console.log(params , 'params');
+  console.log(params?.product , 'product');
+  
+  
   const lang = params?.lang as string
   const cms = process.env.BUILD_CMS
   const countryCode =
@@ -204,6 +211,8 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const country = countries.find(
     (country: Country) => country.code.toLowerCase() === countryCode
   )
+  console.log(cmsFunctions , `${cms}GetProduct`, 'cms ');
+  
   const product = _.has(cmsFunctions, `${cms}GetProduct`)
     ? await cmsFunctions[`${cms}GetProduct`](slug, lang)
     : {}
