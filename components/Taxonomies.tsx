@@ -27,12 +27,12 @@ const Taxonomies = ({
   useEffect(() => {
     if (!_.isEmpty(taxonomies)) {
       _.map(on, (v, k: number) => {
-        setCurrentProducts(taxonomies[k].taxons[v].products || [])
+        setCurrentProducts(taxonomies?.[k]?.taxons?.[v].products || [])
       })
     }
   }, [on, taxonomies])
   const taxonomy = taxonomies?.map((t, k) => {
-    const taxonCard = t.taxons.map((taxon, i) => {
+    const taxonCard = t?.taxons?.map((taxon, i) => {
       const { name, products, label } = taxon
       const pQuantity = products?.length || 0
       const initialName = label || name
@@ -43,27 +43,23 @@ const Taxonomies = ({
         <li key={i}>
           {/* <!-- On: "bg-indigo-50 border-indigo-200 z-10", Off: "border-gray-200" --> */}
           <div
-            className={`${
-              checked ? `bg-blue-50 border-blue-200 z-10` : 'border-gray-200'
-            } ${
-              disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
-            } border rounded-md p-4 my-1`}
+            className={`${checked ? `bg-blue-50 border-blue-200 z-10` : 'border-gray-200'
+              } ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+              } border rounded-md p-4 my-1`}
             onClick={() => !disabled && setOn(checkedKey)}
           >
             <label
-              className={`${
-                disabled ? 'cursor-not-allowed' : 'cursor-pointer'
-              } flex items-center text-sm justify-between`}
+              className={`${disabled ? 'cursor-not-allowed' : 'cursor-pointer'
+                } flex items-center text-sm justify-between`}
             >
               <span className="ml-3 font-medium text-sm text-gray-900 flex-grow">
                 {initialName}
               </span>
               <span
-                className={`${
-                  checked
+                className={`${checked
                     ? 'bg-gray-900 text-gray-50'
                     : 'bg-gray-100 text-gray-600'
-                } ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium leading-5`}
+                  } ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium leading-5`}
               >
                 {pQuantity}
               </span>
@@ -84,6 +80,7 @@ const Taxonomies = ({
       </div>
     )
   })
+
   return (
     <div className="px-3 lg:px-0 container mx-auto max-w-screen-lg flex flex-wrap sm:flex-nowrap">
       <div className="flex-shrink md:flex-shrink-0 md:pr-4 w-full sm:w-auto">
@@ -94,17 +91,15 @@ const Taxonomies = ({
                 type="button"
                 aria-pressed="false"
                 aria-labelledby="toggleLabel"
-                className={`${
-                  algoliaStatus ? 'bg-blue-500' : 'bg-gray-200'
-                } relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                className={`${algoliaStatus ? 'bg-blue-500' : 'bg-gray-200'
+                  } relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
                 onClick={activeAlgolia}
               >
                 <span className="sr-only">Enable algolia</span>
                 <span
                   aria-hidden="true"
-                  className={`${
-                    algoliaStatus ? 'translate-x-5' : 'translate-x-0'
-                  } inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}
+                  className={`${algoliaStatus ? 'translate-x-5' : 'translate-x-0'
+                    } inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}
                 ></span>
               </button>
               <span className="ml-3" id="toggleLabel">

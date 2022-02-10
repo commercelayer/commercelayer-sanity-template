@@ -34,6 +34,6 @@ export const parseLocale = (
 }
 
 export const parseImg = (url: string, cms: string) => {
-  const sanityImg = cms === 'sanity' ? '&bg=FFF' : ''
-  return `${url}?fm=jpg&q=75${sanityImg}`
+  const datoCMSImg = cms === 'datoCMS' ? '&bg=FFF' : ''
+  return `${url}?fm=jpg&q=75${datoCMSImg}`
 }

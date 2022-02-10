@@ -70,14 +70,15 @@ const ProductPage: FunctionComponent<Props> = ({
     countryCode: router.query?.countryCode as string,
   })
   const imgUrl = parseImg(_.first(product?.images)?.url as string, cms)
-  const firstVariantCode = _.first(product?.variants)?.code
-  const variantOptions = product?.variants?.map((variant) => {
+  const imgALT = parseImg(_.first(product?.images)?.alt as string, cms)
+  const firstVariantCode = _.first(_.first(product?.variants)?.code)  
+  const variantOptions = product?.variants?.map((variant) => {  
     return {
-      label: variant.size.name,
+      label: variant.size?.name,
       code: variant.code,
       lineItem: {
         name: product.name,
-        imageUrl: _.first(variant.images)?.url,
+        imageUrl: _.first(variant.images)?.url
       },
     }
   })
@@ -110,7 +111,7 @@ const ProductPage: FunctionComponent<Props> = ({
                 <div className="flex flex-wrap sm:flex-nowrap sm:space-x-5 px-5 lg:px-0">
                   <div className="w-full pb-5 lg:pb-0">
                     <img
-                      alt={product.name}
+                      alt={imgALT}
                       className="w-full object-center rounded border border-gray-200"
                       src={imgUrl}
                     />
@@ -184,9 +185,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {  
   const lang = params?.lang as string
-  const cms = process.env.BUILD_CMS
+   const cms = process.env.BUILD_CMS
   const countryCode =
     params?.countryCode || process.env.BUILD_COUNTRY?.toLowerCase()
   const slug = params?.product
@@ -203,10 +204,11 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   )
   const country = countries.find(
     (country: Country) => country.code.toLowerCase() === countryCode
-  )
+  )  
   const product = _.has(cmsFunctions, `${cms}GetProduct`)
     ? await cmsFunctions[`${cms}GetProduct`](slug, lang)
     : {}
+  
   return {
     props: {
       product,

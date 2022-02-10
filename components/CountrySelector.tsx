@@ -51,7 +51,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
             </span>
             <img
               src={selectedOption?.image?.url}
-              alt={selectedOption?.name}
+              alt={selectedOption?.image?.alt}
               className="block ml-3 mt-0.5 w-6"
             />
           </span>
@@ -106,7 +106,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
                       <div className="flex items-center">
                         <img
                           src={image.url}
-                          alt={name}
+                          alt={image?.alt}
                           className="flex-shrink-0 w-6"
                         />
                         <span

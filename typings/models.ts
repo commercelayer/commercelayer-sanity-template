@@ -26,19 +26,17 @@ export interface Taxon {
 }
 
 export interface Image {
-  file?: {
-    url?: string
-  }
   url: string
+  alt?:string
 }
 
 export interface Product {
-  name: string
-  slug: string
-  variants: Variant[]
-  reference: string
-  description: string
-  images: Image[]
+  name?: string
+  slug?: string
+  variants?: Variant[]
+  reference?: string
+  description?: string
+  images?: Image[]
 }
 
 export interface Variant {
