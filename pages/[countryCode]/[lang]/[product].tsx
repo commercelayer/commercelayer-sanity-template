@@ -72,12 +72,12 @@ const ProductPage: FunctionComponent<Props> = ({
   const imgUrl = parseImg(_.first(product?.images)?.url as string, cms)
   const imgALT = parseImg(_.first(product?.images)?.alt as string, cms)
   const firstVariantCode = _.first(_.first(product?.variants)?.code)  
-  const variantOptions = product?.variants?.map((variant) => {  
+  const variantOptions = product?.variants?.map((variant) => {      
     return {
       label: variant.size?.name,
       code: variant.code,
       lineItem: {
-        name: product.name,
+        name: product.name ||'',
         imageUrl: _.first(variant.images)?.url
       },
     }

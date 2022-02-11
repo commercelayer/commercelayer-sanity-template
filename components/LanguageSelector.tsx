@@ -89,7 +89,7 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
               aria-activedescendant="listbox-item-3"
               className="max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
             >
-              {optionComponents.map(({ value, name, image }, k) => {
+              {optionComponents.map(({ value,image }, k) => {
                 const selected = value === selectedOption?.value
                 return (
                   <li

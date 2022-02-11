@@ -1,6 +1,6 @@
 import { GraphQLClient } from "graphql-request";
 
-export function request({ query, variables, preview }) {
+export function request({ query, variables, preview }:{ query:string, variables:any, preview:boolean }) {
   const endpoint = preview
     ? `https://graphql.datocms.com/preview`
     : `https://graphql.datocms.com/`;
