@@ -8,8 +8,8 @@
   NEXT_SERVERLESS = "true"
   BUILD_LANGUAGES = "en-US,it-IT"
   BUILD_CMS = "datoCMS"
-  CL_CLIENT_ID = "0Pc4Mll9d5GMRRl-VZhns7asNGEKtEpAKKF-fynuTfY"
-  CL_ENDPOINT = "https://synthia-coorperation.commercelayer.io"
+  CL_CLIENT_ID = "4qyq_BKvvspTGgOU8gZmQy3-th6RcjX7AzLVZ3Ayc6s"
+  CL_ENDPOINT = "https://synthia1.commercelayer.io"
   NEXT_DATOCMS_API_TOKEN="e7ce43bf38a1c3c3f10984a25c1d15"
 [[plugins]]
   package = "@netlify/plugin-nextjs"

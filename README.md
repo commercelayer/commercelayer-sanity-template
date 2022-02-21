@@ -1,10 +1,6 @@
 # Commerce Layer Starter
 
-A multi-country ecommerce starter that features the sanity studio built with Commerce Layer, Next.js, and deployed to Netlify.
-
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/preview.jpg 'A preview image showing the frontend demo with some products.')
-
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/studio.png 'A screenshot of Commerce Layer Sanity studio')
+A multi-country ecommerce starter that features the datocms built with Commerce Layer, Next.js, and deployed to Netlify.
 
 ## What is Commerce Layer?
 
@@ -26,62 +22,57 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 - An ecommerce storefront built with Nextjs, [Commerce Layer react components library](https://github.com/commercelayer/commercelayer-react-components), and Tailwind CSS.
 - International shopping capabilities powered by [Commerce Layer](https://commercelayer.io) APIs.
 - [Micro CLI seeder](https://github.com/commercelayer/commercelayer-seeder-cli) to import Commerce Layer data.
-- Structured content on Sanity CMS.
+- Structured content on Datocms.
 - Localization support.
 - Deployment configuration to Netlify.
 
 ## Getting started
 
-The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer and create a new project by following the instructions on Sanity.
+1. [Create an account on DatoCMS](https://datocms.com).
 
-Alternatively, you can clone this repository, configure the starter, import the dataset into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
+2. Make sure that you have set up the [Github integration on Vercel](https://vercel.com/docs/git/vercel-for-github).
 
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/sanity.png 'A screenshot of Commerce Layer Starter in sanity.io')
+3. Let DatoCMS set everything up for you clicking this button:
 
-### ⚙️ Installation guide
+[![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/deploy?repo=datocms/nextjs-demo)
 
-1. Clone this repository ([learn how to do this](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)).
+### Local setup
 
-2. Rename the `/env.example` file to `.env` and add the following:
+Once the setup of the project and repo is done, clone the repo locally.
 
-- Your project ID, dataset, and token from [manage.sanity.io](https://manage.sanity.io).
-- Your client ID and client endpoint from [Commerce Layer](https://dashboard.commercelayer.io/sign_up).
+#### Set up environment variables
 
-3. Run the command below to install the necessary dependencies of your project:
+In your DatoCMS' project, go to the **Settings** menu at the top and click **API tokens**.
+
+Then click **Read-only API token** and copy the token.
+
+Next, copy the `.env.example` file in this directory to `.env` (which will be ignored by Git):
 
 ```bash
-npm install && cd /studio && sanity install
+cp .env.example .env
 ```
 
-4. Add your `projectTitle`, `projectId,` and `dataset` in `/studio/sanity.json`.
+Then set each variable on `.env`:
 
-5. Run the command below to start the development server:
+- `NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN` should be the API token you just copied.
+- `NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for the Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode).
+
+Your `.env` file should look like this:
 
 ```bash
+NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN=...
+NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET=...
+```
+
+#### Run your project locally
+
+```bash
+npm install
 npm run dev
 ```
 
-This will run the frontend at `localhost:3000` and studio at `localhost:3333`.
+Your project should be up and running on [http://localhost:3000](http://localhost:3000)!
 
-### ⬇️ Import test studio content
-
-> If you set up your project from the starters page on Sanity, you should skip this step as Sanity will automatically add the dataset's content.
-
-1. Extract the `production.tar.gz` file in `/.sanity-template/data` directory using the command below:
-
-```bash
-tar -xf production.tar.gz
-```
-
-The extracted folder name should look like `production-export-2021-02-26t14-15-56-557z`.
-
-2. Run the command below in `/studio` to import the `data.ndjson` file in the extracted folder.
-
-```bash
-sanity dataset import ../.sanity-template/data/<name of extracted folder>/data.ndjson <your_dataset>
-```
-
-3. Check the frontend and studio now to preview the imported content.
 
 ### ⬇️ Seed Commerce Layer data
 
