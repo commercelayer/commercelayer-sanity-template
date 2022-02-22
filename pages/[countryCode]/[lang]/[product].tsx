@@ -89,7 +89,7 @@ const ProductPage: FunctionComponent<Props> = ({
   return !product ? null : (
     <CommerceLayer accessToken={token} endpoint={endpoint}>
       <OrderStorage persistKey={`order-${countryCode}`}>
-        <OrderContainer attributes={{ languageCode }}>
+        <OrderContainer attributes={{ language_code: languageCode }}>
           <Layout
             cms={cms}
             title={product.name}
@@ -100,7 +100,11 @@ const ProductPage: FunctionComponent<Props> = ({
             <ItemContainer>
               <div className="container mx-auto max-w-screen-lg px-5 lg:px-0 text-sm text-gray-700">
                 <a href="#" onClick={handleBackTo}>
-                  <img src="/back.svg" className="w-5 h-5 inline-block" />
+                  <img
+                    title="back"
+                    src="/back.svg"
+                    className="w-5 h-5 inline-block"
+                  />
                   <p className="ml-2 hover:underline inline-block align-middle">
                     {locale[lang].backToAllProducts}
                   </p>
