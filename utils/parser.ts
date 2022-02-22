@@ -28,8 +28,8 @@ export const parseLocale = (
   const splitCode = locale.split(splitString)
   const lastCode =
     style === 'uppercase'
-      ? splitCode[1].toUpperCase()
-      : splitCode[1].toLowerCase()
+      ? splitCode[1]?.toUpperCase()
+      : splitCode[1]?.toLowerCase()
   return `${splitCode[0]}${replaceString}${lastCode}`
 }
 

@@ -78,7 +78,7 @@ const FilterPage: NextPage<Props> = ({
   return !endpoint ? null : (
     <CommerceLayer accessToken={token} endpoint={endpoint}>
       <OrderStorage persistKey={`order-${code}`}>
-        <OrderContainer attributes={{ languageCode }}>
+        <OrderContainer attributes={{ language_code: languageCode }}>
           <Layout
             title="Commerce Layer Starter"
             buildLanguages={buildLanguages}
@@ -110,7 +110,7 @@ const FilterPage: NextPage<Props> = ({
                         ></span>
                       </button>
                       <span className="ml-3" id="toggleLabel">
-                        <img src="/algolia.svg" />
+                        <img title="Algolia" src="/algolia.svg" />
                       </span>
                     </div>
                     <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-4">

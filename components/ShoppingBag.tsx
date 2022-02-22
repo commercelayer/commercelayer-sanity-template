@@ -28,7 +28,7 @@ const CustomRemoveLink: FunctionComponent<CustomRemoveLinkProps> = ({
   handleRemove,
 }) => {
   return (
-    <a href="#" onClick={handleRemove}>
+    <a title="Remove" href="#" onClick={handleRemove}>
       <svg
         className="h-6 w-6 text-red-600"
         fill="none"
@@ -138,7 +138,7 @@ const ShoppingBag: React.FunctionComponent<Props> = ({
                             max={10}
                             className="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
                           />
-                          <Errors resource="lineItem" field="quantity" />
+                          <Errors resource="line_items" field="quantity" />
                           <LineItemAmount className="font-extrabold ml-3 px-2 text-sm" />
                         </div>
                       </div>

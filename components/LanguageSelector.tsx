@@ -83,6 +83,7 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
             onMouseLeave={() => setShow(false)}
           >
             <ul
+              title="Languages"
               tabIndex={-1}
               role="listbox"
               aria-labelledby="listbox-label"

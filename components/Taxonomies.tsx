@@ -108,7 +108,7 @@ const Taxonomies = ({
                 ></span>
               </button>
               <span className="ml-3" id="toggleLabel">
-                <img src="/algolia.svg" />
+                <img title="Algolia" src="/algolia.svg" />
               </span>
             </Fragment>
           )}
