@@ -141,9 +141,9 @@ So, when you seed your Commerce Layer organization, some markets will be created
 
 Also, you must access the application using the right locale slug for the country you have configured like so `localhost:3000/it/it-it` or `localhost:3000/us/en-us`. If you want to set up other countries, then create a market for it on Commerce Layer alongside the associated resources and update the Market ID on Sanity as you earlier did.
 
-![A preview image showing the Commerce Layer dashboard.](./public/cl-screen.png)
+![A preview image showing the Commerce Layer dashboard.](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/./public/cl-screen.png)
 
-![A preview image showing the sanity studio.](./public/sanity-screen.png)
+![A preview image showing the sanity studio.](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/./public/sanity-screen.png)
 
 Ideally, you would want to add your content data and set up Commerce Layer manually based on your use cases. To ensure the starter runs smoothly, ensure to update the market ID attribute, create a product, and link to variant(s) on Sanity and create a market associated with a stock location, stock item, price list, price, and SKU in Commerce Layer.
 
