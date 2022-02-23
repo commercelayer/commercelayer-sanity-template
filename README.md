@@ -17,8 +17,8 @@ A multi-country ecommerce starter that features the sanity studio built with Com
   - [⚙️ Installation guide](#%EF%B8%8F-installation-guide)
   - [⬇️ Import test studio content](#%EF%B8%8F-import-test-studio-content)
   - [⬇️ Seed Commerce Layer data](#%EF%B8%8F-seed-commerce-layer-data)
-- [Setup Cart Checkout](#setup-cart-checkout)
-- [⚠️ Important Notes](#%EF%B8%8F-important-notes)
+- [⚠️ Important notes](#%EF%B8%8F-important-notes)
+- [🛒 Setup cart checkout](#%EF%B8%8F-setup-cart-checkout)
 - [Contributors guide](#contributors-guide)
 - [Need help?](#need-help)
 - [License](#license)
@@ -27,7 +27,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 - An ecommerce storefront built with Nextjs, [Commerce Layer react components library](https://github.com/commercelayer/commercelayer-react-components), and Tailwind CSS.
 - International shopping capabilities powered by [Commerce Layer](https://commercelayer.io) APIs.
-- [Micro CLI seeder](https://github.com/commercelayer/commercelayer-seeder-cli) to import Commerce Layer data.
+- [Micro CLI seeder](https://github.com/commercelayer/commercelayer-cli-plugin-seeder/blob/main/README.md) to import Commerce Layer data.
 - Structured content on Sanity CMS.
 - Localization support.
 - Deployment configuration to Netlify.
@@ -77,7 +77,7 @@ tar -xf production.tar.gz
 
 The extracted folder name should look like `production-export-2021-02-26t14-15-56-557z`.
 
-2. Run the command below in `/studio` to import the `data.ndjson` file in the extracted folder.
+2. Run the command below in the `/studio` directory to import the `data.ndjson` file in the extracted folder.
 
 ```bash
 sanity dataset import ../.sanity-template/data/<name of extracted folder>/data.ndjson <your_dataset>
@@ -95,7 +95,7 @@ sanity dataset import ../.sanity-template/data/<name of extracted folder>/data.n
 
 4. In your newly created application, copy your `Client ID`, `Client Secret`, and base endpoint.
 
-5. Install the [Commerce Layer CLI](https://github.com/commercelayer/commercelayer-cli) which is available as an [npm package](https://www.npmjs.com/package/@commercelayer/commercelayer-cli) using the command below:
+5. Install the [Commerce Layer CLI](https://github.com/commercelayer/commercelayer-cli) which is available as an [npm package](https://www.npmjs.com/package/@commercelayer/commercelayer-cli) or [yarn package](https://yarnpkg.com/package/@commercelayer/cli) using the command below:
 
 ```bash
 // npm
@@ -129,23 +129,23 @@ commercelayer seed -b multi_market
 commercelayer --help
 ```
 
-### Setup Cart Checkout
+## ⚠️ Important notes
 
-To setup a checkout functionality, you can use the Commerce Layer checkout application that provides you with a PCI-compliant, PSD2-compliant, and production-ready checkout flow powered by Commerce Layer APIs. Kindly read [the documentation](https://github.com/commercelayer/commercelayer-react-checkout#commerce-layer-react-checkout) to learn how to set this up on your organization. The `CheckoutLink` component from our react-components library will automatically populate with the right link if the checkout is configured properply.
-
-### ⚠️ Important Notes
-
-The Sanity content data includes a collection of sample countries, products, variants, sizes, taxons, taxonomies, catalogues, and product images created during development. To get an [access token](https://docs.commercelayer.io/developers/authentication) we fetch the scope (market ID) from the Market Id attribute set in the Sanity country schema.
+The Sanity content data includes a collection of sample countries, products, variants, sizes, taxons, taxonomies, catalogs, and product images created during development. To get an [access token](https://docs.commercelayer.io/developers/authentication) we fetch the scope (market ID) from the Market Id attribute set in the Sanity country schema.
 
 So, when you seed your Commerce Layer organization, some markets will be created which will have a different Market ID from the one set in Sanity. So you need to fetch the valid market scope (from the sales channel tab in the [Commerce Layer dashboard](https://dashboard.commercelayer.io/)) and update the appropriate country model in Sanity. For example, the Europe Market on Commerce Layer and Italy country model on Sanity. Failure to do this will result in an invalid scope authentication error when you try to access your application.
 
-Also, you must access the application using the right locale slug for the country you have configured like so `localhost:3000/it/it-it` or `localhost:3000/us/en-us`. If you want to setup other countries, then create a market for it on Commerce Layer alongside the associated resources and update the Market ID on Sanity as you earlier did.
+Also, you must access the application using the right locale slug for the country you have configured like so `localhost:3000/it/it-it` or `localhost:3000/us/en-us`. If you want to set up other countries, then create a market for it on Commerce Layer alongside the associated resources and update the Market ID on Sanity as you earlier did.
 
-![A preview image showing the Commerce Layer dashboard.](./public/cl-screen.png)
+![A preview image showing the Commerce Layer dashboard.](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/./public/cl-screen.png)
 
-![A preview image showing the sanity studio.](./public/sanity-screen.png)
+![A preview image showing the sanity studio.](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/./public/sanity-screen.png)
 
-Ideally, you would want to add your own content data and setup Commerce Layer manually based on your use cases. To ensure the starter runs smoothly, ensure to update the market ID, create a product, and link to variant(s) on Sanity and create a market associated with a stock location, stock item, price list, price, and SKU in Commerce Layer.
+Ideally, you would want to add your content data and set up Commerce Layer manually based on your use cases. To ensure the starter runs smoothly, ensure to update the market ID attribute, create a product, and link to variant(s) on Sanity and create a market associated with a stock location, stock item, price list, price, and SKU in Commerce Layer.
+
+## 🛒 Setup cart checkout
+
+To set up a checkout functionality, you can use the Commerce Layer checkout application that provides you with a PCI-compliant, PSD2-compliant, and production-ready checkout flow powered by Commerce Layer APIs. Kindly read [the documentation](https://github.com/commercelayer/commercelayer-react-checkout#commerce-layer-react-checkout) to learn how to set this up. The `CheckoutLink` component from our react-components library will automatically populate with the right link if the checkout is configured properly.
 
 ## Contributors guide
 
