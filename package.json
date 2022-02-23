@@ -13,7 +13,7 @@
     "postinstall": "lerna bootstrap",
     "check-template": "sanity-template check",
     "export": "cd studio && sanity dataset export production ../.sanity-template/data/production.tar.gz",
-    "sem-release": "semantic-release"
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",

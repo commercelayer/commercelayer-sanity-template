@@ -221,7 +221,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       },
       revalidate: 60,
     }
-  } catch (err) {
+  } catch (err:any) {
     console.error(err)
     return {
       props: {
