@@ -17,8 +17,8 @@ A multi-country ecommerce starter that features the sanity studio built with Com
   - [⚙️ Installation guide](#%EF%B8%8F-installation-guide)
   - [⬇️ Import test studio content](#%EF%B8%8F-import-test-studio-content)
   - [⬇️ Seed Commerce Layer data](#%EF%B8%8F-seed-commerce-layer-data)
-- [Setup cart checkout](#setup-cart-checkout)
 - [⚠️ Important notes](#%EF%B8%8F-important-notes)
+- [🛒 Setup cart checkout](#%EF%B8%8F-setup-cart-checkout)
 - [Contributors guide](#contributors-guide)
 - [Need help?](#need-help)
 - [License](#license)
@@ -129,11 +129,7 @@ commercelayer seed -b multi_market
 commercelayer --help
 ```
 
-### Setup cart checkout
-
-To set up a checkout functionality, you can use the Commerce Layer checkout application that provides you with a PCI-compliant, PSD2-compliant, and production-ready checkout flow powered by Commerce Layer APIs. Kindly read [the documentation](https://github.com/commercelayer/commercelayer-react-checkout#commerce-layer-react-checkout) to learn how to set this up. The `CheckoutLink` component from our react-components library will automatically populate with the right link if the checkout is configured properly.
-
-### ⚠️ Important notes
+## ⚠️ Important notes
 
 The Sanity content data includes a collection of sample countries, products, variants, sizes, taxons, taxonomies, catalogs, and product images created during development. To get an [access token](https://docs.commercelayer.io/developers/authentication) we fetch the scope (market ID) from the Market Id attribute set in the Sanity country schema.
 
@@ -146,6 +142,10 @@ Also, you must access the application using the right locale slug for the countr
 ![A preview image showing the sanity studio.](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/./public/sanity-screen.png)
 
 Ideally, you would want to add your content data and set up Commerce Layer manually based on your use cases. To ensure the starter runs smoothly, ensure to update the market ID attribute, create a product, and link to variant(s) on Sanity and create a market associated with a stock location, stock item, price list, price, and SKU in Commerce Layer.
+
+## 🛒 Setup cart checkout
+
+To set up a checkout functionality, you can use the Commerce Layer checkout application that provides you with a PCI-compliant, PSD2-compliant, and production-ready checkout flow powered by Commerce Layer APIs. Kindly read [the documentation](https://github.com/commercelayer/commercelayer-react-checkout#commerce-layer-react-checkout) to learn how to set this up. The `CheckoutLink` component from our react-components library will automatically populate with the right link if the checkout is configured properly.
 
 ## Contributors guide
 
