@@ -2,8 +2,8 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
-import product from './product'
 import country from './country'
+import product from './product'
 import variant from './variant'
 import size from './size'
 import taxon from './taxon'
@@ -26,8 +26,8 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
-    product,
     country,
+    product,
     variant,
     size,
     taxon,
