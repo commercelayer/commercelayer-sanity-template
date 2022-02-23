@@ -19,11 +19,12 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run package
+        env:
+          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          SANITY_TOKEN: ${{ secrets.SANITY_TOKEN }}
         run: npm run build
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-          SANITY_TOKEN: ${{ secrets.SANITY_TOKEN }}
         run: npx semantic-release
