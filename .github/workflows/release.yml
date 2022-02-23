@@ -24,7 +24,7 @@ jobs:
           SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
           SANITY_TOKEN: ${{ secrets.SANITY_TOKEN }}
           BUILD_LANGUAGES: ${{ secrets.BUILD_LANGUAGES }}
-          BUILD_CMS: ${{ BUILD_CMS }}
+          BUILD_CMS: ${{ secrets.BUILD_CMS }}
         run: npm run build
       - name: Release
         env:
