@@ -6,6 +6,7 @@
     "node": ">=16",
     "npm": ">=7.0.0"
   },
+  "private": true,
   "scripts": {
     "dev": "concurrently \"next\" \"cd studio && sanity start\"",
     "build": "next build",
