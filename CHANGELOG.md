@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/commercelayer/sanity-template-commercelayer/compare/v1.0.0...v1.0.1) (2022-02-24)
+
+
+### Bug Fixes
+
+* 🐛 hosted checkout issue without access token ([2110d8e](https://github.com/commercelayer/sanity-template-commercelayer/commit/2110d8e6a351ec5e3c6a0894fe337da0edd78a30))
+
 # 1.0.0 (2022-02-23)
 
 
