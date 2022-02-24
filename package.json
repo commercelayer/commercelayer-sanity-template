@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "@commercelayer/js-auth": "^3.0.0",
-    "@commercelayer/react-components": "^3.2.4",
+    "@commercelayer/react-components": "^3.4.2",
     "@headlessui/react": "^1.5.0",
     "@netlify/plugin-nextjs": "^4.2.7",
     "@sanity/client": "^3.1.0",
@@ -97,7 +97,7 @@
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.2",
-    "@semantic-release/npm": "^9.0.0",
+    "@semantic-release/npm": "^7.0.10",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@types/js-cookie": "^3.0.1",
     "@types/lodash": "^4.14.178",
