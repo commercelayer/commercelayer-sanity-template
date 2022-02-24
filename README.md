@@ -18,7 +18,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
   - [⬇️ Import test studio content](#%EF%B8%8F-import-test-studio-content)
   - [⬇️ Seed Commerce Layer data](#%EF%B8%8F-seed-commerce-layer-data)
 - [⚠️ Important notes](#%EF%B8%8F-important-notes)
-- [🛒 Setup cart checkout](#%EF%B8%8F-setup-cart-checkout)
+- [🛒 Setup hosted checkout](#%EF%B8%8F-setup-hosted-checkout)
 - [Contributors guide](#contributors-guide)
 - [Need help?](#need-help)
 - [License](#license)
@@ -143,9 +143,9 @@ Also, you must access the application using the right locale slug for the countr
 
 Ideally, you would want to add your content data and set up Commerce Layer manually based on your use cases. To ensure the starter runs smoothly, ensure to update the market ID attribute, create a product, and link to variant(s) on Sanity and create a market associated with a stock location, stock item, price list, price, and SKU in Commerce Layer.
 
-## 🛒 Setup cart checkout
+## 🛒 Setup hosted checkout
 
-To set up a checkout functionality, you can use the Commerce Layer checkout application that provides you with a PCI-compliant, PSD2-compliant, and production-ready checkout flow powered by Commerce Layer APIs. Kindly read [the documentation](https://github.com/commercelayer/commercelayer-react-checkout#commerce-layer-react-checkout) to learn how to set this up. The `CheckoutLink` component from our react-components library will automatically populate with the right link if the checkout is configured properly.
+To set up a checkout functionality, you can use the [Commerce Layer React Checkout Application](https://github.com/commercelayer/commercelayer-react-checkout) that provides you with a PCI-compliant, PSD2-compliant, and production-ready checkout flow powered by Commerce Layer APIs. We will be launching a (free) hosted version of this checkout application and a new dashboard soon. But for now you can proceed to add a checkout template URL like so `<your-organization-slug>/:order_id`, to the CHECKOUT URL field in *Settings > Markets > [Select a market of your choice]* on the existing [admin dashboard](https://core.commercelayer.io/admin/account/organizations). The `CheckoutLink` component from our react-components library will automatically populate with the right link to checkout any order in cart.
 
 ## Contributors guide
 
