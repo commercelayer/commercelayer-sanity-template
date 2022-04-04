@@ -1,6 +1,6 @@
 [build]
   base = "/"
-  publish = "/out"
+  publish = ".next"
   command = "npm run build"
   functions = "/netlify"
 

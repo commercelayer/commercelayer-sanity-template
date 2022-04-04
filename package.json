@@ -69,7 +69,6 @@
     "@commercelayer/js-auth": "^3.0.0",
     "@commercelayer/react-components": "^3.4.2",
     "@headlessui/react": "^1.5.0",
-    "@netlify/plugin-nextjs": "^4.2.7",
     "@sanity/client": "^3.1.0",
     "@sanity/image-url": "^1.0.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",
@@ -91,7 +90,7 @@
     "sanity-template": "^2.4.3"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.2.7",
+    "@netlify/plugin-nextjs": "^4.3.1",
     "@sanity/cli": "^2.27.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
