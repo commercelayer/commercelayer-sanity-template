@@ -175,4 +175,4 @@ This repository is published under the [MIT](LICENSE) license.
 
 ---
 
-Want to learn more about how we built this starter and how you can build yours? Sign up for our [newsletter](https://commercelayer.io/blog) to get notified once we publish the article.
+Want to learn more about how we built this starter and how you can build yours? Then you should read [this article](https://commercelayer.io/blog/how-to-build-an-international-ecommerce-website-with-sanity-and-commerce-layer).
