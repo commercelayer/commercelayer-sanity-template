@@ -18,7 +18,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
   - [⬇️ Import test studio content](#%EF%B8%8F-import-test-studio-content)
   - [⬇️ Seed Commerce Layer data](#%EF%B8%8F-seed-commerce-layer-data)
 - [⚠️ Important notes](#%EF%B8%8F-important-notes)
-- [🛒 Setup hosted checkout](#%EF%B8%8F-setup-hosted-checkout)
+- [🚀 Production environment variables](#-production-environment-variables)
 - [Contributors guide](#contributors-guide)
 - [Need help?](#need-help)
 - [License](#license)
@@ -27,6 +27,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 - An ecommerce storefront built with Nextjs, [Commerce Layer react components library](https://github.com/commercelayer/commercelayer-react-components), and Tailwind CSS.
 - International shopping capabilities powered by [Commerce Layer](https://commercelayer.io) APIs.
+- PSD2-compliant and production-ready checkout functionality powered by [Commerce Layer React Checkout Application](https://github.com/commercelayer/commercelayer-react-checkout).
 - [Micro CLI seeder](https://github.com/commercelayer/commercelayer-cli-plugin-seeder/blob/main/README.md) to import Commerce Layer data.
 - Structured content on Sanity CMS.
 - Localization support.
@@ -34,7 +35,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 ## Getting started
 
-The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer and create a new project by following the instructions on Sanity.
+The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer, create a new project (following the instructions on Sanity), and read the [production environment variables](#-production-environment-variables) guidelines.
 
 Alternatively, you can clone this repository, configure the starter, import the dataset into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
 
@@ -143,9 +144,20 @@ Also, you must access the application using the right locale slug for the countr
 
 Ideally, you would want to add your content data and set up Commerce Layer manually based on your use cases. To ensure the starter runs smoothly, ensure to update the market ID attribute, create a product, and link to variant(s) on Sanity and create a market associated with a stock location, stock item, price list, price, and SKU in Commerce Layer.
 
-## 🛒 Setup hosted checkout
+## 🚀 Production Environment Variables
 
-To set up a checkout functionality, you can use the [Commerce Layer React Checkout Application](https://github.com/commercelayer/commercelayer-react-checkout) that provides you with a PCI-compliant, PSD2-compliant, and production-ready checkout flow powered by Commerce Layer APIs. We will be launching a (free) hosted version of this checkout application and a new dashboard soon. But for now you can proceed to add a checkout template URL like so `<your-organization-slug>/:order_id`, to the CHECKOUT URL field in *Settings > Markets > [Select a market of your choice]* on the existing [admin dashboard](https://core.commercelayer.io/admin/account/organizations). The `CheckoutLink` component from our react-components library will automatically populate with the right link to checkout any order in cart.
+When you deploy your project to Netlify, you need to update the `SANITY_PROJECT_ID`, `CL_CLIENT_ID`, and `CL_ENDPOINT` environment variables to valid credentials for the applications in use. You can update this in the `netlify.toml` file as seen below. For security reasons, you should [add the environment variables in the Netlify dashboard](https://docs.netlify.com/configure-builds/environment-variables) during build time.
+
+```toml
+[build.environment]
+  NEXT_SERVERLESS = "true"
+  SANITY_PROJECT_ID="xyz7gbab"
+  SANITY_DATASET="production"
+  BUILD_LANGUAGES = "en-US,it-IT"
+  BUILD_CMS = "sanity"
+  CL_CLIENT_ID = "HOpqt0R5oIDG8BlttE4idgGQkR6PeOkBCNnQhp-nvGk"
+  CL_ENDPOINT = "https://demo.commercelayer.io"
+```
 
 ## Contributors guide
 
