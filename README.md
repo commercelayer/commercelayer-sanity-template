@@ -35,7 +35,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 ## Getting started
 
-The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer, create a new project (following the instructions on Sanity), and read the [production environment variables](#-production-environment-variables) guidelines.
+The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer, create a new project (following the instructions on Sanity), and read the [important notes](#%EF%B8%8F-important-notes) and [production ENV guidelines](#-production-environment-variables).
 
 Alternatively, you can clone this repository, configure the starter, import the dataset into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
 
