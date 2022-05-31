@@ -18,7 +18,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
   - [⬇️ Import test studio content](#%EF%B8%8F-import-test-studio-content)
   - [⬇️ Seed Commerce Layer data](#%EF%B8%8F-seed-commerce-layer-data)
 - [⚠️ Important notes](#%EF%B8%8F-important-notes)
-- [🚀 Production Environment Variables](#-production-environment-variables)
+- [🚀 Production environment variables](#-production-environment-variables)
 - [Contributors guide](#contributors-guide)
 - [Need help?](#need-help)
 - [License](#license)
@@ -27,7 +27,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 - An ecommerce storefront built with Nextjs, [Commerce Layer react components library](https://github.com/commercelayer/commercelayer-react-components), and Tailwind CSS.
 - International shopping capabilities powered by [Commerce Layer](https://commercelayer.io) APIs.
-- PSD2-compliant, and production-ready checkout checkout functionality using the [Commerce Layer React Checkout Application](https://github.com/commercelayer/commercelayer-react-checkout).
+- PSD2-compliant and production-ready checkout functionality powered by [Commerce Layer React Checkout Application](https://github.com/commercelayer/commercelayer-react-checkout).
 - [Micro CLI seeder](https://github.com/commercelayer/commercelayer-cli-plugin-seeder/blob/main/README.md) to import Commerce Layer data.
 - Structured content on Sanity CMS.
 - Localization support.
@@ -35,7 +35,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 ## Getting started
 
-The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer, create a new project by following the instructions on Sanity, and read the [production environment variables](#-production-environment-variables) guidelines.
+The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer, create a new project (following the instructions on Sanity), and read the [production environment variables](#-production-environment-variables) guidelines.
 
 Alternatively, you can clone this repository, configure the starter, import the dataset into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
 
@@ -146,7 +146,7 @@ Ideally, you would want to add your content data and set up Commerce Layer manua
 
 ## 🚀 Production Environment Variables
 
-When you deploy your project to Netlify, you need to update the `SANITY_PROJECT_ID`, `CL_CLIENT_ID`, and `CL_ENDPOINT` environment variables to valid credentials. You can update this in the `netlify.toml` file (if your repository is private). For security reasons, you should [add the environment variables in the Netlify dashboard](https://docs.netlify.com/configure-builds/environment-variables) during build time.
+When you deploy your project to Netlify, you need to update the `SANITY_PROJECT_ID`, `CL_CLIENT_ID`, and `CL_ENDPOINT` environment variables to valid credentials for the applications in use. You can update this in the `netlify.toml` file as seen below. For security reasons, you should [add the environment variables in the Netlify dashboard](https://docs.netlify.com/configure-builds/environment-variables) during build time.
 
 ```toml
 [build.environment]
