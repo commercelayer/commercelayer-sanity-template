@@ -13,6 +13,7 @@ import {
 const client = sanityClient({
   projectId: process.env.SANITY_PROJECT_ID as string,
   dataset: process.env.SANITY_DATASET as string,
+  apiVersion: '2021-08-31',
   useCdn: process.env.NODE_ENV === 'production', // `false` if you want to ensure fresh data
 })
 
