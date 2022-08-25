@@ -48,7 +48,7 @@ Alternatively, you can clone this repository, configure the starter, import the 
 2. Rename the `/env.example` file to `.env` and add the following:
 
 - Your project ID, dataset, and token from [manage.sanity.io](https://manage.sanity.io).
-- Your sales_channels application client ID and base endpoint from [Commerce Layer](https://commercelayer.io). You can create this automatically by following our [onboarding guide](https://docs.commercelayer.io/developers/) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io/sign_up).
+- Your **Sales channels** application client ID and base endpoint from [Commerce Layer](https://commercelayer.io) (you can create this automatically by following our [onboarding guide](https://docs.commercelayer.io/developers) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io)).
 
 3. Run the command below to install the necessary dependencies of your project:
 
@@ -84,15 +84,15 @@ The extracted folder name should look like `production-export-2021-02-26t14-15-5
 sanity dataset import ../.sanity-template/data/<name of extracted folder>/data.ndjson <your_dataset>
 ```
 
-3. Check the frontend and studio now to preview the imported content.
+3. Check the studio now on `localhost:3333` to preview the imported content.
 
 ### ⬇️ Seed Commerce Layer data
 
 1. Create a free [Commerce Layer account](https://dashboard.commercelayer.io/sign_up). If you already have an account, kindly skip to Step 3.
 
-2. Create a new [organization](https://commercelayer.io/docs/data-model/users-and-organizations) or follow the [onboarding tutorial guide](https://docs.commercelayer.io/developers/).
+2. Create a new [organization](https://commercelayer.io/docs/data-model/users-and-organizations) or follow the [onboarding tutorial guide](https://docs.commercelayer.io/developers).
 
-3. Create a new application in the **Integrations** tab with **Name** set to `<Project Name>`, and **Role** set to `admin`.
+3. Create a new **Integrations** application with **Name** set to `CLI` and **Role** set to `admin`.
 
 4. In your newly created application, copy your `Client ID`, `Client Secret`, and base endpoint.
 
@@ -134,7 +134,7 @@ commercelayer --help
 
 The Sanity content data includes a collection of sample countries, products, variants, sizes, taxons, taxonomies, catalogs, and product images created during development. To get an [access token](https://docs.commercelayer.io/developers/authentication) we fetch the scope (market ID) from the Market Id attribute set in the Sanity country schema.
 
-So, when you seed your Commerce Layer organization, some markets will be created which will have a different Market ID from the one set in Sanity. So you need to fetch the valid market scope (from the sales channel tab in the [Commerce Layer dashboard](https://dashboard.commercelayer.io/)) and update the appropriate country model in Sanity. For example, the Europe Market on Commerce Layer and Italy country model on Sanity. Failure to do this will result in an invalid scope authentication error when you try to access your application.
+So, when you seed your Commerce Layer organization, some markets will be created which will have a different Market ID from the one set in Sanity. So you need to fetch the valid market scope's number (from the sales channel tab in the [Commerce Layer dashboard](https://dashboard.commercelayer.io)) and update the appropriate country model in Sanity. For example, the Europe Market on Commerce Layer and Italy country model on Sanity. Failure to do this will result in an invalid scope authentication error when you try to access your application.
 
 Also, you must access the application using the right locale slug for the country you have configured like so `localhost:3000/it/it-it` or `localhost:3000/us/en-us`. If you want to set up other countries, then create a market for it on Commerce Layer alongside the associated resources and update the Market ID on Sanity as you earlier did.
 
