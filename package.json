@@ -8,7 +8,7 @@
   },
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next\" \"cd studio && sanity start\"",
+    "dev": "concurrently \"next\" \"cd studio && npm run dev \"",
     "build": "next build",
     "start": "npm run build",
     "postinstall": "lerna bootstrap",
@@ -76,7 +76,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "@types/react-instantsearch-dom": "^6.12.2",
     "algoliasearch": "^4.12.1",
-    "autoprefixer": "^10.4.2",
+    "autoprefixer": "10.4.5",
     "axios": "^0.26.0",
     "contentful": "^9.1.10",
     "js-cookie": "^3.0.1",
