@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/commercelayer/sanity-template-commercelayer/compare/v1.0.1...v1.1.0) (2022-05-31)
+
+
+### Features
+
+* update react-components ([699926f](https://github.com/commercelayer/sanity-template-commercelayer/commit/699926ff78c24fb8d50b36bebc720318a3124053))
+
 ## [1.0.1](https://github.com/commercelayer/sanity-template-commercelayer/compare/v1.0.0...v1.0.1) (2022-02-24)
 
 

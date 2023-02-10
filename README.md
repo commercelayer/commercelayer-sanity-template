@@ -18,7 +18,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
   - [⬇️ Import test studio content](#%EF%B8%8F-import-test-studio-content)
   - [⬇️ Seed Commerce Layer data](#%EF%B8%8F-seed-commerce-layer-data)
 - [⚠️ Important notes](#%EF%B8%8F-important-notes)
-- [🛒 Setup hosted checkout](#%EF%B8%8F-setup-hosted-checkout)
+- [🚀 Production environment variables](#-production-environment-variables)
 - [Contributors guide](#contributors-guide)
 - [Need help?](#need-help)
 - [License](#license)
@@ -27,6 +27,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 - An ecommerce storefront built with Nextjs, [Commerce Layer react components library](https://github.com/commercelayer/commercelayer-react-components), and Tailwind CSS.
 - International shopping capabilities powered by [Commerce Layer](https://commercelayer.io) APIs.
+- PSD2-compliant and production-ready checkout functionality powered by [Commerce Layer React Checkout Application](https://github.com/commercelayer/commercelayer-react-checkout).
 - [Micro CLI seeder](https://github.com/commercelayer/commercelayer-cli-plugin-seeder/blob/main/README.md) to import Commerce Layer data.
 - Structured content on Sanity CMS.
 - Localization support.
@@ -34,7 +35,7 @@ A multi-country ecommerce starter that features the sanity studio built with Com
 
 ## Getting started
 
-The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer and create a new project by following the instructions on Sanity.
+The quickest way to get up and running is to go to https://www.sanity.io/create?template=commercelayer/sanity-template-commercelayer, create a new project (following the instructions on Sanity), and read the [important notes](#%EF%B8%8F-important-notes) and [production ENV guidelines](#-production-environment-variables).
 
 Alternatively, you can clone this repository, configure the starter, import the dataset into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
 
@@ -47,7 +48,7 @@ Alternatively, you can clone this repository, configure the starter, import the 
 2. Rename the `/env.example` file to `.env` and add the following:
 
 - Your project ID, dataset, and token from [manage.sanity.io](https://manage.sanity.io).
-- Your sales_channels application client ID and base endpoint from [Commerce Layer](https://commercelayer.io). You can create this automatically by following our [onboarding guide](https://docs.commercelayer.io/developers/) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io/sign_up).
+- Your **Sales channels** application client ID and base endpoint from [Commerce Layer](https://commercelayer.io) (you can create this automatically by following our [onboarding guide](https://docs.commercelayer.io/developers) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io)).
 
 3. Run the command below to install the necessary dependencies of your project:
 
@@ -83,15 +84,15 @@ The extracted folder name should look like `production-export-2021-02-26t14-15-5
 sanity dataset import ../.sanity-template/data/<name of extracted folder>/data.ndjson <your_dataset>
 ```
 
-3. Check the frontend and studio now to preview the imported content.
+3. Check the studio now on `localhost:3333` to preview the imported content.
 
 ### ⬇️ Seed Commerce Layer data
 
 1. Create a free [Commerce Layer account](https://dashboard.commercelayer.io/sign_up). If you already have an account, kindly skip to Step 3.
 
-2. Create a new [organization](https://commercelayer.io/docs/data-model/users-and-organizations) or follow the [onboarding tutorial guide](https://docs.commercelayer.io/developers/).
+2. Create a new [organization](https://commercelayer.io/docs/data-model/users-and-organizations) or follow the [onboarding tutorial guide](https://docs.commercelayer.io/developers).
 
-3. Create a new application in the **Integrations** tab with **Name** set to `<Project Name>`, and **Role** set to `admin`.
+3. Create a new **Integrations** application with **Name** set to `CLI` and **Role** set to `admin`.
 
 4. In your newly created application, copy your `Client ID`, `Client Secret`, and base endpoint.
 
@@ -133,7 +134,7 @@ commercelayer --help
 
 The Sanity content data includes a collection of sample countries, products, variants, sizes, taxons, taxonomies, catalogs, and product images created during development. To get an [access token](https://docs.commercelayer.io/developers/authentication) we fetch the scope (market ID) from the Market Id attribute set in the Sanity country schema.
 
-So, when you seed your Commerce Layer organization, some markets will be created which will have a different Market ID from the one set in Sanity. So you need to fetch the valid market scope (from the sales channel tab in the [Commerce Layer dashboard](https://dashboard.commercelayer.io/)) and update the appropriate country model in Sanity. For example, the Europe Market on Commerce Layer and Italy country model on Sanity. Failure to do this will result in an invalid scope authentication error when you try to access your application.
+So, when you seed your Commerce Layer organization, some markets will be created which will have a different Market ID from the one set in Sanity. So you need to fetch the valid market scope's number (from the sales channel tab in the [Commerce Layer dashboard](https://dashboard.commercelayer.io)) and update the appropriate country model in Sanity. For example, the Europe Market on Commerce Layer and Italy country model on Sanity. Failure to do this will result in an invalid scope authentication error when you try to access your application.
 
 Also, you must access the application using the right locale slug for the country you have configured like so `localhost:3000/it/it-it` or `localhost:3000/us/en-us`. If you want to set up other countries, then create a market for it on Commerce Layer alongside the associated resources and update the Market ID on Sanity as you earlier did.
 
@@ -143,9 +144,20 @@ Also, you must access the application using the right locale slug for the countr
 
 Ideally, you would want to add your content data and set up Commerce Layer manually based on your use cases. To ensure the starter runs smoothly, ensure to update the market ID attribute, create a product, and link to variant(s) on Sanity and create a market associated with a stock location, stock item, price list, price, and SKU in Commerce Layer.
 
-## 🛒 Setup hosted checkout
+## 🚀 Production Environment Variables
 
-To set up a checkout functionality, you can use the [Commerce Layer React Checkout Application](https://github.com/commercelayer/commercelayer-react-checkout) that provides you with a PCI-compliant, PSD2-compliant, and production-ready checkout flow powered by Commerce Layer APIs. We will be launching a (free) hosted version of this checkout application and a new dashboard soon. But for now you can proceed to add a checkout template URL like so `<your-organization-slug>/:order_id`, to the CHECKOUT URL field in *Settings > Markets > [Select a market of your choice]* on the existing [admin dashboard](https://core.commercelayer.io/admin/account/organizations). The `CheckoutLink` component from our react-components library will automatically populate with the right link to checkout any order in cart.
+When you deploy your project to Netlify, you need to update the `SANITY_PROJECT_ID`, `CL_CLIENT_ID`, and `CL_ENDPOINT` environment variables to valid credentials for the applications in use. You can update this in the `netlify.toml` file as seen below. For security reasons, you should [add the environment variables in the Netlify dashboard](https://docs.netlify.com/configure-builds/environment-variables) during build time.
+
+```toml
+[build.environment]
+  NEXT_SERVERLESS = "true"
+  SANITY_PROJECT_ID="xyz7gbab"
+  SANITY_DATASET="production"
+  BUILD_LANGUAGES = "en-US,it-IT"
+  BUILD_CMS = "sanity"
+  CL_CLIENT_ID = "HOpqt0R5oIDG8BlttE4idgGQkR6PeOkBCNnQhp-nvGk"
+  CL_ENDPOINT = "https://demo.commercelayer.io"
+```
 
 ## Contributors guide
 
@@ -175,4 +187,4 @@ This repository is published under the [MIT](LICENSE) license.
 
 ---
 
-Want to learn more about how we built this starter and how you can build yours? Sign up for our [newsletter](https://commercelayer.io/blog) to get notified once we publish the article.
+Want to learn more about how we built this starter and how you can build yours? Then you should read [this article](https://commercelayer.io/blog/how-to-build-an-international-ecommerce-website-with-sanity-and-commerce-layer).

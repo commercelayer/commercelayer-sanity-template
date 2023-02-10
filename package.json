@@ -1,6 +1,6 @@
 {
   "name": "sanity-template-commercelayer",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
   "engines": {
     "node": ">=16",
@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "@commercelayer/js-auth": "^3.0.0",
-    "@commercelayer/react-components": "^3.4.2",
+    "@commercelayer/react-components": "^3.13.0",
     "@headlessui/react": "^1.5.0",
     "@sanity/client": "^3.1.0",
     "@sanity/image-url": "^1.0.1",
@@ -96,7 +96,7 @@
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.2",
-    "@semantic-release/npm": "^7.0.10",
+    "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@types/js-cookie": "^3.0.1",
     "@types/lodash": "^4.14.178",
@@ -104,7 +104,7 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "concurrently": "^7.0.0",
-    "lerna": "^4.0.0",
+    "lerna": "^5.5.2",
     "netlify-plugin-inline-functions-env": "^1.0.9",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-preset-env": "^7.4.1",
