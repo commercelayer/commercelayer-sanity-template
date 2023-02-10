@@ -6,7 +6,7 @@
 
 [build.environment]
   NEXT_SERVERLESS = "true"
-  SANITY_PROJECT_ID="wvv7gbzb"
+  SANITY_PROJECT_ID="JJv7gxkb"
   SANITY_DATASET="production"
   BUILD_LANGUAGES = "en-US,it-IT"
   BUILD_CMS = "sanity"
