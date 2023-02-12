@@ -1,6 +1,6 @@
 import { TfiShoppingCartFull } from "react-icons/tfi";
 import { defineField, defineType } from "sanity";
-import supportedLanguages from "./locale/supportedLanguages";
+import supportedLanguages from "../locale/supportedLanguages";
 
 const baseLanguage =
   supportedLanguages.find((l) => l.isDefault) || supportedLanguages[0];

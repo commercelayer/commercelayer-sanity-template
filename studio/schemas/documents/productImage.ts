@@ -1,16 +1,16 @@
-import { SlGlobeAlt } from "react-icons/sl";
+import { ImImages } from "react-icons/im";
 import { defineField, defineType } from "sanity";
-import supportedLanguages from "./locale/supportedLanguages";
+import supportedLanguages from "../locale/supportedLanguages";
 
 const baseLanguage =
   supportedLanguages.find((l) => l.isDefault) || supportedLanguages[0];
 
 export default defineType({
-  name: "catalog",
-  title: "Catalog",
-  description: "A list of catalogs associated with some taxonomies",
+  name: "productImage",
+  title: "Product Image",
+  description: "A list of product images",
   type: "document",
-  icon: SlGlobeAlt,
+  icon: ImImages,
   fields: [
     defineField({
       name: "name",
@@ -19,25 +19,23 @@ export default defineType({
       validation: (rule) => rule.required().error("A name is required"),
     }),
     defineField({
-      name: "taxonomies",
-      title: "Taxonomies",
-      type: "array",
+      name: "description",
+      title: "Description",
+      type: "localeText",
+    }),
+    defineField({
+      name: "images",
+      title: "Images",
+      type: "image",
       validation: (rule) =>
-        rule.required().error("One or more taxonomies are required"),
-      of: [
-        {
-          type: "reference",
-          to: {
-            type: "taxonomy",
-          },
-        },
-      ],
+        rule.required().error("One or more images are required"),
     }),
   ],
 
   preview: {
     select: {
       title: `name.${baseLanguage.id}`,
+      media: "images",
     },
   },
 });

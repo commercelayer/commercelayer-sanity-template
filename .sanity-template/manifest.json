@@ -1,5 +1,5 @@
 {
-  "version": 2.0,
+  "version": 3.0,
   "title": "Commerce Layer Starter",
   "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
   "previewMedia": {

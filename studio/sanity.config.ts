@@ -5,9 +5,9 @@ import schemas from "./schemas/schemaTypes";
 import { Logo } from "./plugins/studio-logo/logo";
 
 export default defineConfig({
-  title: "<#< sanity.projectTitle >#>",
-  projectId: "wvv7gbzb",
-  dataset: "production",
+  title: import.meta.env.SANITY_STUDIO_PROJECT_TITLE,
+  projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
+  dataset: import.meta.env.SANITY_STUDIO_DATASET,
   plugins: [deskTool(), visionTool()],
   schema: {
     types: schemas,
