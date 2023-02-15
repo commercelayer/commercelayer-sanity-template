@@ -1,20 +1,20 @@
-import React, { FunctionComponent, useState } from 'react'
-import { useRouter } from 'next/router'
-import _ from 'lodash'
-import { Transition } from '@headlessui/react'
-import { Country } from '@typings/models'
-import locale from '@locale/index'
+import React, { FunctionComponent, useState } from "react";
+import { useRouter } from "next/router";
+import _ from "lodash";
+import { Transition } from "@headlessui/react";
+import { Country } from "@typings/models";
+import locale from "@locale/index";
 
 type Props = {
-  options: Country[]
-}
+  options: Country[];
+};
 
 const CountrySelector: FunctionComponent<Props> = ({ options }) => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
   const {
     push,
     query: { countryCode, searchBy, lang },
-  } = useRouter()
+  } = useRouter();
   const optionComponents = options.map(
     ({ code, name, image, defaultLocale }) => {
       return {
@@ -22,18 +22,18 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
         name,
         image,
         defaultLocale: defaultLocale.toLowerCase(),
-      }
+      };
     }
-  )
+  );
   const selectedOption = _.first(
     optionComponents.filter(({ value }) => value === countryCode)
-  )
+  );
   const handleChange = (code: string, defaultLocale: string) => {
     searchBy
       ? push(`/${code}/${defaultLocale}?searchBy=${searchBy}`)
-      : push(`/${code}/${defaultLocale}`)
-    setShow(!show)
-  }
+      : push(`/${code}/${defaultLocale}`);
+    setShow(!show);
+  };
   return (
     <div>
       <div className="mt-1 relative">
@@ -47,7 +47,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
         >
           <span className="flex items-center">
             <span className="flex-shrink-0 text-gray-700 truncate">
-              {locale[lang as string].shippingTo}:{' '}
+              {locale[lang as string].shippingTo}:{" "}
             </span>
             <img
               src={selectedOption?.image?.url}
@@ -80,7 +80,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
         >
           <div
             className={`absolute mt-1 w-full rounded-md bg-white shadow-lg ${
-              show ? 'z-10' : ''
+              show ? "z-10" : ""
             }`}
             onMouseLeave={() => setShow(false)}
           >
@@ -93,13 +93,13 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
             >
               {optionComponents.map(
                 ({ value, name, image, defaultLocale }, k) => {
-                  const selected = value === selectedOption?.value
+                  const selected = value === selectedOption?.value;
                   return (
                     <li
                       key={k}
                       role="option"
                       className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-blue-500 ${
-                        selected ? '' : 'text-gray-900'
+                        selected ? "" : "text-gray-900"
                       }`}
                       onClick={() => handleChange(value, defaultLocale)}
                     >
@@ -111,7 +111,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
                         />
                         <span
                           className={`${
-                            selected ? 'font-semibold' : 'font-normal'
+                            selected ? "font-semibold" : "font-normal"
                           } ml-3 block font-normal truncate`}
                         >
                           {name}
@@ -120,7 +120,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
                       {/* Highlighted: "text-white", Not Highlighted: "text-indigo-600" */}
                       <span
                         className={`${
-                          selected ? 'text-gray-900' : 'hidden'
+                          selected ? "text-gray-900" : "hidden"
                         } absolute inset-y-0 right-0 flex items-center pr-4 hover:bg-blue-500`}
                       >
                         <svg
@@ -138,7 +138,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
                         </svg>
                       </span>
                     </li>
-                  )
+                  );
                 }
               )}
             </ul>
@@ -146,7 +146,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
         </Transition>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CountrySelector
+export default CountrySelector;

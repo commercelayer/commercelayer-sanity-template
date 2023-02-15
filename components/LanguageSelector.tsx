@@ -1,20 +1,20 @@
-import React, { FunctionComponent, useState } from 'react'
-import { useRouter } from 'next/router'
-import _ from 'lodash'
-import { Transition } from '@headlessui/react'
-import { Country } from '@typings/models'
-import locale from '@locale/index'
+import React, { FunctionComponent, useState } from "react";
+import { useRouter } from "next/router";
+import _ from "lodash";
+import { Transition } from "@headlessui/react";
+import { Country } from "@typings/models";
+import locale from "@locale/index";
 
 type Props = {
-  options: Country[]
-}
+  options: Country[];
+};
 
 const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
   const {
     push,
     query: { searchBy, lang, countryCode },
-  } = useRouter()
+  } = useRouter();
   const optionComponents = options.map(
     ({ code, name, image, defaultLocale }) => {
       return {
@@ -22,18 +22,18 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
         name,
         image,
         code: code?.toLowerCase(),
-      }
+      };
     }
-  )
+  );
   const selectedOption = _.first(
     optionComponents.filter(({ value }) => value === lang)
-  )
+  );
   const handleChange = (defaultLocale: string) => {
     searchBy
       ? push(`/${countryCode}/${defaultLocale}?searchBy=${searchBy}`)
-      : push(`/${countryCode}/${defaultLocale}`)
-    setShow(!show)
-  }
+      : push(`/${countryCode}/${defaultLocale}`);
+    setShow(!show);
+  };
   return (
     <div>
       <div className="mt-1 relative">
@@ -47,7 +47,7 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
         >
           <span className="flex items-center">
             <span className="flex-shrink-0 text-gray-700 truncate capitalize">
-              {locale[lang as string].language}:{' '}
+              {locale[lang as string].language}:{" "}
             </span>
             <img
               src={selectedOption?.image?.url}
@@ -91,13 +91,13 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
               className="max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
             >
               {optionComponents.map(({ value, name, image }, k) => {
-                const selected = value === selectedOption?.value
+                const selected = value === selectedOption?.value;
                 return (
                   <li
                     key={k}
                     role="option"
                     className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-blue-500 ${
-                      selected ? '' : 'text-gray-900'
+                      selected ? "" : "text-gray-900"
                     }`}
                     onClick={() => handleChange(value)}
                   >
@@ -109,7 +109,7 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
                       />
                       <span
                         className={`${
-                          selected ? 'font-semibold' : 'font-normal'
+                          selected ? "font-semibold" : "font-normal"
                         } ml-3 block font-normal capitalize truncate`}
                       >
                         {locale[lang as string].languages[value as string]}
@@ -118,7 +118,7 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
                     {/* Highlighted: "text-white", Not Highlighted: "text-indigo-600" */}
                     <span
                       className={`${
-                        selected ? 'text-gray-900' : 'hidden'
+                        selected ? "text-gray-900" : "hidden"
                       } absolute inset-y-0 right-0 flex items-center pr-4 hover:bg-blue-500`}
                     >
                       <svg
@@ -136,14 +136,14 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
                       </svg>
                     </span>
                   </li>
-                )
+                );
               })}
             </ul>
           </div>
         </Transition>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LanguageSelector
+export default LanguageSelector;

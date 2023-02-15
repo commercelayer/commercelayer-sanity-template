@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent } from "react";
 import {
   LineItemsContainer,
   LineItemsCount,
@@ -16,13 +16,13 @@ import {
   GiftCardAmount,
   TotalAmount,
   CheckoutLink,
-} from '@commercelayer/react-components'
-import locale from '@locale/index'
-import { Transition } from '@headlessui/react'
+} from "@commercelayer/react-components";
+import locale from "@locale/index";
+import { Transition } from "@headlessui/react";
 
 type CustomRemoveLinkProps = {
-  handleRemove: (e: any) => void
-}
+  handleRemove: (e: any) => void;
+};
 
 const CustomRemoveLink: FunctionComponent<CustomRemoveLinkProps> = ({
   handleRemove,
@@ -43,23 +43,23 @@ const CustomRemoveLink: FunctionComponent<CustomRemoveLinkProps> = ({
         />
       </svg>
     </a>
-  )
-}
+  );
+};
 
 type Props = {
-  handleAnimation: (e: any) => void
-  lang?: string
-  active: boolean
-}
+  handleAnimation: (e: any) => void;
+  lang?: string;
+  active: boolean;
+};
 
 const ShoppingBag: React.FunctionComponent<Props> = ({
   handleAnimation,
-  lang = 'en-us',
+  lang = "en-us",
   active,
 }) => {
   return (
     <div
-      className={`fixed inset-0 overflow-hidden ${!active ? 'hidden' : 'z-10'}`}
+      className={`fixed inset-0 overflow-hidden ${!active ? "hidden" : "z-10"}`}
     >
       <div className="absolute inset-0 overflow-hidden">
         <Transition
@@ -95,7 +95,7 @@ const ShoppingBag: React.FunctionComponent<Props> = ({
                 <header className="px-4 sm:px-6">
                   <div className="flex items-start justify-between space-x-3">
                     <h2 className="text-lg leading-7 font-medium text-gray-900">
-                      {locale[lang].yourShoppingCart} <LineItemsCount />{' '}
+                      {locale[lang].yourShoppingCart} <LineItemsCount />{" "}
                       {locale[lang].items}
                     </h2>
                     <div className="h-7 flex items-center">
@@ -199,7 +199,7 @@ const ShoppingBag: React.FunctionComponent<Props> = ({
         </section>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ShoppingBag
+export default ShoppingBag;

@@ -1,28 +1,28 @@
-import { CustomPaginationProps } from '.'
-import { FunctionComponent } from 'react'
+import { CustomPaginationProps } from ".";
+import { FunctionComponent } from "react";
 
 type PrevProps = Pick<
   CustomPaginationProps,
-  'showPrevious' | 'currentRefinement' | 'createURL' | 'refine'
->
+  "showPrevious" | "currentRefinement" | "createURL" | "refine"
+>;
 const Prev: FunctionComponent<PrevProps> = ({
   showPrevious,
   currentRefinement,
   createURL,
   refine,
 }) => {
-  const prevPage = currentRefinement - 1
-  const disabled = prevPage === 0 ? 'cursor-not-allowed opacity-25' : ''
+  const prevPage = currentRefinement - 1;
+  const disabled = prevPage === 0 ? "cursor-not-allowed opacity-25" : "";
   return !showPrevious ? null : (
     <div className="-mt-px w-0 flex-1 flex">
       <a
         className={`border-t-2 border-transparent pt-4 pr-1 inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 ${disabled}`}
         href={createURL(prevPage)}
         onClick={(event) => {
-          event.preventDefault()
+          event.preventDefault();
           if (prevPage > 0) {
-            refine(prevPage)
-            window.scrollTo(0, 0)
+            refine(prevPage);
+            window.scrollTo(0, 0);
           }
         }}
       >
@@ -42,7 +42,7 @@ const Prev: FunctionComponent<PrevProps> = ({
         Previous
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default Prev
+export default Prev;

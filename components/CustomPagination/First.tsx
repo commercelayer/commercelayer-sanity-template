@@ -1,10 +1,10 @@
-import { CustomPaginationProps } from '.'
-import { FunctionComponent } from 'react'
+import { CustomPaginationProps } from ".";
+import { FunctionComponent } from "react";
 
 type FirstProps = Pick<
   CustomPaginationProps,
-  'showFirst' | 'currentRefinement' | 'createURL' | 'refine'
->
+  "showFirst" | "currentRefinement" | "createURL" | "refine"
+>;
 
 const First: FunctionComponent<FirstProps> = ({
   showFirst,
@@ -13,24 +13,24 @@ const First: FunctionComponent<FirstProps> = ({
   refine,
 }) => {
   const disabled =
-    currentRefinement === 1 ? 'cursor-not-allowed opacity-25' : ''
+    currentRefinement === 1 ? "cursor-not-allowed opacity-25" : "";
   return !showFirst ? null : (
     <li className={`pagination`}>
       <a
         className={disabled}
         href={createURL(1)}
         onClick={(event) => {
-          event.preventDefault()
+          event.preventDefault();
           if (currentRefinement > 1) {
-            refine(1)
-            window.scrollTo(0, 0)
+            refine(1);
+            window.scrollTo(0, 0);
           }
         }}
       >
-        {'<<'}
+        {"<<"}
       </a>
     </li>
-  )
-}
+  );
+};
 
-export default First
+export default First;

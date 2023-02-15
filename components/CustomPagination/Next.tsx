@@ -1,10 +1,10 @@
-import { CustomPaginationProps } from '.'
-import { FunctionComponent } from 'react'
+import { CustomPaginationProps } from ".";
+import { FunctionComponent } from "react";
 
 type NextProps = Pick<
   CustomPaginationProps,
-  'showNext' | 'currentRefinement' | 'createURL' | 'refine' | 'nbPages'
->
+  "showNext" | "currentRefinement" | "createURL" | "refine" | "nbPages"
+>;
 const Next: FunctionComponent<NextProps> = ({
   showNext,
   currentRefinement,
@@ -12,21 +12,21 @@ const Next: FunctionComponent<NextProps> = ({
   refine,
   nbPages,
 }) => {
-  const nextPage = currentRefinement + 1
+  const nextPage = currentRefinement + 1;
   const disabled =
     currentRefinement === nbPages || nbPages === 0
-      ? 'cursor-not-allowed opacity-25'
-      : ''
+      ? "cursor-not-allowed opacity-25"
+      : "";
   return !showNext ? null : (
     <div className="-mt-px w-0 flex-1 flex justify-end">
       <a
         className={`border-t-2 border-transparent pt-4 pl-1 inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 ${disabled}`}
         href={createURL(nextPage)}
         onClick={(event) => {
-          event.preventDefault()
+          event.preventDefault();
           if (currentRefinement !== nbPages) {
-            refine(nextPage)
-            window.scrollTo(0, 0)
+            refine(nextPage);
+            window.scrollTo(0, 0);
           }
         }}
       >
@@ -46,7 +46,7 @@ const Next: FunctionComponent<NextProps> = ({
         </svg>
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default Next
+export default Next;

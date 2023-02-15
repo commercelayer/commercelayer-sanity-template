@@ -1,14 +1,14 @@
-import React, { FunctionComponent, Fragment } from 'react'
+import React, { FunctionComponent, Fragment } from "react";
 
 export interface SocialIcon {
-  href: string
-  src: string
-  alt: string
+  href: string;
+  src: string;
+  alt: string;
 }
 
 type Props = {
-  items: SocialIcon[]
-}
+  items: SocialIcon[];
+};
 
 const SocialIcons: FunctionComponent<Props> = ({ items }) => {
   const icons = items.map(({ href, src, alt }, key) => {
@@ -20,9 +20,9 @@ const SocialIcons: FunctionComponent<Props> = ({ items }) => {
       >
         <img src={`/${src}`} className="inline w-6 mx-2" alt={alt} />
       </a>
-    )
-  })
-  return <Fragment>{icons}</Fragment>
-}
+    );
+  });
+  return <Fragment>{icons}</Fragment>;
+};
 
-export default SocialIcons
+export default SocialIcons;

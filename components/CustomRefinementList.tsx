@@ -1,18 +1,18 @@
-import _ from 'lodash'
-import { Highlight, connectRefinementList } from 'react-instantsearch-dom'
+import _ from "lodash";
+import { Highlight, connectRefinementList } from "react-instantsearch-dom";
 
 type Props = {
   items: {
-    label: string
-    isRefined: boolean
-    value: string
-    count: number
-  }[]
-  isFromSearch: boolean
-  refine: (value: string) => void
-  searchForItems: (value: string) => void
-  createURL: (value: string) => string
-}
+    label: string;
+    isRefined: boolean;
+    value: string;
+    count: number;
+  }[];
+  isFromSearch: boolean;
+  refine: (value: string) => void;
+  searchForItems: (value: string) => void;
+  createURL: (value: string) => string;
+};
 
 const RefinementList = ({ items, isFromSearch, refine, createURL }: Props) => (
   <ul className="bg-white rounded-md -space-y-px">
@@ -25,7 +25,7 @@ const RefinementList = ({ items, isFromSearch, refine, createURL }: Props) => (
             className={`flex items-center text-sm justify-between cursor-pointer`}
           >
             <p className="ml-3 font-medium text-sm text-gray-900 flex-grow">
-              No results found{' '}
+              No results found{" "}
             </p>
             <span className="bg-gray-100 text-gray-600 ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium leading-5">
               {0}
@@ -40,11 +40,11 @@ const RefinementList = ({ items, isFromSearch, refine, createURL }: Props) => (
             className={`${
               item.isRefined
                 ? `bg-blue-50 border-blue-200 z-10`
-                : 'border-gray-200'
+                : "border-gray-200"
             }  border rounded-md p-4 my-1 cursor-pointer`}
             onClick={(event) => {
-              event.preventDefault()
-              refine(item.value)
+              event.preventDefault();
+              refine(item.value);
             }}
           >
             <label
@@ -58,13 +58,13 @@ const RefinementList = ({ items, isFromSearch, refine, createURL }: Props) => (
                   <Highlight attribute="label" hit={item} />
                 ) : (
                   item.label
-                )}{' '}
+                )}{" "}
               </a>
               <span
                 className={`${
                   item.isRefined
-                    ? 'bg-gray-900 text-gray-50'
-                    : 'bg-gray-100 text-gray-600'
+                    ? "bg-gray-900 text-gray-50"
+                    : "bg-gray-100 text-gray-600"
                 } ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium leading-5`}
               >
                 {item.count}
@@ -75,6 +75,6 @@ const RefinementList = ({ items, isFromSearch, refine, createURL }: Props) => (
       ))
     )}
   </ul>
-)
+);
 
-export default connectRefinementList(RefinementList as any)
+export default connectRefinementList(RefinementList as any);

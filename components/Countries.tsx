@@ -1,22 +1,22 @@
-import React, { FunctionComponent } from 'react'
-import Link from 'next/link'
-import _ from 'lodash'
-import { Country } from '@typings/models'
+import React, { FunctionComponent } from "react";
+import Link from "next/link";
+import _ from "lodash";
+import { Country } from "@typings/models";
 
-type Item = Omit<Country, 'image'> & {
-  image: { title: string; url: string }
-}
+type Item = Omit<Country, "image"> & {
+  image: { title: string; url: string };
+};
 
 type Props = {
-  items: Item[]
-  cms?: string
-  searchBy?: string
-}
+  items: Item[];
+  cms?: string;
+  searchBy?: string;
+};
 
 const Countries: FunctionComponent<Props> = ({ items, searchBy }) => {
   const countries = items.map(({ image, defaultLocale, code }, key) => {
-    const lang = _.first(defaultLocale.toLowerCase().split(','))
-    const countryCode = code.toLowerCase()
+    const lang = _.first(defaultLocale.toLowerCase().split(","));
+    const countryCode = code.toLowerCase();
     const href = !_.isEmpty(searchBy)
       ? {
           pathname: `/[countryCode]/[lang]`,
@@ -32,7 +32,7 @@ const Countries: FunctionComponent<Props> = ({ items, searchBy }) => {
             countryCode,
             lang,
           },
-        }
+        };
     return (
       <Link key={key} href={href}>
         <div className="cursor-pointer">
@@ -43,8 +43,8 @@ const Countries: FunctionComponent<Props> = ({ items, searchBy }) => {
           />
         </div>
       </Link>
-    )
-  })
+    );
+  });
   return (
     <div className="bg-white shadow-md p-10 max-w-screen-sm mx-auto rounded">
       <h1 className="text-xl md:text-2xl mb-8">Choose your country</h1>
@@ -52,7 +52,7 @@ const Countries: FunctionComponent<Props> = ({ items, searchBy }) => {
         {countries}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Countries
+export default Countries;

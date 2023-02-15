@@ -1,27 +1,27 @@
-import { connectHits } from 'react-instantsearch-dom'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import _ from 'lodash'
-import locale from '@locale/index'
+import { connectHits } from "react-instantsearch-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import _ from "lodash";
+import locale from "@locale/index";
 
 type Props = {
   hits: {
-    name: string
-    image: string
-    reference: string
-    formattedAmount: string
-    formattedCompareAtAmount: string
-    description: string
-    category: string
-    objectID: string
-    slug: string
-  }[]
-}
+    name: string;
+    image: string;
+    reference: string;
+    formattedAmount: string;
+    formattedCompareAtAmount: string;
+    description: string;
+    category: string;
+    objectID: string;
+    slug: string;
+  }[];
+};
 
 const Hits = ({ hits }: Props) => {
   const {
     query: { lang, countryCode },
-  } = useRouter()
+  } = useRouter();
   return _.isEmpty(hits) ? (
     <div className="w-full text-gray-900 h-96">
       <p>{locale[lang as string].emptyProducts}</p>
@@ -37,7 +37,7 @@ const Hits = ({ hits }: Props) => {
           formattedAmount,
           formattedCompareAtAmount,
           slug,
-        } = hit
+        } = hit;
         return (
           <li key={objectID}>
             <Link
@@ -72,10 +72,10 @@ const Hits = ({ hits }: Props) => {
               </div>
             </Link>
           </li>
-        )
+        );
       })}
     </ul>
-  )
-}
+  );
+};
 
-export default connectHits(Hits)
+export default connectHits(Hits);

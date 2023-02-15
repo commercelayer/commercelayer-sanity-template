@@ -1,26 +1,26 @@
-import { Price, PricesContainer } from '@commercelayer/react-components'
-import { Product } from '@typings/models'
-import _ from 'lodash'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React from 'react'
-import locale from '@locale/index'
+import { Price, PricesContainer } from "@commercelayer/react-components";
+import { Product } from "@typings/models";
+import _ from "lodash";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
+import locale from "@locale/index";
 
 type Props = {
-  products: Product[]
-}
+  products: Product[];
+};
 
 const ProductsList = ({ products }: Props) => {
   const {
     query: { countryCode, lang },
-  } = useRouter()
+  } = useRouter();
   return (
     <div className="mt-10 sm:ml-10 lg:col-span-2">
       <ul className="md:pt-7 space-y-12 sm:grid sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-3 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
         {products.map(
           ({ images, name, variants, reference, slug }, key: number) => {
-            const img = _.first(images)?.url
-            const code = _.first(variants)?.code
+            const img = _.first(images)?.url;
+            const code = _.first(variants)?.code;
             return (
               <li key={key}>
                 <Link
@@ -56,12 +56,12 @@ const ProductsList = ({ products }: Props) => {
                   </div>
                 </Link>
               </li>
-            )
+            );
           }
         )}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default ProductsList
+export default ProductsList;

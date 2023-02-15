@@ -1,33 +1,48 @@
-import React, { useContext, FunctionComponent } from 'react'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import _ from 'lodash'
-import Layout from '@components/Layout'
+import React, {
+  useContext,
+  useState,
+  FunctionComponent,
+  useEffect,
+} from "react";
+import { GetStaticPaths, GetStaticProps } from "next";
+import _ from "lodash";
+import Layout from "@components/Layout";
 import {
   CommerceLayer,
   Price,
   PricesContainer,
-  VariantsContainer,
-  VariantSelector,
   OrderContainer,
-  ItemContainer,
+  LineItemsContainer,
   AddToCartButton,
   OrderStorage,
-} from '@commercelayer/react-components'
-import LayoutContext from '@context/LayoutContext'
-import { useGetToken } from '@hooks/GetToken'
-import { useRouter } from 'next/router'
-import locale from '@locale/index'
-import { parseImg, parseLanguageCode } from '@utils/parser'
-import { cmsFunctions } from '@utils/cms'
-import { Product, Country } from '@typings/models'
+} from "@commercelayer/react-components";
+import LayoutContext from "@context/LayoutContext";
+import { useGetToken } from "@hooks/GetToken";
+import { useRouter } from "next/router";
+import locale from "@locale/index";
+import { parseImg, parseLanguageCode } from "@utils/parser";
+import { cmsFunctions } from "@utils/cms";
+import { Product, Country } from "@typings/models";
+
+type Props = {
+  product: Product;
+  clientId: string;
+  endpoint: string;
+  countryCode: string;
+  lang: string;
+  marketId: string;
+  buildLanguages?: Country[];
+  cms: string;
+  countries: Country[];
+};
 
 const AddToCartCustom = (props: any) => {
-  const { className, label, disabled, handleClick } = props
-  const { handleAnimation } = useContext(LayoutContext)
+  const { className, label, disabled, handleClick } = props;
+  const { handleAnimation } = useContext(LayoutContext);
   const customHandleClick = async (e: any) => {
-    const { success } = await handleClick(e)
-    if (success && handleAnimation) handleAnimation(e)
-  }
+    const { success } = await handleClick(e);
+    if (success && handleAnimation) handleAnimation(e);
+  };
   return (
     <button
       disabled={disabled}
@@ -36,41 +51,29 @@ const AddToCartCustom = (props: any) => {
     >
       {label}
     </button>
-  )
-}
-
-type Props = {
-  product: Product
-  clientId: string
-  endpoint: string
-  countryCode: string
-  lang: string
-  marketId: string
-  buildLanguages?: Country[]
-  cms: string
-  countries: Country[]
-}
+  );
+};
 
 const ProductPage: FunctionComponent<Props> = ({
   product,
   clientId,
   endpoint,
   countryCode,
-  lang = 'en-US',
+  lang = "en-US",
   marketId,
   buildLanguages,
   cms,
   countries,
 }) => {
-  const router = useRouter()
+  const router = useRouter();
   const token = useGetToken({
     clientId,
     endpoint,
     scope: marketId,
     countryCode: router.query?.countryCode as string,
-  })
-  const imgUrl = parseImg(_.first(product?.images)?.url as string, cms)
-  const firstVariantCode = _.first(product?.variants)?.code
+  });
+  const imgUrl = parseImg(_.first(product?.images)?.url as string, cms);
+  const firstVariantCode = _.first(product?.variants)?.code as string;
   const variantOptions = product?.variants?.map((variant) => {
     return {
       label: variant.size.name,
@@ -79,13 +82,20 @@ const ProductPage: FunctionComponent<Props> = ({
         name: product.name,
         imageUrl: _.first(variant.images)?.url,
       },
-    }
-  })
+    };
+  });
   const handleBackTo = (e: any) => {
-    e.preventDefault()
-    router.back()
-  }
-  const languageCode = parseLanguageCode(lang, 'toLowerCase', true)
+    e.preventDefault();
+    router.back();
+  };
+  const languageCode = parseLanguageCode(lang, "toLowerCase", true);
+
+  const [selectedVariant, setSelectedVariant] = useState<string>();
+
+  useEffect(() => {
+    setSelectedVariant(firstVariantCode);
+  }, [firstVariantCode]);
+
   return !product ? null : (
     <CommerceLayer accessToken={token} endpoint={endpoint}>
       <OrderStorage persistKey={`order-${countryCode}`}>
@@ -97,7 +107,7 @@ const ProductPage: FunctionComponent<Props> = ({
             buildLanguages={buildLanguages}
             countries={countries}
           >
-            <ItemContainer>
+            <LineItemsContainer>
               <div className="container mx-auto max-w-screen-lg px-5 lg:px-0 text-sm text-gray-700">
                 <a href="#" onClick={handleBackTo}>
                   <img
@@ -130,13 +140,18 @@ const ProductPage: FunctionComponent<Props> = ({
                     <div className="flex items-center border-b-2 border-gray-200 py-5">
                       <div className="flex items-center">
                         <div className="relative" data-children-count="1">
-                          <VariantsContainer>
-                            <VariantSelector
-                              placeholder={locale[lang].selectSize as string}
-                              options={_.sortBy(variantOptions, 'label')}
-                              className="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-blue-500 text-base pl-3 pr-10"
-                            />
-                          </VariantsContainer>
+                          <select
+                            placeholder={locale[lang].selectSize as string}
+                            className="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-blue-500 text-base pl-3 pr-10"
+                            value={selectedVariant}
+                            onChange={(e) => setSelectedVariant(e.target.value)}
+                          >
+                            {variantOptions?.map((option) => (
+                              <option key={option.code} value={option.code}>
+                                {option.label}
+                              </option>
+                            ))}
+                          </select>
                           <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                             <svg
                               fill="none"
@@ -157,13 +172,14 @@ const ProductPage: FunctionComponent<Props> = ({
                       <span className="title-font font-medium text-2xl text-gray-900">
                         <PricesContainer>
                           <Price
-                            skuCode={firstVariantCode}
+                            skuCode={selectedVariant}
                             className="text-green-600 mr-1"
                             compareClassName="text-gray-500 line-through text-lg"
                           />
                         </PricesContainer>
                       </span>
                       <AddToCartButton
+                        skuCode={selectedVariant}
                         label={locale[lang].addToCart as string}
                         className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm md:text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
@@ -173,44 +189,44 @@ const ProductPage: FunctionComponent<Props> = ({
                   </div>
                 </div>
               </div>
-            </ItemContainer>
+            </LineItemsContainer>
           </Layout>
         </OrderContainer>
       </OrderStorage>
     </CommerceLayer>
-  )
-}
+  );
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
     fallback: true,
-  }
-}
+  };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const lang = params?.lang as string
-  const cms = process.env.BUILD_CMS
+  const lang = params?.lang as string;
+  const cms = process.env.BUILD_CMS;
   const countryCode =
-    params?.countryCode || process.env.BUILD_COUNTRY?.toLowerCase()
-  const slug = params?.product
+    params?.countryCode || process.env.BUILD_COUNTRY?.toLowerCase();
+  const slug = params?.product;
   const countries = _.has(cmsFunctions, `${cms}AllCountries`)
     ? await cmsFunctions[`${cms}AllCountries`](lang)
-    : {}
+    : {};
   const buildLanguages = _.compact(
-    process.env.BUILD_LANGUAGES?.split(',').map((l) => {
+    process.env.BUILD_LANGUAGES?.split(",").map((l) => {
       const country = countries.find(
         (country: Country) => country.code === parseLanguageCode(l)
-      )
-      return !_.isEmpty(country) ? country : null
+      );
+      return !_.isEmpty(country) ? country : null;
     })
-  )
+  );
   const country = countries.find(
     (country: Country) => country.code.toLowerCase() === countryCode
-  )
+  );
   const product = _.has(cmsFunctions, `${cms}GetProduct`)
     ? await cmsFunctions[`${cms}GetProduct`](slug, lang)
-    : {}
+    : {};
   return {
     props: {
       product,
@@ -224,7 +240,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       countries,
     },
     revalidate: 60,
-  }
-}
+  };
+};
 
-export default ProductPage
+export default ProductPage;
