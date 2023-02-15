@@ -1,9 +1,9 @@
-import { Head, Html, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
     <Html>
-        <Head>
+      <Head>
         <link
           href="//data.commercelayer.app/assets/fonts/eina01.min.css"
           rel="stylesheet"
@@ -28,5 +28,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }

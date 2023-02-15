@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import _ from "lodash";
 import { Transition } from "@headlessui/react";
@@ -13,25 +14,19 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
   const [show, setShow] = useState(false);
   const {
     push,
-    query: { searchBy, lang, countryCode },
+    query: { searchBy, lang, countryCode }
   } = useRouter();
-  const optionComponents = options.map(
-    ({ code, name, image, defaultLocale }) => {
-      return {
-        value: defaultLocale?.toLowerCase(),
-        name,
-        image,
-        code: code?.toLowerCase(),
-      };
-    }
-  );
-  const selectedOption = _.first(
-    optionComponents.filter(({ value }) => value === lang)
-  );
+  const optionComponents = options.map(({ code, name, image, defaultLocale }) => {
+    return {
+      value: defaultLocale?.toLowerCase(),
+      name,
+      image,
+      code: code?.toLowerCase()
+    };
+  });
+  const selectedOption = _.first(optionComponents.filter(({ value }) => value === lang));
   const handleChange = (defaultLocale: string) => {
-    searchBy
-      ? push(`/${countryCode}/${defaultLocale}?searchBy=${searchBy}`)
-      : push(`/${countryCode}/${defaultLocale}`);
+    searchBy ? push(`/${countryCode}/${defaultLocale}?searchBy=${searchBy}`) : push(`/${countryCode}/${defaultLocale}`);
     setShow(!show);
   };
   return (
@@ -46,13 +41,13 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
           className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         >
           <span className="flex items-center">
-            <span className="flex-shrink-0 text-gray-700 truncate capitalize">
-              {locale[lang as string].language}:{" "}
-            </span>
-            <img
-              src={selectedOption?.image?.url}
-              alt={selectedOption?.name}
+            <span className="flex-shrink-0 text-gray-700 truncate capitalize">{locale[lang as string].language}: </span>
+            <Image
+              src={selectedOption?.image?.url as string}
+              alt={selectedOption?.name as string}
               className="block ml-3 mt-0.5 w-6"
+              width={200}
+              height={50}
             />
           </span>
           <span className="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
@@ -72,16 +67,8 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
           </span>
         </button>
 
-        <Transition
-          show={show}
-          leave="transition ease-in duration-100"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div
-            className="absolute mt-1 w-full rounded-md bg-white shadow-lg"
-            onMouseLeave={() => setShow(false)}
-          >
+        <Transition show={show} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
+          <div className="absolute mt-1 w-full rounded-md bg-white shadow-lg" onMouseLeave={() => setShow(false)}>
             <ul
               title="Languages"
               tabIndex={-1}
@@ -96,17 +83,14 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
                   <li
                     key={k}
                     role="option"
+                    aria-selected={selected}
                     className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-blue-500 ${
                       selected ? "" : "text-gray-900"
                     }`}
                     onClick={() => handleChange(value)}
                   >
                     <div className="flex items-center">
-                      <img
-                        src={image?.url}
-                        alt={name}
-                        className="flex-shrink-0 w-6"
-                      />
+                      <Image src={image?.url} alt={name} className="flex-shrink-0 w-6" width={200} height={50} />
                       <span
                         className={`${
                           selected ? "font-semibold" : "font-normal"

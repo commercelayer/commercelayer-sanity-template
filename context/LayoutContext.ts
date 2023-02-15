@@ -1,9 +1,9 @@
-import { createContext } from 'react'
+import { createContext } from "react";
 
 type LayoutContextProps = {
-  handleAnimation?: (e: any) => void
-}
+  handleAnimation?: (e: any) => void;
+};
 
-const LayoutContext = createContext<LayoutContextProps>({})
+const LayoutContext = createContext<LayoutContextProps>({});
 
-export default LayoutContext
+export default LayoutContext;

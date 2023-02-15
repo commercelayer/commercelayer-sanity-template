@@ -20,9 +20,10 @@ const Pagination: FunctionComponent<CustomPaginationProps> = ({
   refine,
   createURL,
   showPrevious = true,
-  showNext = true,
+  showNext = true
 }) => {
-  const items = new Array(nbPages).fill(null).map((_, index) => {
+  const items = new Array(nbPages).fill(null)
+.map((_, index) => {
     const page = index + 1;
     const isSelected = currentRefinement === page;
     const selected = isSelected

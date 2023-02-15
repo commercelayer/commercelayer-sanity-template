@@ -1,26 +1,23 @@
 import React, { useState } from "react";
-import Layout from "@components/Layout";
+import Image from "next/image";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import locale from "@locale/index";
-import { InstantSearch, Configure } from "react-instantsearch-dom";
-import { searchClient } from "@utils/algolia";
-import CustomPagination from "@components/CustomPagination";
-import {
-  CommerceLayer,
-  OrderContainer,
-  OrderStorage,
-} from "@commercelayer/react-components";
-import { useGetToken } from "@hooks/GetToken";
-import { parseLanguageCode, parseLocale } from "@utils/parser";
-import _ from "lodash";
 import { useRouter } from "next/router";
-import { cmsFunctions } from "@utils/cms";
-import Taxonomies from "@components/Taxonomies";
+import _ from "lodash";
+import { CommerceLayer, OrderContainer, OrderStorage } from "@commercelayer/react-components";
+import { InstantSearch, Configure } from "react-instantsearch-dom";
 import queryString from "query-string";
+import Layout from "@components/Layout";
+import CustomPagination from "@components/CustomPagination";
+import Taxonomies from "@components/Taxonomies";
 import CustomSearchBox from "@components/CustomSearchBox";
 import CustomRefinementList from "@components/CustomRefinementList";
 import CustomSortBy from "@components/CustomSortBy";
 import CustomHits from "@components/CustomHits";
+import { searchClient } from "@utils/algolia";
+import { parseLanguageCode, parseLocale } from "@utils/parser";
+import { cmsFunctions } from "@utils/cms";
+import { useGetToken } from "@hooks/GetToken";
+import locale from "@locale/index";
 import { Country } from "@typings/models";
 
 type Props = {
@@ -48,12 +45,12 @@ const FilterPage: NextPage<Props> = ({
   buildLanguages = [],
   countries = [],
   lang,
-  cms,
+  cms
 }) => {
   const {
     query: { countryCode, searchBy, lang: currentLang },
     push,
-    asPath,
+    asPath
   } = useRouter();
   const parseUrl = queryString.parseUrl(asPath);
   const showSearch = _.has(parseUrl.query, "searchBy");
@@ -64,15 +61,13 @@ const FilterPage: NextPage<Props> = ({
     clientId,
     endpoint,
     scope: `market:${marketId}`,
-    countryCode: countryCode as string,
+    countryCode: countryCode as string
   });
   const indexLang = parseLocale(currentLang as string, "-", "-");
   const indexName = `${cms}_${code}_${indexLang}`;
   const handleActiveAlgolia = () => {
     setActiveAlgolia(!activeAlgolia);
-    !!searchBy
-      ? push(`/${countryCode}/${lang}`)
-      : push(`/${countryCode}/${lang}?searchBy=${searchEngine}`);
+    searchBy ? push(`/${countryCode}/${lang}`) : push(`/${countryCode}/${lang}?searchBy=${searchEngine}`);
   };
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
   return !endpoint ? null : (
@@ -110,15 +105,13 @@ const FilterPage: NextPage<Props> = ({
                         ></span>
                       </button>
                       <span className="ml-3" id="toggleLabel">
-                        <img title="Algolia" src="/algolia.svg" />
+                        <Image title="Algolia" src="/algolia.svg" alt="Algolia's Logo" />
                       </span>
                     </div>
                     <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-4">
                       {locale[lang].categories}:
                     </h2>
-                    <CustomRefinementList
-                      attribute={locale[lang].algoliaCategory}
-                    />
+                    <CustomRefinementList attribute={locale[lang].algoliaCategory} />
                   </div>
                   <div className="my-5 md:my-0 sm:ml-10 lg:col-span-2 w-full">
                     <div className="flex flex-row flex-wrap md:flex-nowrap items-center justify-center px-4 md:px-0 md:justify-between mt-1 mb-3.5 space-x-5">
@@ -137,16 +130,16 @@ const FilterPage: NextPage<Props> = ({
                             items={[
                               {
                                 value: `${indexName}`,
-                                label: locale[lang].featured,
+                                label: locale[lang].featured
                               },
                               {
                                 value: `${indexName}_price_desc`,
-                                label: locale[lang].highestPrice,
+                                label: locale[lang].highestPrice
                               },
                               {
                                 value: `${indexName}_price_asc`,
-                                label: locale[lang].lowestPrice,
-                              },
+                                label: locale[lang].lowestPrice
+                              }
                             ]}
                           />
                         </div>
@@ -180,7 +173,7 @@ export default FilterPage;
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: true,
+    fallback: true
   };
 };
 
@@ -188,22 +181,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const lang = params?.lang as string;
     const cms = process.env.BUILD_CMS;
-    const countryCode =
-      params?.countryCode || process.env.BUILD_COUNTRY?.toLowerCase();
-    const countries = _.has(cmsFunctions, `${cms}AllCountries`)
-      ? await cmsFunctions[`${cms}AllCountries`](lang)
-      : {};
+    const countryCode = params?.countryCode || process.env.BUILD_COUNTRY?.toLowerCase();
+    const countries = _.has(cmsFunctions, `${cms}AllCountries`) ? await cmsFunctions[`${cms}AllCountries`](lang) : {};
     const buildLanguages = _.compact(
       process.env.BUILD_LANGUAGES?.split(",").map((l) => {
-        const country = countries.find(
-          (country: Country) => country.code === parseLanguageCode(l)
-        );
+        const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
         return !_.isEmpty(country) ? country : null;
       })
     );
-    const country = countries.find(
-      (country: Country) => country.code.toLowerCase() === countryCode
-    );
+    const country = countries.find((country: Country) => country.code.toLowerCase() === countryCode);
     const taxonomies = _.has(cmsFunctions, `${cms}AllTaxonomies`)
       ? await cmsFunctions[`${cms}AllTaxonomies`](country.catalog.id, lang)
       : {};
@@ -217,9 +203,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         buildLanguages,
         searchEngine: process.env.BUILD_SEARCH_ENGINE || "",
         lang,
-        cms,
+        cms
       },
-      revalidate: 60,
+      revalidate: 60
     };
   } catch (err: any) {
     console.error(err);
@@ -227,9 +213,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       props: {
         clientId: process.env.CL_CLIENT_ID,
         endpoint: process.env.CL_ENDPOINT,
-        errors: err.message,
+        errors: err.message
       },
-      revalidate: 60,
+      revalidate: 60
     };
   }
 };

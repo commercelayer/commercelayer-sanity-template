@@ -1,16 +1,8 @@
 import { CustomPaginationProps } from ".";
 import { FunctionComponent } from "react";
 
-type PrevProps = Pick<
-  CustomPaginationProps,
-  "showPrevious" | "currentRefinement" | "createURL" | "refine"
->;
-const Prev: FunctionComponent<PrevProps> = ({
-  showPrevious,
-  currentRefinement,
-  createURL,
-  refine,
-}) => {
+type PrevProps = Pick<CustomPaginationProps, "showPrevious" | "currentRefinement" | "createURL" | "refine">;
+const Prev: FunctionComponent<PrevProps> = ({ showPrevious, currentRefinement, createURL, refine }) => {
   const prevPage = currentRefinement - 1;
   const disabled = prevPage === 0 ? "cursor-not-allowed opacity-25" : "";
   return !showPrevious ? null : (

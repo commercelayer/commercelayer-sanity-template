@@ -39,7 +39,7 @@ The quickest way to get up and running is to go to https://www.sanity.io/create?
 
 Alternatively, you can clone this repository, configure the starter, import the dataset into your Sanity studio, import some test data into your Commerce Layer organization, and deploy your application.
 
-![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/sanity.png 'A screenshot of Commerce Layer Starter in sanity.io')
+![](https://raw.githubusercontent.com/commercelayer/sanity-template-commercelayer/main/.sanity-template/assets/sanity.png "A screenshot of Commerce Layer Starter in sanity.io")
 
 ### ⚙️ Installation guide
 

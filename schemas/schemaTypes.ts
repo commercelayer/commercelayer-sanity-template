@@ -26,5 +26,5 @@ export default [
   localeString,
   localeText,
   localeSlug,
-  localeBlockContent,
+  localeBlockContent
 ];

@@ -1,22 +1,10 @@
 import { CustomPaginationProps } from ".";
 import { FunctionComponent } from "react";
 
-type NextProps = Pick<
-  CustomPaginationProps,
-  "showNext" | "currentRefinement" | "createURL" | "refine" | "nbPages"
->;
-const Next: FunctionComponent<NextProps> = ({
-  showNext,
-  currentRefinement,
-  createURL,
-  refine,
-  nbPages,
-}) => {
+type NextProps = Pick<CustomPaginationProps, "showNext" | "currentRefinement" | "createURL" | "refine" | "nbPages">;
+const Next: FunctionComponent<NextProps> = ({ showNext, currentRefinement, createURL, refine, nbPages }) => {
   const nextPage = currentRefinement + 1;
-  const disabled =
-    currentRefinement === nbPages || nbPages === 0
-      ? "cursor-not-allowed opacity-25"
-      : "";
+  const disabled = currentRefinement === nbPages || nbPages === 0 ? "cursor-not-allowed opacity-25" : "";
   return !showNext ? null : (
     <div className="-mt-px w-0 flex-1 flex justify-end">
       <a

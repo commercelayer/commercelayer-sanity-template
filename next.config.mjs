@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  images: {
+    remotePatterns: [{ hostname: "cdn.sanity.io" }, { hostname: "data.commercelayer.app" }]
+  },
   env: {
     JSCOV: 0,
     NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
@@ -9,8 +12,8 @@ const nextConfig = {
     BUILD_LANGUAGES: process.env.BUILD_LANGUAGES,
     BUILD_CMS: process.env.BUILD_CMS,
     CL_CLIENT_ID: process.env.CL_CLIENT_ID,
-    CL_ENDPOINT: process.env.CL_ENDPOINT,
-  },
-}
+    CL_ENDPOINT: process.env.CL_ENDPOINT
+  }
+};
 
 export default nextConfig;

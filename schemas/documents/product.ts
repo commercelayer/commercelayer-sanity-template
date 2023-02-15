@@ -2,8 +2,7 @@ import { TfiShoppingCartFull } from "react-icons/tfi";
 import { defineField, defineType } from "sanity";
 import supportedLanguages from "../locale/supportedLanguages";
 
-const baseLanguage =
-  supportedLanguages.find((l) => l.isDefault) || supportedLanguages[0];
+const baseLanguage = supportedLanguages.find((l) => l.isDefault) || supportedLanguages[0];
 
 export default defineType({
   name: "product",
@@ -16,24 +15,24 @@ export default defineType({
       name: "name",
       title: "Name",
       type: "localeString",
-      validation: (rule) => rule.required(),
+      validation: (rule) => rule.required()
     }),
     defineField({
       name: "description",
       title: "Description",
-      type: "localeText",
+      type: "localeText"
     }),
     defineField({
       name: "slug",
       title: "Slug",
       type: "localeSlug",
-      validation: (rule) => rule.required(),
+      validation: (rule) => rule.required()
     }),
     defineField({
       name: "reference",
       title: "Reference",
       type: "string",
-      validation: (rule) => rule.required(),
+      validation: (rule) => rule.required()
     }),
     defineField({
       name: "images",
@@ -43,11 +42,11 @@ export default defineType({
         {
           type: "reference",
           to: {
-            type: "productImage",
-          },
-        },
+            type: "productImage"
+          }
+        }
       ],
-      validation: (rule) => rule.required(),
+      validation: (rule) => rule.required()
     }),
     defineField({
       name: "variants",
@@ -57,26 +56,26 @@ export default defineType({
         {
           type: "reference",
           to: {
-            type: "variant",
-          },
-        },
+            type: "variant"
+          }
+        }
       ],
-      validation: (rule) => rule.required(),
-    }),
+      validation: (rule) => rule.required()
+    })
   ],
 
   preview: {
     select: {
       title: `name.${baseLanguage.id}`,
       subtitle: `slug.${baseLanguage.id}.current`,
-      media: "images.0.images",
+      media: "images.0.images"
     },
     prepare({ title, subtitle, media }) {
       return {
         title: title,
         subtitle: `/${subtitle}`,
-        media: media,
+        media: media
       };
-    },
-  },
+    }
+  }
 });

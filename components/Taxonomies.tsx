@@ -1,5 +1,6 @@
-import _ from "lodash";
 import React, { Fragment, useEffect, useState } from "react";
+import Image from "next/image";
+import _ from "lodash";
 import ProductsList from "./ProductsList";
 // import Link from 'next/link'
 
@@ -16,12 +17,7 @@ type Props = {
   lang?: string;
 };
 
-const Taxonomies = ({
-  taxonomies,
-  activeAlgolia,
-  algoliaStatus,
-  searchEngine,
-}: Props) => {
+const Taxonomies = ({ taxonomies, activeAlgolia, algoliaStatus, searchEngine }: Props) => {
   const [on, setOn] = useState<Record<string, number>>({ "0": 0 });
   const [currentProducts, setCurrentProducts] = useState([]);
   useEffect(() => {
@@ -43,9 +39,7 @@ const Taxonomies = ({
         <li key={i}>
           {/* <!-- On: "bg-indigo-50 border-indigo-200 z-10", Off: "border-gray-200" --> */}
           <div
-            className={`${
-              checked ? `bg-blue-50 border-blue-200 z-10` : "border-gray-200"
-            } ${
+            className={`${checked ? "bg-blue-50 border-blue-200 z-10" : "border-gray-200"} ${
               disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
             } border rounded-md p-4 my-1`}
             onClick={() => !disabled && setOn(checkedKey)}
@@ -55,14 +49,10 @@ const Taxonomies = ({
                 disabled ? "cursor-not-allowed" : "cursor-pointer"
               } flex items-center text-sm justify-between`}
             >
-              <span className="ml-3 font-medium text-sm text-gray-900 flex-grow">
-                {initialName}
-              </span>
+              <span className="ml-3 font-medium text-sm text-gray-900 flex-grow">{initialName}</span>
               <span
                 className={`${
-                  checked
-                    ? "bg-gray-900 text-gray-50"
-                    : "bg-gray-100 text-gray-600"
+                  checked ? "bg-gray-900 text-gray-50" : "bg-gray-100 text-gray-600"
                 } ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium leading-5`}
               >
                 {pQuantity}
@@ -74,9 +64,7 @@ const Taxonomies = ({
     });
     return (
       <div className="my-4" key={k}>
-        <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-4">
-          {t?.label || t.name}
-        </h2>
+        <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-4">{t?.label || t.name}</h2>
         <fieldset>
           <legend className="sr-only">Taxon</legend>
           <ul className=" bg-white rounded-md -space-y-px">{taxonCard}</ul>
@@ -108,7 +96,7 @@ const Taxonomies = ({
                 ></span>
               </button>
               <span className="ml-3" id="toggleLabel">
-                <img title="Algolia" src="/algolia.svg" />
+                <Image title="Algolia" src="/algolia.svg" alt="Algolia's Logo" fill />
               </span>
             </Fragment>
           )}

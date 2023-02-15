@@ -13,7 +13,7 @@ const SearchBox = ({
   isSearchStalled,
   refine,
   className = "w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-sm border-gray-300 rounded-md",
-  placeholder = "Search products...",
+  placeholder = "Search products..."
 }: Props) => (
   <form noValidate action="" role="search">
     <input

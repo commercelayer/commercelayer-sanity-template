@@ -1,10 +1,6 @@
-import React, {
-  useContext,
-  useState,
-  FunctionComponent,
-  useEffect,
-} from "react";
+import React, { useContext, useState, FunctionComponent, useEffect } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
+import Image from "next/image";
 import _ from "lodash";
 import Layout from "@components/Layout";
 import {
@@ -14,7 +10,7 @@ import {
   OrderContainer,
   LineItemsContainer,
   AddToCartButton,
-  OrderStorage,
+  OrderStorage
 } from "@commercelayer/react-components";
 import LayoutContext from "@context/LayoutContext";
 import { useGetToken } from "@hooks/GetToken";
@@ -44,11 +40,7 @@ const AddToCartCustom = (props: any) => {
     if (success && handleAnimation) handleAnimation(e);
   };
   return (
-    <button
-      disabled={disabled}
-      className={className}
-      onClick={customHandleClick}
-    >
+    <button disabled={disabled} className={className} onClick={customHandleClick}>
       {label}
     </button>
   );
@@ -63,14 +55,14 @@ const ProductPage: FunctionComponent<Props> = ({
   marketId,
   buildLanguages,
   cms,
-  countries,
+  countries
 }) => {
   const router = useRouter();
   const token = useGetToken({
     clientId,
     endpoint,
     scope: marketId,
-    countryCode: router.query?.countryCode as string,
+    countryCode: router.query?.countryCode as string
   });
   const imgUrl = parseImg(_.first(product?.images)?.url as string, cms);
   const firstVariantCode = _.first(product?.variants)?.code as string;
@@ -80,8 +72,8 @@ const ProductPage: FunctionComponent<Props> = ({
       code: variant.code,
       lineItem: {
         name: product.name,
-        imageUrl: _.first(variant.images)?.url,
-      },
+        imageUrl: _.first(variant.images)?.url
+      }
     };
   });
   const handleBackTo = (e: any) => {
@@ -100,42 +92,35 @@ const ProductPage: FunctionComponent<Props> = ({
     <CommerceLayer accessToken={token} endpoint={endpoint}>
       <OrderStorage persistKey={`order-${countryCode}`}>
         <OrderContainer attributes={{ language_code: languageCode }}>
-          <Layout
-            cms={cms}
-            title={product.name}
-            lang={lang}
-            buildLanguages={buildLanguages}
-            countries={countries}
-          >
+          <Layout cms={cms} title={product.name} lang={lang} buildLanguages={buildLanguages} countries={countries}>
             <LineItemsContainer>
               <div className="container mx-auto max-w-screen-lg px-5 lg:px-0 text-sm text-gray-700">
                 <a href="#" onClick={handleBackTo}>
-                  <img
+                  <Image
                     title="back"
                     src="/back.svg"
                     className="w-5 h-5 inline-block"
+                    alt="Back to previous page SVG icon"
+                    width={20}
+                    height={20}
                   />
-                  <p className="ml-2 hover:underline inline-block align-middle">
-                    {locale[lang].backToAllProducts}
-                  </p>
+                  <p className="ml-2 hover:underline inline-block align-middle">{locale[lang].backToAllProducts}</p>
                 </a>
               </div>
               <div className="container mx-auto max-w-screen-lg py-10 lg:py-16 flex flex-row">
                 <div className="flex flex-wrap sm:flex-nowrap sm:space-x-5 px-5 lg:px-0">
                   <div className="w-full pb-5 lg:pb-0">
-                    <img
+                    <Image
                       alt={product.name}
                       className="w-full object-center rounded border border-gray-200"
                       src={imgUrl}
+                      width={500}
+                      height={500}
                     />
                   </div>
                   <div className="w-full">
-                    <h2 className="text-sm title-font text-gray-500 tracking-widest">
-                      BRAND
-                    </h2>
-                    <h1 className="text-gray-900 text-3xl title-font font-medium my-3">
-                      {product.name}
-                    </h1>
+                    <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND</h2>
+                    <h1 className="text-gray-900 text-3xl title-font font-medium my-3">{product.name}</h1>
                     <p className="leading-relaxed">{product.description}</p>
                     <div className="flex items-center border-b-2 border-gray-200 py-5">
                       <div className="flex items-center">
@@ -200,33 +185,24 @@ const ProductPage: FunctionComponent<Props> = ({
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: true,
+    fallback: true
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const lang = params?.lang as string;
   const cms = process.env.BUILD_CMS;
-  const countryCode =
-    params?.countryCode || process.env.BUILD_COUNTRY?.toLowerCase();
+  const countryCode = params?.countryCode || process.env.BUILD_COUNTRY?.toLowerCase();
   const slug = params?.product;
-  const countries = _.has(cmsFunctions, `${cms}AllCountries`)
-    ? await cmsFunctions[`${cms}AllCountries`](lang)
-    : {};
+  const countries = _.has(cmsFunctions, `${cms}AllCountries`) ? await cmsFunctions[`${cms}AllCountries`](lang) : {};
   const buildLanguages = _.compact(
     process.env.BUILD_LANGUAGES?.split(",").map((l) => {
-      const country = countries.find(
-        (country: Country) => country.code === parseLanguageCode(l)
-      );
+      const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
       return !_.isEmpty(country) ? country : null;
     })
   );
-  const country = countries.find(
-    (country: Country) => country.code.toLowerCase() === countryCode
-  );
-  const product = _.has(cmsFunctions, `${cms}GetProduct`)
-    ? await cmsFunctions[`${cms}GetProduct`](slug, lang)
-    : {};
+  const country = countries.find((country: Country) => country.code.toLowerCase() === countryCode);
+  const product = _.has(cmsFunctions, `${cms}GetProduct`) ? await cmsFunctions[`${cms}GetProduct`](slug, lang) : {};
   return {
     props: {
       product,
@@ -237,9 +213,9 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       marketId: `market:${country?.marketId}`,
       buildLanguages,
       cms: process.env.BUILD_CMS,
-      countries,
+      countries
     },
-    revalidate: 60,
+    revalidate: 60
   };
 };
 

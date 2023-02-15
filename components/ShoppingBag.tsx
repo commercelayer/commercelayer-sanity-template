@@ -15,7 +15,7 @@ import {
   TaxesAmount,
   GiftCardAmount,
   TotalAmount,
-  CheckoutLink,
+  CheckoutLink
 } from "@commercelayer/react-components";
 import locale from "@locale/index";
 import { Transition } from "@headlessui/react";
@@ -24,23 +24,11 @@ type CustomRemoveLinkProps = {
   handleRemove: (e: any) => void;
 };
 
-const CustomRemoveLink: FunctionComponent<CustomRemoveLinkProps> = ({
-  handleRemove,
-}) => {
+const CustomRemoveLink: FunctionComponent<CustomRemoveLinkProps> = ({ handleRemove }) => {
   return (
     <a title="Remove" href="#" onClick={handleRemove}>
-      <svg
-        className="h-6 w-6 text-red-600"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M6 18L18 6M6 6l12 12"
-        />
+      <svg className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </a>
   );
@@ -52,15 +40,9 @@ type Props = {
   active: boolean;
 };
 
-const ShoppingBag: React.FunctionComponent<Props> = ({
-  handleAnimation,
-  lang = "en-us",
-  active,
-}) => {
+const ShoppingBag: React.FunctionComponent<Props> = ({ handleAnimation, lang = "en-us", active }) => {
   return (
-    <div
-      className={`fixed inset-0 overflow-hidden ${!active ? "hidden" : "z-10"}`}
-    >
+    <div className={`fixed inset-0 overflow-hidden ${!active ? "hidden" : "z-10"}`}>
       <div className="absolute inset-0 overflow-hidden">
         <Transition
           show={active}
@@ -71,10 +53,7 @@ const ShoppingBag: React.FunctionComponent<Props> = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div
-            className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-            aria-hidden="true"
-          ></div>
+          <div className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
         </Transition>
         <section
           className="absolute inset-y-0 right-0 pl-10 max-w-full flex overflow-auto"
@@ -95,8 +74,7 @@ const ShoppingBag: React.FunctionComponent<Props> = ({
                 <header className="px-4 sm:px-6">
                   <div className="flex items-start justify-between space-x-3">
                     <h2 className="text-lg leading-7 font-medium text-gray-900">
-                      {locale[lang].yourShoppingCart} <LineItemsCount />{" "}
-                      {locale[lang].items}
+                      {locale[lang].yourShoppingCart} <LineItemsCount /> {locale[lang].items}
                     </h2>
                     <div className="h-7 flex items-center">
                       <button
@@ -104,18 +82,8 @@ const ShoppingBag: React.FunctionComponent<Props> = ({
                         className="text-gray-400 hover:text-gray-500 transition ease-in-out duration-150"
                         onClick={handleAnimation}
                       >
-                        <svg
-                          className="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M6 18L18 6M6 6l12 12"
-                          />
+                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                       </button>
                     </div>
@@ -128,10 +96,7 @@ const ShoppingBag: React.FunctionComponent<Props> = ({
                       <div className="flex flex-row flex-wrap items-center">
                         <div className="flex flex-col flex-shrink">
                           <LineItemName className="font-bold text-sm md:text-base" />
-                          <LineItemAmount
-                            type="unit"
-                            className="text-xs md:text-sm"
-                          />
+                          <LineItemAmount type="unit" className="text-xs md:text-sm" />
                         </div>
                         <div className="py-2 flex flex-row items-center md:justify-between">
                           <LineItemQuantity
@@ -142,18 +107,14 @@ const ShoppingBag: React.FunctionComponent<Props> = ({
                           <LineItemAmount className="font-extrabold ml-3 px-2 text-sm" />
                         </div>
                       </div>
-                      <LineItemRemoveLink>
-                        {CustomRemoveLink}
-                      </LineItemRemoveLink>
+                      <LineItemRemoveLink>{CustomRemoveLink}</LineItemRemoveLink>
                     </div>
                   </LineItem>
                 </div>
               </LineItemsContainer>
               <div className="flex flex-col py-5 w-5/6 mx-auto">
                 <div className="flex flex-row justify-between pb-2">
-                  <span className="font-extrabold">
-                    {locale[lang].subTotal}:
-                  </span>
+                  <span className="font-extrabold">{locale[lang].subTotal}:</span>
                   <SubTotalAmount />
                 </div>
                 <div className="flex flex-row justify-between text-gray-600 pb-2 text-sm">

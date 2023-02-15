@@ -2,8 +2,7 @@ import { BiCheckboxSquare } from "react-icons/bi";
 import { defineField, defineType } from "sanity";
 import supportedLanguages from "../locale/supportedLanguages";
 
-const baseLanguage =
-  supportedLanguages.find((l) => l.isDefault) || supportedLanguages[0];
+const baseLanguage = supportedLanguages.find((l) => l.isDefault) || supportedLanguages[0];
 
 export default defineType({
   name: "taxon",
@@ -16,26 +15,26 @@ export default defineType({
       name: "name",
       title: "Name",
       type: "localeString",
-      validation: (rule) => rule.required().error("A name is required"),
+      validation: (rule) => rule.required().error("A name is required")
     }),
     defineField({
       name: "label",
       title: "Label",
-      type: "localeString",
+      type: "localeString"
     }),
     defineField({
       name: "slug",
       title: "Slug",
       type: "localeSlug",
       options: {
-        source: "Name",
+        source: "Name"
       },
-      validation: (rule) => rule.required().error("A slug is required"),
+      validation: (rule) => rule.required().error("A slug is required")
     }),
     defineField({
       name: "description",
       title: "Description",
-      type: "localeText",
+      type: "localeText"
     }),
     defineField({
       name: "products",
@@ -45,12 +44,11 @@ export default defineType({
         {
           type: "reference",
           to: {
-            type: "product",
-          },
-        },
+            type: "product"
+          }
+        }
       ],
-      validation: (rule) =>
-        rule.required().error("One or more products are required"),
+      validation: (rule) => rule.required().error("One or more products are required")
     }),
     defineField({
       name: "taxons",
@@ -60,16 +58,16 @@ export default defineType({
         {
           type: "reference",
           to: {
-            type: "taxon",
-          },
-        },
-      ],
-    }),
+            type: "taxon"
+          }
+        }
+      ]
+    })
   ],
 
   preview: {
     select: {
-      title: `name.${baseLanguage.id}`,
-    },
-  },
+      title: `name.${baseLanguage.id}`
+    }
+  }
 });

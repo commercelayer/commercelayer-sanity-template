@@ -2,8 +2,7 @@ import { TfiFlagAlt2 } from "react-icons/tfi";
 import { defineField, defineType } from "sanity";
 import supportedLanguages from "../locale/supportedLanguages";
 
-const baseLanguage =
-  supportedLanguages.find((l) => l.isDefault) || supportedLanguages[0];
+const baseLanguage = supportedLanguages.find((l) => l.isDefault) || supportedLanguages[0];
 
 export default defineType({
   name: "country",
@@ -16,20 +15,14 @@ export default defineType({
       name: "name",
       title: "Name",
       type: "localeString",
-      validation: (rule) => rule.required().error("A name is required"),
+      validation: (rule) => rule.required().error("A name is required")
     }),
     defineField({
       name: "code",
       title: "Code",
       type: "string",
       validation: (rule) =>
-        rule
-          .required()
-          .min(2)
-          .max(4)
-          .error(
-            "A code of min. 2 characters and max. 4 characters is required"
-          ),
+        rule.required().min(2).max(4).error("A code of min. 2 characters and max. 4 characters is required")
     }),
     defineField({
       name: "catalog",
@@ -37,39 +30,39 @@ export default defineType({
       type: "reference",
       to: [
         {
-          type: "catalog",
-        },
+          type: "catalog"
+        }
       ],
-      validation: (rule) => rule.required().error("A catalog is required"),
+      validation: (rule) => rule.required().error("A catalog is required")
     }),
     defineField({
       name: "marketId",
       title: "Market Id",
       type: "string",
-      validation: (rule) => rule.required().error("A market ID is required"),
+      validation: (rule) => rule.required().error("A market ID is required")
     }),
     defineField({
       name: "image",
       title: "Image",
       type: "image",
-      validation: (rule) => rule.required().error("An image is required"),
+      validation: (rule) => rule.required().error("An image is required")
     }),
     defineField({
       name: "defaultLocale",
       title: "DefaultLocale",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "domain",
       title: "Domain",
-      type: "string",
-    }),
+      type: "string"
+    })
   ],
 
   preview: {
     select: {
       title: `name.${baseLanguage.id}`,
-      media: "image",
-    },
-  },
+      media: "image"
+    }
+  }
 });
