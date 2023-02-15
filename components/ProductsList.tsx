@@ -26,7 +26,7 @@ const ProductsList = ({ products }: Props) => {
               <Link href={"/[countryCode]/[lang]/[productName]"} as={`/${countryCode}/${lang}/${slug}`} passHref>
                 <div className="flex flex-col h-full shadow-lg rounded-lg p-5 md:p-3 cursor-pointer hover:opacity-75 hover:shadow-2xl">
                   <div className="aspect-w-3 aspect-h-2 mb-5">
-                    <Image className="object-contain" src={`${img}`} alt="" fill />
+                    <Image className="object-contain" src={`${img}`} alt="" width={200} height={50} />
                   </div>
                   <div className="text-base leading-6 font-medium space-y-1 justify-self-start h-full">
                     <h3>{name}</h3>
@@ -43,9 +43,9 @@ const ProductsList = ({ products }: Props) => {
                         </PricesContainer>
                       </li>
                       <li>
-                        <a className="inline-flex uppercase items-center p-2 border border-gray-300 shadow-sm text-xs font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <span className="inline-flex uppercase items-center p-2 border border-gray-300 shadow-sm text-xs font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                           {locale[lang as string].viewMore}
-                        </a>
+                        </span>
                       </li>
                     </ul>
                   </div>

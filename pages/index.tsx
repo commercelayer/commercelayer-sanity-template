@@ -22,7 +22,12 @@ const IndexPage = (props: Props) => {
         <Countries items={countries} cms={cms} searchBy={searchEngine} />
       </div>
       {/* Consider removing this in production */}
-      <Link href="/studio" className="text-center block text-sm text-gray-700 hover:text-gray-900">
+      <Link
+        href="/studio"
+        target="_blank"
+        rel="noreferrer noopener"
+        className="text-center block text-sm text-gray-700 hover:text-gray-900"
+      >
         Go to Sanity Studio &rarr;
       </Link>
     </Layout>

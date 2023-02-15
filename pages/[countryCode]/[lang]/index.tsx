@@ -105,7 +105,7 @@ const FilterPage: NextPage<Props> = ({
                         ></span>
                       </button>
                       <span className="ml-3" id="toggleLabel">
-                        <Image title="Algolia" src="/algolia.svg" alt="Algolia's Logo" />
+                        <Image title="Algolia" src="/algolia.svg" alt="Algolia's Logo" width={200} height="50" />
                       </span>
                     </div>
                     <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-4">

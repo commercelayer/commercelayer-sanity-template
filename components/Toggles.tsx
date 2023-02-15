@@ -22,7 +22,7 @@ const Toggles = ({ items = [], isOn, setIsOn, type = "checkbox" }: Props) => {
     };
     return (
       <div key={k} className="flex flew-row justify-center px-5">
-        <Image className="h-8 mx-5" src={src} alt="" fill />
+        <Image className="h-8 mx-5" src={src} alt="" width={200} height={50} />
         <span
           role="checkbox"
           tabIndex={0}
