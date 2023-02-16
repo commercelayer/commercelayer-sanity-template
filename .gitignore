@@ -12,6 +12,10 @@
 /.next/
 /out/
 
+# sanity
+/.sanity/
+/dist/
+
 # production
 /build
 /public/studio

@@ -17,7 +17,8 @@ const locale: Locale = {
     language: "language",
     languages: {
       "en-us": "english",
-      "it-it": "italian"
+      "it-it": "italian",
+      "fr-fr": "french"
     },
     method: "method",
     outOfStock: "The requested quantity is not available",
@@ -44,7 +45,7 @@ const locale: Locale = {
     emptyProducts: "No products",
     emptyFilters: "No results found",
     shipping: "Shipping",
-    algoliaCategory: "category"
+    algoliaCategory: "Algolia category"
   },
   "it-it": {
     addToCart: "Aggiungi al carrello",
@@ -58,7 +59,8 @@ const locale: Locale = {
     language: "lingua",
     languages: {
       "en-us": "inglese",
-      "it-it": "italiano"
+      "it-it": "italiano",
+      "fr-fr": "francese"
     },
     method: "metodo",
     outOfStock: "La quantità richiesta non è disponibile",
@@ -67,7 +69,7 @@ const locale: Locale = {
     selectSize: "Seleziona la tua taglia",
     shippingTo: "Spedizione",
     yourShoppingCart: "Il tuo carrello contiene",
-    searchTitle: `Trova tutto all'istante`,
+    searchTitle: "Trova tutto all'istante",
     sortBy: "Ordina per",
     featured: "In evidenza",
     highestPrice: "Prezzo più alto",
@@ -85,7 +87,49 @@ const locale: Locale = {
     shipping: "Spedizione",
     emptyProducts: "Nessun prodotto",
     emptyFilters: "Nessun risultato trovato",
-    algoliaCategory: "categoria"
+    algoliaCategory: "Algolia categoria"
+  },
+  "fr-fr": {
+    addToCart: "Ajouter au panier",
+    available: "disponible",
+    notAvailable: "Pas disponible",
+    categories: "catégories",
+    continueShopping: "Continuer vos achats",
+    shoppingBag: "Sac de courses",
+    days: "jours",
+    freeOver: "libre sur",
+    language: "langue",
+    languages: {
+      "en-us": "anglais",
+      "it-it": "italian",
+      "fr-fr": "français"
+    },
+    method: "méthode",
+    outOfStock: "La quantité demandée n'est pas disponible",
+    price: "prix",
+    proceedToCheckout: "Passer à la caisse",
+    selectSize: "Select your size",
+    shippingTo: "Sélectionnez votre taille",
+    yourShoppingCart: "Votre panier contient",
+    searchTitle: "Trouvez tout instantanément",
+    sortBy: "Trier par",
+    featured: "Mis en exergue",
+    highestPrice: "Prix le plus élevé",
+    lowestPrice: "Prix le plus bas",
+    searchPlaceholder: "Cherche ici...",
+    backToAllProducts: "Retour à tous les produits",
+    reviews: "Commentaires",
+    total: "Total",
+    subTotal: "Subtotal",
+    discount: "Rabais",
+    taxes: "Impôts",
+    giftCard: "Carte cadeau",
+    items: "articles",
+    viewMore: "voir plus",
+    emptyProducts: "Aucun produit",
+    emptyFilters: "Aucun résultat trouvé",
+    shipping: "Expédition",
+    algoliaCategory: "Algolia catégorie"
   }
 };
 
