@@ -1,3 +1,7 @@
 {
-  "extends": ["github>sanity-io/renovate-presets:sanity-template"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>sanity-io/renovate-presets//ecosystem/auto",
+    "github>sanity-io/renovate-presets//ecosystem/studio-v3"
+  ]
 }

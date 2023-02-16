@@ -95,7 +95,6 @@
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.3.1",
     "@next/eslint-plugin-next": "^13.1.6",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
@@ -112,7 +111,6 @@
     "eslint": "^8.34.0",
     "eslint-config-next": "^13.1.6",
     "eslint-config-prettier": "^8.6.0",
-    "netlify-plugin-inline-functions-env": "^1.0.9",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-preset-env": "^7.4.1",
     "prettier": "^2.5.1",
