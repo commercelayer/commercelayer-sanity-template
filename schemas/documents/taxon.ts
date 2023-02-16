@@ -48,7 +48,7 @@ export default defineType({
           }
         }
       ],
-      validation: (rule) => rule.required().error("One or more products are required")
+      validation: (rule) => rule.warning("One or more products are required")
     }),
     defineField({
       name: "taxons",
