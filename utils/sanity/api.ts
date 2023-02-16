@@ -1,10 +1,10 @@
-import sanityClient from "@sanity/client";
-import { Product, Taxon, Taxonomy, Variant } from "@typings/models";
-import { parseLocale } from "@utils/parser";
+import { createClient, groq } from "next-sanity";
 import _ from "lodash";
+import { Product, Taxon, Taxonomy, Variant } from "@typings/models";
 import { SanityCountry, SanityProduct, SanityTaxon, SanityTaxonomy, SanityVariant } from "./typings";
+import { parseLocale } from "@utils/parser";
 
-const client = sanityClient({
+const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
   apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION as string,
@@ -13,7 +13,7 @@ const client = sanityClient({
 
 const sanityAllCountries = async (locale = "en-US") => {
   const lang = parseLocale(locale, "_", "-", "lowercase");
-  const query = `*[_type == "country"]{
+  const query = groq`*[_type == "country"]{
     name,
     code,
     marketId,
@@ -89,9 +89,10 @@ const parsingTaxonomies = (taxonomies: SanityTaxonomy[], locale = "en-US"): Taxo
   });
   return items;
 };
+
 const sanityAllTaxonomies = async (catalogId: string, locale = "en-US") => {
   // const newLocale = getLocale(locale)
-  const query = `*[_type == "catalog" && _id == '${catalogId}']{
+  const query = groq`*[_type == "catalog" && _id == '${catalogId}']{
     'taxonomies': taxonomies[]->{
       label,
       name,
@@ -121,7 +122,7 @@ const sanityAllTaxonomies = async (catalogId: string, locale = "en-US") => {
 
 const sanityGetProduct = async (slug: string, locale = "en-US") => {
   const lang = parseLocale(locale, "_", "-", "lowercase");
-  const query = `*[_type == "product" && slug["${lang}"].current == "${slug}"]{
+  const query = groq`*[_type == "product" && slug["${lang}"].current == "${slug}"]{
     name,
     description,
     reference,
@@ -143,8 +144,10 @@ const sanityGetProduct = async (slug: string, locale = "en-US") => {
   return parsingProduct(_.first(item), lang);
 };
 
-export default {
+const sanityData = {
   sanityAllCountries,
   sanityAllTaxonomies,
   sanityGetProduct
 };
+
+export default sanityData;

@@ -1,10 +1,16 @@
 import _ from "lodash";
 
 export const parseCategoryName = (categoryName: string): string =>
-  categoryName.toLowerCase().trim().replace("&", "and").split(" ").join("-");
+  categoryName.toLowerCase().trim()
+.replace("&", "and")
+.split(" ")
+.join("-");
 
 export const parseProductName = (productName: string): string =>
-  _.first(productName.toLowerCase().trim().split(" ").join("-").split("-(")) || "";
+  _.first(productName.toLowerCase().trim()
+.split(" ")
+.join("-")
+.split("-(")) || "";
 export const parseLanguageCode = (
   languageCode: string,
   style?: "toUpperCase" | "toLowerCase",

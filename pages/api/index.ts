@@ -1,16 +1,16 @@
-import sanityClient from "@sanity/client";
+import { createClient, groq } from "next-sanity";
 import _ from "lodash";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const querySanity = async (_req: NextApiRequest, res: NextApiResponse) => {
-  const client = sanityClient({
+  const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
     apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION as string,
     token: process.env.NEXT_PUBLIC_SANITY_TOKEN as string, // or leave blank to be anonymous user
     useCdn: false // `false` if you want to ensure fresh data
   });
-  const query = "*[_type == \"variant\"]";
+  const query = groq`*[_type == \"variant\"]`;
   const items = await client.fetch<any[]>(query);
   const update = await Promise.all(
     items.map((item) => {
