@@ -14,7 +14,7 @@
     "format": "npx prettier --write . --ignore-path .gitignore",
     "lint": "next lint -- --ignore-path .gitignore",
     "lint:fix": "npm run format && npm run lint -- --fix",
-    "sanity-export": "sanity dataset export production ../.sanity-template/data/production.tar.gz"
+    "export": "sanity dataset export production ./data/production.tar.gz"
   },
   "repository": {
     "type": "git",
