@@ -1,36 +1,39 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# Testing
 /coverage
 
-# next.js
+# Next.js
 /.next/
 /out/
 
-# sanity
+# Sanity
 /.sanity/
 /dist/
 
-# production
+# Netlify
+.netlify
+
+# Production
 /build
 /public/studio
 
-# misc
+# Misc
 .vscode
 .DS_Store
 *.pem
 
-# debug
+# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
+# Local env files
 .env
 .env.local
 .env.development.local

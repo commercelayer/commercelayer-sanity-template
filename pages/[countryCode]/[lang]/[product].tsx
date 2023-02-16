@@ -120,7 +120,8 @@ const ProductPage: FunctionComponent<Props> = ({
                   </div>
                   <div className="w-full">
                     <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND</h2>
-                    <h1 className="text-gray-900 text-3xl title-font font-medium my-3">{product.name}</h1>
+                    <p className="text-gray-900 text-3xl title-font font-medium my-3">{product.name}</p>
+                    <p className="text-gray-600 text-xl title-font font-medium my-3">{selectedVariant}</p>
                     <p className="leading-relaxed">{product.description}</p>
                     <div className="flex items-center border-b-2 border-gray-200 py-5">
                       <div className="flex items-center">
