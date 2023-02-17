@@ -1,7 +1,7 @@
 {
   "name": "sanity-template-commercelayer",
   "version": "1.1.0",
-  "description": "A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity Studio, and deployed to Netlify.",
+  "description": "A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity studio, and deployed to Netlify.",
   "private": true,
   "scripts": {
     "dev": "next",

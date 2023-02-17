@@ -7,7 +7,7 @@ type Props = {
 
 const title = process.env.NEXT_PUBLIC_SITE_NAME || "Commerce Layer Sanity Template";
 const description =
-  "A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity Studio, and deployed to Netlify.";
+  "A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity studio, and deployed to Netlify.";
 const keywords =
   "Commerce Layer, Reactjs, Nextjs, Sanity Studio, Netlify, Nextjs Template, Sanity Template, Ecommerce Template, Ecommerce";
 const url = process.env.NEXT_PUBLIC_SITE_URL || "https://commercelayer-sanity-template.netlify.app";
