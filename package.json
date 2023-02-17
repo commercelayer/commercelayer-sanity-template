@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "postbuild": "next-sitemap",
     "start": "next start",
     "format": "npx prettier --write . --ignore-path .gitignore",
     "lint": "next lint -- --ignore-path .gitignore",
