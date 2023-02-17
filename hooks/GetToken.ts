@@ -27,6 +27,6 @@ export const useGetToken: UseGetToken = ({ clientId, endpoint, countryCode, scop
     } else {
       setToken(getCookieToken || "");
     }
-  });
+  }, [countryCode, clientId, endpoint, scope]);
   return token;
 };
