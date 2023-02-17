@@ -91,7 +91,7 @@ const ProductPage: FunctionComponent<Props> = ({
     <CommerceLayer accessToken={token} endpoint={endpoint}>
       <OrderStorage persistKey={`order-${countryCode}`}>
         <OrderContainer attributes={{ language_code: languageCode }}>
-          <Layout cms={cms} title={product.name} lang={lang} buildLanguages={buildLanguages} countries={countries}>
+          <Layout cms={cms} pageTitle={product.name} lang={lang} buildLanguages={buildLanguages} countries={countries}>
             <div className="container mx-auto max-w-screen-lg px-5 lg:px-0 text-sm text-gray-700">
               <a href="#" onClick={handleBackTo}>
                 <Image

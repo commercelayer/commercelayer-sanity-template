@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import SEOHead from "@components/SEO";
 import { LineItemsContainer, LineItemsCount } from "@commercelayer/react-components";
 import ShoppingBag from "./ShoppingBag";
 import LayoutContext from "@context/LayoutContext";
@@ -21,16 +21,17 @@ type Props = {
   buildLanguages?: Country[];
   countries?: Country[];
   cms: string;
+  pageTitle?: string;
 };
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
-  title = "This is the default title",
   showMenu = true,
+  cms,
+  pageTitle,
   lang = "en-us",
   buildLanguages = [],
-  countries = [],
-  cms
+  countries = []
 }) => {
   const [animation, setAnimation] = useState(false);
   const [burgerMenu, setBurgerMenu] = useState(false);
@@ -41,11 +42,7 @@ const Layout: React.FunctionComponent<Props> = ({
   const opacity = animation ? "opacity-25 transition ease-in duration-300" : "transition ease-in duration-300";
   return (
     <LayoutContext.Provider value={{ handleAnimation }}>
-      <Head>
-        <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+      <SEOHead productName={pageTitle} />
       <div className="relative bg-gray-50 overflow-hidden ">
         <div className="relative pt-5 pb-10 px-5 lg:px-0 lg:pb-16 max-w-screen-lg mx-auto">
           <div className="max-w-7xl mx-auto">

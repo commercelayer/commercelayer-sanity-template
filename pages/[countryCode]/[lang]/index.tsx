@@ -74,13 +74,7 @@ const FilterPage: NextPage<Props> = ({
     <CommerceLayer accessToken={token} endpoint={endpoint}>
       <OrderStorage persistKey={`order-${code}`}>
         <OrderContainer attributes={{ language_code: languageCode }}>
-          <Layout
-            title="Commerce Layer Sanity Starter"
-            buildLanguages={buildLanguages}
-            countries={countries}
-            lang={lang}
-            cms={cms}
-          >
+          <Layout cms={cms} lang={lang} buildLanguages={buildLanguages} countries={countries}>
             {showSearch ? (
               <InstantSearch searchClient={searchClient} indexName={indexName}>
                 <Configure facetingAfterDistinct />

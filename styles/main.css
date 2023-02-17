@@ -1,3 +1,7 @@
+@import url("//data.commercelayer.app/assets/fonts/eina01.min.css");
+@import url("//data.commercelayer.app/assets/fonts/fontawesome.min.css");
+/* @import url("//data.commercelayer.app/assets/css/commercelayer.min.css"); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
