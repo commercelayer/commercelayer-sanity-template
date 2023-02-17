@@ -1,5 +1,7 @@
 # Commerce Layer Sanity Template
 
+[![Release](https://github.com/commercelayer/commercelayer-sanity-template/actions/workflows/release.yml/badge.svg)](https://github.com/commercelayer/commercelayer-sanity-template/actions/workflows/release.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/f27e93e5-5989-4afc-835b-7ab26a5f5cd2/deploy-status)](https://app.netlify.com/sites/commercelayer-sanity-template/deploys)
+
 A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity studio, and deployed to Netlify.
 
 [![A preview image showing the frontend demo with some products.](./public/preview.gif)](https://commercelayer-sanity-template.netlify.app)
