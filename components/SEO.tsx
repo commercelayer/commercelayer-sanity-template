@@ -5,12 +5,12 @@ type Props = {
   productName?: string;
 };
 
-const title = "Commerce Layer Sanity Template";
+const title = process.env.NEXT_PUBLIC_SITE_NAME || "Commerce Layer Sanity Template";
 const description =
   "A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity Studio, and deployed to Netlify.";
 const keywords =
   "Commerce Layer, Reactjs, Nextjs, Sanity Studio, Netlify, Nextjs Template, Sanity Template, Ecommerce Template, Ecommerce";
-const url = "https://commercelayer-sanity-template.netlify.app";
+const url = process.env.NEXT_PUBLIC_SITE_URL || "https://commercelayer-sanity-template.netlify.app";
 const twitterHandle = "@commercelayer";
 const ogImage = "/seo/og-image.png";
 const favicon = "//data.commercelayer.app/assets/images/favicons/favicon.ico";
