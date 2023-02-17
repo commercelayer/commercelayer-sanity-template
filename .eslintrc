@@ -1,0 +1,28 @@
+{
+  "extends": ["eslint:recommended", "next", "prettier"],
+  "rules": {
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "jsx-quotes": ["error", "prefer-double"],
+    "quotes": ["error", "double", "avoid-escape"],
+    "dot-location": ["error", "property"],
+    "no-multi-spaces": "error",
+    "array-bracket-spacing": ["error", "never"],
+    "semi": ["error", "always"],
+    "semi-style": ["error", "last"],
+    "space-in-parens": ["error", "never"],
+    "array-element-newline": ["error", "consistent"],
+    "object-curly-spacing": ["error", "always"],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-dangle": ["error", "never"],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "no-trailing-spaces": "error",
+    "no-unused-vars": "off"
+  }
+}

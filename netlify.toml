@@ -1,22 +1,12 @@
-[build]
-  base = "/"
-  publish = ".next"
-  command = "npm run build"
-  functions = "/netlify"
+[template.environment]
+  NEXT_PUBLIC_SITE_NAME=""
+  NEXT_PUBLIC_SITE_URL=""
 
-[build.environment]
-  NEXT_SERVERLESS = "true"
-  SANITY_PROJECT_ID="wvv7gbzb"
-  SANITY_DATASET="production"
-  BUILD_LANGUAGES = "en-US,it-IT"
-  BUILD_CMS = "sanity"
-  CL_CLIENT_ID = "ETpqt0R5oIDG8BgttE4idgGMkR6PeOkBCNnRhp-nvGk"
-  CL_ENDPOINT = "https://demo.commercelayer.io"
+  CL_CLIENT_ID=""
+  CL_ENDPOINT=""
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[[plugins]]
-  package = "netlify-plugin-inline-functions-env"
-  [plugins.inputs]
-    buildEvent = "onBuild"
+  NEXT_PUBLIC_SANITY_PROJECT_TITLE=""
+  NEXT_PUBLIC_SANITY_PROJECT_ID=""
+  NEXT_PUBLIC_SANITY_DATASET=""
+  NEXT_PUBLIC_SANITY_API_VERSION=""
+  NEXT_PUBLIC_SANITY_TOKEN=""

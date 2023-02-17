@@ -1,9 +1,9 @@
-import sanityApi from './sanity/api'
+import sanityApi from "./sanity/api";
 
 export const cmsList = () => {
-  return process.env.BUILD_CMS
-}
+  return process.env.BUILD_CMS;
+};
 
 export const cmsFunctions: Record<string, any> = {
-  ...sanityApi,
-}
+  ...sanityApi
+};
