@@ -443,7 +443,8 @@
         },
         {
           "src": "seo/ios/192.png",
-          "sizes": "192x192"
+          "sizes": "192x192",
+          "purpose": "any maskable"
         },
         {
           "src": "seo/ios/256.png",

@@ -27,7 +27,6 @@ type Props = {
 const Layout: React.FunctionComponent<Props> = ({
   children,
   showMenu = true,
-  cms,
   pageTitle,
   lang = "en-us",
   buildLanguages = [],
@@ -55,6 +54,7 @@ const Layout: React.FunctionComponent<Props> = ({
                       className="h-8 w-auto"
                       src="//data.commercelayer.app/assets/logos/full-logo/black/commercelayer_full_logo_black.svg"
                       alt="Commerce Layer Logo"
+                      loading="eager"
                       width={200}
                       height={50}
                     />
@@ -164,21 +164,21 @@ const Layout: React.FunctionComponent<Props> = ({
         <ShoppingBag active={animation} handleAnimation={handleAnimation} lang={lang} />
         <main>{children}</main>
         <footer className={`mt-12 border-t border-gray-200 py-8 ${opacity}`}>
-          <p className="text-xs mx-5 sm:mx-0 sm:text-base text-gray-400 text-center">
+          <p className="text-xs mx-5 sm:mx-0 sm:text-base text-black-500 text-center">
             Powered by{" "}
-            <a className="underline hover:text-blue-500" href="//commercelayer.io" target="_blank" rel="noreferrer">
+            <a className="underline hover:no-underline" href="//commercelayer.io" target="_blank" rel="noreferrer">
               Commerce Layer
             </a>
             ,{" "}
-            <a href="//sanity.io" target="_blank" className="capitalize underline hover:text-blue-500" rel="noreferrer">
-              {cms}
+            <a className="underline hover:no-underline" href="//sanity.io" target="_blank" rel="noreferrer">
+              Sanity
             </a>
             , and{" "}
-            <a className="underline hover:text-blue-500" href="//nextjs.org" target="_blank" rel="noreferrer">
+            <a className="underline hover:no-underline" href="//nextjs.org" target="_blank" rel="noreferrer">
               Next.js
             </a>{" "}
             on{" "}
-            <a className="underline hover:text-blue-500" href="//netlify.com" target="_blank" rel="noreferrer">
+            <a className="underline hover:no-underline" href="//netlify.com" target="_blank" rel="noreferrer">
               Netlify.
             </a>
           </p>
