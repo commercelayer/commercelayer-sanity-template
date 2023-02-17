@@ -19,15 +19,11 @@ const touchIcon = "/seo/ios/192.png";
 const SEOHead: React.FunctionComponent<Props> = ({ productName }) => {
   return (
     <NextHead>
-      <meta charSet="UTF-8" />
       <title>{productName ? `${title} : ${productName}` : title}</title>
       <meta name="description" content={description} />
-      <meta charSet="utf-8" />
+      <meta charSet="UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta
-        name="viewport"
-        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1"
-      />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <link rel="manifest" href="/manifest.json" />
       <meta name="theme-color" content="#000000" />
       <meta name="keywords" content={keywords} />
