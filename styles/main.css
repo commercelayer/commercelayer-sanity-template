@@ -9,6 +9,7 @@
 
 body {
   font-family: "Eina01", "sans-serif";
+  font-display: swap;
   height: 100vh;
   @apply bg-gray-50;
 }
