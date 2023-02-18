@@ -1,12 +1,12 @@
 [template.environment]
-  NEXT_PUBLIC_SITE_NAME=""
-  NEXT_PUBLIC_SITE_URL=""
+  CL_CLIENT_ID="Commerce Layer sales channels application client ID (you can get this from dashboard.commercelayer.io)"
+  CL_ENDPOINT="Commerce Layer organization's base endpoint (you can get this from dashboard.commercelayer.io)"
 
-  CL_CLIENT_ID=""
-  CL_ENDPOINT=""
+  NEXT_PUBLIC_SANITY_PROJECT_ID="Sanity project ID (you can get this from sanity.io/manage)"
+  NEXT_PUBLIC_SANITY_DATASET="Sanity dataset (you can get this from sanity.io/manage)"
+  NEXT_PUBLIC_SANITY_API_VERSION="Sanity API version in the ISO date format"
+  NEXT_PUBLIC_SANITY_TOKEN="Sanity API token (you can get this from sanity.io/manage)"
 
-  NEXT_PUBLIC_SANITY_PROJECT_TITLE=""
-  NEXT_PUBLIC_SANITY_PROJECT_ID=""
-  NEXT_PUBLIC_SANITY_DATASET=""
-  NEXT_PUBLIC_SANITY_API_VERSION=""
-  NEXT_PUBLIC_SANITY_TOKEN=""
+  NEXT_PUBLIC_SANITY_PROJECT_TITLE="Optional name for the <title> head tag in Sanity studio (you can also edit this directly in the code)."
+  NEXT_PUBLIC_SITE_NAME="Optional name for the <title> head tag (you can also edit this directly in the code)."
+  NEXT_PUBLIC_SITE_URL="Optional URL of your deployed project for the og:url meta property (you can also edit this directly in the code)."
