@@ -168,8 +168,8 @@ sanity dataset import ./data/<name of extracted folder>/data.ndjson <your_datase
 > **Note**
 >
 > The Sanity content data includes a collection of sample countries, products, variants, sizes, taxons, taxonomies, catalogs, and product images created during development. To get an [access token](https://docs.commercelayer.io/developers/authentication) for the Nextjs storefront, we fetch the scope (market ID) from the `Market Id` attribute set in the Sanity `country` document schema.
-> &nbsp;
-So, when you seed your Commerce Layer organization, some markets will be created with a different market ID from the one imported into Sanity. So you need to fetch the valid market scope's number (4 digits) from the sales channel tab of your organization in the [Commerce Layer dashboard](https://dashboard.commercelayer.io) and update the appropriate country model in Sanity. For example, the Europe Market on Commerce Layer and Italy country model on Sanity. Failure to do this will result in an invalid scope authentication error when you try to access the storefront.
+>
+> So, when you seed your Commerce Layer organization, some markets will be created with a different market ID from the one imported into Sanity. Hence, you will need to fetch the valid market scope's number (4 digits) from the sales channel tab of your organization in the [Commerce Layer dashboard](https://dashboard.commercelayer.io) and update the appropriate country model in Sanity. For example, the Europe Market on Commerce Layer and Italy country model on Sanity. Failure to do this will result in an invalid scope authentication error when you try to access the storefront.
 
 | Commerce Layer dashboard (sales channel tab) | Sanity studio (country model schema) |
 | ---- | ---- |
