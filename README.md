@@ -30,7 +30,7 @@ A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity st
 - Structured content and a customizable Sanity authoring environment (including demo data), accessible on `<yourdomain>/studio`.
 - PSD2-compliant and production-ready checkout functionality powered by [Commerce Layer React Checkout](https://github.com/commercelayer/commercelayer-react-checkout) application.
 - Commerce seed data powered by [Commerce Layer CLI Seeder](https://github.com/commercelayer/commercelayer-cli-plugin-seeder/blob/main/README.md) plugin.
-- React 18 and Next 13 support.
+- React18 and Next13 support.
 - Type-checking and code linting.
 - Localization support (including Italian and French translations).
 - SEO and progressive web application (PWA) support.
