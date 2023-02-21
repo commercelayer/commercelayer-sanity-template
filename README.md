@@ -73,7 +73,7 @@ The quickest way to get up and running is to use the deploy button below to set 
 
 | **Variable**                         | **Description**                     |
 | ------------------------------------ | ----------------------------------- |
-| `BUILD_LANGUAGES`                    | The supported locales (the default is `en-US,it-IT, fr-FR`).                                                       |
+| `BUILD_LANGUAGES`                    | The supported locales (the default is `en-US, it-IT, fr-FR`).                                                       |
 | `BUILD_CMS`                          | The name of the CMS in use (the default is `sanity`).                                                        |
 | `NEXT_PUBLIC_SITE_NAME`              | Optional name for the `<title>` head tag (you can also edit this directly in the code).                           |
 | `NEXT_PUBLIC_SITE_URL`               | Optional URL of your deployed project for the `og:url` meta property (you can also edit this directly in the code).|
