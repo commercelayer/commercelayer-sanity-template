@@ -25,7 +25,7 @@ A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity st
 
 ## Template Features
 
-- A user-friendly and performance ecommerce storefront (with products, categories, i18n, cart, checkout, etc.) built with TypeScript, Nextjs, [Commerce Layer React Components](https://github.com/commercelayer/commercelayer-react-components) library, and Tailwind CSS.
+- A user-friendly and performant ecommerce storefront (with products, categories, i18n, cart, checkout, etc.) built with TypeScript, Nextjs, [Commerce Layer React Components](https://github.com/commercelayer/commercelayer-react-components) library, and Tailwind CSS.
 - International transactional functionalities powered by [Commerce Layer](https://commercelayer.io) APIs.
 - Structured content and a customizable Sanity authoring environment (including demo data), accessible on `<yourdomain>/studio`.
 - PSD2-compliant and production-ready checkout functionality powered by [Commerce Layer React Checkout](https://github.com/commercelayer/commercelayer-react-checkout) application.
