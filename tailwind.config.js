@@ -4,7 +4,8 @@ module.exports = {
     extend: {
       zIndex: {
         "-10": "-10"
-      }
+      },
+      colors: { ashy: "#fdfbfb" }
     }
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography"), require("@tailwindcss/aspect-ratio")]

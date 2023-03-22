@@ -6,10 +6,13 @@ type Locale = {
 
 const locale: Locale = {
   "en-us": {
+    welcomeTo: "Welcome to",
     addToCart: "Add to cart",
     available: "available",
     notAvailable: "Not available",
     categories: "categories",
+    startShopping: "Start shopping",
+    learnMore: "Learn more",
     continueShopping: "Continue shopping",
     shoppingBag: "Shopping Bag",
     days: "days",
@@ -48,10 +51,13 @@ const locale: Locale = {
     algoliaCategory: "Algolia category"
   },
   "it-it": {
+    welcomeTo: "Benvenuto a",
     addToCart: "Aggiungi al carrello",
     available: "disponibile",
     notAvailable: "non disponibile",
     categories: "categorie",
+    startShopping: "Inizia a fare acquisti",
+    learnMore: "Saperne di più",
     continueShopping: "Continua lo shopping",
     shoppingBag: "Carrello",
     days: "giorni",
@@ -90,10 +96,13 @@ const locale: Locale = {
     algoliaCategory: "Algolia categoria"
   },
   "fr-fr": {
+    welcomeTo: "Bienvenue à",
     addToCart: "Ajouter au panier",
     available: "disponible",
     notAvailable: "Pas disponible",
     categories: "catégories",
+    startShopping: "Commencer à magasiner",
+    learnMore: "Apprendre encore plus",
     continueShopping: "Continuer vos achats",
     shoppingBag: "Sac de courses",
     days: "jours",

@@ -42,7 +42,7 @@ const Layout: React.FunctionComponent<Props> = ({
   return (
     <LayoutContext.Provider value={{ handleAnimation }}>
       <SEOHead productName={pageTitle} />
-      <div className="relative bg-gray-50 overflow-hidden ">
+      <div className="relative bg-ashy overflow-hidden">
         <div className="relative pt-5 pb-10 px-5 lg:px-0 lg:pb-16 max-w-screen-lg mx-auto">
           <div className="max-w-7xl mx-auto">
             <nav className="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
@@ -163,8 +163,8 @@ const Layout: React.FunctionComponent<Props> = ({
         </div>
         <ShoppingBag active={animation} handleAnimation={handleAnimation} lang={lang} />
         <main>{children}</main>
-        <footer className={`mt-12 border-t border-gray-200 py-8 ${opacity}`}>
-          <p className="text-xs mx-5 sm:mx-0 sm:text-base text-black-500 text-center">
+        <footer className={`bg-gray-900 mt-12 border-t border-gray-200 py-8 ${opacity}`}>
+          <p className="text-xs mx-5 sm:mx-0 sm:text-base text-white text-center">
             Powered by{" "}
             <a className="underline hover:no-underline" href="//commercelayer.io" target="_blank" rel="noreferrer">
               Commerce Layer
