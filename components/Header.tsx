@@ -53,7 +53,7 @@ const Header: React.FunctionComponent<Props> = ({ lang }) => {
           </div>
           <div className="lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
             <Image
-              className="hidden lg:block w-full object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
+              className="hidden sm:block w-full object-cover lg:inset-0 lg:aspect-auto lg:h-full"
               src="https://images.unsplash.com/photo-1598971861713-54ad16a7e72e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2576&q=80"
               alt="An image of a happy woman smiling and sitting in a shopping trolley"
               width={1000}
