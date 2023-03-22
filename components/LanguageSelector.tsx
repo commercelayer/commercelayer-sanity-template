@@ -106,7 +106,7 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
                     <span
                       className={`${
                         selected ? "text-gray-900" : "hidden"
-                      } absolute inset-y-0 right-0 flex items-center pr-4 hover:bg-indigo-500`}
+                      } absolute inset-y-0 right-0 flex items-center pr-4 hover:bg-indigo-600`}
                     >
                       <svg
                         className="h-5 w-5"
