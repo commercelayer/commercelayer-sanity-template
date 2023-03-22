@@ -7,6 +7,10 @@
 @tailwind utilities;
 @tailwind variants;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Eina01", "sans-serif";
   font-display: swap;

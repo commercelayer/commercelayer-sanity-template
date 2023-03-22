@@ -76,7 +76,7 @@ const FilterPage: NextPage<Props> = ({
       <OrderStorage persistKey={`order-${code}`}>
         <OrderContainer attributes={{ language_code: languageCode }}>
           <Layout cms={cms} lang={lang} buildLanguages={buildLanguages} countries={countries}>
-            <Header />
+            <Header lang={lang} />
             {showSearch ? (
               <InstantSearch searchClient={searchClient} indexName={indexName}>
                 <Configure facetingAfterDistinct />
