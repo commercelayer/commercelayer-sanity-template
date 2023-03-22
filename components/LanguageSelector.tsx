@@ -71,7 +71,6 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
           <div
             className={`absolute mt-1 w-full rounded-md bg-white shadow-lg z-10 ${show ? "z-10" : ""}`}
             onMouseLeave={() => setShow(false)}
-            onTouchMove={() => setShow(false)}
           >
             <ul
               title="Languages"

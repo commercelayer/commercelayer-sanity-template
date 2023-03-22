@@ -71,7 +71,6 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
           <div
             className={`absolute mt-1 w-full rounded-md bg-white shadow-lg ${show ? "z-10" : ""}`}
             onMouseLeave={() => setShow(false)}
-            onTouchMove={() => setShow(false)}
           >
             <ul
               title="Countries"
