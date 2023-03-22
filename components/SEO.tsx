@@ -12,7 +12,7 @@ const keywords =
   "Commerce Layer, Reactjs, Nextjs, Sanity Studio, Netlify, Nextjs Template, Sanity Template, Ecommerce Template, Ecommerce";
 const url = process.env.NEXT_PUBLIC_SITE_URL || "https://commercelayer-sanity-template.netlify.app";
 const twitterHandle = "@commercelayer";
-const ogImage = "/seo/og-image.png";
+const ogImage = "/preview.jpg";
 const favicon = "//data.commercelayer.app/assets/images/favicons/favicon.ico";
 const touchIcon = "/seo/ios/192.png";
 
