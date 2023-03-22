@@ -38,7 +38,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
           aria-expanded="true"
           aria-labelledby="listbox-label"
           onClick={() => setShow(!show)}
-          className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-black focus:border-black sm:text-sm"
         >
           <span className="flex items-center">
             <span className="flex-shrink-0 text-gray-700 truncate">{locale[lang as string].shippingTo}: </span>
@@ -86,7 +86,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
                     key={k}
                     role="option"
                     aria-selected={selected}
-                    className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-blue-500 ${
+                    className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-indigo-500 ${
                       selected ? "" : "text-gray-900"
                     }`}
                     onClick={() => handleChange(value, defaultLocale)}
@@ -101,7 +101,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
                     <span
                       className={`${
                         selected ? "text-gray-900" : "hidden"
-                      } absolute inset-y-0 right-0 flex items-center pr-4 hover:bg-blue-500`}
+                      } absolute inset-y-0 right-0 flex items-center pr-4 hover:bg-indigo-500`}
                     >
                       <svg
                         className="h-5 w-5"

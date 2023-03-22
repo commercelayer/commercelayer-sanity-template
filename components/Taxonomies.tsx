@@ -63,7 +63,7 @@ const Taxonomies = ({ taxonomies, activeAlgolia, algoliaStatus, searchEngine }: 
       );
     });
     return (
-      <div className="my-24" key={k} id="start">
+      <div className="my-24" key={k}>
         <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-4">{t?.label || t.name}</h2>
         <fieldset>
           <legend className="sr-only">Taxon</legend>

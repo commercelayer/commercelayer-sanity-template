@@ -101,7 +101,7 @@ const ShoppingBag: React.FunctionComponent<Props> = ({ handleAnimation, lang = "
                         <div className="py-2 flex flex-row items-center md:justify-between">
                           <LineItemQuantity
                             max={10}
-                            className="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
+                            className="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
                           />
                           <Errors resource="line_items" field="quantity" />
                           <LineItemAmount className="font-extrabold ml-3 px-2 text-sm" />
@@ -141,7 +141,7 @@ const ShoppingBag: React.FunctionComponent<Props> = ({ handleAnimation, lang = "
                   <span className="inline-flex rounded-md shadow-sm">
                     <button
                       type="button"
-                      className="w-full md:w-auto inline-flex justify-center items-center px-4 py-3 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-600 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-blue active:bg-gray-700 transition ease-in-out duration-150"
+                      className="w-full md:w-auto inline-flex justify-center items-center px-4 py-3 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-600 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition ease-in-out duration-150"
                       onClick={handleAnimation}
                     >
                       {locale[lang].continueShopping}
@@ -150,7 +150,7 @@ const ShoppingBag: React.FunctionComponent<Props> = ({ handleAnimation, lang = "
                   <span className="mb-5 md:mb-0 inline-flex rounded-md shadow-sm">
                     <CheckoutLink
                       label={locale[lang].proceedToCheckout as string}
-                      className="w-full md:w-auto justify-center text-center primary inline-flex items-center px-4 py-3 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-400 focus:outline-none focus:border-blue-600 focus:shadow-outline-blue active:bg-blue-600 transition ease-in-out duration-150"
+                      className="w-full md:w-auto justify-center text-center primary inline-flex items-center px-4 py-3 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:border-indigo-600 focus:shadow-outline-indigo active:bg-indigo-600 transition ease-in-out duration-150"
                     />
                   </span>
                 </div>

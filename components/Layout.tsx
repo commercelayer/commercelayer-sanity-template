@@ -99,7 +99,7 @@ const Layout: React.FunctionComponent<Props> = ({
                     <div className="flex flex-row items-center">
                       <span className="hidden md:inline-block">{locale[lang].shoppingBag}</span>
                       <LineItemsContainer>
-                        <LineItemsCount className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium leading-5 bg-blue-500 hover:bg-blue-400 text-gray-50" />
+                        <LineItemsCount className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium leading-5 bg-indigo-500 hover:bg-indigo-400 text-gray-50" />
                       </LineItemsContainer>
                     </div>
                   </a>
