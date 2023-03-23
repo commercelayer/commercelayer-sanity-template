@@ -21,17 +21,16 @@ const Header: React.FunctionComponent<Props> = ({ lang }) => {
                 !
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
+                This ecommerce store is a demo template built using {""}
                 <a
                   href="//commercelayer.io?utm_source=commercelayer-sanity-template"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Commerce Layer
-                </a>{" "}
-                is a multi-market commerce API and order management system that lets you add global shopping
-                capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose
-                your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable,
-                anywhere, through a blazing-fast, enterprise-grade, and secure API.
+                </a>
+                , an API-first global commerce solution that can easily make any digital experience shoppable through a
+                suite of developer tools.
               </p>
               <div className="mt-16 flex items-center gap-x-6">
                 <a

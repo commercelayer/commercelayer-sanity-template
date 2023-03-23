@@ -6,7 +6,7 @@ type Locale = {
 
 const locale: Locale = {
   "en-us": {
-    welcomeTo: "Welcome to",
+    welcomeTo: "Welcome to the",
     addToCart: "Add to cart",
     available: "available",
     notAvailable: "Not available",
@@ -96,7 +96,7 @@ const locale: Locale = {
     algoliaCategory: "Algolia categoria"
   },
   "fr-fr": {
-    welcomeTo: "Bienvenue à",
+    welcomeTo: "Bienvenue à la",
     addToCart: "Ajouter au panier",
     available: "disponible",
     notAvailable: "Pas disponible",
