@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/commercelayer/commercelayer-sanity-template/compare/v1.2.0...v1.3.0) (2023-03-23)
+
+
+### Features
+
+* 🎸 add header card to template UI ([ace1227](https://github.com/commercelayer/commercelayer-sanity-template/commit/ace122739c7a3fa5268b9e87b7f8528a95bcabc9))
+* 🎸 update hero description ([dd6f8d8](https://github.com/commercelayer/commercelayer-sanity-template/commit/dd6f8d8e81de94ae4c00013c03766995982dd52c))
+
 # [1.2.0](https://github.com/commercelayer/sanity-template-commercelayer/compare/v1.1.0...v1.2.0) (2023-02-17)
 
 
