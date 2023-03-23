@@ -42,7 +42,7 @@ const Layout: React.FunctionComponent<Props> = ({
   return (
     <LayoutContext.Provider value={{ handleAnimation }}>
       <SEOHead productName={pageTitle} />
-      <div className="relative bg-gray-50 overflow-hidden ">
+      <div className="relative bg-ashy overflow-hidden">
         <div className="relative pt-5 pb-10 px-5 lg:px-0 lg:pb-16 max-w-screen-lg mx-auto">
           <div className="max-w-7xl mx-auto">
             <nav className="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
@@ -63,7 +63,7 @@ const Layout: React.FunctionComponent<Props> = ({
                     <div className="-mr-2 flex items-center md:hidden">
                       <button
                         type="button"
-                        className="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        className="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
                         id="main-menu"
                         aria-haspopup="true"
                         onClick={() => setBurgerMenu(!burgerMenu)}
@@ -99,7 +99,7 @@ const Layout: React.FunctionComponent<Props> = ({
                     <div className="flex flex-row items-center">
                       <span className="hidden md:inline-block">{locale[lang].shoppingBag}</span>
                       <LineItemsContainer>
-                        <LineItemsCount className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium leading-5 bg-blue-500 hover:bg-blue-400 text-gray-50" />
+                        <LineItemsCount className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium leading-5 bg-indigo-500 hover:bg-indigo-400 text-gray-50" />
                       </LineItemsContainer>
                     </div>
                   </a>
@@ -109,20 +109,20 @@ const Layout: React.FunctionComponent<Props> = ({
           </div>
           <Transition
             show={burgerMenu}
-            enter="duration-150 ease-out"
-            enterFrom="opacity-0 scale-95"
-            enterTo="opacity-100 scale-100"
-            leave="duration-100 ease-in"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
+            enter="ease-in-out duration-500"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in-out duration-500"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
           >
-            <div className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-              <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div className="fixed inset-0 overflow-hidden z-10 top-0 transition transform origin-top-right md:hidden">
+              <div className="px-4 sm:px-0 bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                 <div className="pt-4 mb-10 flex items-center justify-between">
-                  <div className="mr-8 mt-12 absolute right-0">
+                  <div className="mr-3 mt-12 absolute right-0">
                     <button
                       type="button"
-                      className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                      className="bg-white rounded-md p-2 inline-flex items-center justify-center text-black focus:outline-none"
                       onClick={() => setBurgerMenu(!burgerMenu)}
                     >
                       <span className="sr-only">Close menu</span>
@@ -139,12 +139,14 @@ const Layout: React.FunctionComponent<Props> = ({
                     </button>
                   </div>
                 </div>
-                <div role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
-                  <div className="px-2 pt-5 pb-2" role="none">
+                <div className="min-h-screen" role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
+                  <div className="px-2 pt-24" role="none">
                     {showMenu && <CountrySelector options={countries} />}
+                  </div>
+                  <div className="px-2 pt-8" role="none">
                     {showMenu && <LanguageSelector options={buildLanguages} />}
                   </div>
-                  <div className="px-3 pt-2 pb-20" role="none">
+                  <div className="px-3 pt-8" role="none">
                     {showMenu && (
                       <a href="#" onClick={handleAnimation}>
                         <div className="flex flex-row items-center">
@@ -163,8 +165,8 @@ const Layout: React.FunctionComponent<Props> = ({
         </div>
         <ShoppingBag active={animation} handleAnimation={handleAnimation} lang={lang} />
         <main>{children}</main>
-        <footer className={`mt-12 border-t border-gray-200 py-8 ${opacity}`}>
-          <p className="text-xs mx-5 sm:mx-0 sm:text-base text-black-500 text-center">
+        <footer className={`bg-gray-900 mt-12 border-t border-gray-200 py-8 ${opacity}`}>
+          <p className="text-xs mx-5 sm:mx-0 sm:text-base text-white text-center">
             Powered by{" "}
             <a className="underline hover:no-underline" href="//commercelayer.io" target="_blank" rel="noreferrer">
               Commerce Layer

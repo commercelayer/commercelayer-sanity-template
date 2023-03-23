@@ -7,6 +7,7 @@ import { CommerceLayer, OrderContainer, OrderStorage } from "@commercelayer/reac
 import { InstantSearch, Configure } from "react-instantsearch-dom";
 import queryString from "query-string";
 import Layout from "@components/Layout";
+import Header from "@components/Header";
 import CustomPagination from "@components/CustomPagination";
 import Taxonomies from "@components/Taxonomies";
 import CustomSearchBox from "@components/CustomSearchBox";
@@ -75,6 +76,7 @@ const FilterPage: NextPage<Props> = ({
       <OrderStorage persistKey={`order-${code}`}>
         <OrderContainer attributes={{ language_code: languageCode }}>
           <Layout cms={cms} lang={lang} buildLanguages={buildLanguages} countries={countries}>
+            <Header lang={lang} />
             {showSearch ? (
               <InstantSearch searchClient={searchClient} indexName={indexName}>
                 <Configure facetingAfterDistinct />
