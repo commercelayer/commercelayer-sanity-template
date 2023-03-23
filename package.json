@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/commercelayer/sanity-template-commercelayer.git"
+    "url": "git+https://github.com/commercelayer/commercelayer-sanity-template.git"
   },
   "release": {
     "branches": [
@@ -35,9 +35,9 @@
     },
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/commercelayer/sanity-template-commercelayer/issues"
+      "url": "https://github.com/commercelayer/commercelayer-sanity-template/issues"
     },
-    "homepage": "https://github.com/commercelayer/sanity-template-commercelayer#readme",
+    "homepage": "https://github.com/commercelayer/commercelayer-sanity-template#readme",
     "keywords": [
       "commercelayer",
       "sanity",
