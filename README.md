@@ -1,6 +1,6 @@
 # Commerce Layer Sanity Template
 
-[![Release](https://github.com/commercelayer/commercelayer-sanity-template/actions/workflows/release.yml/badge.svg)](https://github.com/commercelayer/commercelayer-sanity-template/actions/workflows/release.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/f27e93e5-5989-4afc-835b-7ab26a5f5cd2/deploy-status)](https://app.netlify.com/sites/commercelayer-sanity-template/deploys)
+[![Release](https://github.com/commercelayer/commercelayer-sanity-template/actions/workflows/release.yml/badge.svg)](https://github.com/commercelayer/commercelayer-sanity-template/actions/workflows/release.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/c345cf90-e959-4cdc-8305-68b734bbe196/deploy-status)](https://app.netlify.com/sites/commercelayer-sanity-template/deploys)
 
 A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity studio, and deployed to Netlify.
 
@@ -26,7 +26,7 @@ A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity st
 ## Template Features
 
 - A user-friendly and performant ecommerce storefront (with products, categories, i18n, cart, checkout, etc.) built with TypeScript, Nextjs, [Commerce Layer React Components](https://github.com/commercelayer/commercelayer-react-components) library, and Tailwind CSS.
-- International transactional functionalities powered by [Commerce Layer](https://commercelayer.io) APIs.
+- International transactional functionalities powered by [Commerce Layer](https://commercelayer.io) API.
 - Structured content and a customizable Sanity authoring environment (including demo data), accessible on `<yourdomain>/studio`.
 - PSD2-compliant and production-ready checkout functionality powered by [Commerce Layer React Checkout](https://github.com/commercelayer/commercelayer-react-checkout) application.
 - Commerce seed data powered by [Commerce Layer CLI Seeder](https://github.com/commercelayer/commercelayer-cli-plugin-seeder/blob/main/README.md) plugin.
@@ -48,7 +48,7 @@ A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity st
 | `.env.local.sample`                | Example file with all the required environment variables.                                                      |  
 | `/components`                      | React components for the storefront. | 
 | `/locale/index.ts`                 | Config file for the storefront's transalations (`en-US`, `it-IT`, and `fr-FR`).                              |
-| `/hooks/GetToken.ts`               | Hooks file to fetch a salesChannel token from Commerce Layer and save as a cookie.                             |
+| `/hooks/GetToken.ts`               | React hook file to fetch a salesChannel token from Commerce Layer and save as a cookie.                             |
 | `/pages/[countryCode]/[lang]/index.tsx`     | Index page for the storefront (country selector and product listing).                                    |
 | `/pages/[countryCode]/[lang]/[product].tsx` | Page for all product items (image, product information, and variant selection).                        |
 | `/data`                            | Exported data to seed your Sanity studio with.                                                                |  
@@ -80,10 +80,10 @@ The quickest way to get up and running is to use the deploy button below to set 
 | `CL_CLIENT_ID`                       | Your Commerce Layer sales channels application client ID (you can create this automatically by following this [onboarding guide](https://docs.commercelayer.io/developers) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io).          |
 | `CL_ENDPOINT`                        | Your Commerce Layer organization's base endpoint (you can copy this on the [Commerce Layer dashboard](https://dashboard.commercelayer.io).                                                 |
 | `NEXT_PUBLIC_SANITY_PROJECT_TITLE`   | Optional name for the `<title>` head tag in Sanity studio (you can also edit this directly in the code).          |
-| `NEXT_PUBLIC_SANITY_PROJECT_ID`      | Sanity project ID (you can get this from [sanity.io/manage](https://sanity.io/manage).                           |
-| `NEXT_PUBLIC_SANITY_DATASET`         | Sanity dataset (you can get this from [sanity.io/manage](https://sanity.io/manage).                                |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID`      | Sanity project ID (you can get this from [sanity.io/manage](https://sanity.io/manage) after creating a new project with the `npm -y create sanity@latest` CLI command or this [quick start wizard](https://sanity.io/get-started).                           |
+| `NEXT_PUBLIC_SANITY_DATASET`         | Sanity dataset (you can get this from [sanity.io/manage](https://sanity.io/manage)).                                |
 | `NEXT_PUBLIC_SANITY_API_VERSION`     | Sanity API version in the ISO date format, e.g `2022-02-15` (you can learn more about this in [Sanity docs](https://www.sanity.io/help/js-client-api-version)).                         |
-| `NEXT_PUBLIC_SANITY_TOKEN`           | Sanity API token (you can get this from [sanity.io/manage](https://sanity.io/manage).                           |
+| `NEXT_PUBLIC_SANITY_TOKEN`           | Sanity API token (you can get this from [sanity.io/manage](https://sanity.io/manage)).                           |
 
 3. Run the command below to install the required dependencies:
 
