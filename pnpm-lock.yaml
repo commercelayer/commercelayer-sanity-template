@@ -58,7 +58,7 @@ dependencies:
     version: 13.1.6(@babel/core@7.22.8)(react-dom@18.2.0)(react@18.2.0)
   next-sanity:
     specifier: ^5.1.1
-    version: 5.1.1(@sanity/client@6.1.7)(@sanity/icons@2.4.1)(@sanity/types@3.4.0)(@sanity/ui@1.7.1)(@types/styled-components@5.1.26)(next@13.1.6)(react@18.2.0)(sanity@3.4.0)(styled-components@5.3.6)
+    version: 5.1.1(@sanity/client@6.1.7)(@sanity/icons@2.4.1)(@sanity/types@3.14.1)(@sanity/ui@1.7.1)(@types/styled-components@5.1.26)(next@13.1.6)(react@18.2.0)(sanity@3.4.0)(styled-components@5.3.6)
   postcss:
     specifier: ^8.4.6
     version: 8.4.6
@@ -1812,7 +1812,7 @@ packages:
     engines: {node: '>=14.18'}
     dependencies:
       '@sanity/eventsource': 5.0.0
-      '@sanity/types': 3.4.0
+      '@sanity/types': 3.14.1
       fast-deep-equal: 3.1.3
       groq: 3.14.1
       groq-js: 1.1.9
@@ -1970,6 +1970,15 @@ packages:
       scroll-into-view-if-needed: 2.2.31
       slate: 0.81.1
       tiny-invariant: 1.0.6
+    dev: false
+
+  /@sanity/types@3.14.1:
+    resolution: {integrity: sha512-13qj14LI69VsGE4+H+XrdFC7yUgHHtIHHqkqygBtvPAqfteVwDEG8KyWJ1+ZMXMUnz89fuTeP721DC3+AlrmPg==}
+    dependencies:
+      '@sanity/client': 6.1.7
+      '@types/react': 18.0.28
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@sanity/types@3.4.0:
@@ -5813,7 +5822,7 @@ packages:
     resolution: {integrity: sha512-EZSPZB70jiVsivaBLYDCyntd5eH8NTSMOn3rB+HxwdmKThGELLdYv8qVIMWvZEFy9w8ZZpW9h9OB32l1rGtj7g==}
     dev: true
 
-  /next-sanity@5.1.1(@sanity/client@6.1.7)(@sanity/icons@2.4.1)(@sanity/types@3.4.0)(@sanity/ui@1.7.1)(@types/styled-components@5.1.26)(next@13.1.6)(react@18.2.0)(sanity@3.4.0)(styled-components@5.3.6):
+  /next-sanity@5.1.1(@sanity/client@6.1.7)(@sanity/icons@2.4.1)(@sanity/types@3.14.1)(@sanity/ui@1.7.1)(@types/styled-components@5.1.26)(next@13.1.6)(react@18.2.0)(sanity@3.4.0)(styled-components@5.3.6):
     resolution: {integrity: sha512-zY80a0F7uDzvmKSvP1rNGKcbxPz2nH6UY0sYs7fW/nmifJzd48MyYqL31AqzO9FHPAG/V4a/aMbC23PFOgxKIA==}
     engines: {node: '>=16.14'}
     peerDependencies:
@@ -5830,7 +5839,7 @@ packages:
       '@sanity/client': 6.1.7
       '@sanity/icons': 2.4.1(react@18.2.0)
       '@sanity/preview-kit': 2.3.1(@sanity/client@6.1.7)(react@18.2.0)
-      '@sanity/types': 3.4.0
+      '@sanity/types': 3.14.1
       '@sanity/ui': 1.7.1(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@5.3.6)
       '@sanity/webhook': 2.0.0
       '@types/styled-components': 5.1.26
