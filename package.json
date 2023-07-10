@@ -68,7 +68,7 @@
     "@commercelayer/react-components": "^4.2.2",
     "@headlessui/react": "^1.5.0",
     "@next/env": "^13.4.9",
-    "@portabletext/react": "^2.0.1",
+    "@portabletext/react": "^3.0.4",
     "@sanity/client": "^6.1.7",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.4.0",
