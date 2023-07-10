@@ -4,12 +4,13 @@
   "description": "A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity studio, and deployed to Netlify.",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "format": "npx prettier --write . --ignore-path .gitignore",
     "lint": "next lint -- --ignore-path .gitignore",
-    "lint:fix": "npm run format && npm run lint -- --fix",
+    "lint:fix": "pnpm run format && pnpm run lint -- --fix",
     "export": "sanity dataset export production ./data/production.tar.gz"
   },
   "repository": {
@@ -64,7 +65,7 @@
   },
   "dependencies": {
     "@commercelayer/js-auth": "^4.1.1",
-    "@commercelayer/react-components": "^4.4.4",
+    "@commercelayer/react-components": "^4.2.2",
     "@headlessui/react": "^1.5.0",
     "@portabletext/react": "^2.0.1",
     "@sanity/image-url": "^1.0.2",
