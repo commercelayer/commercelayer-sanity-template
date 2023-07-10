@@ -20,14 +20,13 @@ jobs:
         run: npm install
       - name: Run package
         env:
-          CL_CLIENT_ID: ${{ secrets.CL_CLIENT_ID }}
-          CL_ENDPOINT: ${{ secrets.CL_ENDPOINT }}
+          NEXT_PUBLIC_CL_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_CL_CLIENT_ID }}
+          NEXT_PUBLIC_CL_ENDPOINT: ${{ secrets.NEXT_PUBLIC_CL_ENDPOINT }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_API_VERSION: ${{ secrets.NEXT_PUBLIC_SANITY_API_VERSION }}
           NEXT_PUBLIC_SANITY_TOKEN: ${{ secrets.NEXT_PUBLIC_SANITY_TOKEN }}
           BUILD_LANGUAGES: ${{ vars.BUILD_LANGUAGES }}
-          BUILD_CMS: ${{ vars.BUILD_CMS }}
         run: npm run build
       - name: Release
         env:
