@@ -63,7 +63,7 @@
     ]
   },
   "dependencies": {
-    "@commercelayer/js-auth": "^2.3.0",
+    "@commercelayer/js-auth": "^4.1.1",
     "@commercelayer/react-components": "^4.2.2",
     "@headlessui/react": "^1.5.0",
     "@portabletext/react": "^2.0.1",
