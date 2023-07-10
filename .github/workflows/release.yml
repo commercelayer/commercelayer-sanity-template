@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
       - name: Run package
         env:
           NEXT_PUBLIC_CL_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_CL_CLIENT_ID }}
@@ -27,7 +27,7 @@ jobs:
           NEXT_PUBLIC_SANITY_API_VERSION: ${{ secrets.NEXT_PUBLIC_SANITY_API_VERSION }}
           NEXT_PUBLIC_SANITY_TOKEN: ${{ secrets.NEXT_PUBLIC_SANITY_TOKEN }}
           BUILD_LANGUAGES: ${{ vars.BUILD_LANGUAGES }}
-        run: npm run build
+        run: pnpm run build
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
