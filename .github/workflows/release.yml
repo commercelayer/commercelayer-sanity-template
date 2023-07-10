@@ -10,6 +10,8 @@ jobs:
     environment: staging
     runs-on: ubuntu-22.04
     steps:
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
       - name: Checkout
         uses: actions/checkout@v1
       - name: Setup Node.js
