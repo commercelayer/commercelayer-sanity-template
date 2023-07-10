@@ -1,48 +1,42 @@
-import Link from "next/link";
-import { GetStaticProps } from "next";
-import Layout from "@components/Layout";
-import Countries from "@components/Countries";
-import { cmsList } from "@utils/cms";
 import _ from "lodash";
-import { searchEngineList } from "@utils/search";
-import { cmsFunctions } from "@utils/cms";
+import Image from "next/image";
+import { GetStaticProps, NextPage } from "next";
+import SEOHead from "@components/SEO";
+import Countries from "@components/Countries";
+import sanityApi from "@utils/sanity/api";
 
 type Props = {
   [key: string]: any;
+  lang: string;
   countries: any[];
-  cms: "sanity";
-  searchEngine?: "algolia";
 };
 
-const IndexPage = (props: Props) => {
-  const { cms, searchEngine, countries } = props;
+const IndexPage: NextPage<Props> = ({ countries }) => {
   return (
-    <Layout showMenu={false} cms={cms}>
-      <div className="pb-10 px-5 md:px-0 max-w-screen-lg mx-auto container">
-        <Countries items={countries} cms={cms} searchBy={searchEngine} />
+    <>
+      <SEOHead />
+      <div className="m-16 mx-auto container">
+        <Countries items={countries} />
       </div>
-      {/* Consider removing this in production */}
-      <Link
-        href="/studio"
-        target="_blank"
-        rel="noreferrer noopener"
-        className="text-center block text-sm text-gray-700 hover:text-gray-900"
-      >
-        Go to Sanity Studio &rarr;
-      </Link>
-    </Layout>
+      <hr />
+      <Image
+        className="h-8 mx-auto m-12 md:mt-16"
+        src="//data.commercelayer.app/assets/logos/full-logo/black/commercelayer_full_logo_black.svg"
+        alt="Commerce Layer Logo"
+        loading="eager"
+        width={200}
+        height={50}
+      />
+      <br />
+    </>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const cms = cmsList();
-  const searchEngine = searchEngineList();
-  const countries = _.has(cmsFunctions, `${cms}AllCountries`) ? await cmsFunctions[`${cms}AllCountries`]() : [];
+  const countries = _.has(sanityApi, "allCountries") ? await sanityApi["allCountries"]() : [];
   return {
     props: {
-      countries,
-      cms,
-      searchEngine
+      countries
     },
     revalidate: false
   };

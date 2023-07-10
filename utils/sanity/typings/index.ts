@@ -19,7 +19,7 @@ export interface SanityTaxon extends Omit<Taxon, "name" | "products"> {
 export interface SanityProduct extends Omit<Product, "name" | "description" | "slug" | "variants"> {
   name: Record<string, string>;
   description: Record<string, string>;
-  slug: Record<string, { current: string }>;
+  slug: Record<string, any>;
   variants: SanityVariant[];
 }
 

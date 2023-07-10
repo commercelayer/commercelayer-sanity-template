@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint:recommended", "next", "prettier"],
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended", "prettier"],
   "rules": {
     "no-console": ["warn", { "allow": ["warn", "error"] }],
     "jsx-quotes": ["error", "prefer-double"],
@@ -14,7 +14,7 @@
     "object-curly-spacing": ["error", "always"],
     "comma-spacing": ["error", { "before": false, "after": true }],
     "comma-dangle": ["error", "never"],
-    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 5 }],
     "key-spacing": [
       "error",
       {
