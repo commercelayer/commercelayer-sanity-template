@@ -81,7 +81,7 @@
     "js-cookie": "^3.0.1",
     "latest": "^0.2.0",
     "next": "^13.1.6",
-    "next-sanity": "^4.1.5",
+    "next-sanity": "^5.1.1",
     "postcss": "^8.4.6",
     "prop-types": "^15.8.1",
     "query-string": "^7.1.1",
