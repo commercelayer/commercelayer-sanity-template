@@ -6,9 +6,7 @@ A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity st
 
 [![A preview image showing the frontend demo with some products.](./public/preview.gif)](https://commercelayer-sanity-template.netlify.app)
 
-## What is Commerce Layer?
-
-[Commerce Layer](https://commercelayer.io) is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and secure API.
+---
 
 ## Table of Contents
 
@@ -46,7 +44,7 @@ A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity st
 | **Path**                           | **Description**                      |
 | ---------------------------------- | ------------------------------------ |
 | `.env.local.sample`                | Example file with all the required environment variables.                                                      |  
-| `/components`                      | React components for the storefront. | 
+| `/components`                      | React components for the storefront. |
 | `/locale/index.ts`                 | Config file for the storefront's transalations (`en-US`, `it-IT`, and `fr-FR`).                              |
 | `/hooks/GetToken.ts`               | React hook file to fetch a salesChannel token from Commerce Layer and save as a cookie.                             |
 | `/pages/[countryCode]/[lang]/index.tsx`     | Index page for the storefront (country selector and product listing).                                    |
@@ -74,11 +72,10 @@ The quickest way to get up and running is to use the deploy button below to set 
 | **Variable**                         | **Description**                     |
 | ------------------------------------ | ----------------------------------- |
 | `BUILD_LANGUAGES`                    | The supported locales (the default is `en-US, it-IT, fr-FR`).                                                       |
-| `BUILD_CMS`                          | The name of the CMS in use (the default is `sanity`).                                                        |
 | `NEXT_PUBLIC_SITE_NAME`              | Optional name for the `<title>` head tag (you can also edit this directly in the code).                           |
 | `NEXT_PUBLIC_SITE_URL`               | Optional URL of your deployed project for the `og:url` meta property (you can also edit this directly in the code).|
-| `CL_CLIENT_ID`                       | Your Commerce Layer sales channels application client ID (you can create this automatically by following this [onboarding guide](https://docs.commercelayer.io/developers) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io).          |
-| `CL_ENDPOINT`                        | Your Commerce Layer organization's base endpoint (you can copy this on the [Commerce Layer dashboard](https://dashboard.commercelayer.io).                                                 |
+| `NEXT_PUBLIC_CL_CLIENT_ID`                       | Your Commerce Layer sales channels application client ID (you can create this automatically by following this [onboarding guide](https://docs.commercelayer.io/developers) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io).          |
+| `NEXT_PUBLIC_CL_ENDPOINT`                        | Your Commerce Layer organization's base endpoint (you can copy this on the [Commerce Layer dashboard](https://dashboard.commercelayer.io).                                                 |
 | `NEXT_PUBLIC_SANITY_PROJECT_TITLE`   | Optional name for the `<title>` head tag in Sanity studio (you can also edit this directly in the code).          |
 | `NEXT_PUBLIC_SANITY_PROJECT_ID`      | Sanity project ID (you can get this from [sanity.io/manage](https://sanity.io/manage) after creating a new project with the `npm -y create sanity@latest` CLI command or this [quick start wizard](https://sanity.io/get-started).                           |
 | `NEXT_PUBLIC_SANITY_DATASET`         | Sanity dataset (you can get this from [sanity.io/manage](https://sanity.io/manage)).                                |
@@ -88,13 +85,13 @@ The quickest way to get up and running is to use the deploy button below to set 
 3. Run the command below to install the required dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 4. Run the command below to start the development server:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 This will run the storefront at `localhost:3000` and studio at `localhost:3000/studio`.
@@ -203,10 +200,17 @@ git clone https://github.com/<your username>/commercelayer-sanity-template.git &
 
 3. Ping us [on Twitter](https://twitter.com/commercelayer).
 
+> Want to learn more about how we built the first version of this template and how you can build yours? Then you should read [this article](https://commercelayer.io/blog/how-to-build-an-international-ecommerce-website-with-sanity-and-commerce-layer) on our blog.
+
 ## License
 
 This repository is published under the [MIT](LICENSE) license.
 
 ---
 
-Want to learn more about how we built this template  (the first version) and how you can build yours? Then you should read [this article](https://commercelayer.io/blog/how-to-build-an-international-ecommerce-website-with-sanity-and-commerce-layer) on our blog.
+<div align="center">
+  <a href="https://commercelayer.io">
+    <img src="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" height="50" alt="Commerce Layer Logo">
+  </a>
+  <p><a href="https://commercelayer.io/why" target="_blank" rel="noopener noreferrer">Commerce Layer</a> is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and <a href="https://docs.commercelayer.io" target="_blank" rel="noopener noreferrer">secure API</a>.</p>
+</div>
