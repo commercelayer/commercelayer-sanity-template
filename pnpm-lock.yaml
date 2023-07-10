@@ -14,6 +14,9 @@ dependencies:
   '@headlessui/react':
     specifier: ^1.5.0
     version: 1.5.0(react-dom@18.2.0)(react@18.2.0)
+  '@next/env':
+    specifier: ^13.4.9
+    version: 13.4.9
   '@portabletext/react':
     specifier: ^2.0.1
     version: 2.0.1(react@18.2.0)
@@ -1354,6 +1357,10 @@ packages:
 
   /@next/env@13.1.6:
     resolution: {integrity: sha512-s+W9Fdqh5MFk6ECrbnVmmAOwxKQuhGMT7xXHrkYIBMBcTiOqNWhv5KbJIboKR5STXxNXl32hllnvKaffzFaWQg==}
+    dev: false
+
+  /@next/env@13.4.9:
+    resolution: {integrity: sha512-vuDRK05BOKfmoBYLNi2cujG2jrYbEod/ubSSyqgmEx9n/W3eZaJQdRNhTfumO+qmq/QTzLurW487n/PM/fHOkw==}
     dev: false
 
   /@next/eslint-plugin-next@13.1.6:
