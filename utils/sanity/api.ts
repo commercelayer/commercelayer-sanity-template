@@ -58,7 +58,6 @@ const parsingProduct = (
 ): Product[] | Product => {
   return _.isArray(products)
     ? products.map((product) => {
-        console.log(product?.slug);
         const localization = {
           name: product?.name[lang],
           slug: product?.slug["en_us"].current,
