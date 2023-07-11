@@ -17,29 +17,6 @@ const client = createClient({
   useCdn: process.env.NODE_ENV === "production" // `false` to ensure fresh data
 });
 
-const allCountries = async (locale = "en-US") => {
-  const lang = parseLocale(locale, "_", "-", "lowercase");
-  const query = groq`*[_type == "country"]{
-    name,
-    code,
-    marketId,
-    defaultLocale,
-    "image": {
-      "url": image.asset->url
-    },
-    'catalog': {
-      'id': catalog->_id
-    }
-  } | order(name["${lang}"] asc)`;
-  const countries = await client.fetch<SanityCountry[]>(query);
-  return countries.map((country) => {
-    const localization = {
-      name: country?.name[lang]
-    };
-    return { ...country, ...localization };
-  });
-};
-
 const parsingVariant = (variants: SanityVariant[], lang = "en_us"): Variant[] => {
   return !_.isEmpty(variants)
     ? variants.map((variant) => {
@@ -99,8 +76,30 @@ const parsingTaxonomies = (taxonomies: SanityTaxonomy[], locale = "en-US"): Taxo
   return items;
 };
 
-const allTaxonomies = async (catalogId: string, locale = "en-US") => {
-  // const newLocale = getLocale(locale)
+const getAllCountries = async (locale = "en-US") => {
+  const lang = parseLocale(locale, "_", "-", "lowercase");
+  const query = groq`*[_type == "country"]{
+    name,
+    code,
+    marketId,
+    defaultLocale,
+    "image": {
+      "url": image.asset->url
+    },
+    'catalog': {
+      'id': catalog->_id
+    }
+  } | order(name["${lang}"] asc)`;
+  const countries = await client.fetch<SanityCountry[]>(query);
+  return countries.map((country) => {
+    const localization = {
+      name: country?.name[lang]
+    };
+    return { ...country, ...localization };
+  });
+};
+
+const getAllTaxonomies = async (catalogId: string, locale = "en-US") => {
   const query = groq`*[_type == "catalog" && _id == '${catalogId}']{
     'taxonomies': taxonomies[]->{
       label,
@@ -154,8 +153,8 @@ const getProduct = async (slug: string, locale = "en-US") => {
 };
 
 const sanityApi: Record<string, any> = {
-  allCountries,
-  allTaxonomies,
+  getAllCountries,
+  getAllTaxonomies,
   getProduct
 };
 

@@ -169,7 +169,9 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const lang = params?.lang as string;
   const slug = params?.product;
   const countryCode = params?.countryCode as string;
-  const countries = _.has(sanityApi, "allCountries") ? await sanityApi["allCountries"](lang) : {};
+  const countries = _.has(sanityApi, "getAllCountries")
+    ? await sanityApi.getAllCountries(lang)
+    : {};
   const country = countries.find((country: Country) => country.code.toLowerCase() === countryCode);
   const buildLanguages = _.compact(
     process.env.BUILD_LANGUAGES?.split(",").map((l) => {
@@ -177,7 +179,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       return !_.isEmpty(country) ? country : null;
     })
   );
-  const product = _.has(sanityApi, "getProduct") ? await sanityApi["getProduct"](slug, lang) : {};
+  const product = _.has(sanityApi, "getProduct") ? await sanityApi.getProduct(slug, lang) : {};
 
   return {
     props: {

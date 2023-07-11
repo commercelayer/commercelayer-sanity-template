@@ -42,10 +42,14 @@ const CartIframe: React.FC<CartProps> = ({ countryCode, slug, clToken }) => {
           const orderFromStorage = localStorage.getItem(persistKey);
 
           if (orderFromStorage === null) {
-            setCartUrl(`https://${slug}.commercelayer.app/cart/null?embed=true&accessToken=${clToken}`);
+            setCartUrl(
+              `https://${slug}.commercelayer.app/cart/null?embed=true&accessToken=${clToken}`
+            );
           } else {
             if (order !== undefined) {
-              setCartUrl(`https://${slug}.commercelayer.app/cart/${order.id}?embed=true&accessToken=${clToken}`);
+              setCartUrl(
+                `https://${slug}.commercelayer.app/cart/${order.id}?embed=true&accessToken=${clToken}`
+              );
             }
           }
         }
@@ -112,8 +116,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const lang = params?.lang as string;
     const countryCode = params?.countryCode as string;
-    const countries = _.has(sanityApi, "allCountries") ? await sanityApi["allCountries"](lang) : {};
-    const country = countries.find((country: Country) => country.code.toLowerCase() === countryCode);
+    const countries = _.has(sanityApi, "getAllCountries")
+      ? await sanityApi.getAllCountries(lang)
+      : {};
+    const country = countries.find(
+      (country: Country) => country.code.toLowerCase() === countryCode
+    );
     const buildLanguages = _.compact(
       process.env.BUILD_LANGUAGES?.split(",").map((l) => {
         const country = countries.find((country: Country) => country.code === parseLanguageCode(l));

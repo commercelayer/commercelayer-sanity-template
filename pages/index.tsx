@@ -33,7 +33,7 @@ const IndexPage: NextPage<Props> = ({ countries }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const countries = _.has(sanityApi, "allCountries") ? await sanityApi["allCountries"]() : [];
+  const countries = await sanityApi.getAllCountries();
   return {
     props: {
       countries

@@ -21,7 +21,13 @@ type Props = {
   taxonomies: any;
 };
 
-const HomePage: NextPage<Props> = ({ lang, buildLanguages = [], country, countries = [], taxonomies }) => {
+const HomePage: NextPage<Props> = ({
+  lang,
+  buildLanguages = [],
+  country,
+  countries = [],
+  taxonomies
+}) => {
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
   const countryCode = country?.code.toLowerCase() as string;
   const clMarketId = country?.marketId as string;
@@ -60,24 +66,28 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const lang = params?.lang as string;
     const countryCode = params?.countryCode as string;
-    const countries = _.has(sanityApi, "allCountries") ? await sanityApi["allCountries"](lang) : {};
-    const country = countries.find((country: Country) => country.code.toLowerCase() === countryCode);
+    const countries = _.has(sanityApi, "getAllCountries")
+      ? await sanityApi.getAllCountries(lang)
+      : {};
+    const country = countries.find(
+      (country: Country) => country.code.toLowerCase() === countryCode
+    );
     const buildLanguages = _.compact(
       process.env.BUILD_LANGUAGES?.split(",").map((l) => {
         const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
         return !_.isEmpty(country) ? country : null;
       })
     );
-    const taxonomies = _.has(sanityApi, "allTaxonomies")
-      ? await sanityApi["allTaxonomies"](country.catalog.id, lang)
+    const taxonomies = _.has(sanityApi, "getAllTaxonomies")
+      ? await sanityApi.getAllTaxonomies(country.catalog.id, lang)
       : {};
 
     return {
       props: {
-        buildLanguages,
         lang,
         countries,
         country,
+        buildLanguages,
         taxonomies
       },
       revalidate: 60
