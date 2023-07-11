@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "@commercelayer/js-auth": "^4.1.1",
-    "@commercelayer/react-components": "^4.2.2",
+    "@commercelayer/react-components": "4.2.2",
     "@headlessui/react": "^1.5.0",
     "@next/env": "^13.4.9",
     "@portabletext/react": "^3.0.4",
