@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/commercelayer/commercelayer-sanity-template/compare/v1.3.0...v1.4.0) (2023-07-13)
+
+
+### Features
+
+* cleanup code and update UI ([6e4e402](https://github.com/commercelayer/commercelayer-sanity-template/commit/6e4e402630a5ab35cb10d327eb23442b51ce812e))
+
 # [1.3.0](https://github.com/commercelayer/commercelayer-sanity-template/compare/v1.2.0...v1.3.0) (2023-03-23)
 
 
