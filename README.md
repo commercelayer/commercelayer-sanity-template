@@ -17,7 +17,7 @@ Want to learn more about how we built the first version of this template and how
   - [Installation Guide](#installation-guide)
   - [Import Seed Commerce Layer Data](#import-seed-commerce-layer-data)
   - [Import Seed Sanity Studio Content](#import-seed-sanity-studio-content)
-  - [Add Custom Data](#add-custom-commerce-and-content-data)
+  - [Add Custom Commerce and Content Data](#add-custom-commerce-and-content-data)
 - [Contributors Guide](#contributors-guide)
 - [Need Help?](#need-help)
 - [License](#license)
