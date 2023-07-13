@@ -1,6 +1,6 @@
 [template.environment]
-  CL_CLIENT_ID="Commerce Layer sales channels application client ID (you can get this from dashboard.commercelayer.io)"
-  CL_ENDPOINT="Commerce Layer organization's base endpoint (you can get this from dashboard.commercelayer.io)"
+  NEXT_PUBLIC_CL_CLIENT_ID="Commerce Layer sales channels application client ID (you can get this from dashboard.commercelayer.io)"
+  NEXT_PUBLIC_CL_ENDPOINT="Commerce Layer organization's base endpoint (you can get this from dashboard.commercelayer.io)"
 
   NEXT_PUBLIC_SANITY_PROJECT_ID="Sanity project ID (you can get this from sanity.io/manage)"
   NEXT_PUBLIC_SANITY_DATASET="Sanity dataset (you can get this from sanity.io/manage)"

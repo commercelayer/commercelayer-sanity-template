@@ -1,23 +1,28 @@
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import { getSalesChannelToken } from "@commercelayer/js-auth";
+import { authentication } from "@commercelayer/js-auth";
+import { parseEndpoint } from "@utils/parser";
+
+const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
+const clientId = process.env.NEXT_PUBLIC_CL_CLIENT_ID as string;
+const slug = parseEndpoint(clEndpoint);
 
 type UseGetToken = {
-  (args: { clientId: string; endpoint: string; scope?: string; countryCode: string }): string;
+  (args: { scope: string; countryCode: string }): string;
 };
 
-export const useGetToken: UseGetToken = ({ clientId, endpoint, countryCode, scope = "market:all" }) => {
+export const useGetToken: UseGetToken = ({ scope, countryCode }) => {
   const [token, setToken] = useState("");
   useEffect(() => {
     const getCookieToken = Cookies.get(`clAccessToken-${countryCode}`);
-    if (!getCookieToken && clientId && endpoint) {
+    if (!getCookieToken && clientId && slug && scope) {
       const getToken = async () => {
-        const auth = await getSalesChannelToken({
+        const auth = await authentication("client_credentials", {
           clientId,
-          endpoint,
-          scope // NOTE: take it from country
+          slug,
+          scope: `market:${scope}`
         });
-        setToken(auth?.accessToken as string); // TODO: add to LocalStorage
+        setToken(auth?.accessToken as string);
         Cookies.set(`clAccessToken-${countryCode}`, auth?.accessToken as string, {
           // @ts-ignore
           expires: auth?.expires
@@ -27,6 +32,6 @@ export const useGetToken: UseGetToken = ({ clientId, endpoint, countryCode, scop
     } else {
       setToken(getCookieToken || "");
     }
-  }, [countryCode, clientId, endpoint, scope]);
+  }, [scope, countryCode]);
   return token;
 };

@@ -1,20 +1,22 @@
-import React, { FunctionComponent, useState } from "react";
+import _ from "lodash";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import _ from "lodash";
 import { Transition } from "@headlessui/react";
-import { Country } from "@typings/models";
 import locale from "@locale/index";
+import { Country } from "@typings/models";
 
 type Props = {
   options: Country[];
 };
 
-const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
+const LanguageSelector: React.FC<Props> = ({ options }) => {
   const [show, setShow] = useState(false);
   const {
     push,
-    query: { searchBy, lang, countryCode }
+    reload,
+    pathname,
+    query: { lang, countryCode, product }
   } = useRouter();
   const optionComponents = options.map(({ code, name, image, defaultLocale }) => {
     return {
@@ -26,9 +28,20 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
   });
   const selectedOption = _.first(optionComponents.filter(({ value }) => value === lang));
   const handleChange = (defaultLocale: string) => {
-    searchBy ? push(`/${countryCode}/${defaultLocale}?searchBy=${searchBy}`) : push(`/${countryCode}/${defaultLocale}`);
+    const viewPage = pathname.split("/").pop();
+    switch (viewPage) {
+      case "cart":
+        push(`/${countryCode}/${defaultLocale}/cart`).then(() => reload());
+        break;
+      case "[product]":
+        push(`/${countryCode}/${defaultLocale}/${product}`);
+        break;
+      case "[lang]":
+        push(`/${countryCode}/${defaultLocale}`);
+    }
     setShow(!show);
   };
+
   return (
     <div>
       <div className="mt-1 relative">
@@ -80,11 +93,11 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
               aria-activedescendant="listbox-item-3"
               className="max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
             >
-              {optionComponents.map(({ value, name, image }, k) => {
+              {optionComponents.map(({ value, name, image }, key) => {
                 const selected = value === selectedOption?.value;
                 return (
                   <li
-                    key={k}
+                    key={key}
                     role="option"
                     aria-selected={selected}
                     className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-indigo-500 ${
@@ -102,7 +115,6 @@ const LanguageSelector: FunctionComponent<Props> = ({ options }) => {
                         {locale[lang as string].languages[value as string]}
                       </span>
                     </div>
-                    {/* Highlighted: "text-white", Not Highlighted: "text-indigo-600" */}
                     <span
                       className={`${
                         selected ? "text-gray-900" : "hidden"

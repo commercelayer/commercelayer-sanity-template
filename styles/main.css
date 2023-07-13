@@ -1,6 +1,5 @@
-@import url("//data.commercelayer.app/assets/fonts/eina01.min.css");
+@import url("//fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
 @import url("//data.commercelayer.app/assets/fonts/fontawesome.min.css");
-/* @import url("//data.commercelayer.app/assets/css/commercelayer.min.css"); */
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +11,7 @@ html {
 }
 
 body {
-  font-family: "Eina01", "sans-serif";
+  font-family: "Manrope", sans-serif;
   font-display: swap;
   height: 100vh;
   @apply bg-ashy;

@@ -1,8 +1,6 @@
-import React, { Fragment, useEffect, useState } from "react";
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import _ from "lodash";
-import ProductsList from "./ProductsList";
-// import Link from 'next/link'
+import ProductsList from "@components/ProductsList";
 
 type Props = {
   taxonomies: {
@@ -10,14 +8,10 @@ type Props = {
     label?: string;
     taxons: any[];
   }[];
-  cms: string;
-  activeAlgolia: () => void;
-  algoliaStatus: boolean;
-  searchEngine: boolean;
   lang?: string;
 };
 
-const Taxonomies = ({ taxonomies, activeAlgolia, algoliaStatus, searchEngine }: Props) => {
+const Taxonomies = ({ taxonomies }: Props) => {
   const [on, setOn] = useState<Record<string, number>>({ "0": 0 });
   const [currentProducts, setCurrentProducts] = useState([]);
   useEffect(() => {
@@ -63,7 +57,7 @@ const Taxonomies = ({ taxonomies, activeAlgolia, algoliaStatus, searchEngine }: 
       );
     });
     return (
-      <div className="my-24" key={k}>
+      <div className="my-20" key={k}>
         <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-4">{t?.label || t.name}</h2>
         <fieldset>
           <legend className="sr-only">Taxon</legend>
@@ -73,37 +67,9 @@ const Taxonomies = ({ taxonomies, activeAlgolia, algoliaStatus, searchEngine }: 
     );
   });
   return (
-    <div className="px-3 lg:px-0 container mx-auto max-w-screen-lg flex flex-wrap sm:flex-nowrap">
-      <div className="flex-shrink md:flex-shrink-0 md:pr-4 w-full sm:w-auto">
-        <div className={`flex items-center mb-5 mt-${searchEngine ? 3 : 14}`}>
-          {!searchEngine ? null : (
-            <Fragment>
-              <button
-                type="button"
-                aria-pressed="false"
-                aria-labelledby="toggleLabel"
-                className={`${
-                  algoliaStatus ? "bg-blue-500" : "bg-gray-200"
-                } relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
-                onClick={activeAlgolia}
-              >
-                <span className="sr-only">Enable algolia</span>
-                <span
-                  aria-hidden="true"
-                  className={`${
-                    algoliaStatus ? "translate-x-5" : "translate-x-0"
-                  } inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}
-                ></span>
-              </button>
-              <span className="ml-3" id="toggleLabel">
-                <Image title="Algolia" src="/algolia.svg" alt="Algolia's Logo" width={200} height={50} />
-              </span>
-            </Fragment>
-          )}
-        </div>
-        {taxonomy}
-      </div>
-      <div className="w-full mt-6">
+    <div className="px-3 mt-12 lg:px-0 container mx-auto max-w-screen-lg flex flex-wrap sm:flex-nowrap">
+      <div className="flex-shrink md:flex-shrink-0 md:pr-4 w-full sm:w-auto">{taxonomy}</div>
+      <div className="w-full mt-10">
         <ProductsList products={currentProducts} />
       </div>
     </div>

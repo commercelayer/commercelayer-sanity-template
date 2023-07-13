@@ -1,20 +1,20 @@
-import React, { FunctionComponent, useState } from "react";
+import _ from "lodash";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import _ from "lodash";
 import { Transition } from "@headlessui/react";
-import { Country } from "@typings/models";
 import locale from "@locale/index";
+import { Country } from "@typings/models";
 
 type Props = {
   options: Country[];
 };
 
-const CountrySelector: FunctionComponent<Props> = ({ options }) => {
+const CountrySelector: React.FC<Props> = ({ options }) => {
   const [show, setShow] = useState(false);
   const {
     push,
-    query: { countryCode, searchBy, lang }
+    query: { lang, countryCode }
   } = useRouter();
   const optionComponents = options.map(({ code, name, image, defaultLocale }) => {
     return {
@@ -26,7 +26,7 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
   });
   const selectedOption = _.first(optionComponents.filter(({ value }) => value === countryCode));
   const handleChange = (code: string, defaultLocale: string) => {
-    searchBy ? push(`/${code}/${defaultLocale}?searchBy=${searchBy}`) : push(`/${code}/${defaultLocale}`);
+    push(`/${code}/${defaultLocale}`);
     setShow(!show);
   };
   return (
@@ -80,11 +80,11 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
               aria-activedescendant="listbox-item-3"
               className="max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
             >
-              {optionComponents.map(({ value, name, image, defaultLocale }, k) => {
+              {optionComponents.map(({ value, name, image, defaultLocale }, key) => {
                 const selected = value === selectedOption?.value;
                 return (
                   <li
-                    key={k}
+                    key={key}
                     role="option"
                     aria-selected={selected}
                     className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-indigo-500 ${
@@ -98,7 +98,6 @@ const CountrySelector: FunctionComponent<Props> = ({ options }) => {
                         {name}
                       </span>
                     </div>
-                    {/* Highlighted: "text-white", Not Highlighted: "text-indigo-600" */}
                     <span
                       className={`${
                         selected ? "text-gray-900" : "hidden"
