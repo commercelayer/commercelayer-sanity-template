@@ -5,6 +5,7 @@ export interface Country {
   domain: string;
   catalog: Catalog;
   image: Image;
+  marketId: string;
 }
 
 export interface Catalog {
@@ -23,13 +24,6 @@ export interface Taxon {
   description: string;
   products: Product[];
   taxons: Taxon[];
-}
-
-export interface Image {
-  file?: {
-    url?: string;
-  };
-  url: string;
 }
 
 export interface Product {
@@ -51,6 +45,13 @@ export interface Variant {
 
 export interface Size {
   name: string;
+}
+
+export interface Image {
+  file?: {
+    url?: string;
+  };
+  url: string;
 }
 
 export interface SelectorObject {

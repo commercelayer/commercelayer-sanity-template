@@ -5,29 +5,19 @@ import { useGetToken } from "@hooks/GetToken";
 import Page from "@components/Page";
 import Hero from "@components/Hero";
 import Taxonomies from "@components/Taxonomies";
-import { Country } from "@typings/models";
+import { Country, Taxonomy } from "@typings/models";
 import { parseLanguageCode } from "@utils/parser";
 import sanityApi from "@utils/sanity/api";
 
 type Props = {
   lang: string;
-  buildLanguages?: Country[];
-  country: {
-    code: string;
-    defaultLocale: string;
-    marketId: string;
-  };
-  countries?: any[];
-  taxonomies: any;
+  countries: Country[];
+  country: Country;
+  taxonomies: Taxonomy[];
+  buildLanguages: Country[];
 };
 
-const HomePage: NextPage<Props> = ({
-  lang,
-  buildLanguages = [],
-  country,
-  countries = [],
-  taxonomies
-}) => {
+const HomePage: NextPage<Props> = ({ lang, countries, country, taxonomies, buildLanguages }) => {
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
   const countryCode = country?.code.toLowerCase() as string;
   const clMarketId = country?.marketId as string;
@@ -63,42 +53,26 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const lang = params?.lang as string;
-    const countryCode = params?.countryCode as string;
-    const countries = _.has(sanityApi, "getAllCountries")
-      ? await sanityApi.getAllCountries(lang)
-      : {};
-    const country = countries.find(
-      (country: Country) => country.code.toLowerCase() === countryCode
-    );
-    const buildLanguages = _.compact(
-      process.env.BUILD_LANGUAGES?.split(",").map((l) => {
-        const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
-        return !_.isEmpty(country) ? country : null;
-      })
-    );
-    const taxonomies = _.has(sanityApi, "getAllTaxonomies")
-      ? await sanityApi.getAllTaxonomies(country.catalog.id, lang)
-      : {};
+  const lang = params?.lang as string;
+  const countryCode = params?.countryCode as string;
+  const countries = await sanityApi.getAllCountries(lang);
+  const country = countries.find((country: Country) => country.code.toLowerCase() === countryCode);
+  const taxonomies = await sanityApi.getAllTaxonomies(country.catalog.id, lang);
+  const buildLanguages = _.compact(
+    process.env.BUILD_LANGUAGES?.split(",").map((l) => {
+      const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
+      return !_.isEmpty(country) ? country : null;
+    })
+  );
 
-    return {
-      props: {
-        lang,
-        countries,
-        country,
-        buildLanguages,
-        taxonomies
-      },
-      revalidate: 60
-    };
-  } catch (err: any) {
-    console.error(err);
-    return {
-      props: {
-        errors: err.message
-      },
-      revalidate: 60
-    };
-  }
+  return {
+    props: {
+      lang,
+      countries,
+      country,
+      taxonomies,
+      buildLanguages
+    },
+    revalidate: 60
+  };
 };

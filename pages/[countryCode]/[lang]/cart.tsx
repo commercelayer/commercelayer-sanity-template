@@ -17,15 +17,9 @@ type CartProps = {
 
 type Props = {
   lang: string;
-  slug: string;
-  clToken: string;
-  buildLanguages?: Country[];
-  countries?: any[];
-  country: {
-    code: string;
-    defaultLocale: string;
-    marketId: string;
-  };
+  countries: Country[];
+  country: Country;
+  buildLanguages: Country[];
 };
 
 const CartIframe: React.FC<CartProps> = ({ countryCode, slug, clToken }) => {
@@ -113,39 +107,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const lang = params?.lang as string;
-    const countryCode = params?.countryCode as string;
-    const countries = _.has(sanityApi, "getAllCountries")
-      ? await sanityApi.getAllCountries(lang)
-      : {};
-    const country = countries.find(
-      (country: Country) => country.code.toLowerCase() === countryCode
-    );
-    const buildLanguages = _.compact(
-      process.env.BUILD_LANGUAGES?.split(",").map((l) => {
-        const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
-        return !_.isEmpty(country) ? country : null;
-      })
-    );
+  const lang = params?.lang as string;
+  const countryCode = params?.countryCode as string;
+  const countries = await sanityApi.getAllCountries(lang);
+  const country = countries.find((country: Country) => country.code.toLowerCase() === countryCode);
+  const buildLanguages = _.compact(
+    process.env.BUILD_LANGUAGES?.split(",").map((l) => {
+      const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
+      return !_.isEmpty(country) ? country : null;
+    })
+  );
 
-    return {
-      props: {
-        buildLanguages,
-        lang,
-        countries,
-        country
-      }
-    };
-  } catch (err: any) {
-    console.error(err);
-    return {
-      props: {
-        errors: err.message
-      },
-      revalidate: 60
-    };
-  }
+  return {
+    props: {
+      lang,
+      countries,
+      country,
+      buildLanguages
+    }
+  };
 };
 
 export default ShoppingBagPage;

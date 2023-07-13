@@ -13,16 +13,10 @@ import sanityApi from "@utils/sanity/api";
 
 type Props = {
   lang: string;
-  countryCode: string;
-  country: {
-    code: string;
-    defaultLocale: string;
-    marketId: string;
-  };
-  clMarketId: string;
   countries: Country[];
-  buildLanguages?: Country[];
+  country: Country;
   product: Product;
+  buildLanguages?: Country[];
 };
 
 const ProductPage: React.FC<Props> = ({ lang, country, countries, buildLanguages, product }) => {
@@ -169,26 +163,23 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const lang = params?.lang as string;
   const slug = params?.product;
   const countryCode = params?.countryCode as string;
-  const countries = _.has(sanityApi, "getAllCountries")
-    ? await sanityApi.getAllCountries(lang)
-    : {};
+  const countries = await sanityApi.getAllCountries(lang);
   const country = countries.find((country: Country) => country.code.toLowerCase() === countryCode);
+  const product = await sanityApi.getProduct(slug, lang);
   const buildLanguages = _.compact(
     process.env.BUILD_LANGUAGES?.split(",").map((l) => {
       const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
       return !_.isEmpty(country) ? country : null;
     })
   );
-  const product = _.has(sanityApi, "getProduct") ? await sanityApi.getProduct(slug, lang) : {};
 
   return {
     props: {
       lang,
-      countryCode,
-      country,
       countries,
-      buildLanguages,
-      product
+      country,
+      product,
+      buildLanguages
     },
     revalidate: 60
   };

@@ -6,8 +6,6 @@ import Countries from "@components/Countries";
 import sanityApi from "@utils/sanity/api";
 
 type Props = {
-  [key: string]: any;
-  lang: string;
   countries: any[];
 };
 

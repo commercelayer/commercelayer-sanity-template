@@ -27,14 +27,18 @@ const Footer: React.FC<Props> = ({ lang, countries, buildLanguages }) => {
           <div className="md:flex md:items-center">
             <p className="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
               &copy; {new Date().getFullYear()} | {""}
-              {process.env.NEXT_PUBLIC_SITE_NAME ? process.env.NEXT_PUBLIC_SITE_NAME : "Examples Store, Inc"}. | All
-              rights reserved.
+              {process.env.NEXT_PUBLIC_SITE_NAME
+                ? process.env.NEXT_PUBLIC_SITE_NAME
+                : "Examples Store, Inc"}
+              . | All rights reserved.
             </p>
           </div>
         </div>
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
           <div>
-            <h3 className="text-sm font-semibold leading-6 text-gray-900">{locale[lang].subscribeTitle}</h3>
+            <h3 className="text-sm font-semibold leading-6 text-gray-900">
+              {locale[lang].subscribeTitle}
+            </h3>
             <p className="mt-2 text-sm leading-6 text-gray-600">{locale[lang].subscribeText}.</p>
           </div>
           <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
@@ -51,6 +55,7 @@ const Footer: React.FC<Props> = ({ lang, countries, buildLanguages }) => {
               placeholder={locale[lang].subscribePlaceholder}
             />
             <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
+              {/* Handle the subcribe form yourself */}
               <button
                 type="submit"
                 className="flex w-full items-center justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
