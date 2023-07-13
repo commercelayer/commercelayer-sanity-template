@@ -6,6 +6,8 @@ A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity st
 
 [![A preview image showing the frontend demo with some products.](./public/preview.gif)](https://commercelayer-sanity-template.netlify.app)
 
+Want to learn more about how we built the first version of this template and how you can build yours? Then you should read [this article](https://commercelayer.io/blog/how-to-build-an-international-ecommerce-website-with-sanity-and-commerce-layer) on our blog.
+
 ---
 
 ## Table of Contents
@@ -15,6 +17,7 @@ A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity st
   - [Installation Guide](#installation-guide)
   - [Import Seed Commerce Layer Data](#import-seed-commerce-layer-data)
   - [Import Seed Sanity Studio Content](#import-seed-sanity-studio-content)
+  - [Add Custom Data](#add-custom-commerce-and-content-data)
 - [Contributors Guide](#contributors-guide)
 - [Need Help?](#need-help)
 - [License](#license)
@@ -43,25 +46,26 @@ A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity st
 
 | **Path**                           | **Description**                      |
 | ---------------------------------- | ------------------------------------ |
-| `.env.local.sample`                | Example file with all the required environment variables.                                                      |  
-| `/components`                      | React components for the storefront. |
-| `/locale/index.ts`                 | Config file for the storefront's transalations (`en-US`, `it-IT`, and `fr-FR`).                              |
-| `/hooks/GetToken.ts`               | React hook file to fetch a salesChannel token from Commerce Layer and save as a cookie.                             |
-| `/pages/[countryCode]/[lang]/index.tsx`     | Index page for the storefront (country selector and product listing).                                    |
-| `/pages/[countryCode]/[lang]/[product].tsx` | Page for all product items (image, product information, and variant selection).                        |
-| `/data`                            | Exported data to seed your Sanity studio with.                                                                |  
-| `/utils/sanity/api.ts`             | Where all data from Sanity is fetched using `groq` queries.                                                       |
-| `sanity.config.ts`                 | Config file for Sanity Studio.                                                                     |
-| `sanity.cli.ts`                    | Config file for Sanity CLI.                                                                        |
-| `/pages/studio/[[...index]].tsx`   | Where Sanity Studio is mounted using `next-sanity`.                                                              |
-| `/schemas`                         | Where Sanity Studio gets its content types from.                                                                 |
-| `/plugins`                         | Where the advanced Sanity Studio customization is setup.                                                     |
+| `.env.local.sample`                | Example file with all the required environment variables.               |  
+| `/components`                      | React components for the storefront.                          |
+| `/locale/index.ts`                 | Config file for the storefront's transalations (`en-US`, `it-IT`, and `fr-FR`).     |
+| `/hooks/GetToken.ts`               | React hook file to fetch a salesChannel token from Commerce Layer and save as a cookie.    |
+| `/pages/[countryCode]/[lang]/index.tsx`     | Index page for the storefront (country selector and product listing).          |
+| `/pages/[countryCode]/[lang]/[product].tsx` | Page for all product items (image, product information, and variant selection).       |
+| `/pages/[countryCode]/[lang]/cart.tsx` | Cart page for for the storefront with link to checkout.        |
+| `/data`                            | Exported data to seed your Sanity studio with.                         |  
+| `/utils/sanity/api.ts`             | Where all data from Sanity is fetched using `groq` queries.        |
+| `sanity.config.ts`                 | Config file for Sanity Studio.  |
+| `sanity.cli.ts`                    | Config file for Sanity CLI.     |
+| `/pages/studio/[[...index]].tsx`   | Where Sanity Studio is mounted using `next-sanity`.                 |
+| `/schemas`                         | Where Sanity Studio gets its content types from.                  |
+| `/plugins`                         | Where the advanced Sanity Studio customization is setup.              |
 
 ## Getting Started
 
 The quickest way to get up and running is to use the deploy button below to set up and deploy automatically to Netlify. Afterward, you will add some seed data to Commerce Layer and Sanity studio. The deploy button will clone this repository and ask you to enter all the required environment variables. Alternatively, you can clone this repository, configure the template, import the dataset into your Sanity studio, import some seed commerce data into your Commerce Layer organization, and deploy your application. The installation guides below will show you how to achieve this.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/commercelayer/commercelayer-sanity-template#BUILD_LANGUAGES=en-US,it-IT,fr-FR&BUILD_CMS=sanity)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/commercelayer/commercelayer-sanity-template#BUILD_LANGUAGES=en-US,it-IT,fr-FR)
 
 ### Installation Guide
 
@@ -176,7 +180,19 @@ sanity dataset import ./data/<name of extracted folder>/data.ndjson <your_datase
 >
 > You must access the application using the right locale slug for the country you have configured (e.g., `localhost:3000/it/it-it` or `localhost:3000/us/en-us`). Currently, Italy and France are the only countries with a default language different from `en-us`. Hence their slug is `localhost:3000/it/it-it` and `localhost:3000/fr/fr-fr`. Other countries will have the `en-us` slug (e.g., `localhost:3000/ng/en-us`). If you want to set up other countries, then create a market for it on Commerce Layer alongside the associated resources and update the Market ID on Sanity, as mentioned earlier.
 
-Eventually, you would want to add your content data and set up Commerce Layer manually based on your use case. To ensure the template runs smoothly, kindly create a [market](https://docs.commercelayer.io/core/v/api-reference/markets) associated with a [stock location](https://docs.commercelayer.io/core/v/api-reference/stock_locations), [stock item](https://docs.commercelayer.io/core/v/api-reference/stock_items), [price list](https://docs.commercelayer.io/core/v/api-reference/price_lists), [price](https://docs.commercelayer.io/core/v/api-reference/prices), and [SKU](https://docs.commercelayer.io/core/v/api-reference/skus) in Commerce Layer and update the `market ID` attribute, create a product, and link to variant(s) on Sanity. If you want to learn more about how Commerce Layer works, see our [onboarding guide](https://docs.commercelayer.io/core/welcome/onboarding-tutorial), [manual configuration guide](https://docs.commercelayer.io/core/welcome/manual-configuration), or [data models documentation](https://commercelayer.io/docs/data-model).
+### Add Custom Commerce and Content Data
+
+Eventually, you would want to set up commerce data in Commerce Layer manually and add your content data in Sanity based on your use case. To ensure the template runs smoothly, kindly do the following:
+
+1. In the [Commerce Layer dashboard](https://dashboard.commercelayer.io), create a [market](https://docs.commercelayer.io/core/v/api-reference/markets) (if you need a new one) associated with a [stock location](https://docs.commercelayer.io/core/v/api-reference/stock_locations), [stock item](https://docs.commercelayer.io/core/v/api-reference/stock_items), [price list](https://docs.commercelayer.io/core/v/api-reference/price_lists), [price](https://docs.commercelayer.io/core/v/api-reference/prices), and [SKU](https://docs.commercelayer.io/core/v/api-reference/skus)(s) and add a new `Country` content in Sanity using a valid `market ID` attribute.
+
+2. In the Sanity studio, add the content for the new SKUs as a `Variant` and associate them with a `Product` content model. You can then go ahead to update other content models like `Taxon`, `Taxonomy`, and `Catalog` as you deem fit.
+
+3. Ensure to read our [onboarding guide](https://docs.commercelayer.io/core/welcome/onboarding-tutorial), [manual configuration guide](https://docs.commercelayer.io/core/welcome/manual-configuration), or [data models documentation](https://commercelayer.io/docs/data-model) to learn more about how Commerce Layer works and the relationships between each API resource.
+
+> **Note**
+>
+> If you want to start a fresh project, we recommend you use a fresh Commerce Layer organization and a fresh Sanity studio without seed data so you can add your data from scratch. You can then use the seed data as a guide to set up all the required resources in Commerce Layer. If you have existing commerce data, you can also leverage our [Import API](https://docs.commercelayer.io/core/importing-resources) or [CLI Import Plugin](https://github.com/commercelayer/commercelayer-cli-plugin-imports/).
 
 ## Contributors Guide
 
@@ -199,8 +215,6 @@ git clone https://github.com/<your username>/commercelayer-sanity-template.git &
 2. Create an [issue](https://github.com/commercelayer/sanity-template-commercelayer/issues) in this repository.
 
 3. Ping us [on Twitter](https://twitter.com/commercelayer).
-
-> Want to learn more about how we built the first version of this template and how you can build yours? Then you should read [this article](https://commercelayer.io/blog/how-to-build-an-international-ecommerce-website-with-sanity-and-commerce-layer) on our blog.
 
 ## License
 
