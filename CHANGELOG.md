@@ -1,38 +1,34 @@
 # [1.4.0](https://github.com/commercelayer/commercelayer-sanity-template/compare/v1.3.0...v1.4.0) (2023-07-13)
 
-
 ### Features
 
-* cleanup code and update UI ([6e4e402](https://github.com/commercelayer/commercelayer-sanity-template/commit/6e4e402630a5ab35cb10d327eb23442b51ce812e))
+- cleanup code and update UI ([6e4e402](https://github.com/commercelayer/commercelayer-sanity-template/commit/6e4e402630a5ab35cb10d327eb23442b51ce812e))
 
 # [1.3.0](https://github.com/commercelayer/commercelayer-sanity-template/compare/v1.2.0...v1.3.0) (2023-03-23)
 
-
 ### Features
 
-* 🎸 add header card to template UI ([ace1227](https://github.com/commercelayer/commercelayer-sanity-template/commit/ace122739c7a3fa5268b9e87b7f8528a95bcabc9))
-* 🎸 update hero description ([dd6f8d8](https://github.com/commercelayer/commercelayer-sanity-template/commit/dd6f8d8e81de94ae4c00013c03766995982dd52c))
+- 🎸 add header card to template UI ([ace1227](https://github.com/commercelayer/commercelayer-sanity-template/commit/ace122739c7a3fa5268b9e87b7f8528a95bcabc9))
+- 🎸 update hero description ([dd6f8d8](https://github.com/commercelayer/commercelayer-sanity-template/commit/dd6f8d8e81de94ae4c00013c03766995982dd52c))
 
 # [1.2.0](https://github.com/commercelayer/sanity-template-commercelayer/compare/v1.1.0...v1.2.0) (2023-02-17)
 
-
 ### Bug Fixes
 
-* 🐛 add apiVersion to sanityClient ([3df0c1f](https://github.com/commercelayer/sanity-template-commercelayer/commit/3df0c1f7bc2e9bf00ae36c938eabc992ca8b00f4))
-* 🐛 autoprefixer: color-adjust deprecation ([f9087e5](https://github.com/commercelayer/sanity-template-commercelayer/commit/f9087e5e5523f678625499331eb351eb640ab380))
-* 🐛 improve lighthouse ([85d5d92](https://github.com/commercelayer/sanity-template-commercelayer/commit/85d5d92dd75102657071e6e9b7c482256d9c81c9))
-* 🐛 lighthouse issues ([241ace0](https://github.com/commercelayer/sanity-template-commercelayer/commit/241ace020773dc972bbcaadc3a1d55d2ad871d2b))
-* 🐛 remove postbuild script ([9e1f5e6](https://github.com/commercelayer/sanity-template-commercelayer/commit/9e1f5e6bfad8631ec5d4caca071fde1c9b3f6c3d))
-
+- 🐛 add apiVersion to sanityClient ([3df0c1f](https://github.com/commercelayer/sanity-template-commercelayer/commit/3df0c1f7bc2e9bf00ae36c938eabc992ca8b00f4))
+- 🐛 autoprefixer: color-adjust deprecation ([f9087e5](https://github.com/commercelayer/sanity-template-commercelayer/commit/f9087e5e5523f678625499331eb351eb640ab380))
+- 🐛 improve lighthouse ([85d5d92](https://github.com/commercelayer/sanity-template-commercelayer/commit/85d5d92dd75102657071e6e9b7c482256d9c81c9))
+- 🐛 lighthouse issues ([241ace0](https://github.com/commercelayer/sanity-template-commercelayer/commit/241ace020773dc972bbcaadc3a1d55d2ad871d2b))
+- 🐛 remove postbuild script ([9e1f5e6](https://github.com/commercelayer/sanity-template-commercelayer/commit/9e1f5e6bfad8631ec5d4caca071fde1c9b3f6c3d))
 
 ### Features
 
-* 🎸 add french locale (sanity and UI) ([4afc448](https://github.com/commercelayer/sanity-template-commercelayer/commit/4afc4486ec641d28d4cb824e2ea9f4929fd5a3fd))
-* 🎸 add SEO component ([852fd43](https://github.com/commercelayer/sanity-template-commercelayer/commit/852fd43e9464d1107e1cdb5ded5d1991193cbfac))
-* 🎸 add SKU code to product page ([e8a44c0](https://github.com/commercelayer/sanity-template-commercelayer/commit/e8a44c04ad4478d6f175a0638ad5d5908c0ae184))
-* 🎸 export latest sanity data ([7290d73](https://github.com/commercelayer/sanity-template-commercelayer/commit/7290d7387a89ef33e9a56dd03ca29ac471bf8c8c))
-* 🎸 upgrade to React18 and Next13 ([66645ce](https://github.com/commercelayer/sanity-template-commercelayer/commit/66645ce7ad3821a6bb77814e6fe3e2186b55cf07))
-* 🎸 upgrade to sanity studio v3 ([c85f09d](https://github.com/commercelayer/sanity-template-commercelayer/commit/c85f09d0ce39392b509acd8c42a78f69f8a120ea))
+- 🎸 add french locale (sanity and UI) ([4afc448](https://github.com/commercelayer/sanity-template-commercelayer/commit/4afc4486ec641d28d4cb824e2ea9f4929fd5a3fd))
+- 🎸 add SEO component ([852fd43](https://github.com/commercelayer/sanity-template-commercelayer/commit/852fd43e9464d1107e1cdb5ded5d1991193cbfac))
+- 🎸 add SKU code to product page ([e8a44c0](https://github.com/commercelayer/sanity-template-commercelayer/commit/e8a44c04ad4478d6f175a0638ad5d5908c0ae184))
+- 🎸 export latest sanity data ([7290d73](https://github.com/commercelayer/sanity-template-commercelayer/commit/7290d7387a89ef33e9a56dd03ca29ac471bf8c8c))
+- 🎸 upgrade to React18 and Next13 ([66645ce](https://github.com/commercelayer/sanity-template-commercelayer/commit/66645ce7ad3821a6bb77814e6fe3e2186b55cf07))
+- 🎸 upgrade to sanity studio v3 ([c85f09d](https://github.com/commercelayer/sanity-template-commercelayer/commit/c85f09d0ce39392b509acd8c42a78f69f8a120ea))
 
 # [1.1.0](https://github.com/commercelayer/sanity-template-commercelayer/compare/v1.0.1...v1.1.0) (2022-05-31)
 

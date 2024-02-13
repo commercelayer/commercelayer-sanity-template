@@ -43,7 +43,9 @@ const Taxonomies = ({ taxonomies }: Props) => {
                 disabled ? "cursor-not-allowed" : "cursor-pointer"
               } flex items-center text-sm justify-between`}
             >
-              <span className="ml-3 font-medium text-sm text-gray-900 flex-grow">{initialName}</span>
+              <span className="ml-3 font-medium text-sm text-gray-900 flex-grow">
+                {initialName}
+              </span>
               <span
                 className={`${
                   checked ? "bg-gray-900 text-gray-50" : "bg-gray-100 text-gray-600"
@@ -58,7 +60,9 @@ const Taxonomies = ({ taxonomies }: Props) => {
     });
     return (
       <div className="my-20" key={k}>
-        <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-4">{t?.label || t.name}</h2>
+        <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-4">
+          {t?.label || t.name}
+        </h2>
         <fieldset>
           <legend className="sr-only">Taxon</legend>
           <ul className=" bg-white rounded-md -space-y-px">{taxonCard}</ul>
