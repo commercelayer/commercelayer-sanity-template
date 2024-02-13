@@ -54,7 +54,9 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
           className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-black focus:border-black sm:text-sm"
         >
           <span className="flex items-center">
-            <span className="flex-shrink-0 text-gray-700 truncate capitalize">{locale[lang as string].language}: </span>
+            <span className="flex-shrink-0 text-gray-700 truncate capitalize">
+              {locale[lang as string].language}:{" "}
+            </span>
             <Image
               src={selectedOption?.image?.url as string}
               alt={selectedOption?.name as string}
@@ -80,9 +82,16 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
           </span>
         </button>
 
-        <Transition show={show} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
+        <Transition
+          show={show}
+          leave="transition ease-in duration-100"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
           <div
-            className={`absolute mt-1 w-full rounded-md bg-white shadow-lg z-10 ${show ? "z-10" : ""}`}
+            className={`absolute mt-1 w-full rounded-md bg-white shadow-lg z-10 ${
+              show ? "z-10" : ""
+            }`}
             onMouseLeave={() => setShow(false)}
           >
             <ul
@@ -106,7 +115,13 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
                     onClick={() => handleChange(value)}
                   >
                     <div className="flex items-center">
-                      <Image src={image?.url} alt={name} className="flex-shrink-0 w-6" width={200} height={50} />
+                      <Image
+                        src={image?.url}
+                        alt={name}
+                        className="flex-shrink-0 w-6"
+                        width={200}
+                        height={50}
+                      />
                       <span
                         className={`${
                           selected ? "font-semibold" : "font-normal"

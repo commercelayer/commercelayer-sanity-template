@@ -12,7 +12,13 @@ type Props = {
   pageTitle?: string;
 };
 
-const Layout: React.FC<Props> = ({ children, buildLanguages = [], lang, countryCode, countries = [] }) => {
+const Layout: React.FC<Props> = ({
+  children,
+  buildLanguages = [],
+  lang,
+  countryCode,
+  countries = []
+}) => {
   return (
     <>
       <div className="relative bg-ashy overflow-hidden">

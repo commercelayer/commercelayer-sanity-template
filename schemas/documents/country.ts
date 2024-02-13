@@ -22,7 +22,11 @@ export default defineType({
       title: "Code",
       type: "string",
       validation: (rule) =>
-        rule.required().min(2).max(4).error("A code of min. 2 characters and max. 4 characters is required")
+        rule
+          .required()
+          .min(2)
+          .max(4)
+          .error("A code of min. 2 characters and max. 4 characters is required")
     }),
     defineField({
       name: "catalog",

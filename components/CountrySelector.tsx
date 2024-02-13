@@ -41,7 +41,9 @@ const CountrySelector: React.FC<Props> = ({ options }) => {
           className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-black focus:border-black sm:text-sm"
         >
           <span className="flex items-center">
-            <span className="flex-shrink-0 text-gray-700 truncate">{locale[lang as string].shippingTo}: </span>
+            <span className="flex-shrink-0 text-gray-700 truncate">
+              {locale[lang as string].shippingTo}:{" "}
+            </span>
             <Image
               src={selectedOption?.image?.url as string}
               alt={selectedOption?.name as string}
@@ -67,7 +69,12 @@ const CountrySelector: React.FC<Props> = ({ options }) => {
           </span>
         </button>
 
-        <Transition show={show} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
+        <Transition
+          show={show}
+          leave="transition ease-in duration-100"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
           <div
             className={`absolute mt-1 w-full rounded-md bg-white shadow-lg ${show ? "z-10" : ""}`}
             onMouseLeave={() => setShow(false)}
@@ -93,8 +100,18 @@ const CountrySelector: React.FC<Props> = ({ options }) => {
                     onClick={() => handleChange(value, defaultLocale)}
                   >
                     <div className="flex items-center">
-                      <Image src={image.url} alt={name} className="flex-shrink-0 w-6" width={200} height={50} />
-                      <span className={`${selected ? "font-semibold" : "font-normal"} ml-3 block font-normal truncate`}>
+                      <Image
+                        src={image.url}
+                        alt={name}
+                        className="flex-shrink-0 w-6"
+                        width={200}
+                        height={50}
+                      />
+                      <span
+                        className={`${
+                          selected ? "font-semibold" : "font-normal"
+                        } ml-3 block font-normal truncate`}
+                      >
                         {name}
                       </span>
                     </div>

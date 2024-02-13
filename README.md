@@ -38,28 +38,28 @@ Want to learn more about how we built the first version of this template and how
 - Comprehensive installation and usage documentation.
 - One-click deployment configuration to Netlify.
 
-| [Storefront](https://commercelayer-sanity-template.netlify.app) (`/` page) | [Sanity studio](https://commercelayer-sanity-template.netlify.app/studio) (`/studio` page)                                                                |
-| ----------------------------------------- | ------------------------------ |
-| [![A preview image showing the Commerce Layer dashboard.](./public/ui-preview.png)](https://commercelayer-sanity-template.netlify.app)          | [![A preview image showing the Sanity studio.](./public/sanity-preview.png)](https://commercelayer-sanity-template.netlify.app/studio)                   |
+| [Storefront](https://commercelayer-sanity-template.netlify.app) (`/` page)                                                             | [Sanity studio](https://commercelayer-sanity-template.netlify.app/studio) (`/studio` page)                                             |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| [![A preview image showing the Commerce Layer dashboard.](./public/ui-preview.png)](https://commercelayer-sanity-template.netlify.app) | [![A preview image showing the Sanity studio.](./public/sanity-preview.png)](https://commercelayer-sanity-template.netlify.app/studio) |
 
 ## Important Files and Folders
 
-| **Path**                           | **Description**                      |
-| ---------------------------------- | ------------------------------------ |
-| `.env.local.sample`                | Example file with all the required environment variables.               |  
-| `/components`                      | React components for the storefront.                          |
-| `/locale/index.ts`                 | Config file for the storefront's transalations (`en-US`, `it-IT`, and `fr-FR`).     |
-| `/hooks/GetToken.ts`               | React hook file to fetch a salesChannel token from Commerce Layer and save as a cookie.    |
-| `/pages/[countryCode]/[lang]/index.tsx`     | Index page for the storefront (country selector and product listing).          |
-| `/pages/[countryCode]/[lang]/[product].tsx` | Page for all product items (image, product information, and variant selection).       |
-| `/pages/[countryCode]/[lang]/cart.tsx` | Cart page for for the storefront with link to checkout.        |
-| `/data`                            | Exported data to seed your Sanity studio with.                         |  
-| `/utils/sanity/api.ts`             | Where all data from Sanity is fetched using `groq` queries.        |
-| `sanity.config.ts`                 | Config file for Sanity Studio.  |
-| `sanity.cli.ts`                    | Config file for Sanity CLI.     |
-| `/pages/studio/[[...index]].tsx`   | Where Sanity Studio is mounted using `next-sanity`.                 |
-| `/schemas`                         | Where Sanity Studio gets its content types from.                  |
-| `/plugins`                         | Where the advanced Sanity Studio customization is setup.              |
+| **Path**                                    | **Description**                                                                         |
+| ------------------------------------------- | --------------------------------------------------------------------------------------- | --- |
+| `.env.local.sample`                         | Example file with all the required environment variables.                               |
+| `/components`                               | React components for the storefront.                                                    |
+| `/locale/index.ts`                          | Config file for the storefront's transalations (`en-US`, `it-IT`, and `fr-FR`).         |
+| `/hooks/GetToken.ts`                        | React hook file to fetch a salesChannel token from Commerce Layer and save as a cookie. |
+| `/pages/[countryCode]/[lang]/index.tsx`     | Index page for the storefront (country selector and product listing).                   |
+| `/pages/[countryCode]/[lang]/[product].tsx` | Page for all product items (image, product information, and variant selection).         |
+| `/pages/[countryCode]/[lang]/cart.tsx`      | Cart page for for the storefront with link to checkout.                                 |
+| `/data`                                     | Exported data to seed your Sanity studio with.                                          |     |
+| `/utils/sanity/api.ts`                      | Where all data from Sanity is fetched using `groq` queries.                             |
+| `sanity.config.ts`                          | Config file for Sanity Studio.                                                          |
+| `sanity.cli.ts`                             | Config file for Sanity CLI.                                                             |
+| `/pages/studio/[[...index]].tsx`            | Where Sanity Studio is mounted using `next-sanity`.                                     |
+| `/schemas`                                  | Where Sanity Studio gets its content types from.                                        |
+| `/plugins`                                  | Where the advanced Sanity Studio customization is setup.                                |
 
 ## Getting Started
 
@@ -73,18 +73,18 @@ The quickest way to get up and running is to use the deploy button below to set 
 
 2. Rename the `/env.local.example` file to `.env.local` and add the following credentials:
 
-| **Variable**                         | **Description**                     |
-| ------------------------------------ | ----------------------------------- |
-| `BUILD_LANGUAGES`                    | The supported locales (the default is `en-US, it-IT, fr-FR`).                                                       |
-| `NEXT_PUBLIC_SITE_NAME`              | Optional name for the `<title>` head tag (you can also edit this directly in the code).                           |
-| `NEXT_PUBLIC_SITE_URL`               | Optional URL of your deployed project for the `og:url` meta property (you can also edit this directly in the code).|
-| `NEXT_PUBLIC_CL_CLIENT_ID`                       | Your Commerce Layer sales channels application client ID (you can create this automatically by following this [onboarding guide](https://docs.commercelayer.io/developers) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io).          |
-| `NEXT_PUBLIC_CL_ENDPOINT`                        | Your Commerce Layer organization's base endpoint (you can copy this on the [Commerce Layer dashboard](https://dashboard.commercelayer.io).                                                 |
-| `NEXT_PUBLIC_SANITY_PROJECT_TITLE`   | Optional name for the `<title>` head tag in Sanity studio (you can also edit this directly in the code).          |
-| `NEXT_PUBLIC_SANITY_PROJECT_ID`      | Sanity project ID (you can get this from [sanity.io/manage](https://sanity.io/manage) after creating a new project with the `npm -y create sanity@latest` CLI command or this [quick start wizard](https://sanity.io/get-started).                           |
-| `NEXT_PUBLIC_SANITY_DATASET`         | Sanity dataset (you can get this from [sanity.io/manage](https://sanity.io/manage)).                                |
-| `NEXT_PUBLIC_SANITY_API_VERSION`     | Sanity API version in the ISO date format, e.g `2022-02-15` (you can learn more about this in [Sanity docs](https://www.sanity.io/help/js-client-api-version)).                         |
-| `NEXT_PUBLIC_SANITY_TOKEN`           | Sanity API token (you can get this from [sanity.io/manage](https://sanity.io/manage)).                           |
+| **Variable**                       | **Description**                                                                                                                                                                                                                                               |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `BUILD_LANGUAGES`                  | The supported locales (the default is `en-US, it-IT, fr-FR`).                                                                                                                                                                                                 |
+| `NEXT_PUBLIC_SITE_NAME`            | Optional name for the `<title>` head tag (you can also edit this directly in the code).                                                                                                                                                                       |
+| `NEXT_PUBLIC_SITE_URL`             | Optional URL of your deployed project for the `og:url` meta property (you can also edit this directly in the code).                                                                                                                                           |
+| `NEXT_PUBLIC_CL_CLIENT_ID`         | Your Commerce Layer sales channels application client ID (you can create this automatically by following this [onboarding guide](https://docs.commercelayer.io/developers) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io). |
+| `NEXT_PUBLIC_CL_ENDPOINT`          | Your Commerce Layer organization's base endpoint (you can copy this on the [Commerce Layer dashboard](https://dashboard.commercelayer.io).                                                                                                                    |
+| `NEXT_PUBLIC_SANITY_PROJECT_TITLE` | Optional name for the `<title>` head tag in Sanity studio (you can also edit this directly in the code).                                                                                                                                                      |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID`    | Sanity project ID (you can get this from [sanity.io/manage](https://sanity.io/manage) after creating a new project with the `npm -y create sanity@latest` CLI command or this [quick start wizard](https://sanity.io/get-started).                            |
+| `NEXT_PUBLIC_SANITY_DATASET`       | Sanity dataset (you can get this from [sanity.io/manage](https://sanity.io/manage)).                                                                                                                                                                          |
+| `NEXT_PUBLIC_SANITY_API_VERSION`   | Sanity API version in the ISO date format, e.g `2022-02-15` (you can learn more about this in [Sanity docs](https://www.sanity.io/help/js-client-api-version)).                                                                                               |
+| `NEXT_PUBLIC_SANITY_TOKEN`         | Sanity API token (you can get this from [sanity.io/manage](https://sanity.io/manage)).                                                                                                                                                                        |
 
 3. Run the command below to install the required dependencies:
 
@@ -172,8 +172,8 @@ sanity dataset import ./data/<name of extracted folder>/data.ndjson <your_datase
 >
 > So, when you seed your Commerce Layer organization, some markets will be created with a different market ID from the one imported into Sanity. Hence, you will need to fetch the valid market scope's number (4 digits) from the sales channel tab of your organization in the [Commerce Layer dashboard](https://dashboard.commercelayer.io) and update the appropriate country model in Sanity. For example, the Europe Market on Commerce Layer and Italy country model on Sanity. Failure to do this will result in an invalid scope authentication error when you try to access the storefront.
 
-| Commerce Layer dashboard (sales channel tab) | Sanity studio (country model schema) |
-| ---- | ---- |
+| Commerce Layer dashboard (sales channel tab)                                     | Sanity studio (country model schema)                                      |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | ![A preview image showing the Commerce Layer dashboard.](./public/cl-screen.png) | ![A preview image showing the sanity studio.](./public/sanity-screen.png) |
 
 > **Warning**
