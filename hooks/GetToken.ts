@@ -15,15 +15,15 @@ export const useGetToken: UseGetToken = ({ scope, countryCode }) => {
   const [token, setToken] = useState("");
   useEffect(() => {
     const getCookieToken = Cookies.get(`clAccessToken-${countryCode}`);
-    if (!getCookieToken && clientId && slug && scope) {
+    if ((!getCookieToken || getCookieToken === "undefined") && clientId && slug && scope) {
       const getToken = async () => {
         const auth = await authentication("client_credentials", {
           clientId,
           slug,
           scope: `market:${scope}`
         });
-        setToken(auth?.accessToken as string);
-        Cookies.set(`clAccessToken-${countryCode}`, auth?.accessToken as string, {
+        setToken(auth?.accessToken);
+        Cookies.set(`clAccessToken-${countryCode}`, auth?.accessToken, {
           // @ts-ignore
           expires: auth?.expires
         });

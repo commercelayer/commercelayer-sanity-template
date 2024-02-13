@@ -32,6 +32,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+error.log*
+success.log*
+warn.log*
 
 # Local env files
 .env
@@ -39,3 +42,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Data set
+data
+!data/production.tar.gz

@@ -64,31 +64,31 @@
     ]
   },
   "dependencies": {
-    "@commercelayer/js-auth": "^4.1.1",
-    "@commercelayer/react-components": "4.2.2",
+    "@commercelayer/js-auth": "^4.2.1",
+    "@commercelayer/react-components": "4.9.0",
     "@headlessui/react": "^1.5.0",
-    "@next/env": "^13.4.9",
+    "@next/env": "^14.1.0",
     "@portabletext/react": "^3.0.4",
-    "@sanity/client": "^6.1.7",
+    "@sanity/client": "^6.12.4",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.4.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "10.4.5",
-    "axios": "^0.26.0",
+    "axios": "^1.6.7",
     "iframe-resizer-react": "^1.1.0",
     "js-cookie": "^3.0.1",
-    "latest": "^0.2.0",
-    "next": "^13.1.6",
-    "next-sanity": "^5.1.1",
-    "postcss": "^8.4.6",
+    "next": "^14.1.0",
+    "next-sanity": "^8.0.0",
+    "postcss": "^8.4.35",
     "prop-types": "^15.8.1",
     "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
-    "sanity": "^3.4.0",
+    "react-icons": "^5.0.1",
+    "sanity": "^3.28.0",
+    "semver": "^7.6.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
@@ -113,12 +113,12 @@
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-preset-env": "^7.4.1",
     "prettier": "^2.5.1",
-    "semantic-release": "^19.0.2",
+    "semantic-release": "^23.0.2",
     "tailwindcss": "^3.0.23",
-    "typescript": "4.5.5"
+    "typescript": "5.2.2"
   },
   "engines": {
     "node": ">=16",
-    "npm": ">=7.0.0"
+    "npm": ">=10.4.0"
   }
 }

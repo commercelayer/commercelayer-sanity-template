@@ -9,7 +9,7 @@ const nextConfig = {
     ]
   },
   env: {
-    JSCOV: 0,
+    // JSCOV: 0,
     NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
     NEXT_PUBLIC_SANITY_DATASET: process.env.SANITY_DATASET,
     NEXT_PUBLIC_SANITY_TOKEN: process.env.SANITY_TOKEN,
