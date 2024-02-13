@@ -10,7 +10,7 @@
     "start": "next start",
     "format": "npx prettier --write . --ignore-path .gitignore",
     "lint": "next lint -- --ignore-path .gitignore",
-    "lint:fix": "pnpm run format && pnpm run lint -- --fix",
+    "lint:fix": "pnpm run format && next lint -- --fix --ignore-path .gitignore",
     "export": "sanity dataset export production ./data/production.tar.gz"
   },
   "repository": {
