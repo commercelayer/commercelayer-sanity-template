@@ -4,7 +4,7 @@
 
 A multi-country ecommerce template built with Commerce Layer, Nextjs, Sanity studio, and deployed to Netlify.
 
-[![A preview image showing the frontend demo with some products.](./public/preview.gif)](https://commercelayer-sanity-template.netlify.app)
+[![A preview image showing the frontend demo with some products.](./public/preview.gif)](https://sanity-commercelayer-template.netlify.app)
 
 Want to learn more about how we built the first version of this template and how you can build yours? Then you should read [this article](https://commercelayer.io/blog/how-to-build-an-international-ecommerce-website-with-sanity-and-commerce-layer) on our blog.
 
@@ -12,15 +12,18 @@ Want to learn more about how we built the first version of this template and how
 
 ## Table of Contents
 
-- [Template Features](#template-features)
-- [Getting Started](#getting-started)
-  - [Installation Guide](#installation-guide)
-  - [Import Seed Commerce Layer Data](#import-seed-commerce-layer-data)
-  - [Import Seed Sanity Studio Content](#import-seed-sanity-studio-content)
-  - [Add Custom Commerce and Content Data](#add-custom-commerce-and-content-data)
-- [Contributors Guide](#contributors-guide)
-- [Need Help?](#need-help)
-- [License](#license)
+- [Commerce Layer Sanity Template](#commerce-layer-sanity-template)
+  - [Table of Contents](#table-of-contents)
+  - [Template Features](#template-features)
+  - [Important Files and Folders](#important-files-and-folders)
+  - [Getting Started](#getting-started)
+    - [Installation Guide](#installation-guide)
+    - [Import Seed Commerce Layer Data](#import-seed-commerce-layer-data)
+    - [Import Seed Sanity Studio Content](#import-seed-sanity-studio-content)
+    - [Add Custom Commerce and Content Data](#add-custom-commerce-and-content-data)
+  - [Contributors Guide](#contributors-guide)
+  - [Need Help?](#need-help)
+  - [License](#license)
 
 ---
 
@@ -38,9 +41,9 @@ Want to learn more about how we built the first version of this template and how
 - Comprehensive installation and usage documentation.
 - One-click deployment configuration to Netlify.
 
-| [Storefront](https://commercelayer-sanity-template.netlify.app) (`/` page)                                                             | [Sanity studio](https://commercelayer-sanity-template.netlify.app/studio) (`/studio` page)                                             |
+| [Storefront](https://sanity-commercelayer-template.netlify.app) (`/` page)                                                             | [Sanity studio](https://sanity-commercelayer-template.netlify.app/studio) (`/studio` page)                                             |
 | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| [![A preview image showing the Commerce Layer dashboard.](./public/ui-preview.png)](https://commercelayer-sanity-template.netlify.app) | [![A preview image showing the Sanity studio.](./public/sanity-preview.png)](https://commercelayer-sanity-template.netlify.app/studio) |
+| [![A preview image showing the Commerce Layer dashboard.](./public/ui-preview.png)](https://sanity-commercelayer-template.netlify.app) | [![A preview image showing the Sanity studio.](./public/sanity-preview.png)](https://sanity-commercelayer-template.netlify.app/studio) |
 
 ## Important Files and Folders
 
