@@ -3197,7 +3197,7 @@ packages:
   /axios@1.6.5:
     resolution: {integrity: sha512-Ii012v05KEVuUoFWmMW/UQv9aRIc3ZwkWDcM+h5Il8izZCtRVpDUfwpoFf7eOtajT3QiGR4yDUx7lPqHJULgbg==}
     dependencies:
-      follow-redirects: 1.15.5(debug@4.3.4)
+      follow-redirects: 1.15.6(debug@4.3.4)
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -3207,7 +3207,7 @@ packages:
   /axios@1.6.7:
     resolution: {integrity: sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==}
     dependencies:
-      follow-redirects: 1.15.5(debug@4.3.4)
+      follow-redirects: 1.15.6(debug@4.3.4)
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -4874,8 +4874,8 @@ packages:
       tslib: 2.6.0
     dev: false
 
-  /follow-redirects@1.15.5(debug@4.3.4):
-    resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
+  /follow-redirects@1.15.6(debug@4.3.4):
+    resolution: {integrity: sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -5052,7 +5052,7 @@ packages:
     dependencies:
       debug: 4.3.4(supports-color@5.5.0)
       decompress-response: 7.0.0
-      follow-redirects: 1.15.5(debug@4.3.4)
+      follow-redirects: 1.15.6(debug@4.3.4)
       into-stream: 6.0.0
       is-plain-object: 5.0.0
       is-retry-allowed: 2.2.0
