@@ -77,10 +77,10 @@
     "@tailwindcss/typography": "^0.5.2",
     "@typescript-eslint/typescript-estree": "^7.0.1",
     "autoprefixer": "10.4.5",
-    "axios": "^1.6.7",
+    "axios": "^1.7.4",
     "iframe-resizer-react": "^1.1.0",
     "js-cookie": "^3.0.1",
-    "next": "^14.1.0",
+    "next": "^14.1.1",
     "next-sanity": "^8.0.0",
     "postcss": "^8.4.35",
     "prop-types": "^15.8.1",
@@ -89,7 +89,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "sanity": "^3.28.0",
-    "semver": "^7.6.0",
+    "semver": "^7.6.1",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
