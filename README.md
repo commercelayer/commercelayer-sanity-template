@@ -213,11 +213,9 @@ git clone https://github.com/<your username>/commercelayer-sanity-template.git &
 
 ## Need Help?
 
-1. Join [Commerce Layer's Slack community](https://slack.commercelayer.app).
-
-2. Create an [issue](https://github.com/commercelayer/sanity-template-commercelayer/issues) in this repository.
-
-3. Ping us [on Twitter](https://twitter.com/commercelayer).
+- Join [Commerce Layer's Discord community](https://discord.gg/commercelayer).
+- Ping us on [Bluesky](https://bsky.app/profile/commercelayer.io), [X (formerly Twitter)](https://x.com/commercelayer), or [LinkedIn](https://www.linkedin.com/company/commerce-layer).
+- Is there a bug? Create an [issue](https://github.com/commercelayersanity-template-commercelayer/issues) on this repository.
 
 ## License
 
