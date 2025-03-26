@@ -154,15 +154,14 @@ Kindly follow the steps below to add the dataset the template was developed with
 1. Extract the `production.tar.gz` file in the `/data` directory using the command below:
 
 ```bash
-tar -xf ./data/production.tar.gz
+tar -xf ./data/production.tar.gz -C ./data
 ```
-
-The extracted folder name should look like `production-export-2021-02-26t14-15-56-557z`.
 
 2. Run the command below to import the `data.ndjson` file in the extracted folder.
 
 ```bash
-sanity dataset import ./data/<name of extracted folder>/data.ndjson <your_dataset>
+# You might need to login first using `sanity login`.
+sanity dataset import ./data/production/data.ndjson <your_dataset> # Sanity will also give you the option in the CLI to create or select one.
 ```
 
 3. Check the Sanity studio now on `localhost:3000/studio` to preview the imported content.
@@ -173,7 +172,7 @@ sanity dataset import ./data/<name of extracted folder>/data.ndjson <your_datase
 >
 > The Sanity content data includes a collection of sample countries, products, variants, sizes, taxons, taxonomies, catalogs, and product images created during development. To get an [access token](https://docs.commercelayer.io/developers/authentication) for the Nextjs storefront, we fetch the scope (market ID) from the `Market Id` attribute set in the Sanity `country` document schema.
 >
-> So, when you seed your Commerce Layer organization, some markets will be created with a different market ID from the one imported into Sanity. Hence, you will need to fetch the valid market scope's number (4 digits) from the sales channel tab of your organization in the [Commerce Layer dashboard](https://dashboard.commercelayer.io) and update the appropriate country model in Sanity. For example, the Europe Market on Commerce Layer and Italy country model on Sanity. Failure to do this will result in an invalid scope authentication error when you try to access the storefront.
+> So, when you seed your Commerce Layer organization, some markets will be created with a different market ID from the one imported into Sanity. Hence, you will need to fetch the valid market scope's ID from the sales channel tab of your organization in the [Commerce Layer dashboard](https://dashboard.commercelayer.io) and update the appropriate country model in Sanity. For example, the Europe Market on Commerce Layer and Italy country model on Sanity. Failure to do this will result in an invalid scope authentication error when you try to access the storefront.
 
 | Commerce Layer dashboard (sales channel tab)                                     | Sanity studio (country model schema)                                      |
 | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
