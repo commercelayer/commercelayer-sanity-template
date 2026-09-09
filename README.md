@@ -48,7 +48,7 @@ Want to learn more about how we built the first version of this template and how
 ## Important Files and Folders
 
 | **Path**                                    | **Description**                                                                         |
-| ------------------------------------------- | --------------------------------------------------------------------------------------- | --- |
+| ------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `.env.local.sample`                         | Example file with all the required environment variables.                               |
 | `/components`                               | React components for the storefront.                                                    |
 | `/locale/index.ts`                          | Config file for the storefront's transalations (`en-US`, `it-IT`, and `fr-FR`).         |
@@ -56,7 +56,7 @@ Want to learn more about how we built the first version of this template and how
 | `/pages/[countryCode]/[lang]/index.tsx`     | Index page for the storefront (country selector and product listing).                   |
 | `/pages/[countryCode]/[lang]/[product].tsx` | Page for all product items (image, product information, and variant selection).         |
 | `/pages/[countryCode]/[lang]/cart.tsx`      | Cart page for for the storefront with link to checkout.                                 |
-| `/data`                                     | Exported data to seed your Sanity studio with.                                          |     |
+| `/data`                                     | Exported data to seed your Sanity studio with.                                          |
 | `/utils/sanity/api.ts`                      | Where all data from Sanity is fetched using `groq` queries.                             |
 | `sanity.config.ts`                          | Config file for Sanity Studio.                                                          |
 | `sanity.cli.ts`                             | Config file for Sanity CLI.                                                             |
