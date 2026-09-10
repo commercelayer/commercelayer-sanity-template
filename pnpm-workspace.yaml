@@ -6,3 +6,5 @@ allowBuilds:
   esbuild: true
   core-js-pure: false
   styled-components: false
+  iframe-resizer: true
+  unrs-resolver: true
