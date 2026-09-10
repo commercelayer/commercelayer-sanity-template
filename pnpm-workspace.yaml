@@ -1,0 +1,8 @@
+# pnpm 11 reads its settings from here instead of the "pnpm" field in package.json.
+# Dependency lifecycle scripts are blocked by default, so each one must be decided
+# explicitly: esbuild needs its postinstall to link the platform binary, the others
+# only print funding/greeting messages.
+allowBuilds:
+  esbuild: true
+  core-js-pure: false
+  styled-components: false

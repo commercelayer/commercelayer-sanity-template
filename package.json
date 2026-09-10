@@ -3,6 +3,7 @@
   "version": "1.4.0",
   "description": "A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity studio, and deployed to Netlify.",
   "private": true,
+  "packageManager": "pnpm@11.9.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "next",
@@ -119,6 +120,6 @@
   },
   "engines": {
     "node": ">=24",
-    "npm": ">=11"
+    "pnpm": ">=11"
   }
 }
