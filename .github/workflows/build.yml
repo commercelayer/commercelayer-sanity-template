@@ -1,12 +1,12 @@
-name: Release
+name: Build
 on:
   push:
     branches: [main, beta, alpha]
   pull_request:
     branches: [main, beta, alpha]
 jobs:
-  release:
-    name: Release
+  build:
+    name: Build
     environment: staging
     runs-on: ubuntu-22.04
     steps:
@@ -34,7 +34,3 @@ jobs:
           NEXT_PUBLIC_SANITY_TOKEN: ${{ secrets.NEXT_PUBLIC_SANITY_TOKEN }}
           BUILD_LANGUAGES: ${{ vars.BUILD_LANGUAGES }}
         run: pnpm run build
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release

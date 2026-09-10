@@ -21,52 +21,25 @@
     "type": "git",
     "url": "git+https://github.com/commercelayer/commercelayer-sanity-template.git"
   },
-  "release": {
-    "branches": [
-      "+([0-9])?(.{+([0-9]),x}).x",
-      "main",
-      {
-        "name": "beta",
-        "prerelease": true
-      },
-      {
-        "name": "alpha",
-        "prerelease": true
-      }
-    ],
-    "author": {
-      "name": "Commerce Layer",
-      "email": "development@commercelayer.io"
-    },
-    "license": "MIT",
-    "bugs": {
-      "url": "https://github.com/commercelayer/commercelayer-sanity-template/issues"
-    },
-    "homepage": "https://github.com/commercelayer/commercelayer-sanity-template#readme",
-    "keywords": [
-      "commercelayer",
-      "sanity",
-      "reactjs",
-      "nextjs",
-      "jamstack",
-      "headless",
-      "ecommerce",
-      "api"
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git",
-      [
-        "@semantic-release/github",
-        {
-          "addReleases": "top"
-        }
-      ]
-    ]
+  "author": {
+    "name": "Commerce Layer",
+    "email": "development@commercelayer.io"
   },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/commercelayer/commercelayer-sanity-template/issues"
+  },
+  "homepage": "https://github.com/commercelayer/commercelayer-sanity-template#readme",
+  "keywords": [
+    "commercelayer",
+    "sanity",
+    "reactjs",
+    "nextjs",
+    "jamstack",
+    "headless",
+    "ecommerce",
+    "api"
+  ],
   "dependencies": {
     "@commercelayer/js-auth": "^6.7.1",
     "@commercelayer/react-components": "4.9.0",
@@ -98,12 +71,6 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.1.6",
-    "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/commit-analyzer": "^9.0.2",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.2",
-    "@semantic-release/npm": "^9.0.1",
-    "@semantic-release/release-notes-generator": "^10.0.3",
     "@types/js-cookie": "^3.0.1",
     "@types/lodash": "^4.14.178",
     "@types/node": "^20.11.17",
@@ -116,7 +83,6 @@
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-preset-env": "^7.4.1",
     "prettier": "^2.5.1",
-    "semantic-release": "^23.0.2",
     "tailwindcss": "^3.0.23",
     "typescript": "5.9.3"
   },
