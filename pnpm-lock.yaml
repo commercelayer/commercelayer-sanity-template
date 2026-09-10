@@ -9,128 +9,128 @@ importers:
   .:
     dependencies:
       '@commercelayer/js-auth':
-        specifier: ^6.7.1
+        specifier: ^6.7.2
         version: 6.7.2
       '@commercelayer/react-components':
         specifier: 4.9.0
         version: 4.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@headlessui/react':
-        specifier: ^1.5.0
+        specifier: ^1.7.19
         version: 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@next/env':
-        specifier: ^14.1.0
+        specifier: ^14.2.35
         version: 14.2.35
       '@portabletext/react':
-        specifier: ^3.0.4
+        specifier: ^3.2.4
         version: 3.2.4(react@18.3.1)
       '@sanity/client':
-        specifier: ^6.12.4
+        specifier: ^6.29.1
         version: 6.29.1
       '@sanity/image-url':
-        specifier: ^1.0.2
+        specifier: ^1.2.0
         version: 1.2.0
       '@sanity/vision':
-        specifier: ^3.4.0
+        specifier: ^3.99.0
         version: 3.99.0(@babel/runtime@7.29.7)(@codemirror/lint@6.9.7)(@codemirror/theme-one-dark@6.1.3)(@emotion/is-prop-valid@1.4.0)(codemirror@6.0.2)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@tailwindcss/aspect-ratio':
-        specifier: ^0.4.0
+        specifier: ^0.4.2
         version: 0.4.2(tailwindcss@3.4.19(yaml@2.9.0))
       '@tailwindcss/forms':
-        specifier: ^0.4.0
+        specifier: ^0.4.1
         version: 0.4.1(tailwindcss@3.4.19(yaml@2.9.0))
       '@tailwindcss/typography':
-        specifier: ^0.5.2
+        specifier: ^0.5.20
         version: 0.5.20(tailwindcss@3.4.19(yaml@2.9.0))
       '@typescript-eslint/typescript-estree':
-        specifier: ^7.0.1
+        specifier: ^7.18.0
         version: 7.18.0(typescript@5.9.3)
       autoprefixer:
         specifier: 10.4.5
         version: 10.4.5(postcss@8.5.28)
       axios:
-        specifier: ^1.6.7
+        specifier: ^1.20.0
         version: 1.20.0
       iframe-resizer-react:
-        specifier: ^1.1.0
+        specifier: ^1.1.1
         version: 1.1.1(@babel/core@7.29.7)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       js-cookie:
-        specifier: ^3.0.1
+        specifier: ^3.0.8
         version: 3.0.8
       next:
-        specifier: ^14.1.0
+        specifier: ^14.2.35
         version: 14.2.35(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-sanity:
-        specifier: ^8.0.0
+        specifier: ^8.5.5
         version: 8.5.5(@sanity/client@6.29.1)(@sanity/icons@3.8.0(react@18.3.1))(@sanity/types@3.99.0(@types/react@18.3.31))(@sanity/ui@2.16.29(@emotion/is-prop-valid@1.4.0)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(next@14.2.35(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sanity@3.99.0(@emotion/is-prop-valid@1.4.0)(@types/node@20.19.43)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(jiti@2.7.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.9.3)(yaml@2.9.0))(styled-components@6.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       postcss:
-        specifier: ^8.4.35
+        specifier: ^8.5.28
         version: 8.5.28
       prop-types:
         specifier: ^15.8.1
         version: 15.8.1
       query-string:
-        specifier: ^7.1.1
+        specifier: ^7.1.3
         version: 7.1.3
       react:
-        specifier: ^18.2.0
+        specifier: ^18.3.1
         version: 18.3.1
       react-dom:
-        specifier: ^18.2.0
+        specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-icons:
-        specifier: ^5.0.1
+        specifier: ^5.7.0
         version: 5.7.0(react@18.3.1)
       sanity:
-        specifier: ^3.28.0
+        specifier: ^3.99.0
         version: 3.99.0(@emotion/is-prop-valid@1.4.0)(@types/node@20.19.43)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(jiti@2.7.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.9.3)(yaml@2.9.0)
       semver:
-        specifier: ^7.6.0
+        specifier: ^7.8.5
         version: 7.8.5
       styled-components:
-        specifier: ^6.1.19
+        specifier: ^6.5.3
         version: 6.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@next/eslint-plugin-next':
-        specifier: ^13.1.6
+        specifier: ^13.5.11
         version: 13.5.11
       '@types/js-cookie':
-        specifier: ^3.0.1
+        specifier: ^3.0.6
         version: 3.0.6
       '@types/lodash':
-        specifier: ^4.14.178
+        specifier: ^4.17.25
         version: 4.17.25
       '@types/node':
-        specifier: ^20.11.17
+        specifier: ^20.19.43
         version: 20.19.43
       '@types/react':
-        specifier: ^18.0.28
+        specifier: ^18.3.31
         version: 18.3.31
       '@types/react-dom':
-        specifier: ^18.0.11
+        specifier: ^18.3.7
         version: 18.3.7(@types/react@18.3.31)
       eslint:
-        specifier: ^8.56.0
+        specifier: ^8.57.1
         version: 8.57.1
       eslint-config-next:
-        specifier: ^13.1.6
+        specifier: ^13.5.11
         version: 13.5.11(eslint@8.57.1)(typescript@5.9.3)
       eslint-config-prettier:
-        specifier: ^8.6.0
+        specifier: ^8.10.2
         version: 8.10.2(eslint@8.57.1)
       globby:
-        specifier: ^13.1.3
+        specifier: ^13.2.2
         version: 13.2.2
       postcss-flexbugs-fixes:
         specifier: 5.0.2
         version: 5.0.2(postcss@8.5.28)
       postcss-preset-env:
-        specifier: ^7.4.1
+        specifier: ^7.8.3
         version: 7.8.3(postcss@8.5.28)
       prettier:
-        specifier: ^2.5.1
+        specifier: ^2.8.8
         version: 2.8.8
       tailwindcss:
-        specifier: ^3.0.23
+        specifier: ^3.4.19
         version: 3.4.19(yaml@2.9.0)
       typescript:
         specifier: 5.9.3
