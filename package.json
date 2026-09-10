@@ -3,14 +3,15 @@
   "version": "1.4.0",
   "description": "A multi-country ecommerce template built with Commerce Layer, Next.js, Sanity studio, and deployed to Netlify.",
   "private": true,
+  "packageManager": "pnpm@11.9.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "format": "npx prettier --write . --ignore-path .gitignore",
-    "lint": "next lint -- --ignore-path .gitignore",
-    "lint:fix": "pnpm run format && next lint -- --fix --ignore-path .gitignore",
+    "check": "next lint -- --ignore-path .gitignore",
+    "check:fix": "pnpm run format && next lint -- --fix --ignore-path .gitignore",
     "export": "sanity dataset export production ./data/production.tar.gz"
   },
   "repository": {
@@ -31,8 +32,8 @@
       }
     ],
     "author": {
-      "name": "Bolaji Ayodeji",
-      "email": "bolaji@commercelayer.io"
+      "name": "Commerce Layer",
+      "email": "development@commercelayer.io"
     },
     "license": "MIT",
     "bugs": {
@@ -118,7 +119,7 @@
     "typescript": "5.2.2"
   },
   "engines": {
-    "node": ">=16",
-    "npm": ">=10.4.0"
+    "node": ">=24",
+    "pnpm": ">=11"
   }
 }
