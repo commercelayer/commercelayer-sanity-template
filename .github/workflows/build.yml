@@ -1,9 +1,9 @@
 name: Build
+
 on:
   push:
-    branches: [main, beta, alpha]
-  pull_request:
-    branches: [main, beta, alpha]
+    tags: ['v*']
+
 jobs:
   build:
     name: Build
