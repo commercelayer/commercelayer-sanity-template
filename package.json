@@ -9,9 +9,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "format": "npx prettier --write . --ignore-path .gitignore",
-    "check": "next lint -- --ignore-path .gitignore",
-    "check:fix": "pnpm run format && next lint -- --fix --ignore-path .gitignore",
+    "format": "pnpx prettier --write . --ignore-path .gitignore",
+    "check": "next lint --ignore-path .gitignore",
+    "check:fix": "pnpm run format && next lint --fix --ignore-path .gitignore",
     "export": "sanity dataset export production ./data/production.tar.gz",
     "clean": "pnpx rimraf --glob **/node_modules **/pnpm-lock.yaml",
     "dep:major": "pnpm dlx npm-check-updates --packageFile '**/package.json' -u && node replace-react.mjs",
@@ -94,7 +94,7 @@
     "react-icons": "^5.0.1",
     "sanity": "^3.28.0",
     "semver": "^7.6.0",
-    "styled-components": "^5.3.6"
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.1.6",
@@ -109,7 +109,6 @@
     "@types/node": "^20.11.17",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@types/styled-components": "^5.1.26",
     "eslint": "^8.56.0",
     "eslint-config-next": "^13.1.6",
     "eslint-config-prettier": "^8.6.0",
@@ -119,7 +118,7 @@
     "prettier": "^2.5.1",
     "semantic-release": "^23.0.2",
     "tailwindcss": "^3.0.23",
-    "typescript": "5.2.2"
+    "typescript": "5.9.3"
   },
   "engines": {
     "node": ">=24",
