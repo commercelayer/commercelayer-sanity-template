@@ -12,7 +12,10 @@
     "format": "npx prettier --write . --ignore-path .gitignore",
     "check": "next lint -- --ignore-path .gitignore",
     "check:fix": "pnpm run format && next lint -- --fix --ignore-path .gitignore",
-    "export": "sanity dataset export production ./data/production.tar.gz"
+    "export": "sanity dataset export production ./data/production.tar.gz",
+    "clean": "pnpx rimraf --glob **/node_modules **/pnpm-lock.yaml",
+    "dep:major": "pnpm dlx npm-check-updates --packageFile '**/package.json' -u && node replace-react.mjs",
+    "dep:semver": "pnpm dlx npm-check-updates --packageFile '**/package.json' -u -t semver && node replace-react.mjs"
   },
   "repository": {
     "type": "git",
