@@ -102,7 +102,6 @@ const ProductPage: React.FC<Props> = ({ lang, country, countries, buildLanguages
               <div className="flex items-center">
                 <div className="relative" data-children-count="1">
                   <select
-                    placeholder={locale[lang].selectSize as string}
                     className="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-blue-500 text-base pl-3 pr-10"
                     value={selectedVariant}
                     onChange={(e) => setSelectedVariant(e.target.value)}
