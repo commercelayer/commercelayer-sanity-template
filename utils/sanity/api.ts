@@ -81,7 +81,7 @@ const getAllCountries = async (locale = "en-US") => {
   const query = groq`*[_type == "country"]{
     name,
     code,
-    marketId,
+    marketCode,
     defaultLocale,
     "image": {
       "url": image.asset->url
@@ -91,7 +91,7 @@ const getAllCountries = async (locale = "en-US") => {
     }
   } | order(name["${lang}"] asc)`;
   const countries = await client.fetch<SanityCountry[]>(query);
-  return countries.map((country) => {
+  return countries.filter((country) => !_.isEmpty(country.marketCode)).map((country) => {
     const localization = {
       name: country?.name[lang]
     };

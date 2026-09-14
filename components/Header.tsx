@@ -72,7 +72,7 @@ const Header: React.FC<Props> = ({ lang, countryCode, pageTitle }) => {
                 </span>
 
                 <LineItemsContainer>
-                  <LineItemsCount className="animate-bounce -ml-4 md:ml-2 inline-flex items-center px-2 py-1 rounded-full text-sm font-medium leading-5 bg-indigo-500 text-gray-50" />
+                  <LineItemsCount className="animate-bounce -ml-4 md:ml-2 inline-flex items-center px-2 py-1 rounded-full text-sm font-medium leading-5 bg-black text-gray-50" />
                 </LineItemsContainer>
               </div>
             </Link>

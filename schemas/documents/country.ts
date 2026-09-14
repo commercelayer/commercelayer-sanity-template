@@ -40,10 +40,10 @@ export default defineType({
       validation: (rule) => rule.required().error("A catalog is required")
     }),
     defineField({
-      name: "marketId",
-      title: "Market Id",
+      name: "marketCode",
+      title: "Market Code",
       type: "string",
-      validation: (rule) => rule.required().error("A market ID is required")
+      validation: (rule) => rule.required().error("A market code is required")
     }),
     defineField({
       name: "image",

@@ -6,10 +6,6 @@
 @tailwind utilities;
 @tailwind variants;
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: "Manrope", sans-serif;
   font-display: swap;

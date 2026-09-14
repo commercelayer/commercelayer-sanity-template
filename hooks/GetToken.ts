@@ -14,17 +14,17 @@ type UseGetToken = {
 export const useGetToken: UseGetToken = ({ scope, countryCode }) => {
   const [token, setToken] = useState("");
   useEffect(() => {
+    if (!countryCode) return;
     const getCookieToken = Cookies.get(`clAccessToken-${countryCode}`);
     if ((!getCookieToken || getCookieToken === "undefined") && clientId && slug && scope) {
       const getToken = async () => {
         const auth = await authenticate("client_credentials", {
           clientId,
-          scope: `market:id:${scope}`
+          scope
         });
 
         setToken(auth?.accessToken);
         Cookies.set(`clAccessToken-${countryCode}`, auth?.accessToken, {
-          // @ts-ignore
           expires: auth?.expires
         });
       };

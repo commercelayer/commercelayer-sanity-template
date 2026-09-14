@@ -1,5 +1,5 @@
 import React from "react";
-import { CommerceLayer, OrderContainer, OrderStorage } from "@commercelayer/react-components";
+import { CommerceLayer, Order, OrderStorage } from "@commercelayer/react-components";
 import Layout from "@components/Layout";
 import { Country } from "@typings/models";
 
@@ -8,7 +8,6 @@ type Props = {
   buildLanguages?: Country[];
   lang: string;
   clToken: string;
-  clEndpoint: string;
   languageCode: string;
   countryCode: string;
   countries?: any[];
@@ -20,7 +19,6 @@ const Page: React.FC<Props> = ({
   buildLanguages,
   lang,
   clToken,
-  clEndpoint,
   languageCode,
   countryCode,
   countries,
@@ -33,9 +31,9 @@ const Page: React.FC<Props> = ({
   const cart_url = isEnvEmpty ? undefined : `${siteUrl}/${countryCode}/${lang}/cart`;
 
   return (
-    <CommerceLayer accessToken={clToken} endpoint={clEndpoint}>
+    <CommerceLayer accessToken={clToken}>
       <OrderStorage persistKey={`cl_order-${countryCode}`}>
-        <OrderContainer attributes={{ language_code: languageCode, return_url, cart_url }}>
+        <Order attributes={{ language_code: languageCode, return_url, cart_url }}>
           <Layout
             pageTitle={pageTitle}
             buildLanguages={buildLanguages}
@@ -45,7 +43,7 @@ const Page: React.FC<Props> = ({
           >
             {children}
           </Layout>
-        </OrderContainer>
+        </Order>
       </OrderStorage>
     </CommerceLayer>
   );

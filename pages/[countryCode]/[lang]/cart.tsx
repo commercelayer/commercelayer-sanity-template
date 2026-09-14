@@ -2,7 +2,7 @@ import _ from "lodash";
 import React, { useState, useEffect } from "react";
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
 import IframeResizer from "iframe-resizer-react";
-import { useOrderContainer } from "@commercelayer/react-components/hooks/useOrderContainer";
+import { useOrderContainer } from "@commercelayer/react-components";
 import Page from "@components/Page";
 import { useGetToken } from "@hooks/GetToken";
 import { Country } from "@typings/models";
@@ -76,11 +76,11 @@ const CartIframe: React.FC<CartProps> = ({ countryCode, slug, clToken }) => {
 const ShoppingBagPage: NextPage<Props> = ({ lang, buildLanguages = [], countries, country }) => {
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
   const countryCode = country?.code.toLowerCase() as string;
-  const clMarketId = country?.marketId as string;
+  const clMarketCode = country?.marketCode as string;
   const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
   const clSlug = parseEndpoint(clEndpoint);
   const clToken = useGetToken({
-    scope: clMarketId,
+    scope: `market:code:${clMarketCode}`,
     countryCode: countryCode
   });
 
@@ -89,7 +89,6 @@ const ShoppingBagPage: NextPage<Props> = ({ lang, buildLanguages = [], countries
       buildLanguages={buildLanguages}
       lang={lang}
       clToken={clToken}
-      clEndpoint={clEndpoint}
       languageCode={languageCode}
       countryCode={countryCode}
       countries={countries}

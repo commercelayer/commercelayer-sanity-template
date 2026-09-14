@@ -1,5 +1,4 @@
 import _ from "lodash";
-import React from "react";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useGetToken } from "@hooks/GetToken";
 import Page from "@components/Page";
@@ -20,10 +19,9 @@ type Props = {
 const HomePage: NextPage<Props> = ({ lang, countries, country, taxonomies, buildLanguages }) => {
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
   const countryCode = country?.code.toLowerCase() as string;
-  const clMarketId = country?.marketId as string;
-  const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
+  const clMarketCode = country?.marketCode as string;
   const clToken = useGetToken({
-    scope: clMarketId,
+    scope: `market:code:${clMarketCode}`,
     countryCode: countryCode
   });
 
@@ -32,7 +30,6 @@ const HomePage: NextPage<Props> = ({ lang, countries, country, taxonomies, build
       buildLanguages={buildLanguages}
       lang={lang}
       clToken={clToken}
-      clEndpoint={clEndpoint}
       languageCode={languageCode}
       countryCode={countryCode}
       countries={countries}

@@ -94,7 +94,7 @@ const CountrySelector: React.FC<Props> = ({ options }) => {
                     key={key}
                     role="option"
                     aria-selected={selected}
-                    className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-indigo-500 ${
+                    className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-black ${
                       selected ? "" : "text-gray-900"
                     }`}
                     onClick={() => handleChange(value, defaultLocale)}
@@ -118,7 +118,7 @@ const CountrySelector: React.FC<Props> = ({ options }) => {
                     <span
                       className={`${
                         selected ? "text-gray-900" : "hidden"
-                      } absolute inset-y-0 right-0 flex items-center pr-4 hover:bg-indigo-600`}
+                      } absolute inset-y-0 right-0 flex items-center pr-4 hover:bg-black`}
                     >
                       <svg
                         className="h-5 w-5"

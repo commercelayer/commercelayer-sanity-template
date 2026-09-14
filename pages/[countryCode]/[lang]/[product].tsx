@@ -21,10 +21,9 @@ type Props = {
 
 const ProductPage: React.FC<Props> = ({ lang, country, countries, buildLanguages, product }) => {
   const countryCode = country?.code.toLowerCase() as string;
-  const clMarketId = country?.marketId as string;
-  const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
+  const clMarketCode = country?.marketCode as string;
   const clToken = useGetToken({
-    scope: clMarketId,
+    scope: `market:code:${clMarketCode}`,
     countryCode: countryCode
   });
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
@@ -54,7 +53,6 @@ const ProductPage: React.FC<Props> = ({ lang, country, countries, buildLanguages
       pageTitle={product.name}
       lang={lang}
       clToken={clToken}
-      clEndpoint={clEndpoint}
       languageCode={languageCode}
       countryCode={countryCode}
       countries={countries}
@@ -133,7 +131,7 @@ const ProductPage: React.FC<Props> = ({ lang, country, countries, buildLanguages
                 <PricesContainer>
                   <Price
                     skuCode={selectedVariant}
-                    className="text-indigo-600 mr-1"
+                    className="text-black mr-1"
                     compareClassName="text-gray-500 line-through text-lg"
                   />
                 </PricesContainer>
