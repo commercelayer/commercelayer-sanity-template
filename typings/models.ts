@@ -5,7 +5,7 @@ export interface Country {
   domain: string;
   catalog: Catalog;
   image: Image;
-  marketId: string;
+  marketCode: string;
 }
 
 export interface Catalog {

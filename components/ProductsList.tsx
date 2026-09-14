@@ -1,5 +1,4 @@
 import _ from "lodash";
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -43,7 +42,7 @@ const ProductsList = ({ products }: Props) => {
                       <li>
                         <PricesContainer skuCode={code}>
                           <Price
-                            className="text-indigo-600 mr-1 text-base font-bold md:text-sm"
+                            className="text-black mr-1 text-base font-bold md:text-sm"
                             compareClassName="text-gray-500 line-through text-sm md:text-xs"
                           />
                         </PricesContainer>
