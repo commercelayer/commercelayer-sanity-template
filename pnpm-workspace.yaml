@@ -24,3 +24,4 @@ overrides:
   source-map-js@>=1.0.0 <1.2.2: ^1.2.2
   prismjs@<1.30.0: ^1.30.0
   dompurify@<3.4.16: ^3.4.16
+  uuid@<11.1.1: ^11.1.1
